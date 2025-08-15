@@ -42,11 +42,27 @@ You can customize this behavior, see documentation [here](https://docs.keycloaki
 npx keycloakify initialize-account-theme
 ```
 
+# Initializing the admin theme
+
+```bash
+npx keycloakify initialize-admin-theme
+```
+
 # Initializing the email theme
 
 ```bash
 npx keycloakify initialize-email-theme
 ```
+
+# Taking ownership of a specific theme file
+
+By default, Git will not track the initialized themes. Developers must signal to keycloakify that they would like to "take ownership" of a particular file.
+
+```bash
+npx keycloakify own --path "<path_to_newly_owned_file>"
+```
+
+By running this script Git will begin to track the changes made to the specified file allowing version control for only the elements that require changes from the default keycloakify template.
 
 # GitHub Actions
 

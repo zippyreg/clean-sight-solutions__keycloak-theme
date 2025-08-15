@@ -1,0 +1,51 @@
+.pf-v5-c-title {
+  --pf-v5-c-title--m-4xl--FontWeight: var(--pf-v5-global--FontWeight--bold);
+  --pf-v5-c-title--m-3xl--FontWeight: var(--pf-v5-global--FontWeight--bold);
+  --pf-v5-c-title--m-2xl--FontWeight: var(--pf-v5-global--FontWeight--bold);
+  --pf-v5-c-title--m-xl--FontWeight: var(--pf-v5-global--FontWeight--bold);
+}
+
+/* Forms */
+
+.pf-v5-c-form {
+  --pf-v5-c-form__label-text--FontWeight: var(--pf-v5-global--FontWeight--medium);
+}
+
+/* Buttons */
+
+.pf-v5-c-button {
+  border-radius: var(--pf-v5-global--BorderRadius--sm);
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter;
+  transition-timing-function: var(--css-global--transition-timing-function);
+  transition-duration: var(--css-global--transition-duration);
+}
+
+.pf-v5-c-button:not(.pf-m-link):hover,
+.pf-v5-c-button:not(.pf-m-link):focus,
+.pf-v5-c-button:not(.pf-m-link):active {
+  box-shadow: var(--css-global--inset-shadow), 
+    var(--css-global--inset-ring-shadow), 
+    var(--css-global--ring-offset-shadow),
+    var(--css-global--ring-shadow),
+    var(--css-global--shadow);
+}
+
+.pf-v5-c-button.pf-m-primary {
+  --pf-v5-c-button--m-primary--BackgroundColor: var(--css-global--primary-color);
+  --pf-v5-c-button--m-primary--Color: var(--css-global--primary-color-foreground);
+}
+
+.pf-v5-c-button.pf-m-primary:hover,
+.pf-v5-c-button.pf-m-primary:focus,
+.pf-v5-c-button.pf-m-primary:active {
+  --pf-v5-c-button--m-primary--Color: var(--css-global--secondary-color-foreground);
+}
+
+.pf-v5-c-button.pf-m-primary:hover {
+  --pf-v5-c-button--m-primary--BackgroundColor: var(--css-global--secondary-color);
+}
+
+.pf-v5-c-button.pf-m-primary:active,
+.pf-v5-c-button.pf-m-primary:focus {
+  --pf-v5-c-button--m-primary--BackgroundColor: var(--css-global--brand-blue);
+}

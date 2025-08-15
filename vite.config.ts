@@ -7,7 +7,11 @@ export default defineConfig({
     plugins: [
         react(),
         keycloakify({
-            accountThemeImplementation: "none"
+            accountThemeImplementation: "Single-Page",
+            keycloakVersionTargets: {
+                "22-to-25": false,
+                "all-other-versions": "clean-sight-solutions.jar"
+            }
         })
     ]
 });
