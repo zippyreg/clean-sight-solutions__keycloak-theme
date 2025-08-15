@@ -100,7 +100,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                             <h1 id="kc-page-title">{headerNode}</h1>
                         ) : (
                             <div id="kc-username" className={kcClsx("kcFormGroupClass")}>
-                                <label id="kc-attempted-username">{auth.attemptedUsername}</label>
+                                <label id="kc-attempted-username">{msg("loginAttemptedHtml", auth.attemptedUsername)}</label>
                                 <a id="reset-login" href={url.loginRestartFlowUrl} aria-label={msgStr("restartLoginTooltip")}>
                                     <div className="kc-login-tooltip">
                                         <i className={kcClsx("kcResetFlowIcon")}></i>

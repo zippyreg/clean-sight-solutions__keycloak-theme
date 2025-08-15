@@ -1626,9 +1626,9 @@
         "strictTransportSecurity": "max-age=31536000; includeSubDomains"
     },
     "smtpServer": {},
-    "loginTheme": "clean-sight-solutions__keycloakify",
-    "accountTheme": "clean-sight-solutions__keycloakify",
-    "adminTheme": "clean-sight-solutions__keycloakify",
+    "loginTheme": "clean-sight-solutions",
+    "accountTheme": "clean-sight-solutions",
+    "adminTheme": "clean-sight-solutions",
     "emailTheme": "",
     "eventsEnabled": false,
     "eventsListeners": ["keycloakify-logging", "jboss-logging"],

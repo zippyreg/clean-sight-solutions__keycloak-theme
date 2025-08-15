@@ -9,6 +9,7 @@ import Template from "./Template";
 const UserProfileFormFields = lazy(
     () => import("keycloakify/login/UserProfileFormFields")
 );
+const LoginConfigTotp = lazy(() => import("./pages/LoginConfigTotp"));
 
 const doMakeUserConfirmPassword = true;
 
@@ -21,6 +22,13 @@ export default function KcPage(props: { kcContext: KcContext }) {
         <Suspense>
             {(() => {
                 switch (kcContext.pageId) {
+                    case "login-config-totp.ftl": return (
+                        <LoginConfigTotp
+                            {...{ kcContext, i18n, classes }}
+                            Template={Template}
+                            doUseDefaultCss={true}
+                        />
+                    );
                     default:
                         return (
                             <DefaultPage

@@ -7,7 +7,10 @@ const { useI18n, ofTypeI18n } = i18nBuilder
   .withThemeName<ThemeName>()
   .withCustomTranslations({
     en: {
-      loginFooterHtml: "Copyright &copy; {0} <strong>Clean Sight Solutions</strong>"
+      loginFooterHtml: "Copyright &copy; {0} <strong>Clean Sight Solutions</strong>",
+      loginTotpScanBarcode: "Scan QR instead",
+      loginTotpTitle: "Authenticator Setup",
+      loginAttemptedHtml: "Logging in as <strong>{0}</strong>",
     }
   })
   .build();
