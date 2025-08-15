@@ -8,6 +8,8 @@ export default defineConfig({
         react(),
         keycloakify({
             accountThemeImplementation: "Single-Page",
+            groupId: "store.cleansightsolutions.id.keycloak-theme",
+            keycloakifyBuildDirPath: "./target",
             keycloakVersionTargets: {
                 "22-to-25": false,
                 "all-other-versions": "clean-sight-solutions.jar"
