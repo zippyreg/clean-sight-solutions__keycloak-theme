@@ -1,3 +1,12 @@
+TODO:
+
+<pre>
+Login theme colors:
+Page BG: oklch(0.1798 0.0063 236.96)
+Content BG: oklch(0.2303 0.0083 264.4)
+FG: oklch(0.9067 0 0)
+</pre>
+
 <p align="center">
     <i>🚀 <a href="https://keycloakify.dev">Keycloakify</a> v11 starter 🚀</i>
     <br/>
