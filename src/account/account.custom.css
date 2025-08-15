@@ -26,11 +26,15 @@
   --css-global--shadow: 0 4px 6px -1px var(--css--shadow-color, #0000001a), 0 2px 4px -2px var(--css--shadow-color, #0000001a);
   --css-global--shadow-lg: 0 10px 15px -3px var(--css--shadow-color, #0000001a), 0 4px 6px -4px var(--css--shadow-color, #0000001a);
 
+  --pf-v5-global--palette--blue-300: var(--css-global--secondary-color);
+  --pf-v5-global--primary-color--100: var(--css-global--secondary-color);
   --pf-v5-global--danger-color--100: var(--css-global--danger-color);
   --pf-v5-global--danger-color--200: var(--css-global--danger-color);
+  --pf-v5-global--active-color--100: var(--css-global--secondary-color);
   --pf-v5-global--active-color--400: var(--css-global--primary-color);
   --pf-v5-global--BackgroundColor--light-300: var(--css-global--sand);
   --pf-v5-global--BorderRadius--sm: 0.25rem;
+  --pf-v5-global--BorderRadius--md: 0.5rem;
   --pf-v5-global--Color--200: #363636;
   --pf-v5-global--FontFamily--text: "Wix Madefor Text", system-ui, sans-serif;
   --pf-v5-global--FontFamily--heading: "Wix Madefor Text", system-ui, sans-serif;

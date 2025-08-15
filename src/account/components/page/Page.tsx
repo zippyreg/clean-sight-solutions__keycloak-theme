@@ -41,7 +41,7 @@ const LiveCopyrightDate = () => {
 
     return (
         <TextContent>
-            <Text component="small">
+            <Text component="small" className="pf-v5-u-color-100">
                 Copyright &copy; {currentDate.getFullYear()} <strong>Clean Sight Solutions</strong>
             </Text>
         </TextContent>

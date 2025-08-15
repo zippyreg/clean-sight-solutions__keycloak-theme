@@ -116,7 +116,7 @@ h1#kc-page-title {
     var(--css-global--inset-ring-shadow), 
     var(--css-global--ring-offset-shadow),
     var(--css-global--ring-shadow),
-    var(--css-global--shadow-lg);
+    var(--css-global--shadow-lg)!important;
 }
 
 @media screen and (max-width: 767px) {

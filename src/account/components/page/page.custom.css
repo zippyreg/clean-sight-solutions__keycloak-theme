@@ -11,6 +11,37 @@
   --pf-v5-c-form__label-text--FontWeight: var(--pf-v5-global--FontWeight--medium);
 }
 
+.pf-v5-c-form-control,
+.pf-v5-c-form-control input,
+.pf-v5-c-form-control::after,
+.pf-v5-c-menu-toggle,
+.pf-v5-c-menu-toggle::after,
+.pf-v5-c-menu-toggle::before,
+.pf-v5-c-menu {
+  border-radius: var(--pf-v5-global--BorderRadius--sm);
+}
+
+.pf-v5-c-menu-toggle:has(+ .pf-v5-c-menu[data-popper-placement*=top]),
+.pf-v5-c-menu-toggle:has(+ .pf-v5-c-menu[data-popper-placement*=top])::after,
+.pf-v5-c-menu-toggle:has(+ .pf-v5-c-menu[data-popper-placement*=top])::before,
+.pf-v5-c-menu[data-popper-placement*=bottom] {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.pf-v5-c-menu[data-popper-placement*=top] {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.pf-v5-c-menu {
+  box-shadow: var(--css-global--inset-shadow), 
+    var(--css-global--inset-ring-shadow), 
+    var(--css-global--ring-offset-shadow),
+    var(--css-global--ring-shadow),
+    var(--css-global--shadow-lg);
+}
+
 /* Buttons */
 
 .pf-v5-c-button {
