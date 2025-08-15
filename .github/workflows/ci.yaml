@@ -15,7 +15,7 @@ jobs:
             - uses: actions/setup-node@v4
             - uses: bahmutov/npm-install@v1
               with:
-                install-command: yarn --silent
+                install-command: yarn --frozen-lockfile --silent
             - run: npm run build-keycloak-theme
 
     check_if_version_upgraded:
@@ -44,7 +44,7 @@ jobs:
             - uses: actions/setup-node@v4
             - uses: bahmutov/npm-install@v1
               with:
-                install-command: yarn --silent
+                install-command: yarn --frozen-lockfile --silent
             - run: npm run build-keycloak-theme
             - uses: softprops/action-gh-release@v2
               with:

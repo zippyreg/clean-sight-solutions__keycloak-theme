@@ -51,7 +51,7 @@ jspm_packages
 .DS_Store
 
 /dist
-
+/target
 /build
 /storybook-static
 
