@@ -9,7 +9,7 @@ const { useI18n, ofTypeI18n } = i18nBuilder
     en: {
       loginFooterHtml: "Copyright &copy; {0} <strong>Clean Sight Solutions</strong>",
       loginTotpScanBarcode: "Scan QR instead",
-      loginTotpTitle: "Authenticator Setup",
+      loginTotpTitle: "Authenticator setup",
       loginTotpStep1: "Install one of the following Authenticator applications on your mobile device:",
       loginTotpStep2: "Open your Authenticator application and scan the QR code:",
       loginTotpStep3DeviceName: "Give this device a name to organize your OTP devices.",
