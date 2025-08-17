@@ -178,3 +178,8 @@
 .pf-v5-c-switch__input:disabled ~ .pf-v5-c-switch__toggle {
     opacity: 0.5;
 }
+
+/* Cards */
+.pf-v5-c-card.pf-m-rounded {
+    --pf-v5-c-card--m-rounded--BorderRadius: var(--pf-v5-global--BorderRadius--md);
+}
