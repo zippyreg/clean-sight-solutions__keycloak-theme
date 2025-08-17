@@ -16,6 +16,7 @@
     max-width: calc(
         var(--css--brand--width) + (2 * var(--css--brand-container--padding-x))
     );
+    width: 100%;
 }
 
 .keycloak__dashboard_introduction {

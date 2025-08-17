@@ -7,7 +7,7 @@
 
 import { lazy, useEffect } from "react";
 import { KcAdminUiLoader } from "@keycloakify/keycloak-admin-ui";
-import { useColorMode } from "../shared/keycloak-ui-shared/utils/useColorMode";
+import { useColorMode } from "../shared/keycloak-ui-shared/";
 import type { KcContext } from "./KcContext";
 
 const KcAdminUi = lazy(() => import("./KcAdminUi"));

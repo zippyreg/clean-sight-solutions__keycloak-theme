@@ -9,6 +9,7 @@
 # admin/KcAdminUi.tsx
 # admin/KcPage.tsx
 # admin/PageHeader.tsx
+# admin/PageNav.tsx
 # account/account-security/DeviceActivity.tsx
 # account/account-security/SigningIn.tsx
 # account/applications/Applications.tsx
@@ -20,6 +21,7 @@
 # account/root/Root.tsx
 # admin/dashboard/dashboard.css
 # admin/dashboard/Dashboard.tsx
+# shared/keycloak-ui-shared/main.ts
 # account/components/page/Page.tsx
 # admin/assets/theme/login.css
 # admin/components/view-header/ViewHeader.tsx
@@ -38,7 +40,6 @@
 /admin/KcContext.ts
 /admin/page-nav.css
 /admin/PageHeaderClearCachesModal.tsx
-/admin/PageNav.tsx
 /admin/PageNotFoundSection.tsx
 /admin/Root.tsx
 /admin/routes.tsx
@@ -641,7 +642,6 @@
 
 # === @keycloakify/keycloak-ui-shared v260200.0.0 ===
 /shared/keycloak-ui-shared/index.ts
-/shared/keycloak-ui-shared/main.ts
 /shared/@patternfly/react-core/index.tsx
 /shared/@patternfly/react-icons/index.tsx
 /shared/@patternfly/react-styles/index.tsx
