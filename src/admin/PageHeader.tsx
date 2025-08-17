@@ -9,7 +9,12 @@
 
 // @ts-nocheck
 
-import { KeycloakMasthead, ThemeSelector, useEnvironment, useHelp } from "../shared/keycloak-ui-shared";
+import {
+    KeycloakMasthead,
+    ThemeSelector,
+    useEnvironment,
+    useHelp
+} from "../shared/keycloak-ui-shared";
 import { DropdownItem, ToolbarItem } from "../shared/@patternfly/react-core";
 import { HelpIcon } from "../shared/@patternfly/react-icons";
 import { useTranslation } from "react-i18next";
@@ -139,7 +144,7 @@ export const Header = () => {
                 {
                     align: "alignLeft",
                     children: [<ThemeSelector key="theme" />]
-                },
+                }
             ]}
         />
     );

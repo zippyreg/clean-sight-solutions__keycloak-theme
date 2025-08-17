@@ -151,7 +151,8 @@
 
 /* Tab items */
 
-.pf-v5-c-tabs__item.pf-m-action::after, .pf-v5-c-tabs__link::after {
+.pf-v5-c-tabs__item.pf-m-action::after,
+.pf-v5-c-tabs__link::after {
     transition-property:
         color,
         background-color,
