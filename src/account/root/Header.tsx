@@ -61,7 +61,7 @@ export const Header = () => {
                 src: `${import.meta.env.BASE_URL}img/lettermark.png`,
                 alt: t("logo"),
                 className: style.brand,
-                containerClassName: style['brand-container']
+                containerClassName: style["brand-container"]
             }}
             toolbarItems={[<ReferrerLink key="link" />]}
         />

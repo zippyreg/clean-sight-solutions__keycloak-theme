@@ -56,4 +56,4 @@ export const EventsBanners = ({ type }: { type: EventsBannerType }) => {
 
 export const AdminBanner = () => {
     return <WarnBanner msg="usingAdminConsole" />;
-}
+};

@@ -61,10 +61,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
     return (
         <div className={kcClsx("kcLoginClass")}>
             <div id="kc-header" className={kcClsx("kcHeaderClass")}>
-                <div 
-                    id="kc-header-wrapper" 
-                    className={clsx(style["brand-flex"], kcClsx("kcHeaderWrapperClass"))}
-                >
+                <div id="kc-header-wrapper" className={clsx(style["brand-flex"], kcClsx("kcHeaderWrapperClass"))}>
                     <div className={style["brand-container"]}>
                         <img src={`${import.meta.env.BASE_URL}img/wordmark.png`} />
                     </div>

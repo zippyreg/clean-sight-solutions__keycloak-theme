@@ -24,7 +24,7 @@ function setDarkTheme(isDark: boolean): void {
     }
 }
 
-function getThemeFromUrl(): string|undefined {
+function getThemeFromUrl(): string | undefined {
     const url = new URL(window.location.href);
 
     const value = url.searchParams.get("color-mode");
@@ -40,9 +40,9 @@ function getThemeFromUrl(): string|undefined {
     window.history.replaceState({}, "", url.toString());
 
     // We have a valid color mode from the URL.
-    // Persist the value in local storage for use 
-    // in the next block. If the user navigates, 
-    // for example, from login.ftl to register.ftl, 
+    // Persist the value in local storage for use
+    // in the next block. If the user navigates,
+    // for example, from login.ftl to register.ftl,
     // we won’t lose the state.
     return `${value}`;
 }
@@ -54,15 +54,15 @@ export default function KcPage(props: { kcContext: KcContext }) {
 
     const { i18n } = useI18n({ kcContext });
 
-    const [colorMode , setColorMode, isDark] = useColorMode();
-    
+    const [colorMode, setColorMode, isDark] = useColorMode();
+
     from_url: {
         const themeFromUrl = getThemeFromUrl();
 
-        if(themeFromUrl === undefined) {
+        if (themeFromUrl === undefined) {
             break from_url;
         }
-        
+
         setColorMode(themeFromUrl);
     }
 
@@ -74,13 +74,14 @@ export default function KcPage(props: { kcContext: KcContext }) {
         <Suspense>
             {(() => {
                 switch (kcContext.pageId) {
-                    case "login-config-totp.ftl": return (
-                        <LoginConfigTotp
-                            {...{ kcContext, i18n, classes }}
-                            Template={Template}
-                            doUseDefaultCss={true}
-                        />
-                    );
+                    case "login-config-totp.ftl":
+                        return (
+                            <LoginConfigTotp
+                                {...{ kcContext, i18n, classes }}
+                                Template={Template}
+                                doUseDefaultCss={true}
+                            />
+                        );
                     default:
                         return (
                             <DefaultPage

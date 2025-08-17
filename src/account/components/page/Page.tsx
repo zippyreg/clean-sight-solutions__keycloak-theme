@@ -27,7 +27,7 @@ type PageProps = {
 };
 
 const LiveCopyrightDate = () => {
-    const [ currentDate, setCurrentDate ] = useState(new Date());
+    const [currentDate, setCurrentDate] = useState(new Date());
 
     useEffect(() => {
         const intervalId = setInterval(() => {
@@ -43,12 +43,12 @@ const LiveCopyrightDate = () => {
     return (
         <TextContent>
             <Text component="small" className="pf-v5-u-color-100">
-                Copyright &copy; {currentDate.getFullYear()} <strong>Clean Sight Solutions</strong>
+                Copyright &copy; {currentDate.getFullYear()}{" "}
+                <strong>Clean Sight Solutions</strong>
             </Text>
         </TextContent>
     );
-}
-
+};
 
 export const Page = ({ title, description, children }: PropsWithChildren<PageProps>) => {
     return (
@@ -63,9 +63,9 @@ export const Page = ({ title, description, children }: PropsWithChildren<PagePro
             </PageSection>
             <PageSection variant="light">{children}</PageSection>
             <PageSection className="pf-v5-u-display-flex">
-                <Flex 
-                    alignItems={{ default: "alignItemsFlexEnd" }} 
-                    justifyContent={{ default: "justifyContentCenter"}}
+                <Flex
+                    alignItems={{ default: "alignItemsFlexEnd" }}
+                    justifyContent={{ default: "justifyContentCenter" }}
                     style={{ width: "100%" }}
                 >
                     <LiveCopyrightDate />

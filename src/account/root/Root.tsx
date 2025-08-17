@@ -9,7 +9,11 @@
 
 // @ts-nocheck
 
-import { ErrorPage, KeycloakSpinner, useEnvironment } from "../../shared/keycloak-ui-shared";
+import {
+    ErrorPage,
+    KeycloakSpinner,
+    useEnvironment
+} from "../../shared/keycloak-ui-shared";
 import { Page } from "../../shared/@patternfly/react-core";
 import { Suspense, useState } from "react";
 import {

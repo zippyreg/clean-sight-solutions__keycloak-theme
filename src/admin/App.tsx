@@ -13,7 +13,14 @@ import "./app.custom.css";
 
 import KeycloakAdminClient from "@keycloak/keycloak-admin-client";
 import { mainPageContentId, useEnvironment } from "../shared/keycloak-ui-shared";
-import { Flex, FlexItem, Page, PageSection, TextContent, Text } from "../shared/@patternfly/react-core";
+import {
+    Flex,
+    FlexItem,
+    Page,
+    PageSection,
+    TextContent,
+    Text
+} from "../shared/@patternfly/react-core";
 import { PropsWithChildren, Suspense, useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 
@@ -54,7 +61,7 @@ export const AppContexts = ({ children }: PropsWithChildren) => (
 );
 
 const LiveCopyrightDate = () => {
-    const [ currentDate, setCurrentDate ] = useState(new Date());
+    const [currentDate, setCurrentDate] = useState(new Date());
 
     useEffect(() => {
         const intervalId = setInterval(() => {
@@ -70,11 +77,12 @@ const LiveCopyrightDate = () => {
     return (
         <TextContent>
             <Text component="small" className="pf-v5-u-color-100">
-                Copyright &copy; {currentDate.getFullYear()} <strong>Clean Sight Solutions</strong>
+                Copyright &copy; {currentDate.getFullYear()}{" "}
+                <strong>Clean Sight Solutions</strong>
             </Text>
         </TextContent>
     );
-}
+};
 
 export const App = () => {
     const { keycloak, environment } = useEnvironment<Environment>();
@@ -114,9 +122,13 @@ export const App = () => {
                                     <AuthWall>
                                         <Outlet />
                                         <PageSection className="pf-v5-u-display-flex">
-                                            <Flex 
-                                                alignItems={{ default: "alignItemsFlexEnd" }} 
-                                                justifyContent={{ default: "justifyContentCenter"}}
+                                            <Flex
+                                                alignItems={{
+                                                    default: "alignItemsFlexEnd"
+                                                }}
+                                                justifyContent={{
+                                                    default: "justifyContentCenter"
+                                                }}
                                                 style={{ width: "100%" }}
                                             >
                                                 <LiveCopyrightDate />

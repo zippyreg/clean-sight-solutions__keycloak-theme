@@ -104,7 +104,7 @@ const KeycloakMasthead = ({
                     <BarsIcon />
                 </PageToggleButton>
             </MastheadToggle>
-            <MastheadBrand className={containerClassName} { ...brandProps}>
+            <MastheadBrand className={containerClassName} {...brandProps}>
                 <img src={src} alt={alt} className={className} />
             </MastheadBrand>
             <MastheadContent>

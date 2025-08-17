@@ -13,7 +13,9 @@
     align-items: center;
     padding: 0 var(--css--brand-container--padding-x);
     border-radius: 0.5rem;
-    max-width: calc(var(--css--brand--width) + (2 * var(--css--brand-container--padding-x)));
+    max-width: calc(
+        var(--css--brand--width) + (2 * var(--css--brand-container--padding-x))
+    );
 }
 
 .keycloak__dashboard_introduction {

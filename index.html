@@ -6,11 +6,27 @@
 
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
 
-        <style>/* Page */:root { --css-global--page-background: oklch(0.9189 0 0); }
-:where(.pf-v5-theme-dark):root, :where(.pf-theme-dark):root { --css-global--page-background: oklch(0.1798 0.0063 236.96); }
-@media screen and (prefers-color-scheme: dark) { :root { --css-global--page-background: oklch(0.1798 0.0063 236.96); } }
-body { background-color: var(--css-global--page-background); }
-#root > .pf-v5-l-bullseye, body > .pf-v5-l-bullseye { min-height: 100vh; }
+        <style>
+            /* Page */
+            :root {
+                --css-global--page-background: oklch(0.9189 0 0);
+            }
+            :where(.pf-v5-theme-dark):root,
+            :where(.pf-theme-dark):root {
+                --css-global--page-background: oklch(0.1798 0.0063 236.96);
+            }
+            @media screen and (prefers-color-scheme: dark) {
+                :root {
+                    --css-global--page-background: oklch(0.1798 0.0063 236.96);
+                }
+            }
+            body {
+                background-color: var(--css-global--page-background);
+            }
+            #root > .pf-v5-l-bullseye,
+            body > .pf-v5-l-bullseye {
+                min-height: 100vh;
+            }
         </style>
     </head>
 

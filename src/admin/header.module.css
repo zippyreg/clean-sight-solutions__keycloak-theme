@@ -1,15 +1,17 @@
 .brand-container {
-  --css--brand-container--padding-x: 1rem;
-  --css--brand--width: 80px;
+    --css--brand-container--padding-x: 1rem;
+    --css--brand--width: 80px;
 
-  background: white;
-  align-self: stretch;
-  align-items: center;
-  padding: 0 var(--css--brand-container--padding-x);
-  border-radius: var(--pf-v5-global--BorderRadius--md);
-  max-width: calc(var(--css--brand--width) + (2 * var(--css--brand-container--padding-x)));
+    background: white;
+    align-self: stretch;
+    align-items: center;
+    padding: 0 var(--css--brand-container--padding-x);
+    border-radius: var(--pf-v5-global--BorderRadius--md);
+    max-width: calc(
+        var(--css--brand--width) + (2 * var(--css--brand-container--padding-x))
+    );
 }
 
 .brand {
-  width: 80px;
+    width: 80px;
 }

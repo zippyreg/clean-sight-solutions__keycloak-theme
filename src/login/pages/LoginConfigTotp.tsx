@@ -158,7 +158,7 @@ export default function LoginConfigTotp(props: PageProps<Extract<KcContext, { pa
                     <div className={kcClsx("kcFormGroupClass")}>
                         <LogoutOtherSessions kcClsx={kcClsx} i18n={i18n} />
                     </div>
-                    
+
                     <div id="kc-form-buttons">
                         {isAppInitiatedAction ? (
                             <>

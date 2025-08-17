@@ -55,8 +55,8 @@ type MenuItemWithChildren = {
 export type MenuItem = RootMenuItem | MenuItemWithChildren;
 
 const NavSpinner = () => (
-    <Flex 
-        alignItems={{ default: "alignItemsCenter" }} 
+    <Flex
+        alignItems={{ default: "alignItemsCenter" }}
         justifyContent={{ default: "justifyContentCenter" }}
         gap={{ default: "gapXl" }}
         direction={{ default: "column" }}
@@ -64,7 +64,7 @@ const NavSpinner = () => (
         <FlexItem />
         <Spinner />
     </Flex>
-)
+);
 
 export const PageNav = () => {
     const [menuItems, setMenuItems] = useState<MenuItem[]>();

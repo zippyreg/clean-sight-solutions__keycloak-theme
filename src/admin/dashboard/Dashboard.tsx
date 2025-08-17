@@ -68,10 +68,10 @@ const EmptyDashboard = () => {
     return (
         <PageSection variant="light">
             <EmptyState variant="lg">
-                <Flex 
-                    direction={{ default: "column" }} 
+                <Flex
+                    direction={{ default: "column" }}
                     alignItems={{ default: "alignItemsCenter" }}
-                    gap={{ default: "gapLg"}}
+                    gap={{ default: "gapLg" }}
                 >
                     <Brand
                         src={`${import.meta.env.BASE_URL}img/wordmark.png`}
@@ -79,20 +79,20 @@ const EmptyDashboard = () => {
                         className="keycloak__dashboard_icon"
                     />
                     <Flex direction={{ default: "column" }} gap={{ default: undefined }}>
-                        <EmptyStateHeader 
-                            titleText={<>{t("welcome")}</>} 
-                            headingLevel="h2" 
+                        <EmptyStateHeader
+                            titleText={<>{t("welcome")}</>}
+                            headingLevel="h2"
                             className="pf-v5-u-mb-0"
                         />
-                        <EmptyStateHeader 
-                            titleText={<strong>{realmDisplayInfo}</strong>} 
-                            headingLevel="h1" 
+                        <EmptyStateHeader
+                            titleText={<strong>{realmDisplayInfo}</strong>}
+                            headingLevel="h1"
                             titleClassName="pf-v5-u-font-size-4xl"
                         />
                     </Flex>
-                    <EmptyStateBody 
-                        className="keycloak__dashboard_introduction pf-v5-u-font-size-lg"
-                    >{t("introduction")}</EmptyStateBody>
+                    <EmptyStateBody className="keycloak__dashboard_introduction pf-v5-u-font-size-lg">
+                        {t("introduction")}
+                    </EmptyStateBody>
                 </Flex>
             </EmptyState>
         </PageSection>

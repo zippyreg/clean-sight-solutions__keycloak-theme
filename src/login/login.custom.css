@@ -1,308 +1,322 @@
-@import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Text:ital,wght@0,400..800;1,400..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Wix+Madefor+Text:ital,wght@0,400..800;1,400..800&display=swap");
 
 :root {
-  --css-global--primary-color: oklch(0.91 0.1931 105.16);
-  --css-global--primary-color-foreground: oklch(0 0 0);
+    --css-global--primary-color: oklch(0.91 0.1931 105.16);
+    --css-global--primary-color-foreground: oklch(0 0 0);
 
-  --css-global--secondary-color: oklch(0.5738 0.2338 261.64);
-  --css-global--secondary-color-foreground: oklch(1 0 0);
+    --css-global--secondary-color: oklch(0.5738 0.2338 261.64);
+    --css-global--secondary-color-foreground: oklch(1 0 0);
 
-  --css-global--brand-blue: oklch(0.3346 0.1362 261.94);
-  --css-global--brand-blue-foreground: var(--css-global--secondary-color-foreground);
+    --css-global--brand-blue: oklch(0.3346 0.1362 261.94);
+    --css-global--brand-blue-foreground: var(--css-global--secondary-color-foreground);
 
-  --css-global--light-grey: oklch(0.9761 0 0);
-  --css-global--sand: oklch(91.887% 0.0001 271.152);
+    --css-global--light-grey: oklch(0.9761 0 0);
+    --css-global--sand: oklch(91.887% 0.0001 271.152);
 
-  --css-global--danger-color: oklch(0.6739 0.2116 28.87);
-  --css-global--danger-color-foreground: var(--css-global--secondary-color-foreground);
+    --css-global--danger-color: oklch(0.6739 0.2116 28.87);
+    --css-global--danger-color-foreground: var(--css-global--secondary-color-foreground);
 
-  --css-global--transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  --css-global--transition-duration: 150ms;
+    --css-global--transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    --css-global--transition-duration: 150ms;
 
-  --css-global--inset-shadow: 0 0 #0000;
-  --css-global--inset-ring-shadow: 0 0 #0000;
-  --css-global--ring-shadow: 0 0 #0000;
-  --css-global--ring-offset-shadow: 0 0 #0000;
-  --css-global--shadow: 0 4px 6px -1px var(--css--shadow-color, #0000001a), 0 2px 4px -2px var(--css--shadow-color, #0000001a);
-  --css-global--shadow-lg: 0 10px 15px -3px var(--css--shadow-color, #0000001a), 0 4px 6px -4px var(--css--shadow-color, #0000001a);
+    --css-global--inset-shadow: 0 0 #0000;
+    --css-global--inset-ring-shadow: 0 0 #0000;
+    --css-global--ring-shadow: 0 0 #0000;
+    --css-global--ring-offset-shadow: 0 0 #0000;
+    --css-global--shadow: 0 4px 6px -1px var(--css--shadow-color, #0000001a),
+        0 2px 4px -2px var(--css--shadow-color, #0000001a);
+    --css-global--shadow-lg: 0 10px 15px -3px var(--css--shadow-color, #0000001a),
+        0 4px 6px -4px var(--css--shadow-color, #0000001a);
 
-  --pf-global--primary-color--100: var(--css-global--primary-color);
-  --pf-global--Color--light-100: var(--css-global--primary-color-foreground);
-  --pf-global--danger-color--100: var(--css-global--danger-color);
-  --pf-global--danger-color--200: var(--css-global--danger-color);
+    --pf-global--primary-color--100: var(--css-global--primary-color);
+    --pf-global--Color--light-100: var(--css-global--primary-color-foreground);
+    --pf-global--danger-color--100: var(--css-global--danger-color);
+    --pf-global--danger-color--200: var(--css-global--danger-color);
 }
 
 body.kcBodyClass {
-  color: var(--pf-global--palette--black-50);
-  background: var(--css-global--page-background);
-  font-family: "Wix Madefor Text", system-ui, sans-serif;
+    color: var(--pf-global--palette--black-50);
+    background: var(--css-global--page-background);
+    font-family: "Wix Madefor Text", system-ui, sans-serif;
 }
 
 a {
-  color: var(--css-global--secondary-color);
+    color: var(--css-global--secondary-color);
 }
 
 .kcLoginClass {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  padding-top: 0;
-  gap: 1rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 0;
+    gap: 1rem;
 }
 
 @media screen and (min-width: 576px) {
-  .kcLoginClass {
-    gap: 2rem;
-  }
+    .kcLoginClass {
+        gap: 2rem;
+    }
 }
 
 @media screen and (min-width: 768px) {
-  .kcLoginClass {
-    gap: 3rem;
-  }
+    .kcLoginClass {
+        gap: 3rem;
+    }
 }
 
 /* Header */
 #kc-header {
-  margin-bottom: 0!important;
+    margin-bottom: 0 !important;
 }
 
 @media screen and (max-width: 767px) {
-  #kc-header-wrapper {
-    padding-right: 0;
-  }
+    #kc-header-wrapper {
+        padding-right: 0;
+    }
 }
 
 /* Locale dropdown (better character) */
 button#kc-current-locale-link::after {
-  content: "\25be";
+    content: "\25be";
 }
 
 /* Card and title */
 h1#kc-page-title {
-  margin-top: 1.5rem;
+    margin-top: 1.5rem;
 }
 
 #kc-page-title {
-  text-align: start;
-  font-size: 1.5rem;
-  font-weight: 600;
-  letter-spacing: -0.025em;
+    text-align: start;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.025em;
 }
 
 .col-md-10:has(#kc-page-title),
 .kcLabelWrapperClass:has(.subtitle) {
-  padding: 0;
+    padding: 0;
 }
 
 :where(.pf-theme-dark) .subtitle {
-  color: var(--pf-global--palette--black-100);
+    color: var(--pf-global--palette--black-100);
 }
 
 .col-md-10:has(#kc-page-title) {
-  width: 100%;
+    width: 100%;
 }
 
 @media screen and (min-width: 768px) {
-  h1#kc-page-title {
-    margin-top: 10px;
-  }
+    h1#kc-page-title {
+        margin-top: 10px;
+    }
 
-  #kc-page-title {
-    text-align: center;
-  }
+    #kc-page-title {
+        text-align: center;
+    }
 
-  .kcLabelWrapperClass:has(.subtitle) {
-    margin-top: 0;
-    float: none;
-  }
+    .kcLabelWrapperClass:has(.subtitle) {
+        margin-top: 0;
+        float: none;
+    }
 }
 
 .kcFormCardClass {
-  width: 100%;
-  border-top: 6px solid var(--css-global--brand-blue)!important;
-  box-shadow: var(--css-global--inset-shadow), 
-    var(--css-global--inset-ring-shadow), 
-    var(--css-global--ring-offset-shadow),
-    var(--css-global--ring-shadow),
-    var(--css-global--shadow-lg)!important;
+    width: 100%;
+    border-top: 6px solid var(--css-global--brand-blue) !important;
+    box-shadow: var(--css-global--inset-shadow), var(--css-global--inset-ring-shadow),
+        var(--css-global--ring-offset-shadow), var(--css-global--ring-shadow),
+        var(--css-global--shadow-lg) !important;
 }
 
 @media screen and (max-width: 767px) {
-  .kcFormCardClass {
-    border-top: 5px solid var(--css-global--brand-blue)!important;
-  }
+    .kcFormCardClass {
+        border-top: 5px solid var(--css-global--brand-blue) !important;
+    }
 }
 
 :where(.pf-theme-dark) .kcFormCardClass {
-  background-color: oklch(0.2303 0.0083 264.4);
-  border-color: var(--css-global--primary-color)!important;
+    background-color: oklch(0.2303 0.0083 264.4);
+    border-color: var(--css-global--primary-color) !important;
 }
 
 :where(.pf-theme-dark) .login-pf-page .card-pf p {
-  color: var(--pf-global--palette--black-100);
+    color: var(--pf-global--palette--black-100);
 }
 
 /* Inputs */
 .pf-c-form-control {
-  --pf-global--primary-color--100: var(--css-global--secondary-color);
+    --pf-global--primary-color--100: var(--css-global--secondary-color);
 }
 
 /* Buttons */
 .pf-c-button {
-  border-radius: 0.25rem;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter;
-  transition-timing-function: var(--css-global--transition-timing-function);
-  transition-duration: var(--css-global--transition-duration);
+    border-radius: 0.25rem;
+    transition-property:
+        color,
+        background-color,
+        border-color,
+        text-decoration-color,
+        fill,
+        stroke,
+        opacity,
+        box-shadow,
+        transform,
+        translate,
+        scale,
+        rotate,
+        filter,
+        -webkit-backdrop-filter,
+        backdrop-filter;
+    transition-timing-function: var(--css-global--transition-timing-function);
+    transition-duration: var(--css-global--transition-duration);
 }
 
 .pf-c-button.pf-m-control:hover,
 .pf-c-button.pf-m-control:focus {
-  --pf-c-button--m-control--after--BorderBottomColor: var(--css-global--brand-blue);
+    --pf-c-button--m-control--after--BorderBottomColor: var(--css-global--brand-blue);
 }
 
 :where(.pf-theme-dark) .pf-c-button.pf-m-control:hover,
 :where(.pf-theme-dark) .pf-c-button.pf-m-control:focus {
-  --pf-c-button--m-control--after--BorderBottomColor: var(--css-global--secondary-color);
+    --pf-c-button--m-control--after--BorderBottomColor: var(
+        --css-global--secondary-color
+    );
 }
 
 .pf-c-form-control,
 .pf-c-button.pf-m-control::after {
-  border-radius: 0.25rem;
+    border-radius: 0.25rem;
 }
 
 .pf-c-input-group *:not(:last-child) {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
 .pf-c-input-group *:not(:first-child),
 .pf-c-button.pf-m-control:not(:only-child)::after {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
 }
 
 .pf-c-button:hover,
 .pf-c-button:focus {
-  box-shadow: var(--css-global--inset-shadow), 
-    var(--css-global--inset-ring-shadow), 
-    var(--css-global--ring-offset-shadow),
-    var(--css-global--ring-shadow),
-    var(--css-global--shadow);
+    box-shadow: var(--css-global--inset-shadow), var(--css-global--inset-ring-shadow),
+        var(--css-global--ring-offset-shadow), var(--css-global--ring-shadow),
+        var(--css-global--shadow);
 }
 
 .pf-c-button.pf-m-primary:hover,
 .pf-c-button.pf-m-primary:focus,
 .pf-c-button.pf-m-primary:active {
-  color: var(--css-global--secondary-color-foreground);
+    color: var(--css-global--secondary-color-foreground);
 }
 
 .pf-c-button.pf-m-primary:hover {
-  background: var(--css-global--secondary-color);
+    background: var(--css-global--secondary-color);
 }
 
 .pf-c-button.pf-m-primary:active,
 .pf-c-button.pf-m-primary:focus {
-  background: var(--css-global--brand-blue);
+    background: var(--css-global--brand-blue);
 }
 
 #kc-form-buttons,
 .form-actions {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  gap: 1rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1rem 0.5rem;
 }
 
 @media screen and (min-width: 768px) {
-  #kc-form-buttons,
-  .form-actions {
-    flex-direction: row-reverse;
-    justify-content: flex-start;
-  }
+    #kc-form-buttons,
+    .form-actions {
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+    }
 }
 
 .kcFormGroupClass.form-group:has(> #kc-form-buttons) {
-  margin-bottom: 0;
+    margin-bottom: 0;
 }
 
-#kc-form-buttons > button[name=cancel-aia] {
-  margin-left: 0!important;
+#kc-form-buttons > button[name="cancel-aia"] {
+    margin-left: 0 !important;
 }
 
 :where(.pf-theme-dark) .pf-c-button {
-  --pf-c-button--m-primary--BackgroundColor: var(--css-global--primary-color);
+    --pf-c-button--m-primary--BackgroundColor: var(--css-global--primary-color);
 }
 
 /* Authenticator method buttons */
 .kcSelectAuthListItemHeadingClass {
-  color: var(--css-global--secondary-color);
-  line-height: 1.05rem;
-  margin-bottom: 0.25rem;
+    color: var(--css-global--secondary-color);
+    line-height: 1.05rem;
+    margin-bottom: 0.25rem;
 }
 
-.kcSelectAuthListItemIconClass{
-  margin-left: 1rem;
-  margin-top: 0.25rem;
+.kcSelectAuthListItemIconClass {
+    margin-left: 1rem;
+    margin-top: 0.25rem;
 }
 
 .kcSelectAuthListItemBodyClass {
-  padding-right: 1rem;
+    padding-right: 1rem;
 }
 
 .fa-key,
 .fa-unlock {
-  font-size: 1rem;
+    font-size: 1rem;
 }
 
 /* Authentication config */
 #kc-totp-secret-qr-code-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #kc-totp-secret-qr-code {
-  --css--qr-code--size: 200px;
-  width: 100%;
-  height: 100%;
-  max-width: calc(var(--css--qr-code--size) + 0.5rem);
-  max-height: calc(var(--css--qr-code--size) + 0.5rem);
-  margin: 5px 0 15px -20px;
-  background: var(--css-global--sand);
-  padding: 0.25rem;
-  border-radius: 0.5rem;
+    --css--qr-code--size: 200px;
+    width: 100%;
+    height: 100%;
+    max-width: calc(var(--css--qr-code--size) + 0.5rem);
+    max-height: calc(var(--css--qr-code--size) + 0.5rem);
+    margin: 5px 0 15px -20px;
+    background: var(--css-global--sand);
+    padding: 0.25rem;
+    border-radius: 0.5rem;
 }
 
 #kc-totp-secret-key {
-  background-color: var(--css-global--light-grey);
-  padding: 0.25rem;
-  margin-left: -0.25rem;
+    background-color: var(--css-global--light-grey);
+    padding: 0.25rem;
+    margin-left: -0.25rem;
 }
 
 #kc-totp-manual-list {
-  padding-bottom: 10px;
+    padding-bottom: 10px;
 }
 
 /* Info (Registration flag) */
 :where(.pf-theme-dark) #kc-info {
-  color: var(--pf-global--palette--black-200)
+    color: var(--pf-global--palette--black-200);
 }
 
 #kc-info-wrapper {
-  background-color: var(--css-global--light-grey);
+    background-color: var(--css-global--light-grey);
 }
 
-
 :where(.pf-theme-dark) #kc-info-wrapper {
-  background-color: var(--pf-global--palette--black-600);
+    background-color: var(--pf-global--palette--black-600);
 }
 
 /* Footer copyright */
 .kcFooterCopyright {
-  flex-grow: 1;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  padding-bottom: 1rem;
+    flex-grow: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 1rem;
 }
