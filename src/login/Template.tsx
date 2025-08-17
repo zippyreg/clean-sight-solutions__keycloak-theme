@@ -43,11 +43,6 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
     });
 
     useSetClassName({
-        qualifiedName: "html",
-        className: "pf-theme-dark"
-    });
-
-    useSetClassName({
         qualifiedName: "body",
         className: bodyClassName ?? kcClsx("kcBodyClass")
     });
