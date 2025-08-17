@@ -2,11 +2,19 @@
 
 # === Owned files start ===
 # account/KcAccountUi.tsx
+# account/KcPage.tsx
+# account/account-security/DeviceActivity.tsx
+# account/account-security/SigningIn.tsx
+# account/applications/Applications.tsx
+# account/content/ContentComponent.tsx
+# account/personal-info/PersonalInfo.tsx
 # account/root/header.module.css
 # account/root/Header.tsx
+# account/root/PageNav.tsx
 # account/root/Root.tsx
 # account/components/page/Page.tsx
 # admin/assets/theme/login.css
+# shared/keycloak-ui-shared/context/KeycloakContext.tsx
 # shared/keycloak-ui-shared/masthead/Masthead.tsx
 # shared/keycloak-ui-shared/user-profile/UserProfileFields.tsx
 # === Owned files end =====
@@ -644,7 +652,6 @@
 /shared/keycloak-ui-shared/context/environment.ts
 /shared/keycloak-ui-shared/context/ErrorPage.tsx
 /shared/keycloak-ui-shared/context/HelpContext.tsx
-/shared/keycloak-ui-shared/context/KeycloakContext.tsx
 /shared/keycloak-ui-shared/continue-cancel/ContinueCancelModal.tsx
 /shared/keycloak-ui-shared/controls/FormErrorText.tsx
 /shared/keycloak-ui-shared/controls/FormLabel.tsx
@@ -703,24 +710,19 @@
 /account/environment.ts
 /account/i18next.d.ts
 /account/KcContext.ts
-/account/KcPage.tsx
 /account/routes.tsx
 /account/account-security/AccountRow.tsx
-/account/account-security/DeviceActivity.tsx
 /account/account-security/LinkedAccounts.tsx
 /account/account-security/LinkedAccountsToolbar.tsx
-/account/account-security/SigningIn.tsx
 /account/api/constants.ts
 /account/api/methods.ts
 /account/api/parse-links.ts
 /account/api/parse-response.ts
 /account/api/representations.ts
 /account/api/request.ts
-/account/applications/Applications.tsx
 /account/assets/content.ts
 /account/assets/favicon.svg
 /account/assets/logo.svg
-/account/content/ContentComponent.tsx
 /account/content/fetchContent.ts
 /account/groups/Groups.tsx
 /account/i18n/i18n.ts
@@ -760,7 +762,6 @@
 /account/i18n/messages_zh_TW.properties
 /account/oid4vci/Oid4Vci.tsx
 /account/organizations/Organizations.tsx
-/account/personal-info/PersonalInfo.tsx
 /account/resources/EditTheResource.tsx
 /account/resources/PermissionRequest.tsx
 /account/resources/Resources.tsx
@@ -768,7 +769,6 @@
 /account/resources/ResourceToolbar.tsx
 /account/resources/SharedWith.tsx
 /account/resources/ShareTheResource.tsx
-/account/root/PageNav.tsx
 /account/utils/formatDate.ts
 /account/utils/joinPath.ts
 /account/utils/useAccountAlerts.ts

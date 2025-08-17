@@ -9,15 +9,16 @@
 
   --css-global--brand-blue: oklch(0.3346 0.1362 261.94);
   --css-global--brand-blue-foreground: var(--css-global--secondary-color-foreground);
+  
+  --css-global--danger-color: oklch(0.6739 0.2116 28.87);
+  --css-global--danger-color-foreground: var(--css-global--secondary-color-foreground);
 
   --css-global--light-grey: oklch(0.9761 0 0);
   --css-global--sand: oklch(91.887% 0.0001 271.152);
 
-  --css-global--danger-color: oklch(0.6739 0.2116 28.87);
-  --css-global--danger-color-foreground: var(--css-global--secondary-color-foreground);
-
   --css-global--transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   --css-global--transition-duration: 150ms;
+  --css-global--transition-duration-short: 75ms;
 
   --css-global--inset-shadow: 0 0 #0000;
   --css-global--inset-ring-shadow: 0 0 #0000;

@@ -1,3 +1,11 @@
+/* Bullseye */
+
+.pf-v5-l-bullseye {
+  background-color: var(--pf-v5-c-page__main-section--BackgroundColor);
+}
+
+/* Typography */
+
 .pf-v5-c-title {
   --pf-v5-c-title--m-4xl--FontWeight: var(--pf-v5-global--FontWeight--bold);
   --pf-v5-c-title--m-3xl--FontWeight: var(--pf-v5-global--FontWeight--bold);
@@ -21,15 +29,28 @@
   border-radius: var(--pf-v5-global--BorderRadius--sm);
 }
 
+.pf-v5-c-menu__list-item[data-ouia-component-type="PF5/DropdownItem"]:first-of-type {
+  border-top-left-radius: var(--pf-v5-global--BorderRadius--sm);
+  border-top-right-radius: var(--pf-v5-global--BorderRadius--sm);
+}
+
+.pf-v5-c-menu__list-item[data-ouia-component-type="PF5/DropdownItem"]:last-of-type {
+  border-bottom-left-radius: var(--pf-v5-global--BorderRadius--sm);
+  border-bottom-right-radius: var(--pf-v5-global--BorderRadius--sm);
+}
+
 .pf-v5-c-menu-toggle:has(+ .pf-v5-c-menu[data-popper-placement*=top]),
 .pf-v5-c-menu-toggle:has(+ .pf-v5-c-menu[data-popper-placement*=top])::after,
 .pf-v5-c-menu-toggle:has(+ .pf-v5-c-menu[data-popper-placement*=top])::before,
-.pf-v5-c-menu[data-popper-placement*=bottom] {
+.pf-v5-c-menu[data-popper-placement*=bottom]:not([data-ouia-component-type="PF5/Dropdown"]) {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
 
-.pf-v5-c-menu[data-popper-placement*=top] {
+.pf-v5-c-menu-toggle:has(+ .pf-v5-c-menu[data-popper-placement*=bottom]),
+.pf-v5-c-menu-toggle:has(+ .pf-v5-c-menu[data-popper-placement*=bottom])::after,
+.pf-v5-c-menu-toggle:has(+ .pf-v5-c-menu[data-popper-placement*=bottom])::before,
+.pf-v5-c-menu[data-popper-placement*=top]:not([data-ouia-component-type="PF5/Dropdown"]) {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
@@ -42,13 +63,31 @@
     var(--css-global--shadow-lg);
 }
 
-/* Buttons */
+/* Buttons/Menu Toggles */
+
+.pf-v5-c-button,
+.pf-v5-c-button::after,
+.pf-v5-c-menu-toggle,
+.pf-v5-c-menu-toggle::after,
+.pf-v5-c-menu-toggle::before {
+  transition-property: color, background-color, border-color, border-width, text-decoration-color, fill, stroke, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter;
+  transition-timing-function: var(--css-global--transition-timing-function);
+}
+
+.pf-v5-c-button,
+.pf-v5-c-menu-toggle {
+  transition-duration: var(--css-global--transition-duration);
+  border-radius: var(--pf-v5-global--BorderRadius--sm);
+}
 
 .pf-v5-c-button {
   border-radius: var(--pf-v5-global--BorderRadius--sm);
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter;
-  transition-timing-function: var(--css-global--transition-timing-function);
-  transition-duration: var(--css-global--transition-duration);
+}
+
+.pf-v5-c-button::after,
+.pf-v5-c-menu-toggle::after,
+.pf-v5-c-menu-toggle::before{
+  transition-duration: var(--css-global--transition-duration-short);
 }
 
 .pf-v5-c-button:not(.pf-m-link):hover,

@@ -8,6 +8,8 @@ import { useInitialize } from "keycloakify/login/Template.useInitialize";
 import type { I18n } from "./i18n";
 import type { KcContext } from "./KcContext";
 
+import style from "./template.module.css";
+
 export default function Template(props: TemplateProps<KcContext, I18n>) {
     const {
         displayInfo = false,
@@ -39,6 +41,11 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
         qualifiedName: "html",
         className: kcClsx("kcHtmlClass")
     });
+    
+    useSetClassName({
+        qualifiedName: "html",
+        className: "pf-theme-dark"
+    });
 
     useSetClassName({
         qualifiedName: "body",
@@ -54,9 +61,14 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
     return (
         <div className={kcClsx("kcLoginClass")}>
             <div id="kc-header" className={kcClsx("kcHeaderClass")}>
-                <div id="kc-header-wrapper" className={kcClsx("kcHeaderWrapperClass")}>
+                <div 
+                    id="kc-header-wrapper" 
+                    className={clsx(style["brand-flex"], kcClsx("kcHeaderWrapperClass"))}
+                >
+                    <div className={style["brand-container"]}>
+                        <img src={`${import.meta.env.BASE_URL}img/login-template-logo.png`} />
+                    </div>
                     {/* {msg("loginTitleHtml", realm.displayNameHtml)} */}
-                    <img src={`${import.meta.env.BASE_URL}img/login-template-logo.png`} width={350} />
                 </div>
             </div>
             <div className={kcClsx("kcFormCardClass")}>

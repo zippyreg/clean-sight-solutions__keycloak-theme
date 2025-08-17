@@ -15,6 +15,7 @@ import { Button } from "../../shared/@patternfly/react-core";
 import { ExternalLinkSquareAltIcon } from "../../shared/@patternfly/react-icons";
 import { useTranslation } from "react-i18next";
 import { useHref } from "react-router-dom";
+import { useLocalStorage } from "usehooks-ts";
 
 import { environment } from "../environment";
 import { joinPath } from "../utils/joinPath";

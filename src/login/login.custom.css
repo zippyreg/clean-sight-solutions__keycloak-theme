@@ -33,8 +33,13 @@
 }
 
 body.kcBodyClass {
-  background: var(--css-global--sand);
+  color: var(--pf-global--palette--black-50);
+  background: var(--css-global--page-background);
   font-family: "Wix Madefor Text", system-ui, sans-serif;
+}
+
+a {
+  color: var(--css-global--secondary-color);
 }
 
 .kcLoginClass {
@@ -90,6 +95,10 @@ h1#kc-page-title {
   padding: 0;
 }
 
+:where(.pf-theme-dark) .subtitle {
+  color: var(--pf-global--palette--black-100);
+}
+
 .col-md-10:has(#kc-page-title) {
   width: 100%;
 }
@@ -125,6 +134,15 @@ h1#kc-page-title {
   }
 }
 
+:where(.pf-theme-dark) .kcFormCardClass {
+  background-color: oklch(0.2303 0.0083 264.4);
+  border-color: var(--css-global--primary-color)!important;
+}
+
+:where(.pf-theme-dark) .login-pf-page .card-pf p {
+  color: var(--pf-global--palette--black-100);
+}
+
 /* Inputs */
 .pf-c-form-control {
   --pf-global--primary-color--100: var(--css-global--secondary-color);
@@ -141,6 +159,11 @@ h1#kc-page-title {
 .pf-c-button.pf-m-control:hover,
 .pf-c-button.pf-m-control:focus {
   --pf-c-button--m-control--after--BorderBottomColor: var(--css-global--brand-blue);
+}
+
+:where(.pf-theme-dark) .pf-c-button.pf-m-control:hover,
+:where(.pf-theme-dark) .pf-c-button.pf-m-control:focus {
+  --pf-c-button--m-control--after--BorderBottomColor: var(--css-global--secondary-color);
 }
 
 .pf-c-form-control,
@@ -207,6 +230,10 @@ h1#kc-page-title {
   margin-left: 0!important;
 }
 
+:where(.pf-theme-dark) .pf-c-button {
+  --pf-c-button--m-primary--BackgroundColor: var(--css-global--primary-color);
+}
+
 /* Authenticator method buttons */
 .kcSelectAuthListItemHeadingClass {
   color: var(--css-global--secondary-color);
@@ -247,13 +274,28 @@ h1#kc-page-title {
   border-radius: 0.5rem;
 }
 
+#kc-totp-secret-key {
+  background-color: var(--css-global--light-grey);
+  padding: 0.25rem;
+  margin-left: -0.25rem;
+}
+
 #kc-totp-manual-list {
   padding-bottom: 10px;
 }
 
-/* Info Wrapper */
+/* Info (Registration flag) */
+:where(.pf-theme-dark) #kc-info {
+  color: var(--pf-global--palette--black-200)
+}
+
 #kc-info-wrapper {
   background-color: var(--css-global--light-grey);
+}
+
+
+:where(.pf-theme-dark) #kc-info-wrapper {
+  background-color: var(--pf-global--palette--black-600);
 }
 
 /* Footer copyright */
