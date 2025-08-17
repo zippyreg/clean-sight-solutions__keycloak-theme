@@ -5,11 +5,12 @@
 
 .brand-container {
     --css--brand-container--padding-x: 1rem;
+    --css--brand-container--padding-y: 1.5rem;
     --css--brand--width: 350px;
 
     background: white;
     align-items: center;
-    padding: 0 var(--css--brand-container--padding-x);
+    padding: var(--css--brand-container--padding-y) var(--css--brand-container--padding-x);
     border-radius: 0.5rem;
     max-width: calc(
         var(--css--brand--width) + (2 * var(--css--brand-container--padding-x))

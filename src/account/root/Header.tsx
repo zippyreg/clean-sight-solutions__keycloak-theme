@@ -9,7 +9,7 @@
 
 // @ts-nocheck
 
-import { KeycloakMasthead, label, useEnvironment } from "../../shared/keycloak-ui-shared";
+import { KeycloakMasthead, ThemeSelector, label, useEnvironment } from "../../shared/keycloak-ui-shared";
 import { Button } from "../../shared/@patternfly/react-core";
 import { ExternalLinkSquareAltIcon } from "../../shared/@patternfly/react-icons";
 import { useTranslation } from "react-i18next";
@@ -63,7 +63,15 @@ export const Header = () => {
                 className: style.brand,
                 containerClassName: style["brand-container"]
             }}
-            toolbarItems={[<ReferrerLink key="link" />]}
+            toolbarItems={[
+                {
+                    children: [<ReferrerLink key="link" />]
+                },
+                {
+                    align: 'alignLeft',
+                    children: [<ThemeSelector key="theme" />]
+                }
+            ]}
         />
     );
 };

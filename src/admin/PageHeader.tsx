@@ -9,14 +9,13 @@
 
 // @ts-nocheck
 
-import { KeycloakMasthead, useEnvironment, useHelp } from "../shared/keycloak-ui-shared";
+import { KeycloakMasthead, ThemeSelector, useEnvironment, useHelp } from "../shared/keycloak-ui-shared";
 import { DropdownItem, ToolbarItem } from "../shared/@patternfly/react-core";
 import { HelpIcon } from "../shared/@patternfly/react-icons";
 import { useTranslation } from "react-i18next";
 import { Link, useHref } from "react-router-dom";
 import { PageHeaderClearCachesModal } from "./PageHeaderClearCachesModal";
 import { HelpHeader } from "./components/help-enabler/HelpHeader";
-import { ThemeHeader } from "./components/theme-enabler/ThemeHeader";
 import { useAccess } from "./context/access/Access";
 import { useRealm } from "./context/realm-context/RealmContext";
 import { toDashboard } from "./dashboard/routes/Dashboard";
@@ -130,22 +129,17 @@ export const Header = () => {
             dropdownItems={userDropdownItems(isMasterRealm, isManager)}
             kebabDropdownItems={kebabDropdownItems(isMasterRealm, isManager)}
             toolbarItems={[
-                <ToolbarItem
-                    key="help"
-                    align={{ default: "alignRight" }}
-                    visibility={{
+                {
+                    children: [<HelpHeader key="help" />],
+                    visibility: {
                         default: "hidden",
                         md: "visible"
-                    }} /** the settings and help icon buttons are only visible on desktop sizes and replaced by a kebab dropdown for other sizes */
-                >
-                    <HelpHeader />
-                </ToolbarItem>,
-                <ToolbarItem
-                    key="theme"
-                    align={{ default: "alignLeft" }}
-                >
-                    <ThemeHeader />
-                </ToolbarItem>
+                    }
+                },
+                {
+                    align: "alignLeft",
+                    children: [<ThemeSelector key="theme" />]
+                },
             ]}
         />
     );

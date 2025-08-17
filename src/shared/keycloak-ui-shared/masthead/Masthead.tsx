@@ -112,8 +112,9 @@ const KeycloakMasthead = ({
                 <Toolbar>
                     <ToolbarContent>
                         {toolbarItems?.map((item, index) => (
-                            <ToolbarItem key={index} align={{ default: "alignRight" }}>
-                                {item}
+                            <ToolbarItem key={index} align={{ default: item.align || "alignRight" }} 
+                            visibility={item.visibility || {}}>
+                                {item.children}
                             </ToolbarItem>
                         ))}
                         <ToolbarItem
