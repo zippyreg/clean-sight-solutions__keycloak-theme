@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Text:ital,wght@0,400..800;1,400..800&display=swap');
+
+:root {
+  --css-global--primary-color: oklch(0.91 0.1931 105.16);
+  --css-global--primary-color-foreground: oklch(0 0 0);
+
+  --css-global--secondary-color: oklch(0.5738 0.2338 261.64);
+  --css-global--secondary-color-foreground: oklch(1 0 0);
+
+  --css-global--brand-blue: oklch(0.3346 0.1362 261.94);
+  --css-global--brand-blue-foreground: var(--css-global--secondary-color-foreground);
+  
+  --css-global--danger-color: oklch(0.6739 0.2116 28.87);
+  --css-global--danger-color-foreground: var(--css-global--secondary-color-foreground);
+
+  --css-global--light-grey: oklch(0.9761 0 0);
+  --css-global--sand: oklch(91.887% 0.0001 271.152);
+
+  --css-global--transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --css-global--transition-duration: 150ms;
+  --css-global--transition-duration-short: 75ms;
+
+  --css-global--inset-shadow: 0 0 #0000;
+  --css-global--inset-ring-shadow: 0 0 #0000;
+  --css-global--ring-shadow: 0 0 #0000;
+  --css-global--ring-offset-shadow: 0 0 #0000;
+  --css-global--shadow: 0 4px 6px -1px var(--css--shadow-color, #0000001a), 0 2px 4px -2px var(--css--shadow-color, #0000001a);
+  --css-global--shadow-lg: 0 10px 15px -3px var(--css--shadow-color, #0000001a), 0 4px 6px -4px var(--css--shadow-color, #0000001a);
+
+  --pf-v5-global--palette--blue-300: var(--css-global--secondary-color);
+  --pf-v5-global--primary-color--100: var(--css-global--secondary-color);
+  --pf-v5-global--danger-color--100: var(--css-global--danger-color);
+  --pf-v5-global--danger-color--200: var(--css-global--danger-color);
+  --pf-v5-global--active-color--100: var(--css-global--secondary-color);
+  --pf-v5-global--active-color--400: var(--css-global--primary-color);
+  --pf-v5-global--BackgroundColor--light-300: var(--css-global--sand);
+  --pf-v5-global--BorderRadius--sm: 0.25rem;
+  --pf-v5-global--BorderRadius--md: 0.5rem;
+  --pf-v5-global--Color--200: #363636;
+  --pf-v5-global--FontFamily--text: "Wix Madefor Text", system-ui, sans-serif;
+  --pf-v5-global--FontFamily--heading: "Wix Madefor Text", system-ui, sans-serif;
+  --pf-v5-global--FontWeight--medium: 500;
+}

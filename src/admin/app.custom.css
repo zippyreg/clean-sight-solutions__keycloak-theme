@@ -119,3 +119,46 @@
 .pf-v5-c-button.pf-m-primary:focus {
   --pf-v5-c-button--m-primary--BackgroundColor: var(--css-global--brand-blue);
 }
+
+/* View Header */
+.pf-v5-c-content:has(h1) {
+  margin-bottom: var(--pf-v5-global--spacer--sm);
+}
+
+.pf-v5-c-content h1 {
+	font-weight: var(--pf-v5-global--FontWeight--bold);
+}
+
+/* Empty state body color */
+
+.pf-v5-c-empty-state__body {
+  --pf-v5-c-empty-state__body--Color: var(--pf-v5-global--palette--black-500)
+}
+
+:where(.pf-v5-theme-dark) .pf-v5-c-empty-state__body {
+  --pf-v5-c-empty-state__body--Color: var(--pf-v5-global--palette--black-300);
+}
+
+/* Tab items */
+
+.pf-v5-c-tabs__link {
+  --pf-v5-c-tabs__link--Color: var(--pf-v5-global--palette--black-400);
+}
+
+.pf-v5-c-tabs__link[aria-selected="true"] {
+  --pf-v5-c-tabs__link--Color: var(--pf-v5-global--palette--black-900);
+}
+
+:where(.pf-v5-theme-dark) .pf-v5-c-tabs__link {
+  --pf-v5-c-tabs__link--Color: var(--pf-v5-global--palette--black-400);
+}
+
+:where(.pf-v5-theme-dark) .pf-v5-c-tabs__link[aria-selected="true"] {
+  --pf-v5-c-tabs__link--Color: var(--pf-v5-global--palette--black-50);
+}
+
+/* Switches */
+
+.pf-v5-c-switch__input:disabled ~ .pf-v5-c-switch__toggle {
+  opacity: 0.5;
+}

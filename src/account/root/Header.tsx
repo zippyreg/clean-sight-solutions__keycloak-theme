@@ -9,7 +9,6 @@
 
 // @ts-nocheck
 
-import logoPngUrl from "../assets/lettermark.png";
 import { KeycloakMasthead, label, useEnvironment } from "../../shared/keycloak-ui-shared";
 import { Button } from "../../shared/@patternfly/react-core";
 import { ExternalLinkSquareAltIcon } from "../../shared/@patternfly/react-icons";
@@ -59,7 +58,7 @@ export const Header = () => {
             features={{ hasManageAccount: false }}
             brand={{
                 href: indexHref,
-                src: logoPngUrl,
+                src: `${import.meta.env.BASE_URL}img/lettermark.png`,
                 alt: t("logo"),
                 className: style.brand,
                 containerClassName: style['brand-container']

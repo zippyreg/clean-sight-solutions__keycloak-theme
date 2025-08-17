@@ -13,6 +13,7 @@ import "./page.custom.css";
 
 import { clsx } from "keycloakify/tools/clsx";
 import {
+    Flex,
     PageSection,
     Text,
     TextContent,
@@ -48,6 +49,7 @@ const LiveCopyrightDate = () => {
     );
 }
 
+
 export const Page = ({ title, description, children }: PropsWithChildren<PageProps>) => {
     return (
         <>
@@ -60,8 +62,14 @@ export const Page = ({ title, description, children }: PropsWithChildren<PagePro
                 </TextContent>
             </PageSection>
             <PageSection variant="light">{children}</PageSection>
-            <PageSection className={clsx("pf-v5-u-display-flex", "pf-v5-u-align-items-flex-end", "pf-v5-u-justify-content-center")}>
-                <LiveCopyrightDate />
+            <PageSection className="pf-v5-u-display-flex">
+                <Flex 
+                    alignItems={{ default: "alignItemsFlexEnd" }} 
+                    justifyContent={{ default: "justifyContentCenter"}}
+                    style={{ width: "100%" }}
+                >
+                    <LiveCopyrightDate />
+                </Flex>
             </PageSection>
         </>
     );

@@ -41,7 +41,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
         qualifiedName: "html",
         className: kcClsx("kcHtmlClass")
     });
-    
+
     useSetClassName({
         qualifiedName: "html",
         className: "pf-theme-dark"
@@ -66,9 +66,8 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                     className={clsx(style["brand-flex"], kcClsx("kcHeaderWrapperClass"))}
                 >
                     <div className={style["brand-container"]}>
-                        <img src={`${import.meta.env.BASE_URL}img/login-template-logo.png`} />
+                        <img src={`${import.meta.env.BASE_URL}img/wordmark.png`} />
                     </div>
-                    {/* {msg("loginTitleHtml", realm.displayNameHtml)} */}
                 </div>
             </div>
             <div className={kcClsx("kcFormCardClass")}>

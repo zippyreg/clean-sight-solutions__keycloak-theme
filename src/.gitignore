@@ -3,6 +3,12 @@
 # === Owned files start ===
 # account/KcAccountUi.tsx
 # account/KcPage.tsx
+# admin/App.tsx
+# admin/Banners.tsx
+# admin/index.css
+# admin/KcAdminUi.tsx
+# admin/KcPage.tsx
+# admin/PageHeader.tsx
 # account/account-security/DeviceActivity.tsx
 # account/account-security/SigningIn.tsx
 # account/applications/Applications.tsx
@@ -12,8 +18,11 @@
 # account/root/Header.tsx
 # account/root/PageNav.tsx
 # account/root/Root.tsx
+# admin/dashboard/dashboard.css
+# admin/dashboard/Dashboard.tsx
 # account/components/page/Page.tsx
 # admin/assets/theme/login.css
+# admin/components/view-header/ViewHeader.tsx
 # shared/keycloak-ui-shared/context/KeycloakContext.tsx
 # shared/keycloak-ui-shared/masthead/Masthead.tsx
 # shared/keycloak-ui-shared/user-profile/UserProfileFields.tsx
@@ -21,19 +30,13 @@
 
 # === @keycloakify/keycloak-admin-ui v260200.0.3 ===
 /admin/admin-client.ts
-/admin/App.tsx
 /admin/banners.module.css
-/admin/Banners.tsx
 /admin/environment.ts
 /admin/ForbiddenSection.tsx
 /admin/help-urls.ts
 /admin/i18next.d.ts
-/admin/index.css
-/admin/KcAdminUi.tsx
 /admin/KcContext.ts
-/admin/KcPage.tsx
 /admin/page-nav.css
-/admin/PageHeader.tsx
 /admin/PageHeaderClearCachesModal.tsx
 /admin/PageNav.tsx
 /admin/PageNotFoundSection.tsx
@@ -72,8 +75,6 @@
 /admin/clients/utils.ts
 /admin/components/SwitchControl.tsx
 /admin/context/RecentRealms.tsx
-/admin/dashboard/dashboard.css
-/admin/dashboard/Dashboard.tsx
 /admin/dashboard/ProviderInfo.tsx
 /admin/dashboard/routes.ts
 /admin/events/AdminEvents.tsx
@@ -435,7 +436,6 @@
 /admin/components/users/UserDataTableAttributeSearchForm.tsx
 /admin/components/users/UserDataTableToolbarItems.tsx
 /admin/components/users/UserSelect.tsx
-/admin/components/view-header/ViewHeader.tsx
 /admin/components/wizard-section-header/wizard-section-header.css
 /admin/components/wizard-section-header/WizardSectionHeader.tsx
 /admin/context/access/Access.tsx
