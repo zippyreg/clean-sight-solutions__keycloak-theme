@@ -93,17 +93,18 @@
     transition-timing-function: var(--css-global--transition-timing-function);
 }
 
-.pf-v5-c-toggle-group__button,
 .pf-v5-c-button,
 .pf-v5-c-menu-toggle {
     transition-duration: var(--css-global--transition-duration);
     border-radius: var(--pf-v5-global--BorderRadius--sm);
 }
 
+.pf-v5-c-toggle-group__button,
 .pf-v5-c-button {
     border-radius: var(--pf-v5-global--BorderRadius--sm);
 }
 
+.pf-v5-c-toggle-group__button,
 .pf-v5-c-button::after,
 .pf-v5-c-menu-toggle::after,
 .pf-v5-c-menu-toggle::before {
