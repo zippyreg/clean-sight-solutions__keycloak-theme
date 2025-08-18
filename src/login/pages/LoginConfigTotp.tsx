@@ -12,7 +12,7 @@ export default function LoginConfigTotp(props: PageProps<Extract<KcContext, { pa
         classes
     });
 
-    const { url, isAppInitiatedAction, totp, mode, messagesPerField } = kcContext;
+    const { realm, url, isAppInitiatedAction, totp, mode, messagesPerField } = kcContext;
 
     const { msg, msgStr, advancedMsg } = i18n;
 
@@ -24,6 +24,7 @@ export default function LoginConfigTotp(props: PageProps<Extract<KcContext, { pa
             classes={classes}
             headerNode={msg("loginTotpTitle")}
             displayMessage={!messagesPerField.existsError("totp", "userLabel")}
+            documentTitle={msgStr("loginTotpDocumentTitle", realm.displayName)}
         >
             <>
                 <ol id="kc-totp-settings">

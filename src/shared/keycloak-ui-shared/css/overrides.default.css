@@ -1,3 +1,12 @@
+/* Page Header */
+
+.pf-v5-c-nav__item .pf-v5-c-menu-toggle {
+    --pf-v5-c-menu-toggle--before--BorderTopColor: var(--pf-v5-global--palette--black-800);
+    --pf-v5-c-menu-toggle--before--BorderRightColor: var(--pf-v5-global--palette--black-800);
+    --pf-v5-c-menu-toggle--before--BorderLeftColor: var(--pf-v5-global--palette--black-800);
+    --pf-v5-c-menu-toggle--m-full-height__toggle--after--BorderBottomWidth: 0;
+}
+
 /* Bullseye */
 
 .pf-v5-l-bullseye {
@@ -21,12 +30,55 @@
 
 .pf-v5-c-form-control,
 .pf-v5-c-form-control input,
+.pf-v5-c-form-control button,
 .pf-v5-c-form-control::after,
+.pf-v5-text-input-group,
+.pf-v5-c-text-input-group input,
+.pf-v5-c-text-input-group .pf-v5-c-text-input-group__text,
+.pf-v5-c-text-input-group .pf-v5-c-text-input-group__text::after,
 .pf-v5-c-menu-toggle,
 .pf-v5-c-menu-toggle::after,
 .pf-v5-c-menu-toggle::before,
 .pf-v5-c-menu {
     border-radius: var(--pf-v5-global--BorderRadius--sm);
+}
+
+.pf-v5-c-input-group .pf-v5-c-input-group__item:not(:first-of-type) button,
+.pf-v5-c-input-group .pf-v5-c-input-group__item:not(:first-of-type) button::before,
+.pf-v5-c-input-group .pf-v5-c-input-group__item:not(:first-of-type) button::after,
+.pf-v5-c-input-group .pf-v5-c-input-group__item:not(:first-of-type) input::before,
+.pf-v5-c-input-group .pf-v5-c-input-group__item:not(:first-of-type) input::after,
+.pf-v5-c-input-group .pf-v5-c-input-group__item:not(:first-of-type) input,
+.pf-v5-c-input-group .pf-v5-c-input-group__item:not(:first-of-type) .pf-v5-c-text-input-group,
+.pf-v5-c-input-group .pf-v5-c-input-group__item:not(:first-of-type) .pf-v5-c-text-input-group::after,
+.pf-v5-c-input-group .pf-v5-c-input-group__item:not(:first-of-type) .pf-v5-c-text-input-group::before,
+.pf-v5-c-input-group .pf-v5-c-input-group__item:not(:first-of-type) .pf-v5-c-text-input-group__text,
+.pf-v5-c-input-group .pf-v5-c-input-group__item:not(:first-of-type) .pf-v5-c-text-input-group__text::after,
+.pf-v5-c-input-group .pf-v5-c-input-group__item:not(:first-of-type) .pf-v5-c-text-input-group__text::before,
+.pf-v5-c-input-group .pf-v5-c-input-group__item:not(:first-of-type) .pf-v5-c-form-control,
+.pf-v5-c-input-group .pf-v5-c-input-group__item:not(:first-of-type) .pf-v5-c-form-control::before,
+.pf-v5-c-input-group .pf-v5-c-input-group__item:not(:first-of-type) .pf-v5-c-form-control::after {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.pf-v5-c-input-group .pf-v5-c-input-group__item:not(:last-of-type) button,
+.pf-v5-c-input-group .pf-v5-c-input-group__item:not(:last-of-type) button::before,
+.pf-v5-c-input-group .pf-v5-c-input-group__item:not(:last-of-type) button::after,
+.pf-v5-c-input-group .pf-v5-c-input-group__item:not(:last-of-type) input::before,
+.pf-v5-c-input-group .pf-v5-c-input-group__item:not(:last-of-type) input::after,
+.pf-v5-c-input-group .pf-v5-c-input-group__item:not(:last-of-type) input,
+.pf-v5-c-input-group .pf-v5-c-input-group__item:not(:last-of-type) .pf-v5-c-text-input,
+.pf-v5-c-input-group .pf-v5-c-input-group__item:not(:last-of-type) .pf-v5-c-text-input::after,
+.pf-v5-c-input-group .pf-v5-c-input-group__item:not(:last-of-type) .pf-v5-c-text-input::before,
+.pf-v5-c-input-group .pf-v5-c-input-group__item:not(:last-of-type) .pf-v5-c-text-input-group__text,
+.pf-v5-c-input-group .pf-v5-c-input-group__item:not(:last-of-type) .pf-v5-c-text-input-group__text::after,
+.pf-v5-c-input-group .pf-v5-c-input-group__item:not(:last-of-type) .pf-v5-c-text-input-group__text::before,
+.pf-v5-c-input-group .pf-v5-c-input-group__item:not(:last-of-type) .pf-v5-c-form-control,
+.pf-v5-c-input-group .pf-v5-c-input-group__item:not(:last-of-type) .pf-v5-c-form-control::before,
+.pf-v5-c-input-group .pf-v5-c-input-group__item:not(:last-of-type) .pf-v5-c-form-control::after {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
 .pf-v5-c-menu__list-item[data-ouia-component-type="PF5/DropdownItem"]:first-of-type {
@@ -42,9 +94,7 @@
 .pf-v5-c-menu-toggle:has(+ .pf-v5-c-menu[data-popper-placement*="top"]),
 .pf-v5-c-menu-toggle:has(+ .pf-v5-c-menu[data-popper-placement*="top"])::after,
 .pf-v5-c-menu-toggle:has(+ .pf-v5-c-menu[data-popper-placement*="top"])::before,
-.pf-v5-c-menu[data-popper-placement*="bottom"]:not(
-        [data-ouia-component-type="PF5/Dropdown"]
-    ) {
+.pf-v5-c-menu[data-popper-placement*="bottom"] {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
 }
@@ -52,9 +102,7 @@
 .pf-v5-c-menu-toggle:has(+ .pf-v5-c-menu[data-popper-placement*="bottom"]),
 .pf-v5-c-menu-toggle:has(+ .pf-v5-c-menu[data-popper-placement*="bottom"])::after,
 .pf-v5-c-menu-toggle:has(+ .pf-v5-c-menu[data-popper-placement*="bottom"])::before,
-.pf-v5-c-menu[data-popper-placement*="top"]:not(
-        [data-ouia-component-type="PF5/Dropdown"]
-    ) {
+.pf-v5-c-menu[data-popper-placement*="top"] {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
 }
@@ -99,8 +147,8 @@
     border-radius: var(--pf-v5-global--BorderRadius--sm);
 }
 
-.pf-v5-c-toggle-group__button,
-.pf-v5-c-button {
+.pf-v5-c-button.pf-m-control::after,
+.pf-v5-c-toggle-group__button {
     border-radius: var(--pf-v5-global--BorderRadius--sm);
 }
 
@@ -208,6 +256,40 @@
 }
 
 /* Cards */
+
 .pf-v5-c-card.pf-m-rounded {
     --pf-v5-c-card--m-rounded--BorderRadius: var(--pf-v5-global--BorderRadius--md);
+}
+
+/* Menu List */
+
+.pf-v5-c-menu__list-item {
+    color: var(--pf-v5-global--Color--100);
+}
+
+.pf-v5-c-menu__list-item:hover {
+    --pf-v5-c-menu__list-item--BackgroundColor: var(--pf-v5-global--BackgroundColor--200);
+}
+
+:where(.pf-v5-theme-dark) .pf-v5-c-menu__list-item:hover {
+    --pf-v5-c-menu__list-item--BackgroundColor: var(--pf-v5-global--BackgroundColor--400);
+}
+
+.pf-v5-c-nav .pf-v5-c-menu {
+    --pf-v5-c-menu--BackgroundColor: var(--pf-v5-global--BackgroundColor--100);
+}
+
+/* Labels and label groups */
+
+.pf-v5-c-label-group {
+    --pf-v5-c-label-group--m-category--BorderRadius: var(--pf-v5-global--BorderRadius--md);
+    --pf-v5-c-label-group--m-category--BorderColor: var(--pf-v5-global--palette--black-800);
+    --pf-v5-c-label-group--m-category--PaddingTop: var(--pf-v5-global--spacer--sm);
+    --pf-v5-c-label-group--m-category--PaddingBottom: var(--pf-v5-global--spacer--sm);
+    --pf-v5-c-label-group--m-category--PaddingBottom: var(--pf-v5-global--spacer--sm);
+    --pf-v5-c-label-group--m-category--PaddingRight: var(--pf-v5-global--spacer--sm);
+}
+
+:where(.pf-v5-theme-dark) .pf-v5-c-label-group {
+    --pf-v5-c-label-group--m-category--BorderColor: var(--pf-v5-global--palette--black-500);
 }

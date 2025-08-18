@@ -15,3 +15,11 @@
 .brand {
     width: 80px;
 }
+
+.realm-identify {
+    width: 100%;
+}
+
+.realm-identify .pf-v5-c-label-group__main {
+    justify-content: space-between;
+}

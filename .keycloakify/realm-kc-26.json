@@ -1689,7 +1689,7 @@
     "loginTheme": "clean-sight-solutions",
     "accountTheme": "clean-sight-solutions",
     "adminTheme": "clean-sight-solutions",
-    "emailTheme": "",
+    "emailTheme": "clean-sight-solutions",
     "eventsEnabled": false,
     "eventsListeners": ["keycloakify-logging", "jboss-logging"],
     "enabledEventTypes": [],

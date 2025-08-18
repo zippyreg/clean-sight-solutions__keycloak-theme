@@ -11,6 +11,7 @@ const UserProfileFormFields = lazy(
     () => import("keycloakify/login/UserProfileFormFields")
 );
 const LoginConfigTotp = lazy(() => import("./pages/LoginConfigTotp"));
+const LoginUpdatePassword = lazy(() => import("./pages/LoginUpdatePassword"));
 
 const DARK_MODE_CLASS = "pf-theme-dark";
 
@@ -77,6 +78,14 @@ export default function KcPage(props: { kcContext: KcContext }) {
                     case "login-config-totp.ftl":
                         return (
                             <LoginConfigTotp
+                                {...{ kcContext, i18n, classes }}
+                                Template={Template}
+                                doUseDefaultCss={true}
+                            />
+                        );
+                    case "login-update-password.ftl":
+                        return (
+                            <LoginUpdatePassword
                                 {...{ kcContext, i18n, classes }}
                                 Template={Template}
                                 doUseDefaultCss={true}

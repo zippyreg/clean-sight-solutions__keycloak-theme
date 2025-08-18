@@ -32,6 +32,8 @@ import { useTranslation } from "react-i18next";
 import { DefaultAvatar } from "./DefaultAvatar";
 import { KeycloakDropdown } from "./KeycloakDropdown";
 
+import "./masthead.css";
+
 function loggedInUserName(token: KeycloakTokenParsed | undefined, t: TFunction) {
     if (!token) {
         return t("unknownUser");
@@ -63,6 +65,7 @@ type KeycloakMastheadProps = MastheadMainProps & {
     dropdownItems?: ReactNode[];
     toolbarItems?: ReactNode[];
     toolbar?: ReactNode;
+    main?: ReactNode[];
 };
 
 const KeycloakMasthead = ({
@@ -74,6 +77,8 @@ const KeycloakMasthead = ({
     dropdownItems = [],
     toolbarItems,
     toolbar,
+    main,
+    mainProps={},
     ...rest
 }: KeycloakMastheadProps) => {
     const { t } = useTranslation();
@@ -107,10 +112,11 @@ const KeycloakMasthead = ({
             <MastheadBrand className={containerClassName} {...brandProps}>
                 <img src={src} alt={alt} className={className} />
             </MastheadBrand>
+            {main}
             <MastheadContent>
-                {toolbar}
                 <Toolbar>
                     <ToolbarContent>
+                        {toolbar}
                         {toolbarItems?.map((item, index) => (
                             <ToolbarItem
                                 key={index}
@@ -154,7 +160,7 @@ const KeycloakMasthead = ({
                         <ToolbarItem
                             variant="overflow-menu"
                             align={{ default: "alignRight" }}
-                            className="pf-v5-u-m-0-on-lg"
+                            className="pf-v5-u-m-0-on-md"
                         >
                             {picture || avatar?.src ? (
                                 <Avatar

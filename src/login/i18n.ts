@@ -9,7 +9,10 @@ const { useI18n, ofTypeI18n } = i18nBuilder
         en: {
             loginFooterHtml:
                 "Copyright &copy; {0} <strong>Clean Sight Solutions</strong>",
+
+            // TOTP configuration translations
             loginTotpScanBarcode: "Scan QR instead",
+            loginTotpDocumentTitle: "Authenticator setup for {0}",
             loginTotpTitle: "Authenticator setup",
             loginTotpStep1:
                 "Install one of the following Authenticator applications on your mobile device:",
@@ -20,7 +23,14 @@ const { useI18n, ofTypeI18n } = i18nBuilder
                 "Open your Authenticator application and enter the key:",
             loginTotpManualStep3:
                 "Use the following configuration values if your Authenticator application allows:",
-            loginAttemptedHtml: "Logging in as <strong>{0}</strong>"
+
+            // Update password translations
+            loginUpdatePasswordDocumentTitle: "Update password for {0}",
+
+            // Attempted login
+            loginAttempted: "Logging in as {0}",
+            loginAttemptedHtml: "Logging in as <strong>{0}</strong>",
+            
         }
     })
     .build();

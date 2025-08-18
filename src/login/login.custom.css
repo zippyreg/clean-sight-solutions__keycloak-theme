@@ -105,6 +105,22 @@ h1#kc-page-title {
     width: 100%;
 }
 
+@media screen and (max-width: 767px) {
+    #kc-username {
+        padding-top: 10px;
+    }
+
+    #kc-attempted-username {
+        padding-right: 0;
+    }
+
+    #kc-username,
+    #kc-attempted-username span {
+        display: flex; 
+        flex-direction: column;
+    }
+}
+
 @media screen and (min-width: 768px) {
     h1#kc-page-title {
         margin-top: 10px;

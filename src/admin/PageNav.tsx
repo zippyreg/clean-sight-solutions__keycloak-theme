@@ -11,8 +11,9 @@
 
 import { label, useEnvironment } from "../shared/keycloak-ui-shared";
 import {
-    Label,
     Nav,
+    NavItem,
+    NavList,
     NavGroup,
     PageSidebar,
     PageSidebarBody
@@ -20,6 +21,7 @@ import {
 import { FormEvent } from "react";
 import { useTranslation } from "react-i18next";
 import { NavLink, useNavigate } from "react-router-dom";
+import { RealmSelector } from "./components/realm-selector/RealmSelector";
 import { useAccess } from "./context/access/Access";
 import { useRealm } from "./context/realm-context/RealmContext";
 import { useServerInfo } from "./context/server-info/ServerInfoProvider";
@@ -114,15 +116,11 @@ export const PageNav = () => {
         <PageSidebar className="keycloak__page_nav__nav">
             <PageSidebarBody>
                 <Nav onSelect={(_event, item) => onSelect(item as SelectedItem)}>
-                    <h2
-                        className="pf-v5-c-nav__section-title"
-                        style={{ wordWrap: "break-word" }}
-                    >
-                        <span data-testid="currentRealm">
-                            {label(t, realmRepresentation?.displayName, realm)}
-                        </span>{" "}
-                        <Label color="blue">{t("currentRealm")}</Label>
-                    </h2>
+                    <NavList>
+                        <NavItem className="keycloak__page_nav__nav_item__realm-selector">
+                            <RealmSelector />
+                        </NavItem>
+                    </NavList>
                     {showManageRealm && (
                         <NavGroup>
                             <LeftNav title={t("manageRealms")} path="/realms" />
