@@ -247,18 +247,7 @@ export const RealmSelector = () => {
                   {t("noResultsFound")}
                 </DropdownItem>,
               ]
-        ).concat([
-          <Fragment key="add-realm">
-            {whoAmI.canCreateRealm() && (
-              <>
-                <Divider key="divider" />
-                <DropdownItem key="add" component="div">
-                  <AddRealm onClick={() => setOpen(false)} />
-                </DropdownItem>
-              </>
-            )}
-          </Fragment>,
-        ])}
+        )}
       </DropdownList>
     </Dropdown>
   );

@@ -22,6 +22,7 @@ import { useTranslation } from "react-i18next";
 import { Link, useHref } from "react-router-dom";
 import { PageHeaderClearCachesModal } from "./PageHeaderClearCachesModal";
 import { HelpHeader } from "./components/help-enabler/HelpHeader";
+import { CurrentRealm } from "./components/realm-selector/CurrentRealm";
 import { useAccess } from "./context/access/Access";
 import { useRealm } from "./context/realm-context/RealmContext";
 import { toDashboard } from "./dashboard/routes/Dashboard";
@@ -84,40 +85,6 @@ const HelpDropdownItem = () => {
     );
 };
 
-const CurrentRealmToolbar = () => {
-    const { environment } = useEnvironment();
-    const { t } = useTranslation();
-    const { realm, realmRepresentation } = useRealm();
-    const realmBadgeUrl = useHref(toDashboard({ realm }));
-
-    return (
-        <ToolbarItem
-            align={{ default: "alignLeft" }}
-        >
-            <h2
-                className="pf-v5-c-nav__section-title"
-                style={{ wordWrap: "break-word" }}
-            >
-                <LabelGroup 
-                    categoryName={`${t("currentRealm")}:`}
-                    className={style['current-realm']}
-                >
-                    <Label 
-                        isCompact
-                        color="blue" 
-                        href={realmBadgeUrl}
-                        icon={<CubesIcon key="cubes-icon" />}
-                    >
-                        <span data-testid="currentRealm">
-                            {label(t, realmRepresentation?.displayName, realm)}
-                        </span>
-                    </Label>
-                </LabelGroup>
-            </h2>
-        </ToolbarItem>
-    )
-}
-
 const kebabDropdownItems = (isMasterRealm: boolean, isManager: boolean) => [
     <ManageAccountDropdownItem key="kebab Manage Account" />,
     <ServerInfoDropdownItem key="kebab Server Info" />,
@@ -168,7 +135,14 @@ export const Header = () => {
             }}
             dropdownItems={userDropdownItems(isMasterRealm, isManager)}
             kebabDropdownItems={kebabDropdownItems(isMasterRealm, isManager)}
-            toolbar={<CurrentRealmToolbar />}
+            toolbar={[
+                <ToolbarItem
+                    visibility={{ default: "hidden", md: "visible" }}
+                    align={{ default: "alignLeft" }}
+                >
+                    <CurrentRealm />
+                </ToolbarItem>
+            ]}
             toolbarItems={[
                 {
                     children: [<HelpHeader key="help" />],

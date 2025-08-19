@@ -21,6 +21,7 @@ import {
 import { FormEvent } from "react";
 import { useTranslation } from "react-i18next";
 import { NavLink, useNavigate } from "react-router-dom";
+import { CurrentRealm } from "./components/realm-selector/CurrentRealm";
 import { RealmSelector } from "./components/realm-selector/RealmSelector";
 import { useAccess } from "./context/access/Access";
 import { useRealm } from "./context/realm-context/RealmContext";
@@ -31,6 +32,7 @@ import { routes } from "./routes";
 import useIsFeatureEnabled, { Feature } from "./utils/useIsFeatureEnabled";
 
 import "./page-nav.css";
+import style from "./page-nav.module.css";
 
 type LeftNavProps = {
     title: string;
@@ -117,6 +119,9 @@ export const PageNav = () => {
             <PageSidebarBody>
                 <Nav onSelect={(_event, item) => onSelect(item as SelectedItem)}>
                     <NavList>
+                        <span className="pf-v5-u-display-none-on-md">
+                            <CurrentRealm className={style['realm-identify']} />
+                        </span>
                         <NavItem className="keycloak__page_nav__nav_item__realm-selector">
                             <RealmSelector />
                         </NavItem>
