@@ -335,3 +335,9 @@
         --pf-v5-global--palette--black-500
     );
 }
+
+/* Form Group Label Help (dark only) */
+
+:where(.pf-v5-theme-dark) .pf-v5-c-form__group-label-help {
+    --pf-v5-c-form__group-label-help--Color: oklch(0.741 0.00191 248.853);
+}
