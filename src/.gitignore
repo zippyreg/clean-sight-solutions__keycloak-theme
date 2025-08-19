@@ -19,15 +19,26 @@
 # account/root/Header.tsx
 # account/root/PageNav.tsx
 # account/root/Root.tsx
+# admin/client-scopes/ClientScopesSection.tsx
+# admin/clients/ClientsSection.tsx
 # admin/dashboard/dashboard.css
 # admin/dashboard/Dashboard.tsx
+# admin/groups/GroupsSection.tsx
+# admin/groups/GroupTable.tsx
 # shared/keycloak-ui-shared/main.ts
 # account/components/page/Page.tsx
 # admin/assets/theme/login.css
+# admin/clients/initial-access/InitialAccessTokenList.tsx
+# admin/clients/registration/ClientRegistrationList.tsx
+# admin/components/roles-list/RolesList.tsx
+# admin/components/users/UserDataTable.tsx
+# admin/components/users/UserDataTableToolbarItems.tsx
 # admin/components/view-header/ViewHeader.tsx
+# admin/groups/components/GroupToolbar.tsx
 # shared/keycloak-ui-shared/context/KeycloakContext.tsx
 # shared/keycloak-ui-shared/masthead/Masthead.tsx
 # shared/keycloak-ui-shared/user-profile/UserProfileFields.tsx
+# shared/keycloak-ui-shared/controls/table/ListEmptyState.tsx
 # === Owned files end =====
 
 # === @keycloakify/keycloak-admin-ui v260200.0.3 ===
@@ -62,7 +73,6 @@
 /admin/authentication/RequiredActions.tsx
 /admin/authentication/routes.ts
 /admin/client-scopes/ChangeTypeDropdown.tsx
-/admin/client-scopes/ClientScopesSection.tsx
 /admin/client-scopes/CreateClientScope.tsx
 /admin/client-scopes/EditClientScope.tsx
 /admin/client-scopes/routes.ts
@@ -71,7 +81,6 @@
 /admin/clients/ClientDetails.tsx
 /admin/clients/ClientSessions.tsx
 /admin/clients/ClientSettings.tsx
-/admin/clients/ClientsSection.tsx
 /admin/clients/routes.ts
 /admin/clients/utils.ts
 /admin/components/SwitchControl.tsx
@@ -89,8 +98,6 @@
 /admin/groups/GroupRoleMapping.tsx
 /admin/groups/GroupsModal.tsx
 /admin/groups/GroupsSection.css
-/admin/groups/GroupsSection.tsx
-/admin/groups/GroupTable.tsx
 /admin/groups/Members.tsx
 /admin/groups/MembershipsModal.tsx
 /admin/groups/MembersModal.tsx
@@ -317,7 +324,6 @@
 /admin/clients/import/ImportForm.tsx
 /admin/clients/initial-access/AccessTokenDialog.tsx
 /admin/clients/initial-access/CreateInitialAccessToken.tsx
-/admin/clients/initial-access/InitialAccessTokenList.tsx
 /admin/clients/keys/Certificate.tsx
 /admin/clients/keys/ExportSamlKeyDialog.tsx
 /admin/clients/keys/GenerateKeyDialog.tsx
@@ -329,7 +335,6 @@
 /admin/clients/keys/StoreSettings.tsx
 /admin/clients/registration/AddProviderDialog.tsx
 /admin/clients/registration/ClientRegistration.tsx
-/admin/clients/registration/ClientRegistrationList.tsx
 /admin/clients/registration/DetailProvider.tsx
 /admin/clients/roles/CreateClientRole.tsx
 /admin/clients/routes/AddClient.tsx
@@ -428,14 +433,11 @@
 /admin/components/role-mapping/role-mapping.css
 /admin/components/role-mapping/RoleMapping.tsx
 /admin/components/roles-list/RolesList.css
-/admin/components/roles-list/RolesList.tsx
 /admin/components/routable-tabs/RoutableTabs.tsx
 /admin/components/time-selector/TimeSelector.tsx
 /admin/components/time-selector/TimeSelectorControl.tsx
 /admin/components/time-selector/TimeSelectorForm.tsx
-/admin/components/users/UserDataTable.tsx
 /admin/components/users/UserDataTableAttributeSearchForm.tsx
-/admin/components/users/UserDataTableToolbarItems.tsx
 /admin/components/users/UserSelect.tsx
 /admin/components/wizard-section-header/wizard-section-header.css
 /admin/components/wizard-section-header/WizardSectionHeader.tsx
@@ -451,7 +453,6 @@
 /admin/groups/components/CheckableTreeView.tsx
 /admin/groups/components/DeleteGroup.tsx
 /admin/groups/components/group-tree.css
-/admin/groups/components/GroupToolbar.tsx
 /admin/groups/components/GroupTree.tsx
 /admin/groups/components/MoveDialog.tsx
 /admin/groups/routes/Groups.tsx
@@ -701,7 +702,6 @@
 /shared/keycloak-ui-shared/controls/select-control/SingleSelectControl.tsx
 /shared/keycloak-ui-shared/controls/select-control/TypeaheadSelectControl.tsx
 /shared/keycloak-ui-shared/controls/table/KeycloakDataTable.tsx
-/shared/keycloak-ui-shared/controls/table/ListEmptyState.tsx
 /shared/keycloak-ui-shared/controls/table/PaginatingTableToolbar.tsx
 /shared/keycloak-ui-shared/controls/table/TableToolbar.tsx
 

@@ -7,8 +7,13 @@ const { useI18n, ofTypeI18n } = i18nBuilder
     .withThemeName<ThemeName>()
     .withCustomTranslations({
         en: {
+        /* Custom Entries */
+            doRegister: "Register now",
+
+            // Footer
             loginFooterHtml:
                 "Copyright &copy; {0} <strong>Clean Sight Solutions</strong>",
+        /* End Custom Entries */
 
             // TOTP configuration translations
             loginTotpScanBarcode: "Scan QR instead",

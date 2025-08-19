@@ -40,9 +40,9 @@ body.kcBodyClass {
     font-family: "Wix Madefor Text", system-ui, sans-serif;
 }
 
-a {
+/* a {
     color: var(--css-global--secondary-color);
-}
+} */
 
 .kcLoginClass {
     min-height: 100vh;
@@ -152,11 +152,25 @@ h1#kc-page-title {
 
 :where(.pf-theme-dark) .kcFormCardClass {
     background-color: oklch(0.2303 0.0083 264.4);
-    border-color: var(--css-global--primary-color) !important;
+    border-color: var(--css-global--secondary-color) !important;
 }
 
 :where(.pf-theme-dark) .login-pf-page .card-pf p {
     color: var(--pf-global--palette--black-100);
+}
+
+:where(.pf-theme-dark) .pf-c-alert {
+    --pf-c-alert--m-inline--m-custom--BackgroundColor: var(--pf-global--BackgroundColor--300);
+    --pf-c-alert--m-inline--m-success--BackgroundColor: var(--pf-global--BackgroundColor--300);
+    --pf-c-alert--m-inline--m-danger--BackgroundColor: var(--pf-global--BackgroundColor--300);
+    --pf-c-alert--m-inline--m-warning--BackgroundColor: var(--pf-global--BackgroundColor--300);
+    --pf-c-alert--m-inline--m-info--BackgroundColor: var(--pf-global--BackgroundColor--300);
+}
+
+.alert-info {
+    border-top: var(--pf-c-alert--BorderTopWidth) solid var(--pf-c-alert--BorderTopColor);
+    background-color: var(--pf-c-alert--BackgroundColor);
+    color: var(--pf-global--Color--100);
 }
 
 /* Inputs */
@@ -316,6 +330,19 @@ h1#kc-page-title {
 }
 
 /* Info (Registration flag) */
+
+#kc-info {
+    margin-left: -20px;
+    margin-right: -20px;
+}
+
+@media screen and (min-width: 768px) {
+    #kc-info {
+        margin-left: -40px;
+        margin-right: -40px;
+    }
+}
+
 :where(.pf-theme-dark) #kc-info {
     color: var(--pf-global--palette--black-200);
 }
