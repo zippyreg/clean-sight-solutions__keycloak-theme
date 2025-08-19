@@ -14,9 +14,16 @@ import {
     label,
     ThemeSelector,
     useEnvironment,
-    useHelp,
+    useHelp
 } from "../shared/keycloak-ui-shared";
-import { DropdownItem, Label, LabelGroup, Toolbar, ToolbarContent, ToolbarItem } from "../shared/@patternfly/react-core";
+import {
+    DropdownItem,
+    Label,
+    LabelGroup,
+    Toolbar,
+    ToolbarContent,
+    ToolbarItem
+} from "../shared/@patternfly/react-core";
 import { CubesIcon, HelpIcon } from "../shared/@patternfly/react-icons";
 import { useTranslation } from "react-i18next";
 import { Link, useHref } from "react-router-dom";

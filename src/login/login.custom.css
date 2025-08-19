@@ -116,7 +116,7 @@ h1#kc-page-title {
 
     #kc-username,
     #kc-attempted-username span {
-        display: flex; 
+        display: flex;
         flex-direction: column;
     }
 }

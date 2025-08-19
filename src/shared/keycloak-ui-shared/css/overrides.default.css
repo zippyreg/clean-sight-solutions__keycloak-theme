@@ -1,9 +1,15 @@
 /* Page Header */
 
 .pf-v5-c-nav__item .pf-v5-c-menu-toggle {
-    --pf-v5-c-menu-toggle--before--BorderTopColor: var(--pf-v5-global--palette--black-800);
-    --pf-v5-c-menu-toggle--before--BorderRightColor: var(--pf-v5-global--palette--black-800);
-    --pf-v5-c-menu-toggle--before--BorderLeftColor: var(--pf-v5-global--palette--black-800);
+    --pf-v5-c-menu-toggle--before--BorderTopColor: var(
+        --pf-v5-global--palette--black-800
+    );
+    --pf-v5-c-menu-toggle--before--BorderRightColor: var(
+        --pf-v5-global--palette--black-800
+    );
+    --pf-v5-c-menu-toggle--before--BorderLeftColor: var(
+        --pf-v5-global--palette--black-800
+    );
     --pf-v5-c-menu-toggle--m-full-height__toggle--after--BorderBottomWidth: 0;
 }
 
@@ -49,15 +55,31 @@
 .pf-v5-c-input-group .pf-v5-c-input-group__item:not(:first-of-type) input::before,
 .pf-v5-c-input-group .pf-v5-c-input-group__item:not(:first-of-type) input::after,
 .pf-v5-c-input-group .pf-v5-c-input-group__item:not(:first-of-type) input,
-.pf-v5-c-input-group .pf-v5-c-input-group__item:not(:first-of-type) .pf-v5-c-text-input-group,
-.pf-v5-c-input-group .pf-v5-c-input-group__item:not(:first-of-type) .pf-v5-c-text-input-group::after,
-.pf-v5-c-input-group .pf-v5-c-input-group__item:not(:first-of-type) .pf-v5-c-text-input-group::before,
-.pf-v5-c-input-group .pf-v5-c-input-group__item:not(:first-of-type) .pf-v5-c-text-input-group__text,
-.pf-v5-c-input-group .pf-v5-c-input-group__item:not(:first-of-type) .pf-v5-c-text-input-group__text::after,
-.pf-v5-c-input-group .pf-v5-c-input-group__item:not(:first-of-type) .pf-v5-c-text-input-group__text::before,
+.pf-v5-c-input-group
+    .pf-v5-c-input-group__item:not(:first-of-type)
+    .pf-v5-c-text-input-group,
+.pf-v5-c-input-group
+    .pf-v5-c-input-group__item:not(:first-of-type)
+    .pf-v5-c-text-input-group::after,
+.pf-v5-c-input-group
+    .pf-v5-c-input-group__item:not(:first-of-type)
+    .pf-v5-c-text-input-group::before,
+.pf-v5-c-input-group
+    .pf-v5-c-input-group__item:not(:first-of-type)
+    .pf-v5-c-text-input-group__text,
+.pf-v5-c-input-group
+    .pf-v5-c-input-group__item:not(:first-of-type)
+    .pf-v5-c-text-input-group__text::after,
+.pf-v5-c-input-group
+    .pf-v5-c-input-group__item:not(:first-of-type)
+    .pf-v5-c-text-input-group__text::before,
 .pf-v5-c-input-group .pf-v5-c-input-group__item:not(:first-of-type) .pf-v5-c-form-control,
-.pf-v5-c-input-group .pf-v5-c-input-group__item:not(:first-of-type) .pf-v5-c-form-control::before,
-.pf-v5-c-input-group .pf-v5-c-input-group__item:not(:first-of-type) .pf-v5-c-form-control::after {
+.pf-v5-c-input-group
+    .pf-v5-c-input-group__item:not(:first-of-type)
+    .pf-v5-c-form-control::before,
+.pf-v5-c-input-group
+    .pf-v5-c-input-group__item:not(:first-of-type)
+    .pf-v5-c-form-control::after {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
 }
@@ -69,14 +91,28 @@
 .pf-v5-c-input-group .pf-v5-c-input-group__item:not(:last-of-type) input::after,
 .pf-v5-c-input-group .pf-v5-c-input-group__item:not(:last-of-type) input,
 .pf-v5-c-input-group .pf-v5-c-input-group__item:not(:last-of-type) .pf-v5-c-text-input,
-.pf-v5-c-input-group .pf-v5-c-input-group__item:not(:last-of-type) .pf-v5-c-text-input::after,
-.pf-v5-c-input-group .pf-v5-c-input-group__item:not(:last-of-type) .pf-v5-c-text-input::before,
-.pf-v5-c-input-group .pf-v5-c-input-group__item:not(:last-of-type) .pf-v5-c-text-input-group__text,
-.pf-v5-c-input-group .pf-v5-c-input-group__item:not(:last-of-type) .pf-v5-c-text-input-group__text::after,
-.pf-v5-c-input-group .pf-v5-c-input-group__item:not(:last-of-type) .pf-v5-c-text-input-group__text::before,
+.pf-v5-c-input-group
+    .pf-v5-c-input-group__item:not(:last-of-type)
+    .pf-v5-c-text-input::after,
+.pf-v5-c-input-group
+    .pf-v5-c-input-group__item:not(:last-of-type)
+    .pf-v5-c-text-input::before,
+.pf-v5-c-input-group
+    .pf-v5-c-input-group__item:not(:last-of-type)
+    .pf-v5-c-text-input-group__text,
+.pf-v5-c-input-group
+    .pf-v5-c-input-group__item:not(:last-of-type)
+    .pf-v5-c-text-input-group__text::after,
+.pf-v5-c-input-group
+    .pf-v5-c-input-group__item:not(:last-of-type)
+    .pf-v5-c-text-input-group__text::before,
 .pf-v5-c-input-group .pf-v5-c-input-group__item:not(:last-of-type) .pf-v5-c-form-control,
-.pf-v5-c-input-group .pf-v5-c-input-group__item:not(:last-of-type) .pf-v5-c-form-control::before,
-.pf-v5-c-input-group .pf-v5-c-input-group__item:not(:last-of-type) .pf-v5-c-form-control::after {
+.pf-v5-c-input-group
+    .pf-v5-c-input-group__item:not(:last-of-type)
+    .pf-v5-c-form-control::before,
+.pf-v5-c-input-group
+    .pf-v5-c-input-group__item:not(:last-of-type)
+    .pf-v5-c-form-control::after {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 }
@@ -282,8 +318,12 @@
 /* Labels and label groups */
 
 .pf-v5-c-label-group {
-    --pf-v5-c-label-group--m-category--BorderRadius: var(--pf-v5-global--BorderRadius--md);
-    --pf-v5-c-label-group--m-category--BorderColor: var(--pf-v5-global--palette--black-800);
+    --pf-v5-c-label-group--m-category--BorderRadius: var(
+        --pf-v5-global--BorderRadius--md
+    );
+    --pf-v5-c-label-group--m-category--BorderColor: var(
+        --pf-v5-global--palette--black-800
+    );
     --pf-v5-c-label-group--m-category--PaddingTop: var(--pf-v5-global--spacer--sm);
     --pf-v5-c-label-group--m-category--PaddingBottom: var(--pf-v5-global--spacer--sm);
     --pf-v5-c-label-group--m-category--PaddingBottom: var(--pf-v5-global--spacer--sm);
@@ -291,5 +331,7 @@
 }
 
 :where(.pf-v5-theme-dark) .pf-v5-c-label-group {
-    --pf-v5-c-label-group--m-category--BorderColor: var(--pf-v5-global--palette--black-500);
+    --pf-v5-c-label-group--m-category--BorderColor: var(
+        --pf-v5-global--palette--black-500
+    );
 }

@@ -1,7 +1,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { keycloakify } from "keycloakify/vite-plugin";
-import { buildEmailTheme } from 'keycloakify-emails';
+import { buildEmailTheme } from "keycloakify-emails";
 import path from "path";
 
 // https://vitejs.dev/config/
@@ -16,25 +16,25 @@ export default defineConfig({
                 "22-to-25": false,
                 "all-other-versions": "clean-sight-solutions.jar"
             },
-            postBuild: async (buildContext) => {
+            postBuild: async buildContext => {
                 await buildEmailTheme({
                     templatesSrcDirPath: path.join(
                         buildContext.themeSrcDirPath,
                         "email",
-                        "templates",
+                        "templates"
                     ),
                     i18nSourceFile: path.join(
                         buildContext.themeSrcDirPath,
                         "email",
-                        "i18n.ts",
+                        "i18n.ts"
                     ),
                     themeNames: buildContext.themeNames,
                     keycloakifyBuildDirPath: buildContext.keycloakifyBuildDirPath,
                     locales: ["en"],
                     cwd: import.meta.dirname,
-                    esbuild: {}, // optional esbuild options
+                    esbuild: {} // optional esbuild options
                 });
-            },
-        }),
+            }
+        })
     ]
 });

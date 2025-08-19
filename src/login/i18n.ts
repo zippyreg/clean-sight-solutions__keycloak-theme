@@ -29,8 +29,7 @@ const { useI18n, ofTypeI18n } = i18nBuilder
 
             // Attempted login
             loginAttempted: "Logging in as {0}",
-            loginAttemptedHtml: "Logging in as <strong>{0}</strong>",
-            
+            loginAttemptedHtml: "Logging in as <strong>{0}</strong>"
         }
     })
     .build();

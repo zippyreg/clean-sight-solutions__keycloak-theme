@@ -20,7 +20,10 @@ function wrapSetColorMode(setColorMode: ColorModeSetterFn) {
 
 export function useColorMode(): [string, ColorModeSetterFn, boolean] {
     const prefersDarkTheme = useMediaQuery("(prefers-color-scheme: dark)");
-    const [colorMode, setColorMode] = useLocalStorage(LOCAL_STORAGE_KEY, prefersDarkTheme ? "dark" : "light");
+    const [colorMode, setColorMode] = useLocalStorage(
+        LOCAL_STORAGE_KEY,
+        prefersDarkTheme ? "dark" : "light"
+    );
     const [isDark, setIsDark] = useState(false);
 
     useEffect(() => {

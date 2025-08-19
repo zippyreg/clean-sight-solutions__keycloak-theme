@@ -78,7 +78,7 @@ const KeycloakMasthead = ({
     toolbarItems,
     toolbar,
     main,
-    mainProps={},
+    mainProps = {},
     ...rest
 }: KeycloakMastheadProps) => {
     const { t } = useTranslation();
