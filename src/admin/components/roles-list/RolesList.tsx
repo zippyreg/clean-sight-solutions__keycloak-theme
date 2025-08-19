@@ -16,7 +16,7 @@ import {
     Button,
     ButtonVariant
 } from "../../../shared/@patternfly/react-core";
-import { PlusIcon } from "../../../shared/@patternfly/react-icons";
+import { PlusIcon, CodeIcon } from "../../../shared/@patternfly/react-icons";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link, To, useNavigate } from "react-router-dom";
@@ -192,6 +192,8 @@ export const RolesList = ({
                         }
                         primaryActionText={isReadOnly ? "" : t("createRole")}
                         onPrimaryAction={() => navigate(toCreate)}
+                        primaryActionIcon={<PlusIcon />}
+                        icon={CodeIcon}
                     />
                 }
             />

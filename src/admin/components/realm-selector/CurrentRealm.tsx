@@ -33,9 +33,9 @@ export const CurrentRealm = ({ className, textMaxWidth }: CurrentRealmProps) => 
                     <span data-testid="currentRealm">
                         {realmRepresentation?.displayName ? (
                             <span>
-                                {label(t, realm)} (
+                                {label(t, realmRepresentation.displayName)} (
                                 <strong>
-                                    {label(t, realmRepresentation.displayName)}
+                                    {label(t, realm)}
                                 </strong>
                                 )
                             </span>

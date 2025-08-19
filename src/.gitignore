@@ -20,16 +20,26 @@
 # account/root/PageNav.tsx
 # account/root/Root.tsx
 # admin/client-scopes/ClientScopesSection.tsx
+# admin/clients/AdvancedTab.tsx
 # admin/clients/ClientsSection.tsx
 # admin/dashboard/dashboard.css
 # admin/dashboard/Dashboard.tsx
+# admin/events/AdminEvents.tsx
+# admin/events/UserEvents.tsx
 # admin/groups/GroupsSection.tsx
 # admin/groups/GroupTable.tsx
+# admin/sessions/SessionsTable.tsx
 # shared/keycloak-ui-shared/main.ts
 # account/components/page/Page.tsx
 # admin/assets/theme/login.css
+# admin/clients/advanced/AdvancedSettings.tsx
+# admin/clients/advanced/AuthenticationOverrides.tsx
+# admin/clients/advanced/ClusteringPanel.tsx
+# admin/clients/advanced/FineGrainOpenIdConnect.tsx
+# admin/clients/advanced/OpenIdConnectCompatibilityModes.tsx
 # admin/clients/initial-access/InitialAccessTokenList.tsx
 # admin/clients/registration/ClientRegistrationList.tsx
+# admin/clients/scopes/ClientScopes.tsx
 # admin/components/roles-list/RolesList.tsx
 # admin/components/users/UserDataTable.tsx
 # admin/components/users/UserDataTableToolbarItems.tsx
@@ -76,7 +86,6 @@
 /admin/client-scopes/CreateClientScope.tsx
 /admin/client-scopes/EditClientScope.tsx
 /admin/client-scopes/routes.ts
-/admin/clients/AdvancedTab.tsx
 /admin/clients/ClientDescription.tsx
 /admin/clients/ClientDetails.tsx
 /admin/clients/ClientSessions.tsx
@@ -87,12 +96,10 @@
 /admin/context/RecentRealms.tsx
 /admin/dashboard/ProviderInfo.tsx
 /admin/dashboard/routes.ts
-/admin/events/AdminEvents.tsx
 /admin/events/events.css
 /admin/events/EventsSection.tsx
 /admin/events/ResourceLinks.tsx
 /admin/events/routes.ts
-/admin/events/UserEvents.tsx
 /admin/groups/GroupAttributes.tsx
 /admin/groups/groupIdUtils.ts
 /admin/groups/GroupRoleMapping.tsx
@@ -180,7 +187,6 @@
 /admin/sessions/routes.ts
 /admin/sessions/SessionsSection.css
 /admin/sessions/SessionsSection.tsx
-/admin/sessions/SessionsTable.tsx
 /admin/user/CreateUser.tsx
 /admin/user/EditUser.tsx
 /admin/user/FederatedUserLink.tsx
@@ -278,13 +284,8 @@
 /admin/clients/add/SamlConfig.tsx
 /admin/clients/add/SamlSignature.tsx
 /admin/clients/advanced/AddHostDialog.tsx
-/admin/clients/advanced/AdvancedSettings.tsx
 /admin/clients/advanced/ApplicationUrls.tsx
-/admin/clients/advanced/AuthenticationOverrides.tsx
-/admin/clients/advanced/ClusteringPanel.tsx
-/admin/clients/advanced/FineGrainOpenIdConnect.tsx
 /admin/clients/advanced/FineGrainSamlEndpointConfig.tsx
-/admin/clients/advanced/OpenIdConnectCompatibilityModes.tsx
 /admin/clients/advanced/TokenLifespan.tsx
 /admin/clients/authorization/AuthorizationDataModal.tsx
 /admin/clients/authorization/AuthorizationEvaluate.tsx
@@ -361,7 +362,6 @@
 /admin/clients/routes/Scope.tsx
 /admin/clients/scopes/AddScopeDialog.tsx
 /admin/clients/scopes/client-scopes.css
-/admin/clients/scopes/ClientScopes.tsx
 /admin/clients/scopes/DedicatedScope.tsx
 /admin/clients/scopes/DedicatedScopes.tsx
 /admin/clients/scopes/evaluate.css

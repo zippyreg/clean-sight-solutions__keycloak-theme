@@ -336,8 +336,16 @@
     );
 }
 
-/* Form Group Label Help (dark only) */
+/* Form Group Label Help/Kebab/Jump To (dark only) */
 
 :where(.pf-v5-theme-dark) .pf-v5-c-form__group-label-help {
     --pf-v5-c-form__group-label-help--Color: oklch(0.741 0.00191 248.853);
+}
+
+:where(.pf-v5-theme-dark) .pf-v5-c-menu-toggle.pf-m-plain:not(.pf-m-text) {
+    --pf-v5-c-menu-toggle--m-plain--Color: oklch(0.741 0.00191 248.853);
+}
+
+:where(.pf-v5-theme-dark) .pf-v5-c-jump-links {
+    --pf-v5-c-jump-links__link-text--Color: oklch(0.741 0.00191 248.853);
 }

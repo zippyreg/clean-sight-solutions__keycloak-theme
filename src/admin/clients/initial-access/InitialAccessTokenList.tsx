@@ -15,7 +15,7 @@ import {
     Button,
     ButtonVariant
 } from "../../../shared/@patternfly/react-core";
-import { PlusIcon } from "../../../shared/@patternfly/react-icons";
+import { CloudSecurityIcon, PlusIcon } from "../../../shared/@patternfly/react-icons";
 import { wrappable } from "../../../shared/@patternfly/react-table";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -137,6 +137,8 @@ export const InitialAccessTokenList = () => {
                         onPrimaryAction={() =>
                             navigate(toCreateInitialAccessToken({ realm }))
                         }
+                        primaryActionIcon={<PlusIcon />}
+                        icon={CloudSecurityIcon}
                     />
                 }
             />

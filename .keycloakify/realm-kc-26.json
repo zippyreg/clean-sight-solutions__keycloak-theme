@@ -27,11 +27,11 @@
     "oauth2DevicePollingInterval": 5,
     "enabled": true,
     "sslRequired": "none",
-    "registrationAllowed": true,
-    "registrationEmailAsUsername": false,
+    "registrationAllowed": false,
+    "registrationEmailAsUsername": true,
     "rememberMe": true,
     "verifyEmail": false,
-    "loginWithEmailAllowed": true,
+    "loginWithEmailAllowed": false,
     "duplicateEmailsAllowed": false,
     "resetPasswordAllowed": true,
     "editUsernameAllowed": false,
@@ -1727,14 +1727,14 @@
                 "subComponents": {},
                 "config": {
                     "allowed-protocol-mapper-types": [
-                        "oidc-usermodel-attribute-mapper",
-                        "saml-user-property-mapper",
-                        "oidc-address-mapper",
-                        "saml-user-attribute-mapper",
                         "oidc-usermodel-property-mapper",
+                        "saml-user-attribute-mapper",
+                        "saml-user-property-mapper",
                         "oidc-full-name-mapper",
+                        "oidc-sha256-pairwise-sub-mapper",
+                        "oidc-usermodel-attribute-mapper",
                         "saml-role-list-mapper",
-                        "oidc-sha256-pairwise-sub-mapper"
+                        "oidc-address-mapper"
                     ]
                 }
             },
@@ -1764,14 +1764,14 @@
                 "subComponents": {},
                 "config": {
                     "allowed-protocol-mapper-types": [
-                        "oidc-address-mapper",
+                        "oidc-sha256-pairwise-sub-mapper",
                         "oidc-usermodel-property-mapper",
                         "oidc-usermodel-attribute-mapper",
-                        "oidc-full-name-mapper",
                         "saml-user-property-mapper",
-                        "saml-user-attribute-mapper",
+                        "oidc-full-name-mapper",
                         "saml-role-list-mapper",
-                        "oidc-sha256-pairwise-sub-mapper"
+                        "oidc-address-mapper",
+                        "saml-user-attribute-mapper"
                     ]
                 }
             },
