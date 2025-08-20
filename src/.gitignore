@@ -21,6 +21,7 @@
 # account/root/Root.tsx
 # admin/client-scopes/ClientScopesSection.tsx
 # admin/clients/AdvancedTab.tsx
+# admin/clients/ClientDetails.tsx
 # admin/clients/ClientsSection.tsx
 # admin/dashboard/dashboard.css
 # admin/dashboard/Dashboard.tsx
@@ -87,7 +88,6 @@
 /admin/client-scopes/EditClientScope.tsx
 /admin/client-scopes/routes.ts
 /admin/clients/ClientDescription.tsx
-/admin/clients/ClientDetails.tsx
 /admin/clients/ClientSessions.tsx
 /admin/clients/ClientSettings.tsx
 /admin/clients/routes.ts

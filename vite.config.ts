@@ -23,7 +23,12 @@ export default defineConfig({
                 const config = { esbuild: {} } ;
 
                 await buildEmailTheme({
-                    assetsDirPath: import.meta.dirname + "/emails/templates/assets",
+                    assetsDirPath: path.join(
+                        buildContext.themeSrcDirPath,
+                        "email",
+                        "templates",
+                        "assets"
+                    ),
                     templatesSrcDirPath: path.join(
                         buildContext.themeSrcDirPath,
                         "email",
