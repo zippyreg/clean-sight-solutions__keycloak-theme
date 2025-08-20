@@ -18,7 +18,7 @@ function wrapSetColorMode(setColorMode: ColorModeSetterFn) {
     };
 }
 
-export function useColorMode(): [string, ColorModeSetterFn, boolean] {
+export function useColorMode(): [boolean, string, ColorModeSetterFn] {
     const prefersDarkTheme = useMediaQuery("(prefers-color-scheme: dark)");
     const [colorMode, setColorMode] = useLocalStorage(
         LOCAL_STORAGE_KEY,
@@ -40,5 +40,5 @@ export function useColorMode(): [string, ColorModeSetterFn, boolean] {
         }
     }, [prefersDarkTheme, colorMode]);
 
-    return [colorMode, wrapSetColorMode(setColorMode), isDark];
+    return [isDark, colorMode, wrapSetColorMode(setColorMode)];
 }

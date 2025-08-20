@@ -27,7 +27,7 @@ import {
 import { BarsIcon } from "../../@patternfly/react-icons";
 import { TFunction } from "i18next";
 import Keycloak, { type KeycloakTokenParsed } from "keycloak-js";
-import { ReactNode } from "react";
+import React, { ReactNode } from "react";
 import { useTranslation } from "react-i18next";
 import { DefaultAvatar } from "./DefaultAvatar";
 import { KeycloakDropdown } from "./KeycloakDropdown";
@@ -50,11 +50,10 @@ function loggedInUserName(token: KeycloakTokenParsed | undefined, t: TFunction) 
     return givenName || familyName || preferredUsername || t("unknownUser");
 }
 
-type BrandLogo = MastheadBrandProps & { containerClassName?: string };
-
 type KeycloakMastheadProps = MastheadMainProps & {
     keycloak: Keycloak;
-    brand: BrandLogo;
+    brand: MastheadBrandProps;
+    brandChildren?: ReactNode[];
     avatar?: AvatarProps;
     features?: {
         hasLogout?: boolean;
@@ -70,7 +69,8 @@ type KeycloakMastheadProps = MastheadMainProps & {
 
 const KeycloakMasthead = ({
     keycloak,
-    brand: { src, alt, className, containerClassName, ...brandProps },
+    brand: { src, alt, className, ...brandProps },
+    brandChildren,
     avatar,
     features: { hasLogout = true, hasManageAccount = true, hasUsername = true } = {},
     kebabDropdownItems,
@@ -78,7 +78,6 @@ const KeycloakMasthead = ({
     toolbarItems,
     toolbar,
     main,
-    mainProps = {},
     ...rest
 }: KeycloakMastheadProps) => {
     const { t } = useTranslation();
@@ -109,10 +108,12 @@ const KeycloakMasthead = ({
                     <BarsIcon />
                 </PageToggleButton>
             </MastheadToggle>
-            <MastheadBrand className={containerClassName} {...brandProps}>
-                <img src={src} alt={alt} className={className} />
-            </MastheadBrand>
-            {main}
+            <MastheadBrand
+                children={
+                    brandChildren || [<img src={src} alt={alt} className={className} />]
+                }
+                {...brandProps}
+            />
             <MastheadContent>
                 <Toolbar>
                     <ToolbarContent>
@@ -173,6 +174,7 @@ const KeycloakMasthead = ({
                     </ToolbarContent>
                 </Toolbar>
             </MastheadContent>
+            {main}
         </Masthead>
     );
 };

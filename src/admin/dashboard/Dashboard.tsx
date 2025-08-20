@@ -13,7 +13,15 @@ import iconSvgUrl from "../assets/icon.svg";
 import FeatureRepresentation, {
     FeatureType
 } from "@keycloak/keycloak-admin-client/lib/defs/featureRepresentation";
-import { HelpItem, label, useEnvironment } from "../../shared/keycloak-ui-shared";
+import {
+    HelpItem,
+    KeycloakSpinner,
+    BrandWordmark,
+    BrandLettermark,
+    label,
+    useColorMode,
+    useEnvironment
+} from "../../shared/keycloak-ui-shared";
 import {
     ActionList,
     ActionListItem,
@@ -46,7 +54,6 @@ import {
 } from "../../shared/@patternfly/react-core";
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
-import { KeycloakSpinner } from "../../shared/keycloak-ui-shared";
 import { RoutableTabs, useRoutableTab } from "../components/routable-tabs/RoutableTabs";
 import { useRealm } from "../context/realm-context/RealmContext";
 import { useServerInfo } from "../context/server-info/ServerInfoProvider";
@@ -59,6 +66,7 @@ import "./dashboard.css";
 
 const EmptyDashboard = () => {
     const { environment } = useEnvironment();
+    const [isDark] = useColorMode();
 
     const { t } = useTranslation();
     const { realm, realmRepresentation: realmInfo } = useRealm();
@@ -73,11 +81,7 @@ const EmptyDashboard = () => {
                     alignItems={{ default: "alignItemsCenter" }}
                     gap={{ default: "gapLg" }}
                 >
-                    <Brand
-                        src={`${import.meta.env.BASE_URL}img/wordmark.png`}
-                        alt="Keycloak icon"
-                        className="keycloak__dashboard_icon"
-                    />
+                    <BrandWordmark variant={isDark ? "white" : "default"} size="xl" />
                     <Flex direction={{ default: "column" }} gap={{ default: undefined }}>
                         <EmptyStateHeader
                             titleText={<>{t("welcome")}</>}

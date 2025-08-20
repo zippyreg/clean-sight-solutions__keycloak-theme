@@ -10,6 +10,7 @@
 // @ts-nocheck
 
 import {
+    BrandLettermark,
     KeycloakMasthead,
     ThemeSelector,
     label,
@@ -62,11 +63,7 @@ export const Header = () => {
             keycloak={keycloak}
             features={{ hasManageAccount: false }}
             brand={{
-                href: indexHref,
-                src: `${import.meta.env.BASE_URL}img/lettermark.png`,
-                alt: t("logo"),
-                className: style.brand,
-                containerClassName: style["brand-container"]
+                children: [<BrandLettermark variant="white" key="brand-lettermark" />]
             }}
             toolbarItems={[
                 {

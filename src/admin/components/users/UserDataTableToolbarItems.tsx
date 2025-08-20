@@ -23,7 +23,11 @@ import {
     SearchInput,
     ToolbarItem
 } from "../../../shared/@patternfly/react-core";
-import { ArrowRightIcon, EllipsisVIcon, PlusIcon } from "../../../shared/@patternfly/react-icons";
+import {
+    ArrowRightIcon,
+    EllipsisVIcon,
+    PlusIcon
+} from "../../../shared/@patternfly/react-icons";
 import { ReactNode, useState } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -226,11 +230,7 @@ export function UserDataTableToolbarItems({
     const actionItems = (
         <>
             <ToolbarItem>
-                <Button 
-                    data-testid="add-user" 
-                    icon={<PlusIcon />}
-                    onClick={goToCreate}
-                >
+                <Button data-testid="add-user" icon={<PlusIcon />} onClick={goToCreate}>
                     {t("addUser")}
                 </Button>
             </ToolbarItem>

@@ -21,7 +21,11 @@ import {
     MenuToggle,
     ToolbarItem
 } from "../../../shared/@patternfly/react-core";
-import { CodeBranchIcon, EllipsisVIcon, PlusIcon } from "../../../shared/@patternfly/react-icons";
+import {
+    CodeBranchIcon,
+    EllipsisVIcon,
+    PlusIcon
+} from "../../../shared/@patternfly/react-icons";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
@@ -293,7 +297,7 @@ export const ClientScopes = ({
                             <>
                                 <DeleteConfirm />
                                 <ToolbarItem>
-                                    <Button 
+                                    <Button
                                         icon={<PlusIcon />}
                                         onClick={() => setAddDialogOpen(true)}
                                     >

@@ -91,3 +91,4 @@ export {
 export type { FallbackProps } from "./utils/ErrorBoundary";
 export { OrganizationTable } from "./controls/OrganizationTable";
 export { ThemeSelector } from "./theme-selector/ThemeSelector";
+export { BrandWordmark, BrandLettermark } from "./brand/Brand";

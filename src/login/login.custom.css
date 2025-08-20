@@ -160,11 +160,21 @@ h1#kc-page-title {
 }
 
 :where(.pf-theme-dark) .pf-c-alert {
-    --pf-c-alert--m-inline--m-custom--BackgroundColor: var(--pf-global--BackgroundColor--300);
-    --pf-c-alert--m-inline--m-success--BackgroundColor: var(--pf-global--BackgroundColor--300);
-    --pf-c-alert--m-inline--m-danger--BackgroundColor: var(--pf-global--BackgroundColor--300);
-    --pf-c-alert--m-inline--m-warning--BackgroundColor: var(--pf-global--BackgroundColor--300);
-    --pf-c-alert--m-inline--m-info--BackgroundColor: var(--pf-global--BackgroundColor--300);
+    --pf-c-alert--m-inline--m-custom--BackgroundColor: var(
+        --pf-global--BackgroundColor--300
+    );
+    --pf-c-alert--m-inline--m-success--BackgroundColor: var(
+        --pf-global--BackgroundColor--300
+    );
+    --pf-c-alert--m-inline--m-danger--BackgroundColor: var(
+        --pf-global--BackgroundColor--300
+    );
+    --pf-c-alert--m-inline--m-warning--BackgroundColor: var(
+        --pf-global--BackgroundColor--300
+    );
+    --pf-c-alert--m-inline--m-info--BackgroundColor: var(
+        --pf-global--BackgroundColor--300
+    );
 }
 
 .alert-info {

@@ -12,8 +12,10 @@
 import "./page.custom.css";
 
 import { clsx } from "keycloakify/tools/clsx";
+import { BrandWordmark, useColorMode } from "../../../shared/keycloak-ui-shared";
 import {
     Flex,
+    FlexItem,
     PageSection,
     Text,
     TextContent,
@@ -28,6 +30,7 @@ type PageProps = {
 
 const LiveCopyrightDate = () => {
     const [currentDate, setCurrentDate] = useState(new Date());
+    const [isDark] = useColorMode();
 
     useEffect(() => {
         const intervalId = setInterval(() => {
@@ -43,8 +46,12 @@ const LiveCopyrightDate = () => {
     return (
         <TextContent>
             <Text component="small" className="pf-v5-u-color-100">
-                Copyright &copy; {currentDate.getFullYear()}{" "}
-                <strong>Clean Sight Solutions</strong>
+                <Flex gap={{ default: "gapXs" }}>
+                    <FlexItem>Copyright &copy; {currentDate.getFullYear()} </FlexItem>
+                    <FlexItem>
+                        <BrandWordmark size="sm" variant={isDark ? "white" : "default"} />
+                    </FlexItem>
+                </Flex>
             </Text>
         </TextContent>
     );

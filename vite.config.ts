@@ -17,7 +17,13 @@ export default defineConfig({
                 "all-other-versions": "clean-sight-solutions.jar"
             },
             postBuild: async buildContext => {
+                // const { config: loadConfig } = await import("./jsx-email.config");
+
+                // const config = await loadConfig;
+                const config = { esbuild: {} } ;
+
                 await buildEmailTheme({
+                    assetsDirPath: import.meta.dirname + "/emails/templates/assets",
                     templatesSrcDirPath: path.join(
                         buildContext.themeSrcDirPath,
                         "email",
@@ -32,7 +38,7 @@ export default defineConfig({
                     keycloakifyBuildDirPath: buildContext.keycloakifyBuildDirPath,
                     locales: ["en"],
                     cwd: import.meta.dirname,
-                    esbuild: {} // optional esbuild options
+                    esbuild: config.esbuild,
                 });
             }
         })

@@ -13,6 +13,7 @@ import {
     KeycloakMasthead,
     label,
     ThemeSelector,
+    BrandLettermark,
     useEnvironment,
     useHelp
 } from "../shared/keycloak-ui-shared";
@@ -36,8 +37,6 @@ import { toDashboard } from "./dashboard/routes/Dashboard";
 import { usePreviewLogo } from "./realm-settings/themes/LogoContext";
 import { joinPath } from "./utils/joinPath";
 import useToggle from "./utils/useToggle";
-
-import style from "./header.module.css";
 
 const ManageAccountDropdownItem = () => {
     const { keycloak } = useEnvironment();
@@ -130,15 +129,7 @@ export const Header = () => {
             keycloak={keycloak}
             features={{ hasManageAccount: false }}
             brand={{
-                href: logoUrl,
-                src: customLogo
-                    ? customLogo.startsWith("/")
-                        ? joinPath(environment["resourceUrl"], customLogo)
-                        : customLogo
-                    : `${import.meta.env.BASE_URL}img/lettermark.png`,
-                alt: t("logo"),
-                className: style.brand,
-                containerClassName: style["brand-container"]
+                children: [<BrandLettermark variant="white" key="brand-lettermark" />]
             }}
             dropdownItems={userDropdownItems(isMasterRealm, isManager)}
             kebabDropdownItems={kebabDropdownItems(isMasterRealm, isManager)}

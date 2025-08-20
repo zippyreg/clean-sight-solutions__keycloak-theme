@@ -12,7 +12,11 @@
 import "./app.custom.css";
 
 import KeycloakAdminClient from "@keycloak/keycloak-admin-client";
-import { mainPageContentId, useEnvironment } from "../shared/keycloak-ui-shared";
+import {
+    mainPageContentId,
+    useColorMode,
+    useEnvironment
+} from "../shared/keycloak-ui-shared";
 import {
     Flex,
     FlexItem,
@@ -27,7 +31,8 @@ import { Outlet } from "react-router-dom";
 import {
     ErrorBoundaryFallback,
     ErrorBoundaryProvider,
-    KeycloakSpinner
+    KeycloakSpinner,
+    BrandWordmark
 } from "../shared/keycloak-ui-shared";
 import { Header } from "./PageHeader";
 import { PageNav } from "./PageNav";
@@ -63,6 +68,8 @@ export const AppContexts = ({ children }: PropsWithChildren) => (
 const LiveCopyrightDate = () => {
     const [currentDate, setCurrentDate] = useState(new Date());
 
+    const [isDark] = useColorMode();
+
     useEffect(() => {
         const intervalId = setInterval(() => {
             setCurrentDate(new Date()); // Update the current date every minute
@@ -77,8 +84,12 @@ const LiveCopyrightDate = () => {
     return (
         <TextContent>
             <Text component="small" className="pf-v5-u-color-100">
-                Copyright &copy; {currentDate.getFullYear()}{" "}
-                <strong>Clean Sight Solutions</strong>
+                <Flex gap={{ default: "gapXs" }}>
+                    <FlexItem>Copyright &copy; {currentDate.getFullYear()} </FlexItem>
+                    <FlexItem>
+                        <BrandWordmark size="sm" variant={isDark ? "white" : "default"} />
+                    </FlexItem>
+                </Flex>
             </Text>
         </TextContent>
     );

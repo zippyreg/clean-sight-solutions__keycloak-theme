@@ -30,7 +30,8 @@ const MoonIcon = () => (
 );
 
 export const ThemeSelector = () => {
-    const [colorMode, setColorMode] = useColorMode();
+    /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
+    const [_, colorMode, setColorMode] = useColorMode();
 
     const toggleGroupItems = [
         <ToggleGroupItem

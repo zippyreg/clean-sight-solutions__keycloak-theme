@@ -50,7 +50,7 @@ function getThemeFromUrl(): string | undefined {
 export default function KcPage(props: { kcContext: KcContext }) {
     const { kcContext } = props;
 
-    const [colorMode, setColorMode, isDark] = useColorMode();
+    const [isDark, colorMode, setColorMode] = useColorMode();
 
     from_url: {
         const themeFromUrl = getThemeFromUrl();

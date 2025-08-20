@@ -1,0 +1,43 @@
+.brand {
+    --css--brand--font-size: 1.5rem;
+    --css--brand--first-color: var(--css-global--brand-blue);
+    --css--brand--second-color: oklch(53.824% 0.00006 271.152);
+    --css--brand--first-font-weight: 700;
+    --css--brand--second-font-weight: 400;
+
+    font-size: var(--css--brand--font-size);
+}
+
+.brand div:first-child {
+    color: var(--css--brand--first-color);
+    font-weight: var(--css--brand--first-font-weight);
+}
+
+.brand div:last-child {
+    color: var(--css--brand--second-color);
+    font-weight: var(--css--brand--second-font-weight);
+}
+
+.brand.brand__white {
+    --css--brand--first-color: oklch(100% 0.00011 271.152);
+    --css--brand--second-color: oklch(100% 0.00011 271.152);
+}
+
+.brand.brand__blue {
+    --css--brand--second-color: var(--css-global--brand-blue);
+}
+
+.brand.brand__sm {
+    --css--brand--font-size: 1rem;
+    --css--brand--first-font-weight: 600;
+}
+
+.brand.brand__lg {
+    --css--brand--font-size: 2.5rem;
+    --css--brand--first-font-weight: 650;
+}
+
+.brand.brand__xl {
+    --css--brand--font-size: 3.5rem;
+    --css--brand--first-font-weight: 600;
+}

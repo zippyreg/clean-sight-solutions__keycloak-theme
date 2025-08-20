@@ -13,6 +13,10 @@
     --pf-v5-c-menu-toggle--m-full-height__toggle--after--BorderBottomWidth: 0;
 }
 
+.pf-v5-c-masthead__brand {
+    margin-right: 0.75rem;
+}
+
 /* Bullseye */
 
 .pf-v5-l-bullseye {

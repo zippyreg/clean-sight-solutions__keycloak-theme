@@ -24,7 +24,6 @@ export const CurrentRealm = ({ className, textMaxWidth }: CurrentRealmProps) => 
                 className={clsx(className)}
             >
                 <Label
-                    isCompact
                     color="blue"
                     href={realmBadgeUrl}
                     icon={<CubesIcon key="cubes-icon" />}
@@ -34,10 +33,7 @@ export const CurrentRealm = ({ className, textMaxWidth }: CurrentRealmProps) => 
                         {realmRepresentation?.displayName ? (
                             <span>
                                 {label(t, realmRepresentation.displayName)} (
-                                <strong>
-                                    {label(t, realm)}
-                                </strong>
-                                )
+                                <strong>{label(t, realm)}</strong>)
                             </span>
                         ) : (
                             label(t, realm)
