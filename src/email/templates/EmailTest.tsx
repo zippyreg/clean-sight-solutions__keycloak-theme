@@ -1,6 +1,6 @@
 /* eslint-disable react-refresh/only-export-components */
 import { render, Text } from "jsx-email";
-import { EmailLayout, labeledSubject } from "./common";
+import { EmailLayout, labeledSubject } from "../shared";
 import { createVariablesHelper } from "keycloakify-emails/variables";
 import { GetSubject, GetTemplate, GetTemplateProps } from "keycloakify-emails";
 

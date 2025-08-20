@@ -1,18 +1,19 @@
 /* eslint-disable react-refresh/only-export-components */
-import { Text, render } from "jsx-email";
-import { EmailLayout, labeledSubject } from "./common";
+import { Container, render } from "jsx-email";
+import {
+    Content,
+    Disclaimer,
+    EmailLayout,
+    Greeting,
+    HeroText,
+    PrimaryButton,
+    labeledSubject
+} from "../shared";
 import * as Fm from "keycloakify-emails/jsx-email";
 import { GetSubject, GetTemplate, GetTemplateProps } from "keycloakify-emails";
 import { createVariablesHelper } from "keycloakify-emails/variables";
 
 export type TemplateProps = Omit<GetTemplateProps, "plainText">;
-
-const paragraph = {
-    color: "#777",
-    fontSize: "16px",
-    lineHeight: "24px",
-    textAlign: "left" as const
-};
 
 export const previewProps: TemplateProps = {
     locale: "en",
@@ -25,8 +26,10 @@ const { exp, v } = createVariablesHelper("org-invite.ftl");
 
 export const Template = ({ locale }: TemplateProps) => (
     <EmailLayout preview={`Here is a preview`} locale={locale}>
-        <Text style={paragraph}>
-            <p>
+        <Container>
+            <HeroText>You&apos;re Invited</HeroText>
+
+            <Greeting>
                 <Fm.If condition={`${v("firstName")}?? && ${v("lastName")}??`}>
                     <Fm.Then>
                         Hi, {exp("firstName")} {exp("lastName")}.
@@ -36,24 +39,24 @@ export const Template = ({ locale }: TemplateProps) => (
                     </Fm.ElseIf>
                     <Fm.Else>Hi.</Fm.Else>
                 </Fm.If>
-            </p>
-
-            <p>
+            </Greeting>
+            <Content>
                 You were invited to join the {exp("organization.name")} organization.
                 Click the link below to join.{" "}
-            </p>
-            <p>
-                <a href={exp("link")}>Link to join the organization</a>
-            </p>
-            <p>
+            </Content>
+            <PrimaryButton align="center" href={exp("link")} target="_blank">
+                Join {exp("organization.name")}
+            </PrimaryButton>
+            <Content>
                 This link will expire within{" "}
                 {exp("linkExpirationFormatter(linkExpiration)")}.
-            </p>
-            <p>
+            </Content>
+            <Disclaimer>
                 If you don&apos;t want to join the organization, or this email was sent in
-                error, feel free to ignore this message.
-            </p>
-        </Text>
+                error, feel free to ignore this message. If you can&apos;t click the link,
+                copy and paste the following URL into your browser: {exp("link")}.
+            </Disclaimer>
+        </Container>
     </EmailLayout>
 );
 

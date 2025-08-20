@@ -3,12 +3,12 @@ import { Flex, FlexItem } from "../../@patternfly/react-core";
 
 import "./Brand.css";
 
-export type BrandSize = "default" | "sm" | "lg" | "xl" | undefined;
+export type BrandSize = "default" | "xs" | "sm" | "md" | "lg" | "xl" | undefined;
 export type BrandVariant = "default" | "white" | "blue" | undefined;
 
 export type BrandProps = {
-    variant: BrandVariant;
-    size: BrandSize;
+    variant?: BrandVariant;
+    size?: BrandSize;
 };
 
 const getClassNames = ({ variant, size }: BrandProps) => {
@@ -20,14 +20,22 @@ const getClassNames = ({ variant, size }: BrandProps) => {
 };
 
 export const BrandWordmark = (props: BrandProps) => (
-    <Flex gap={{ default: "gapNone" }} className={getClassNames(props)}>
+    <Flex
+        gap={{ default: "gapNone" }}
+        flexWrap={{ default: "nowrap" }}
+        className={getClassNames(props)}
+    >
         <FlexItem>CleanSight</FlexItem>
         <FlexItem>Solutions</FlexItem>
     </Flex>
 );
 
 export const BrandLettermark = (props: BrandProps) => (
-    <Flex gap={{ default: "gapNone" }} className={getClassNames(props)}>
+    <Flex
+        gap={{ default: "gapNone" }}
+        flexWrap={{ default: "nowrap" }}
+        className={getClassNames(props)}
+    >
         <FlexItem>CS</FlexItem>
         <FlexItem>S</FlexItem>
     </Flex>

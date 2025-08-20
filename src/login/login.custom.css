@@ -49,19 +49,6 @@ body.kcBodyClass {
     display: flex;
     flex-direction: column;
     padding-top: 0;
-    gap: 1rem;
-}
-
-@media screen and (min-width: 576px) {
-    .kcLoginClass {
-        gap: 2rem;
-    }
-}
-
-@media screen and (min-width: 768px) {
-    .kcLoginClass {
-        gap: 3rem;
-    }
 }
 
 /* Header */
@@ -69,9 +56,17 @@ body.kcBodyClass {
     margin-bottom: 0 !important;
 }
 
+.kcHeaderWrapperClass {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 0 4rem;
+    line-height: normal;
+}
+
 @media screen and (max-width: 767px) {
-    #kc-header-wrapper {
-        padding-right: 0;
+    .kcHeaderWrapperClass {
+        padding: 2rem 0;
     }
 }
 
@@ -372,4 +367,13 @@ h1#kc-page-title {
     align-items: flex-end;
     justify-content: center;
     padding-bottom: 1rem;
+}
+
+.kcFooterCopyrightContainer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    column-gap: 0.25rem;
+    font-size: 0.875rem;
 }

@@ -5,21 +5,6 @@
  * $ npx keycloakify own --path "admin/dashboard/dashboard.css" --revert
  */
 
-.keycloak__dashboard_icon {
-    --css--brand-container--padding-x: 1rem;
-    --css--brand-container--padding-y: 1.5rem;
-    --css--brand--width: 600px;
-
-    background: white;
-    align-items: center;
-    padding: var(--css--brand-container--padding-y) var(--css--brand-container--padding-x);
-    border-radius: 0.5rem;
-    max-width: calc(
-        var(--css--brand--width) + (2 * var(--css--brand-container--padding-x))
-    );
-    width: 100%;
-}
-
 .keycloak__dashboard_introduction {
     max-width: 400px;
     line-height: 1.4;

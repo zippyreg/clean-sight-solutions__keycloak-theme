@@ -49,7 +49,7 @@ const LiveCopyrightDate = () => {
                 <Flex gap={{ default: "gapXs" }}>
                     <FlexItem>Copyright &copy; {currentDate.getFullYear()} </FlexItem>
                     <FlexItem>
-                        <BrandWordmark size="sm" variant={isDark ? "white" : "default"} />
+                        <BrandWordmark size="xs" variant={isDark ? "white" : "default"} />
                     </FlexItem>
                 </Flex>
             </Text>

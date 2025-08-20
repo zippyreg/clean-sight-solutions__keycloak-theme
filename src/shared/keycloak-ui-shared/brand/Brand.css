@@ -2,7 +2,7 @@
     --css--brand--font-size: 1.5rem;
     --css--brand--first-color: var(--css-global--brand-blue);
     --css--brand--second-color: oklch(53.824% 0.00006 271.152);
-    --css--brand--first-font-weight: 700;
+    --css--brand--first-font-weight: 650;
     --css--brand--second-font-weight: 400;
 
     font-size: var(--css--brand--font-size);
@@ -27,17 +27,28 @@
     --css--brand--second-color: var(--css-global--brand-blue);
 }
 
+.brand.brand__xs {
+    --css--brand--font-size: 0.95rem;
+}
+
 .brand.brand__sm {
     --css--brand--font-size: 1rem;
+}
+
+.brand.brand__xs,
+.brand.brand__sm {
     --css--brand--first-font-weight: 600;
+}
+
+.brand.brand__md {
+    --css--brand--font-size: 1.875rem;
 }
 
 .brand.brand__lg {
     --css--brand--font-size: 2.5rem;
-    --css--brand--first-font-weight: 650;
 }
 
 .brand.brand__xl {
     --css--brand--font-size: 3.5rem;
-    --css--brand--first-font-weight: 600;
+    --css--brand--first-font-weight: 700;
 }

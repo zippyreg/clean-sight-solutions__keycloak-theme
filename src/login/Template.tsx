@@ -1,4 +1,5 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
+import { BrandWordmark, useColorMode } from "../shared/keycloak-ui-shared";
 import { clsx } from "keycloakify/tools/clsx";
 import { kcSanitize } from "keycloakify/lib/kcSanitize";
 import type { TemplateProps } from "keycloakify/login/TemplateProps";
@@ -8,7 +9,29 @@ import { useInitialize } from "keycloakify/login/Template.useInitialize";
 import type { I18n } from "./i18n";
 import type { KcContext } from "./KcContext";
 
-import style from "./template.module.css";
+const LiveCopyrightDate = () => {
+    const [currentDate, setCurrentDate] = useState(new Date());
+
+    const [isDark] = useColorMode();
+
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            setCurrentDate(new Date()); // Update the current date every minute
+        }, 1000);
+
+        // Clean up the interval when the component unmounts
+        return () => {
+            clearInterval(intervalId);
+        };
+    }, []);
+
+    return (
+        <div className="kcFooterCopyrightContainer">
+            <div>Copyright &copy; {currentDate.getFullYear()}</div>
+            <BrandWordmark size="xs" variant={isDark ? "white" : "default"} />
+        </div>
+    );
+};
 
 export default function Template(props: TemplateProps<KcContext, I18n>) {
     const {
@@ -33,6 +56,8 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
 
     const { realm, auth, url, message, isAppInitiatedAction } = kcContext;
 
+    const [isDark] = useColorMode();
+
     useEffect(() => {
         document.title = documentTitle ?? msgStr("loginTitle", realm.displayName);
     }, []);
@@ -56,10 +81,8 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
     return (
         <div className={kcClsx("kcLoginClass")}>
             <div id="kc-header" className={kcClsx("kcHeaderClass")}>
-                <div id="kc-header-wrapper" className={clsx(style["brand-flex"], kcClsx("kcHeaderWrapperClass"))}>
-                    <div className={style["brand-container"]}>
-                        <img src={`${import.meta.env.BASE_URL}img/wordmark.png`} />
-                    </div>
+                <div className={kcClsx("kcHeaderWrapperClass")}>
+                    <BrandWordmark variant={isDark ? "white" : "default"} size="md" />
                 </div>
             </div>
             <div className={kcClsx("kcFormCardClass")}>
@@ -184,8 +207,8 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                     </div>
                 </div>
             </div>
-            <div id="kc-footer" className="kcFooterCopyright">
-                <span>{msg("loginFooterHtml", new Date().getFullYear().toString())}</span>
+            <div className="kcFooterCopyright">
+                <LiveCopyrightDate />
             </div>
         </div>
     );

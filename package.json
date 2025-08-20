@@ -1,6 +1,6 @@
 {
     "name": "clean-sight-solutions",
-    "version": "0.7.1",
+    "version": "0.7.2",
     "description": "Starter for Keycloakify 11",
     "repository": {
         "type": "git",
@@ -14,7 +14,7 @@
         "build-keycloak-theme": "npm run build && keycloakify build",
         "storybook": "storybook dev -p 6006",
         "format": "prettier . --write",
-        "start-latest": "keycloakify start-keycloak --keycloak-version 26",
+        "start-latest": "keycloakify start-keycloak --keycloak-version=26",
         "emails:check": "email check ./src/email/templates",
         "emails:preview": "email preview ./src/email/templates"
     },
