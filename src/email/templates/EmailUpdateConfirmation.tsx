@@ -20,17 +20,17 @@ export const previewProps: TemplateProps = {
     themeName: "clean-sight-solutions"
 };
 
-export const templateName = "Email Verification";
+export const templateName = "Email Update Confirmation";
 
-const { exp, v } = createVariablesHelper("email-verification.ftl");
+const { exp, v } = createVariablesHelper("email-update-confirmation.ftl");
 
 export const Template = ({ locale }: TemplateProps) => (
     <EmailLayout
-        preview={`Verify your ${exp("realmName")} email address.`}
+        preview={`Verify your updated ${exp("realmName")} email address.`}
         locale={locale}
     >
         <Container>
-            <HeroText>Verify your email.</HeroText>
+            <HeroText>Verify updated email.</HeroText>
 
             <Greeting>
                 <Fm.If condition={`${v("user.firstName")}?? && ${v("user.lastName")}??`}>
@@ -44,8 +44,9 @@ export const Template = ({ locale }: TemplateProps) => (
                 </Fm.If>
             </Greeting>
             <Content>
-                This email has been added to a new account on {exp("realmName")}. If this
-                was you, please click the button below to verify your email address.
+                Your {exp("realmName")} account email address has been updated. If this
+                was you, please click the button below to verify your updated email
+                address.
             </Content>
             <PrimaryButton align="center" href={exp("link")} target="_blank">
                 Verify email

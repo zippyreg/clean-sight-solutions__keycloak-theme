@@ -6,7 +6,6 @@ import {
     EmailLayout,
     Greeting,
     HeroText,
-    PrimaryButton,
     labeledSubject
 } from "../shared";
 import * as Fm from "keycloakify-emails/jsx-email";
@@ -20,17 +19,17 @@ export const previewProps: TemplateProps = {
     themeName: "clean-sight-solutions"
 };
 
-export const templateName = "Email Verification";
+export const templateName = "Event: Password Updated";
 
-const { exp, v } = createVariablesHelper("email-verification.ftl");
+const { exp, v } = createVariablesHelper("event-update_password.ftl");
 
 export const Template = ({ locale }: TemplateProps) => (
     <EmailLayout
-        preview={`Verify your ${exp("realmName")} email address.`}
+        preview={`Password updated for your ${exp("realmName")} account.`}
         locale={locale}
     >
         <Container>
-            <HeroText>Verify your email.</HeroText>
+            <HeroText>Password updated.</HeroText>
 
             <Greeting>
                 <Fm.If condition={`${v("user.firstName")}?? && ${v("user.lastName")}??`}>
@@ -44,23 +43,11 @@ export const Template = ({ locale }: TemplateProps) => (
                 </Fm.If>
             </Greeting>
             <Content>
-                This email has been added to a new account on {exp("realmName")}. If this
-                was you, please click the button below to verify your email address.
+                The password for your {exp("realmName")} account was changed from{" "}
+                {exp("event.ipAddress")} on {exp("event.date")}. If this wasn&apos;t you,
+                please reset your password.
             </Content>
-            <PrimaryButton align="center" href={exp("link")} target="_blank">
-                Verify email
-            </PrimaryButton>
-            <Content>
-                This link will expire in {exp("linkExpirationFormatter(linkExpiration)")}.
-            </Content>
-            <Disclaimer>
-                If this wasn&apos;t you, feel free to ignore this message. If you
-                can&apos;t click the link, copy and paste the following URL into your
-                browser:{" "}
-                <a href={exp("link")} target="_blank" rel="noreferrer">
-                    {exp("link")}
-                </a>
-            </Disclaimer>
+            <Disclaimer>If this was you, feel free to ignore this message.</Disclaimer>
         </Container>
     </EmailLayout>
 );
@@ -71,5 +58,5 @@ export const getTemplate: GetTemplate = async props => {
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const getSubject: GetSubject = async _props => {
-    return labeledSubject("Verify email");
+    return labeledSubject("Password updated");
 };

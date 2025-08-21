@@ -1,6 +1,6 @@
-import { Body, Container, Head, Html, Img, Preview, Section } from "jsx-email";
+import { Body, Container, Head, Html, Img, Preview, Section, Text } from "jsx-email";
 import type { PropsWithChildren, ReactNode } from "react";
-import { BaseStyles, getStyles } from ".";
+import { BaseStyles, BrandStyles, getStyles } from ".";
 
 const baseUrl = import.meta.isJsxEmailPreview ? "/assets" : "${url.resourcesUrl}";
 
@@ -28,6 +28,20 @@ export const EmailLayout = ({
                         </Container>
                     </Section>
                     <Section style={getStyles(BaseStyles.Body)}>{children}</Section>
+                </Container>
+                <Container
+                    style={getStyles(
+                        BaseStyles.Main,
+                        {},
+                        { paddingTop: BrandStyles.BaseSize_5xPx }
+                    )}
+                >
+                    <Section style={getStyles(BaseStyles.Footer)}>
+                        <Text>
+                            Copyright &copy; {new Date().getFullYear()}{" "}
+                            <strong>CleanSight</strong>Solutions
+                        </Text>
+                    </Section>
                 </Container>
             </Body>
         </Html>

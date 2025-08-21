@@ -25,36 +25,41 @@ export const templateName = "Org Invite";
 const { exp, v } = createVariablesHelper("org-invite.ftl");
 
 export const Template = ({ locale }: TemplateProps) => (
-    <EmailLayout preview={`Here is a preview`} locale={locale}>
+    <EmailLayout
+        preview={`Join the ${exp("organization.name")} organization.`}
+        locale={locale}
+    >
         <Container>
-            <HeroText>You&apos;re Invited</HeroText>
+            <HeroText>You&apos;re invited.</HeroText>
 
             <Greeting>
                 <Fm.If condition={`${v("firstName")}?? && ${v("lastName")}??`}>
                     <Fm.Then>
-                        Hi, {exp("firstName")} {exp("lastName")}.
+                        Hi, {exp("firstName")} {exp("lastName")}
                     </Fm.Then>
                     <Fm.ElseIf condition={`${v("firstName")}??`}>
-                        Hi, {exp("firstName")}.
+                        Hi, {exp("firstName")}
                     </Fm.ElseIf>
-                    <Fm.Else>Hi.</Fm.Else>
+                    <Fm.Else>Hi</Fm.Else>
                 </Fm.If>
             </Greeting>
             <Content>
-                You were invited to join the {exp("organization.name")} organization.
-                Click the link below to join.{" "}
+                You have been invited to join the {exp("organization.name")} organization.
+                Click the link below to finish creating your account.{" "}
             </Content>
             <PrimaryButton align="center" href={exp("link")} target="_blank">
                 Join {exp("organization.name")}
             </PrimaryButton>
             <Content>
-                This link will expire within{" "}
-                {exp("linkExpirationFormatter(linkExpiration)")}.
+                This link will expire in {exp("linkExpirationFormatter(linkExpiration)")}.
             </Content>
             <Disclaimer>
                 If you don&apos;t want to join the organization, or this email was sent in
                 error, feel free to ignore this message. If you can&apos;t click the link,
-                copy and paste the following URL into your browser: {exp("link")}.
+                copy and paste the following URL into your browser:{" "}
+                <a href={exp("link")} target="_blank" rel="noreferrer">
+                    {exp("link")}
+                </a>
             </Disclaimer>
         </Container>
     </EmailLayout>

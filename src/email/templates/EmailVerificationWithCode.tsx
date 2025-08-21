@@ -1,17 +1,27 @@
 /* eslint-disable react-refresh/only-export-components */
 import { Container, render } from "jsx-email";
 import {
+    BrandStyles,
     Content,
     Disclaimer,
     EmailLayout,
     Greeting,
     HeroText,
-    PrimaryButton,
     labeledSubject
 } from "../shared";
 import * as Fm from "keycloakify-emails/jsx-email";
 import { GetSubject, GetTemplate, GetTemplateProps } from "keycloakify-emails";
 import { createVariablesHelper } from "keycloakify-emails/variables";
+
+export type EmailVerificationWithCode = {
+    emailId: "email-verification-with-code.ftl";
+    vars:
+        | "code"
+        | "realmName"
+        | "linkExpiration"
+        | "linkExpirationFormatter(linkExpiration))";
+    // ${kcSanitize(msg("emailVerificationBodyCodeHtml",code))?no_esc}
+};
 
 export type TemplateProps = Omit<GetTemplateProps, "plainText">;
 
@@ -20,8 +30,9 @@ export const previewProps: TemplateProps = {
     themeName: "clean-sight-solutions"
 };
 
-export const templateName = "Email Verification";
+export const templateName = "Email Verification With Code";
 
+// TODO: need this to work?
 const { exp, v } = createVariablesHelper("email-verification.ftl");
 
 export const Template = ({ locale }: TemplateProps) => (
@@ -44,22 +55,13 @@ export const Template = ({ locale }: TemplateProps) => (
                 </Fm.If>
             </Greeting>
             <Content>
-                This email has been added to a new account on {exp("realmName")}. If this
-                was you, please click the button below to verify your email address.
+                Please enter the following code to verify your email address.
             </Content>
-            <PrimaryButton align="center" href={exp("link")} target="_blank">
-                Verify email
-            </PrimaryButton>
-            <Content>
-                This link will expire in {exp("linkExpirationFormatter(linkExpiration)")}.
-            </Content>
+            <HeroText borders align={BrandStyles.TextAlignCenter}>
+                123456
+            </HeroText>
             <Disclaimer>
-                If this wasn&apos;t you, feel free to ignore this message. If you
-                can&apos;t click the link, copy and paste the following URL into your
-                browser:{" "}
-                <a href={exp("link")} target="_blank" rel="noreferrer">
-                    {exp("link")}
-                </a>
+                If this wasn&apos;t you, feel free to ignore this message.
             </Disclaimer>
         </Container>
     </EmailLayout>

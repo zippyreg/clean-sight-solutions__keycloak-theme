@@ -1,14 +1,6 @@
 /* eslint-disable react-refresh/only-export-components */
 import { Container, render } from "jsx-email";
-import {
-    Content,
-    Disclaimer,
-    EmailLayout,
-    Greeting,
-    HeroText,
-    PrimaryButton,
-    labeledSubject
-} from "../shared";
+import { Content, EmailLayout, Greeting, HeroText, labeledSubject } from "../shared";
 import * as Fm from "keycloakify-emails/jsx-email";
 import { GetSubject, GetTemplate, GetTemplateProps } from "keycloakify-emails";
 import { createVariablesHelper } from "keycloakify-emails/variables";
@@ -20,17 +12,17 @@ export const previewProps: TemplateProps = {
     themeName: "clean-sight-solutions"
 };
 
-export const templateName = "Email Verification";
+export const templateName = "Event: User Temporary Lockout";
 
-const { exp, v } = createVariablesHelper("email-verification.ftl");
+const { exp, v } = createVariablesHelper("event-user_disabled_by_temporary_lockout.ftl");
 
 export const Template = ({ locale }: TemplateProps) => (
     <EmailLayout
-        preview={`Verify your ${exp("realmName")} email address.`}
+        preview={`Your ${exp("realmName")} account has been temporarily disabled.`}
         locale={locale}
     >
         <Container>
-            <HeroText>Verify your email.</HeroText>
+            <HeroText>Account temporarily disabled.</HeroText>
 
             <Greeting>
                 <Fm.If condition={`${v("user.firstName")}?? && ${v("user.lastName")}??`}>
@@ -44,23 +36,10 @@ export const Template = ({ locale }: TemplateProps) => (
                 </Fm.If>
             </Greeting>
             <Content>
-                This email has been added to a new account on {exp("realmName")}. If this
-                was you, please click the button below to verify your email address.
+                Your {exp("realmName")} account has been <strong>permanently</strong>{" "}
+                disabled due to multiple failed login attempts on {exp("event.date")}. If
+                this wasn&apos;t you, please update your password.
             </Content>
-            <PrimaryButton align="center" href={exp("link")} target="_blank">
-                Verify email
-            </PrimaryButton>
-            <Content>
-                This link will expire in {exp("linkExpirationFormatter(linkExpiration)")}.
-            </Content>
-            <Disclaimer>
-                If this wasn&apos;t you, feel free to ignore this message. If you
-                can&apos;t click the link, copy and paste the following URL into your
-                browser:{" "}
-                <a href={exp("link")} target="_blank" rel="noreferrer">
-                    {exp("link")}
-                </a>
-            </Disclaimer>
         </Container>
     </EmailLayout>
 );
@@ -71,5 +50,5 @@ export const getTemplate: GetTemplate = async props => {
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const getSubject: GetSubject = async _props => {
-    return labeledSubject("Verify email");
+    return labeledSubject("Account temporarily disabled");
 };
