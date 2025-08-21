@@ -50,5 +50,9 @@
 
 .brand.brand__xl {
     --css--brand--font-size: 3.5rem;
+}
+
+.brand.brand__lg,
+.brand.brand__xl {
     --css--brand--first-font-weight: 700;
 }

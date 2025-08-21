@@ -46,7 +46,7 @@ const LiveCopyrightDate = () => {
     return (
         <TextContent>
             <Text component="small" className="pf-v5-u-color-100">
-                <Flex gap={{ default: "gapXs" }}>
+                <Flex gap={{ default: "gapXs" }} alignItems={{ default: "alignItemsCenter" }}>
                     <FlexItem>Copyright &copy; {currentDate.getFullYear()} </FlexItem>
                     <FlexItem>
                         <BrandWordmark size="xs" variant={isDark ? "white" : "default"} />
