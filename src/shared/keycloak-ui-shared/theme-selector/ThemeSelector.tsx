@@ -1,4 +1,4 @@
-import { useColorMode } from "..";
+import { useColorMode } from "../utils/useColorMode";
 import { ToggleGroup, ToggleGroupItem } from "../../@patternfly/react-core";
 
 const SunIcon = () => (
