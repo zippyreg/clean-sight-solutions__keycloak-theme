@@ -30,10 +30,17 @@
 # admin/events/UserEvents.tsx
 # admin/groups/GroupsSection.tsx
 # admin/groups/GroupTable.tsx
+# admin/groups/Members.tsx
+# admin/realm-roles/UsersInRoleTab.tsx
+# admin/realm-settings/DefaultGroupsTab.tsx
+# admin/realm-settings/PoliciesTab.tsx
+# admin/realm-settings/ProfilesTab.tsx
 # admin/sessions/SessionsTable.tsx
+# admin/user/UserGroups.tsx
 # shared/keycloak-ui-shared/main.ts
 # account/components/page/Page.tsx
 # admin/assets/theme/login.css
+# admin/client-scopes/details/MapperList.tsx
 # admin/clients/advanced/AdvancedSettings.tsx
 # admin/clients/advanced/AuthenticationOverrides.tsx
 # admin/clients/advanced/ClusteringPanel.tsx
@@ -42,11 +49,17 @@
 # admin/clients/initial-access/InitialAccessTokenList.tsx
 # admin/clients/registration/ClientRegistrationList.tsx
 # admin/clients/scopes/ClientScopes.tsx
+# admin/components/role-mapping/RoleMapping.tsx
 # admin/components/roles-list/RolesList.tsx
 # admin/components/users/UserDataTable.tsx
 # admin/components/users/UserDataTableToolbarItems.tsx
 # admin/components/view-header/ViewHeader.tsx
 # admin/groups/components/GroupToolbar.tsx
+# admin/realm-settings/event-config/EventsTypeTable.tsx
+# admin/realm-settings/keys/KeysProvidersTab.tsx
+# admin/realm-settings/localization/RealmOverrides.tsx
+# admin/realm-settings/user-profile/AttributesGroupTab.tsx
+# admin/realm-settings/user-profile/AttributesTab.tsx
 # shared/keycloak-ui-shared/context/KeycloakContext.tsx
 # shared/keycloak-ui-shared/masthead/Masthead.tsx
 # shared/keycloak-ui-shared/user-profile/UserProfileFields.tsx
@@ -106,7 +119,6 @@
 /admin/groups/GroupRoleMapping.tsx
 /admin/groups/GroupsModal.tsx
 /admin/groups/GroupsSection.css
-/admin/groups/Members.tsx
 /admin/groups/MembershipsModal.tsx
 /admin/groups/MembersModal.tsx
 /admin/groups/routes.ts
@@ -159,11 +171,9 @@
 /admin/realm-roles/RealmRolesSection.tsx
 /admin/realm-roles/RealmRoleTabs.tsx
 /admin/realm-roles/routes.ts
-/admin/realm-roles/UsersInRoleTab.tsx
 /admin/realm-settings/AddClientProfileModal.tsx
 /admin/realm-settings/AddTranslationModal.tsx
 /admin/realm-settings/ClientProfileForm.tsx
-/admin/realm-settings/DefaultGroupsTab.tsx
 /admin/realm-settings/EmailTab.tsx
 /admin/realm-settings/ExecutorForm.tsx
 /admin/realm-settings/GeneralTab.tsx
@@ -174,8 +184,6 @@
 /admin/realm-settings/partial-export.css
 /admin/realm-settings/PartialExport.tsx
 /admin/realm-settings/PartialImport.tsx
-/admin/realm-settings/PoliciesTab.tsx
-/admin/realm-settings/ProfilesTab.tsx
 /admin/realm-settings/realm-settings-section.css
 /admin/realm-settings/RealmSettingsSection.tsx
 /admin/realm-settings/RealmSettingsTabs.tsx
@@ -200,7 +208,6 @@
 /admin/user/UserConsents.tsx
 /admin/user/UserCredentials.tsx
 /admin/user/UserForm.tsx
-/admin/user/UserGroups.tsx
 /admin/user/UserIdentityProviderLinks.tsx
 /admin/user/UserIdPModal.tsx
 /admin/user/UserRoleMapping.tsx
@@ -266,7 +273,6 @@
 /admin/authentication/routes/CreateFlow.tsx
 /admin/authentication/routes/Flow.tsx
 /admin/client-scopes/add/MapperDialog.tsx
-/admin/client-scopes/details/MapperList.tsx
 /admin/client-scopes/details/MappingDetails.tsx
 /admin/client-scopes/details/ScopeForm.tsx
 /admin/client-scopes/details/SearchFilter.tsx
@@ -432,7 +438,6 @@
 /admin/components/role-mapping/queries.ts
 /admin/components/role-mapping/resource.ts
 /admin/components/role-mapping/role-mapping.css
-/admin/components/role-mapping/RoleMapping.tsx
 /admin/components/roles-list/RolesList.css
 /admin/components/routable-tabs/RoutableTabs.tsx
 /admin/components/time-selector/TimeSelector.tsx
@@ -524,13 +529,10 @@
 /admin/realm-settings/event-config/EventConfigForm.tsx
 /admin/realm-settings/event-config/EventListenersForm.tsx
 /admin/realm-settings/event-config/EventsTab.tsx
-/admin/realm-settings/event-config/EventsTypeTable.tsx
 /admin/realm-settings/keys/KeysListTab.tsx
-/admin/realm-settings/keys/KeysProvidersTab.tsx
 /admin/realm-settings/keys/KeysTab.tsx
 /admin/realm-settings/localization/EffectiveMessageBundles.tsx
 /admin/realm-settings/localization/LocalizationTab.tsx
-/admin/realm-settings/localization/RealmOverrides.tsx
 /admin/realm-settings/routes/AddAttribute.tsx
 /admin/realm-settings/routes/AddClientPolicy.tsx
 /admin/realm-settings/routes/AddClientProfile.tsx
@@ -564,8 +566,6 @@
 /admin/realm-settings/themes/ThemesTab.tsx
 /admin/realm-settings/user-profile/AttributesGroupDetails.tsx
 /admin/realm-settings/user-profile/AttributesGroupForm.tsx
-/admin/realm-settings/user-profile/AttributesGroupTab.tsx
-/admin/realm-settings/user-profile/AttributesTab.tsx
 /admin/realm-settings/user-profile/JsonEditorTab.tsx
 /admin/realm-settings/user-profile/UserProfileContext.tsx
 /admin/realm-settings/user-profile/UserProfileTab.tsx

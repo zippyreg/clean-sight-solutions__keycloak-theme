@@ -36,9 +36,10 @@ export const Template = ({ locale }: TemplateProps) => (
                 </Fm.If>
             </Greeting>
             <Content>
-                Your {exp("realmName")} account has been <strong>permanently</strong>{" "}
+                Your {exp("realmName")} account has been <strong>temporarily</strong>{" "}
                 disabled due to multiple failed login attempts on {exp("event.date")}. If
-                this wasn&apos;t you, please update your password.
+                this wasn&apos;t you, please update your password once you are able to 
+                access your account again.
             </Content>
         </Container>
     </EmailLayout>

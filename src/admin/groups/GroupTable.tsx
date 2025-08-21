@@ -234,7 +234,7 @@ export const GroupTable = ({ refresh: viewRefresh }: GroupTableProps) => {
                 ]}
                 emptyState={
                     <ListEmptyState
-                        hasIcon={true}
+                        hasIcon
                         icon={CubeIcon}
                         message={t(`noGroupsInThis${id ? "SubGroup" : "Realm"}`)}
                         instructions={t(
