@@ -32,6 +32,7 @@ import {
 } from "../../shared/@patternfly/react-icons";
 import { CSSProperties, useState } from "react";
 import { Trans, useTranslation } from "react-i18next";
+import { clsx } from "keycloakify/tools/clsx";
 import { KeycloakSpinner, useEnvironment } from "../../shared/keycloak-ui-shared";
 import { getCredentials } from "../api/methods";
 import {
@@ -188,10 +189,22 @@ export const SigningIn = () => {
 
     const credentialUniqueCategories = [...new Set(credentials.map(c => c.category))];
 
+    const credentialSectionPaddingClassName = (index) => {
+        const classNames = ['pf-v5-u-px-0'];
+
+        if(index === 0) {
+            classNames.push('pf-v5-u-pt-0');
+        }
+    }
+
     return (
         <Page title={t("signingIn")} description={t("signingInDescription")}>
-            {credentialUniqueCategories.map(category => (
-                <PageSection key={category} variant="light" className="pf-v5-u-px-0">
+            {credentialUniqueCategories.map((category, index) => (
+                <PageSection key={category} variant="light" className={clsx(
+                    "pf-v5-u-px-0", 
+                    index === 0 ? 'pf-v5-u-pt-0' : null,
+                    index === credentialUniqueCategories.length - 1 ? 'pf-v5-u-pb-0' : null
+                )}>
                     <Title headingLevel="h2" size="xl" id={`${category}-categ-title`}>
                         {t(category as TFuncKey)}
                     </Title>
@@ -241,7 +254,6 @@ export const SigningIn = () => {
 
                                 <DataList
                                     aria-label="credential list"
-                                    className="pf-v5-u-mb-xl"
                                     data-testid={`${container.type}/credential-list`}
                                 >
                                     {container.userCredentialMetadatas.length === 0 && (

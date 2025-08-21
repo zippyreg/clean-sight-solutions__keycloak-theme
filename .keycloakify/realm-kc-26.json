@@ -64,7 +64,7 @@
                 "composites": {
                     "realm": ["offline_access", "uma_authorization"],
                     "client": {
-                        "account": ["delete-account", "manage-account", "view-profile"]
+                        "account": ["manage-account", "view-profile"]
                     }
                 },
                 "clientRole": false,
@@ -306,36 +306,18 @@
             ],
             "account": [
                 {
-                    "id": "d554d15b-d098-47a0-bdd5-d656b20f5643",
-                    "name": "delete-account",
-                    "description": "${role_delete-account}",
-                    "composite": false,
-                    "clientRole": true,
-                    "containerId": "7221ef76-9d96-49ad-88a6-9f72eeeb0aa7",
-                    "attributes": {}
-                },
-                {
-                    "id": "aaf4946d-2cd4-43ba-ad7d-86be56b9ad2c",
-                    "name": "view-applications",
-                    "description": "${role_view-applications}",
-                    "composite": false,
-                    "clientRole": true,
-                    "containerId": "7221ef76-9d96-49ad-88a6-9f72eeeb0aa7",
-                    "attributes": {}
-                },
-                {
                     "id": "b417b187-18b7-41fa-9537-3313cf9b8ed4",
                     "name": "manage-account",
                     "description": "${role_manage-account}",
                     "composite": true,
+                    "clientRole": true,
+                    "containerId": "7221ef76-9d96-49ad-88a6-9f72eeeb0aa7",
+                    "attributes": {},
                     "composites": {
                         "client": {
                             "account": ["manage-account-links"]
                         }
-                    },
-                    "clientRole": true,
-                    "containerId": "7221ef76-9d96-49ad-88a6-9f72eeeb0aa7",
-                    "attributes": {}
+                    }
                 },
                 {
                     "id": "8bb5480d-83a3-4ea2-8e91-237b8870acec",
@@ -356,15 +338,6 @@
                     "attributes": {}
                 },
                 {
-                    "id": "98ccac20-3906-436f-8dc3-ae8d8ae25cbc",
-                    "name": "view-groups",
-                    "description": "${role_view-groups}",
-                    "composite": false,
-                    "clientRole": true,
-                    "containerId": "7221ef76-9d96-49ad-88a6-9f72eeeb0aa7",
-                    "attributes": {}
-                },
-                {
                     "id": "adfba539-826f-4fa7-86f5-8c1287152ed6",
                     "name": "manage-account-links",
                     "description": "${role_manage-account-links}",
@@ -378,14 +351,14 @@
                     "name": "manage-consent",
                     "description": "${role_manage-consent}",
                     "composite": true,
+                    "clientRole": true,
+                    "containerId": "7221ef76-9d96-49ad-88a6-9f72eeeb0aa7",
+                    "attributes": {},
                     "composites": {
                         "client": {
                             "account": ["view-consent"]
                         }
-                    },
-                    "clientRole": true,
-                    "containerId": "7221ef76-9d96-49ad-88a6-9f72eeeb0aa7",
-                    "attributes": {}
+                    }
                 }
             ]
         }
@@ -597,11 +570,8 @@
                 ],
                 "broker": ["read-token"],
                 "account": [
-                    "delete-account",
-                    "view-applications",
                     "manage-account",
                     "view-consent",
-                    "view-groups",
                     "view-profile",
                     "manage-account-links",
                     "manage-consent"
@@ -621,7 +591,7 @@
         "account": [
             {
                 "client": "account-console",
-                "roles": ["manage-account", "view-groups"]
+                "roles": ["manage-account"]
             }
         ]
     },
@@ -1727,13 +1697,13 @@
                 "subComponents": {},
                 "config": {
                     "allowed-protocol-mapper-types": [
-                        "oidc-full-name-mapper",
-                        "oidc-usermodel-attribute-mapper",
-                        "oidc-address-mapper",
-                        "saml-role-list-mapper",
-                        "oidc-usermodel-property-mapper",
                         "oidc-sha256-pairwise-sub-mapper",
+                        "oidc-address-mapper",
+                        "oidc-full-name-mapper",
                         "saml-user-attribute-mapper",
+                        "oidc-usermodel-property-mapper",
+                        "oidc-usermodel-attribute-mapper",
+                        "saml-role-list-mapper",
                         "saml-user-property-mapper"
                     ]
                 }
@@ -1764,13 +1734,13 @@
                 "subComponents": {},
                 "config": {
                     "allowed-protocol-mapper-types": [
-                        "oidc-usermodel-property-mapper",
-                        "oidc-sha256-pairwise-sub-mapper",
-                        "saml-user-attribute-mapper",
-                        "saml-role-list-mapper",
-                        "oidc-usermodel-attribute-mapper",
                         "oidc-address-mapper",
+                        "saml-user-attribute-mapper",
                         "saml-user-property-mapper",
+                        "oidc-usermodel-attribute-mapper",
+                        "oidc-sha256-pairwise-sub-mapper",
+                        "saml-role-list-mapper",
+                        "oidc-usermodel-property-mapper",
                         "oidc-full-name-mapper"
                     ]
                 }
@@ -2551,7 +2521,7 @@
         "frontendUrl": "",
         "saml.signature.algorithm": ""
     },
-    "keycloakVersion": "26.3.2",
+    "keycloakVersion": "26.3.3",
     "userManagedAccessAllowed": false,
     "organizationsEnabled": false,
     "clientProfiles": {

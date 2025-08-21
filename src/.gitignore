@@ -13,6 +13,7 @@
 # account/account-security/DeviceActivity.tsx
 # account/account-security/SigningIn.tsx
 # account/applications/Applications.tsx
+# account/assets/content.ts
 # account/content/ContentComponent.tsx
 # account/personal-info/PersonalInfo.tsx
 # account/root/header.module.css
@@ -720,7 +721,6 @@
 /account/api/parse-response.ts
 /account/api/representations.ts
 /account/api/request.ts
-/account/assets/content.ts
 /account/assets/favicon.svg
 /account/assets/logo.svg
 /account/content/fetchContent.ts
