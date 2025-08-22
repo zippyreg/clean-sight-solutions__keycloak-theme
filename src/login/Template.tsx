@@ -83,9 +83,9 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
             <div id="kc-theme-selector">
                 <div className="pf-c-toggle-group" role="group" aria-label="Theme selector toggle group">
                     <div className="pf-c-toggle-group__item">
-                        <button 
-                            type="button" 
-                            className={`pf-c-toggle-group__button ${colorMode === "light" ? "pf-m-selected" : ""}`} 
+                        <button
+                            type="button"
+                            className={`pf-c-toggle-group__button ${colorMode === "light" ? "pf-m-selected" : ""}`}
                             aria-label="Light mode toggler"
                             aria-pressed={colorMode === "light" ? "true" : "false"}
                             onClick={() => setColorMode("light")}
@@ -94,9 +94,9 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                         </button>
                     </div>
                     <div className="pf-c-toggle-group__item">
-                        <button 
-                            type="button" 
-                            className={`pf-c-toggle-group__button ${colorMode === "dark" ? "pf-m-selected" : ""}`} 
+                        <button
+                            type="button"
+                            className={`pf-c-toggle-group__button ${colorMode === "dark" ? "pf-m-selected" : ""}`}
                             aria-label="Light mode toggler"
                             aria-pressed={colorMode === "dark" ? "true" : "false"}
                             onClick={() => setColorMode("dark")}

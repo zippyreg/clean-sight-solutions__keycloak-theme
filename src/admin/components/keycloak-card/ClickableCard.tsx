@@ -24,7 +24,14 @@ export const ClickableCard = ({ onClick, children, ...rest }: ClickableCardProps
         }
     };
     return (
-        <Card id={id} isClickable isRounded onKeyDown={onKeyDown} onClick={onClick} {...rest}>
+        <Card
+            id={id}
+            isClickable
+            isRounded
+            onKeyDown={onKeyDown}
+            onClick={onClick}
+            {...rest}
+        >
             <CardHeader
                 selectableActions={{
                     onClickAction: onClick,

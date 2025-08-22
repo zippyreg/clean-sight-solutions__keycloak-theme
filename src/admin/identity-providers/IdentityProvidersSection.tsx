@@ -214,10 +214,7 @@ export default function IdentityProvidersSection() {
                 subKey="listExplain"
                 helpUrl={helpUrls.identityProvidersUrl}
             />
-            <PageSection
-                variant="light"
-                className={!hasProviders ? "" : "pf-v5-u-p-0"}
-            >
+            <PageSection variant="light" className={!hasProviders ? "" : "pf-v5-u-p-0"}>
                 {!hasProviders && (
                     <>
                         <TextContent>

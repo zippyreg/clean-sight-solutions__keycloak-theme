@@ -9,6 +9,8 @@
 
 // @ts-nocheck
 
+import { useColorMode } from "../../../shared/keycloak-ui-shared";
+
 import CodeEditorComponent from "@uiw/react-textarea-code-editor";
 
 type CodeEditorProps = {
@@ -23,18 +25,23 @@ type CodeEditorProps = {
     height?: number;
 };
 
-const CodeEditor = ({ onChange, height = 128, ...rest }: CodeEditorProps) => (
-    <div style={{ height: `${height}px`, overflow: "auto" }}>
-        <CodeEditorComponent
-            padding={15}
-            minHeight={height}
-            style={{
-                fontFamily: "var(--pf-global--FontFamily--monospace)"
-            }}
-            onChange={event => onChange?.(event.target.value)}
-            {...rest}
-        />
-    </div>
-);
+const CodeEditor = ({ onChange, height = 128, ...rest }: CodeEditorProps) => {
+    const [isDark] = useColorMode();
+
+    return (
+        <div style={{ height: `${height}px`, overflow: "auto" }}>
+            <CodeEditorComponent
+                padding={15}
+                minHeight={height}
+                style={{
+                    fontFamily: "var(--pf-global--FontFamily--monospace)"
+                }}
+                onChange={event => onChange?.(event.target.value)}
+                data-color-mode={isDark ? "dark" : "light"}
+                {...rest}
+            />
+        </div>
+    );
+};
 
 export default CodeEditor;

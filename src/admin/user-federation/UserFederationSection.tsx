@@ -210,7 +210,10 @@ export default function UserFederationSection() {
                             <Text component={TextVariants.p}>{t("getStarted")}</Text>
                         </TextContent>
                         <TextContent>
-                            <Title className="pf-v5-u-mt-md pf-v5-u-mb-lg" headingLevel={TextVariants.h2}>
+                            <Title
+                                className="pf-v5-u-mt-md pf-v5-u-mb-lg"
+                                headingLevel={TextVariants.h2}
+                            >
                                 {t("providers")}
                             </Title>
                         </TextContent>

@@ -68,7 +68,11 @@ const AliasRenderer = ({ id, alias, usedBy, builtIn }: AuthenticationType) => {
             >
                 {alias}
             </Link>{" "}
-            {builtIn && <Label isCompact icon={<CheckCircleIcon />} key={`label-${id}`}>{t("buildIn")}</Label>}
+            {builtIn && (
+                <Label isCompact icon={<CheckCircleIcon />} key={`label-${id}`}>
+                    {t("buildIn")}
+                </Label>
+            )}
         </>
     );
 };

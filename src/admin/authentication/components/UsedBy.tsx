@@ -36,7 +36,7 @@ type UsedByProps = {
 
 const Label = ({ label }: { label: string }) => (
     <Flex gap={{ default: "gapSm" }}>
-        <CheckCircleIcon className={style.label} /> 
+        <CheckCircleIcon className={style.label} />
         <span>{label}</span>
     </Flex>
 );

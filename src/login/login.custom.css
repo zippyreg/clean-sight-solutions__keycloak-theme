@@ -71,9 +71,13 @@ body.kcBodyClass {
 }
 
 .pf-c-toggle-group {
-    --pf-c-toggle-group__button--m-selected--BackgroundColor: var(--css-global--secondary-color);
+    --pf-c-toggle-group__button--m-selected--BackgroundColor: var(
+        --css-global--secondary-color
+    );
     --pf-c-toggle-group__button--before--BorderColor: var(--css-global--brand-blue);
-    --pf-c-toggle-group__button--m-selected--before--BorderColor: var(--css-global--brand-blue);
+    --pf-c-toggle-group__button--m-selected--before--BorderColor: var(
+        --css-global--brand-blue
+    );
 }
 
 .pf-c-toggle-group__button.pf-m-selected {

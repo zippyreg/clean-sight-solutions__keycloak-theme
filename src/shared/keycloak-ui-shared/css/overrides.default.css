@@ -161,9 +161,9 @@
 .pf-v5-c-menu-toggle,
 .pf-v5-c-menu-toggle::after,
 .pf-v5-c-menu-toggle::before,
-.pf-v5-c-card__selectable-actions .pf-v5-c-check__label, 
+.pf-v5-c-card__selectable-actions .pf-v5-c-check__label,
 .pf-v5-c-card__selectable-actions .pf-v5-c-radio__label,
-.pf-v5-c-card__selectable-actions .pf-v5-c-check__label::before, 
+.pf-v5-c-card__selectable-actions .pf-v5-c-check__label::before,
 .pf-v5-c-card__selectable-actions .pf-v5-c-radio__label::before {
     transition-property:
         color,
@@ -196,9 +196,9 @@
     border-radius: var(--pf-v5-global--BorderRadius--sm);
 }
 
-.pf-v5-c-card__selectable-actions .pf-v5-c-check__label, 
+.pf-v5-c-card__selectable-actions .pf-v5-c-check__label,
 .pf-v5-c-card__selectable-actions .pf-v5-c-radio__label,
-.pf-v5-c-card__selectable-actions .pf-v5-c-check__label::before, 
+.pf-v5-c-card__selectable-actions .pf-v5-c-check__label::before,
 .pf-v5-c-card__selectable-actions .pf-v5-c-radio__label::before {
     border-radius: var(--pf-v5-global--BorderRadius--md);
 }
@@ -207,9 +207,9 @@
 .pf-v5-c-button::after,
 .pf-v5-c-menu-toggle::after,
 .pf-v5-c-menu-toggle::before,
-.pf-v5-c-card__selectable-actions .pf-v5-c-check__label, 
+.pf-v5-c-card__selectable-actions .pf-v5-c-check__label,
 .pf-v5-c-card__selectable-actions .pf-v5-c-radio__label,
-.pf-v5-c-card__selectable-actions .pf-v5-c-check__label::before, 
+.pf-v5-c-card__selectable-actions .pf-v5-c-check__label::before,
 .pf-v5-c-card__selectable-actions .pf-v5-c-radio__label::before {
     transition-duration: var(--css-global--transition-duration-short);
 }
@@ -217,7 +217,7 @@
 .pf-v5-c-button:not(.pf-m-link):not(.pf-m-plain):hover,
 .pf-v5-c-button:not(.pf-m-link):not(.pf-m-plain):focus,
 .pf-v5-c-button:not(.pf-m-link):not(.pf-m-plain):active,
-.pf-v5-c-card__selectable-actions .pf-v5-c-check__label:hover:before, 
+.pf-v5-c-card__selectable-actions .pf-v5-c-check__label:hover:before,
 .pf-v5-c-card__selectable-actions .pf-v5-c-radio__label:hover:before {
     box-shadow: var(--css-global--inset-shadow), var(--css-global--inset-ring-shadow),
         var(--css-global--ring-offset-shadow), var(--css-global--ring-shadow),

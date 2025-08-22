@@ -40,6 +40,8 @@
 # admin/realm-settings/DefaultGroupsTab.tsx
 # admin/realm-settings/PoliciesTab.tsx
 # admin/realm-settings/ProfilesTab.tsx
+# admin/realm-settings/SessionsTab.tsx
+# admin/realm-settings/UserRegistration.tsx
 # admin/sessions/SessionsTable.tsx
 # admin/user/user-section.css
 # admin/user/UserConsents.tsx
@@ -69,9 +71,13 @@
 # admin/components/users/UserDataTableToolbarItems.tsx
 # admin/components/view-header/ViewHeader.tsx
 # admin/groups/components/GroupToolbar.tsx
+# admin/realm-settings/event-config/EventsTab.tsx
 # admin/realm-settings/event-config/EventsTypeTable.tsx
 # admin/realm-settings/keys/KeysProvidersTab.tsx
+# admin/realm-settings/localization/LocalizationTab.tsx
 # admin/realm-settings/localization/RealmOverrides.tsx
+# admin/realm-settings/security-defences/SecurityDefenses.tsx
+# admin/realm-settings/themes/ThemeSettings.tsx
 # admin/realm-settings/user-profile/AttributesGroupTab.tsx
 # admin/realm-settings/user-profile/AttributesTab.tsx
 # shared/keycloak-ui-shared/context/KeycloakContext.tsx
@@ -197,9 +203,7 @@
 /admin/realm-settings/RealmSettingsSection.tsx
 /admin/realm-settings/RealmSettingsTabs.tsx
 /admin/realm-settings/routes.ts
-/admin/realm-settings/SessionsTab.tsx
 /admin/realm-settings/TokensTab.tsx
-/admin/realm-settings/UserRegistration.tsx
 /admin/root/AuthWall.tsx
 /admin/sessions/RevocationModal.tsx
 /admin/sessions/routes.ts
@@ -528,11 +532,9 @@
 /admin/realm-settings/event-config/AddEventTypesDialog.tsx
 /admin/realm-settings/event-config/EventConfigForm.tsx
 /admin/realm-settings/event-config/EventListenersForm.tsx
-/admin/realm-settings/event-config/EventsTab.tsx
 /admin/realm-settings/keys/KeysListTab.tsx
 /admin/realm-settings/keys/KeysTab.tsx
 /admin/realm-settings/localization/EffectiveMessageBundles.tsx
-/admin/realm-settings/localization/LocalizationTab.tsx
 /admin/realm-settings/routes/AddAttribute.tsx
 /admin/realm-settings/routes/AddClientPolicy.tsx
 /admin/realm-settings/routes/AddClientProfile.tsx
@@ -555,14 +557,12 @@
 /admin/realm-settings/security-defences/HeadersForm.tsx
 /admin/realm-settings/security-defences/HelpLinkTextInput.tsx
 /admin/realm-settings/security-defences/security-defences.css
-/admin/realm-settings/security-defences/SecurityDefenses.tsx
 /admin/realm-settings/security-defences/Time.tsx
 /admin/realm-settings/themes/ImageUpload.tsx
 /admin/realm-settings/themes/LogoContext.tsx
 /admin/realm-settings/themes/PatternflyVars.ts
 /admin/realm-settings/themes/PreviewWindow.tsx
 /admin/realm-settings/themes/ThemeColors.tsx
-/admin/realm-settings/themes/ThemeSettings.tsx
 /admin/realm-settings/themes/ThemesTab.tsx
 /admin/realm-settings/user-profile/AttributesGroupDetails.tsx
 /admin/realm-settings/user-profile/AttributesGroupForm.tsx

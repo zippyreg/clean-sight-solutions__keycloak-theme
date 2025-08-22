@@ -22,13 +22,11 @@ import {
     AlertVariant,
     Button,
     ButtonVariant,
-    Divider,
-    Flex,
-    FlexItem,
     PageSection,
-    Radio,
     Switch,
-    Title,
+    Tabs,
+    Tab,
+    TabTitleText,
     ToolbarItem
 } from "../../shared/@patternfly/react-core";
 import { PlusIcon, PrivateIcon } from "../../shared/@patternfly/react-icons";
@@ -60,13 +58,13 @@ export const PoliciesTab = () => {
     const { addAlert, addError } = useAlerts();
     const { realm } = useRealm();
     const navigate = useNavigate();
-    const [show, setShow] = useState(false);
     const [policies, setPolicies] = useState<ClientPolicy[]>();
     const [selectedPolicy, setSelectedPolicy] = useState<ClientPolicy>();
     const [key, setKey] = useState(0);
     const [code, setCode] = useState<string>();
     const [tablePolicies, setTablePolicies] = useState<ClientPolicy[]>();
     const refresh = () => setKey(key + 1);
+    const [activeTab, setActiveTab] = useState(1);
 
     const form = useForm<Record<string, boolean>>({ mode: "onChange" });
 
@@ -196,142 +194,154 @@ export const PoliciesTab = () => {
     return (
         <>
             <DeleteConfirm />
-            <PageSection>
-                <Flex className="kc-policies-config-section">
-                    <FlexItem>
-                        <Title headingLevel="h1" size="md">
-                            {t("policiesConfigType")}
-                        </Title>
-                    </FlexItem>
-                    <FlexItem>
-                        <Radio
-                            isChecked={!show}
-                            name="policiesView"
-                            onChange={() => setShow(false)}
-                            label={t("policiesConfigTypes.formView")}
-                            id="formView-policiesView"
-                            data-testid="formView-policiesView"
-                            className="kc-form-radio-btn pf-v5-u-mr-sm pf-v5-u-ml-sm"
-                        />
-                    </FlexItem>
-                    <FlexItem>
-                        <Radio
-                            isChecked={show}
-                            name="policiesView"
-                            onChange={() => setShow(true)}
-                            label={t("policiesConfigTypes.jsonEditor")}
-                            id="jsonEditor-policiesView"
-                            data-testid="jsonEditor-policiesView"
-                            className="kc-editor-radio-btn"
-                        />
-                    </FlexItem>
-                </Flex>
-            </PageSection>
-            <Divider />
-            {!show ? (
-                <KeycloakDataTable
-                    key={policies.length}
-                    emptyState={
-                        <ListEmptyState
-                            hasIcon
-                            message={t("noClientPolicies")}
-                            instructions={t("noClientPoliciesInstructions")}
-                            primaryActionText={t("createClientPolicy")}
-                            onPrimaryAction={() => navigate(toAddClientPolicy({ realm }))}
-                            primaryActionIcon={<PlusIcon />}
-                            icon={PrivateIcon}
-                        />
+            <Tabs
+                activeKey={activeTab}
+                onSelect={(_, key) => setActiveTab(key as number)}
+            >
+                <Tab
+                    id="label"
+                    isDisabled
+                    eventKey={0}
+                    title={<TabTitleText>{t("policiesConfigType")}</TabTitleText>}
+                    data-testid="policies-label-tab"
+                ></Tab>
+                <Tab
+                    id="settings"
+                    eventKey={1}
+                    title={
+                        <TabTitleText>{t("policiesConfigTypes.formView")}</TabTitleText>
                     }
-                    ariaLabelKey="clientPolicies"
-                    searchPlaceholderKey="clientPolicySearch"
-                    loader={loader}
-                    toolbarItem={
-                        <ToolbarItem>
-                            <Button
-                                id="createPolicy"
-                                component={props => (
-                                    <Link {...props} to={toAddClientPolicy({ realm })} />
-                                )}
-                                data-testid="createPolicy"
-                                icon={<PlusIcon />}
-                            >
-                                {t("createClientPolicy")}
-                            </Button>
-                        </ToolbarItem>
-                    }
-                    isRowDisabled={value => !!value.global}
-                    actions={[
-                        {
-                            title: t("delete"),
-                            onRowClick: item => {
-                                toggleDeleteDialog();
-                                setSelectedPolicy(item);
-                            }
-                        } as Action<ClientPolicy>
-                    ]}
-                    columns={[
-                        {
-                            name: "name",
-                            cellRenderer: ({ name }: ClientPolicyRepresentation) => (
-                                <Link
-                                    to={toEditClientPolicy({ realm, policyName: name! })}
-                                >
-                                    {name}
-                                </Link>
-                            )
-                        },
-                        {
-                            name: "enabled",
-                            displayKey: "status",
-                            cellRenderer: clientPolicy => (
-                                <SwitchRenderer
-                                    clientPolicy={clientPolicy}
-                                    form={form}
-                                    saveStatus={saveStatus}
-                                    onConfirm={() => {
-                                        form.setValue(clientPolicy.name!, false);
-                                        saveStatus();
-                                    }}
+                    data-testid="policies-setting-view-tab"
+                >
+                    <PageSection padding={{ default: "noPadding" }}>
+                        <KeycloakDataTable
+                            key={policies.length}
+                            emptyState={
+                                <ListEmptyState
+                                    hasIcon
+                                    message={t("noClientPolicies")}
+                                    instructions={t("noClientPoliciesInstructions")}
+                                    primaryActionText={t("createClientPolicy")}
+                                    onPrimaryAction={() =>
+                                        navigate(toAddClientPolicy({ realm }))
+                                    }
+                                    primaryActionIcon={<PlusIcon />}
+                                    icon={PrivateIcon}
                                 />
-                            )
-                        },
-                        {
-                            name: "description",
-                            cellFormatters: [translationFormatter(t)]
-                        }
-                    ]}
-                />
-            ) : (
-                <>
-                    <div className="pf-v5-u-mt-md pf-v5-u-ml-lg">
-                        <CodeEditor
-                            value={code}
-                            language="json"
-                            onChange={value => setCode(value)}
-                            height={480}
+                            }
+                            ariaLabelKey="clientPolicies"
+                            searchPlaceholderKey="clientPolicySearch"
+                            loader={loader}
+                            toolbarItem={
+                                <ToolbarItem>
+                                    <Button
+                                        id="createPolicy"
+                                        component={props => (
+                                            <Link
+                                                {...props}
+                                                to={toAddClientPolicy({ realm })}
+                                            />
+                                        )}
+                                        data-testid="createPolicy"
+                                        icon={<PlusIcon />}
+                                    >
+                                        {t("createClientPolicy")}
+                                    </Button>
+                                </ToolbarItem>
+                            }
+                            isRowDisabled={value => !!value.global}
+                            actions={[
+                                {
+                                    title: t("delete"),
+                                    onRowClick: item => {
+                                        toggleDeleteDialog();
+                                        setSelectedPolicy(item);
+                                    }
+                                } as Action<ClientPolicy>
+                            ]}
+                            columns={[
+                                {
+                                    name: "name",
+                                    cellRenderer: ({
+                                        name
+                                    }: ClientPolicyRepresentation) => (
+                                        <Link
+                                            to={toEditClientPolicy({
+                                                realm,
+                                                policyName: name!
+                                            })}
+                                        >
+                                            {name}
+                                        </Link>
+                                    )
+                                },
+                                {
+                                    name: "enabled",
+                                    displayKey: "status",
+                                    cellRenderer: clientPolicy => (
+                                        <SwitchRenderer
+                                            clientPolicy={clientPolicy}
+                                            form={form}
+                                            saveStatus={saveStatus}
+                                            onConfirm={() => {
+                                                form.setValue(clientPolicy.name!, false);
+                                                saveStatus();
+                                            }}
+                                        />
+                                    )
+                                },
+                                {
+                                    name: "description",
+                                    cellFormatters: [translationFormatter(t)]
+                                }
+                            ]}
                         />
-                    </div>
-                    <div className="pf-v5-u-mt-md">
-                        <Button
-                            variant={ButtonVariant.primary}
-                            className="pf-v5-u-mr-md pf-v5-u-ml-lg"
-                            data-testid="jsonEditor-policies-saveBtn"
-                            onClick={save}
-                        >
-                            {t("save")}
-                        </Button>
-                        <Button
-                            variant={ButtonVariant.link}
-                            data-testid="jsonEditor-reloadBtn"
-                            onClick={() => {
-                                setCode(prettyPrintJSON(tablePolicies));
-                            }}
-                        >
-                            {t("reload")}
-                        </Button>
-                    </div>
-                </>
-            )}
+                    </PageSection>
+                </Tab>
+                <Tab
+                    id="json"
+                    eventKey={2}
+                    title={
+                        <TabTitleText>{t("profilesConfigTypes.jsonEditor")}</TabTitleText>
+                    }
+                    data-testid="profiles-josn-view-tab"
+                >
+                    <PageSection
+                        padding={{ default: "noPadding" }}
+                        className="pf-v5-u-pb-4xl pf-v5-u-pr-lg"
+                    >
+                        <>
+                            <div className="pf-v5-u-mt-md pf-v5-u-ml-lg">
+                                <CodeEditor
+                                    value={code}
+                                    language="json"
+                                    onChange={value => setCode(value)}
+                                    height={480}
+                                />
+                            </div>
+                            <div className="pf-v5-u-mt-md">
+                                <Button
+                                    variant={ButtonVariant.primary}
+                                    className="pf-v5-u-mr-md pf-v5-u-ml-lg"
+                                    data-testid="jsonEditor-policies-saveBtn"
+                                    onClick={save}
+                                >
+                                    {t("save")}
+                                </Button>
+                                <Button
+                                    variant={ButtonVariant.link}
+                                    data-testid="jsonEditor-reloadBtn"
+                                    onClick={() => {
+                                        setCode(prettyPrintJSON(tablePolicies));
+                                    }}
+                                >
+                                    {t("reload")}
+                                </Button>
+                            </div>
+                        </>
+                    </PageSection>
+                </Tab>
+            </Tabs>
         </>
     );
 };
