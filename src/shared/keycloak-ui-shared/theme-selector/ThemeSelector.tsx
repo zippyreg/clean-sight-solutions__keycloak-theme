@@ -1,7 +1,7 @@
 import { useColorMode } from "../utils/useColorMode";
 import { ToggleGroup, ToggleGroupItem } from "../../@patternfly/react-core";
 
-const SunIcon = () => (
+export const SunIcon = () => (
     <svg
         className="pf-v5-svg"
         viewBox="0 0 512 512"
@@ -15,7 +15,7 @@ const SunIcon = () => (
     </svg>
 );
 
-const MoonIcon = () => (
+export const MoonIcon = () => (
     <svg
         className="pf-v5-svg"
         viewBox="0 0 512 512"

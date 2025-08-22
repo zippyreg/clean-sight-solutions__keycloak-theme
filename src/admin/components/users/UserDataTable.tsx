@@ -37,6 +37,7 @@ import {
 import {
     ExclamationCircleIcon,
     InfoCircleIcon,
+    PlusIcon,
     WarningTriangleIcon
 } from "../../../shared/@patternfly/react-icons";
 import type { IRowData } from "../../../shared/@patternfly/react-table";
@@ -392,6 +393,7 @@ export function UserDataTable() {
                             instructions={t("emptyInstructions")}
                             primaryActionText={t("createNewUser")}
                             onPrimaryAction={goToCreate}
+                            primaryActionIcon={<PlusIcon />}
                         />
                     )
                 }

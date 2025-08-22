@@ -51,6 +51,35 @@ body.kcBodyClass {
     padding-top: 0;
 }
 
+/* Theme selector */
+#kc-theme-selector {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: var(--pf-global--spacer--md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#kc-theme-selector .pf-c-toggle-group {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.pf-c-toggle-group {
+    --pf-c-toggle-group__button--m-selected--BackgroundColor: var(--css-global--secondary-color);
+    --pf-c-toggle-group__button--before--BorderColor: var(--css-global--brand-blue);
+    --pf-c-toggle-group__button--m-selected--before--BorderColor: var(--css-global--brand-blue);
+}
+
+.pf-c-toggle-group__button.pf-m-selected {
+    color: var(--css-global--secondary-color-foreground);
+}
+
 /* Header */
 #kc-header {
     margin-bottom: 0 !important;
@@ -172,9 +201,14 @@ h1#kc-page-title {
     );
 }
 
+.kcAlertClass {
+    background-color: var(--pf-c-alert--BackgroundColor);
+    color: var(--pf-global--Color--100);
+    margin-bottom: var(--pf-global--spacer--lg);
+}
+
 .alert-info {
     border-top: var(--pf-c-alert--BorderTopWidth) solid var(--pf-c-alert--BorderTopColor);
-    background-color: var(--pf-c-alert--BackgroundColor);
     color: var(--pf-global--Color--100);
 }
 

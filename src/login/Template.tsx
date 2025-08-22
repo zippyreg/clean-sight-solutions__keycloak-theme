@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { BrandWordmark, useColorMode } from "../shared/keycloak-ui-shared";
+import { BrandWordmark, MoonIcon, SunIcon, useColorMode } from "../shared/keycloak-ui-shared";
 import { clsx } from "keycloakify/tools/clsx";
 import { kcSanitize } from "keycloakify/lib/kcSanitize";
 import type { TemplateProps } from "keycloakify/login/TemplateProps";
@@ -56,7 +56,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
 
     const { realm, auth, url, message, isAppInitiatedAction } = kcContext;
 
-    const [isDark] = useColorMode();
+    const [isDark, colorMode, setColorMode] = useColorMode();
 
     useEffect(() => {
         document.title = documentTitle ?? msgStr("loginTitle", realm.displayName);
@@ -80,6 +80,32 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
 
     return (
         <div className={kcClsx("kcLoginClass")}>
+            <div id="kc-theme-selector">
+                <div className="pf-c-toggle-group" role="group" aria-label="Theme selector toggle group">
+                    <div className="pf-c-toggle-group__item">
+                        <button 
+                            type="button" 
+                            className={`pf-c-toggle-group__button ${colorMode === "light" ? "pf-m-selected" : ""}`} 
+                            aria-label="Light mode toggler"
+                            aria-pressed={colorMode === "light" ? "true" : "false"}
+                            onClick={() => setColorMode("light")}
+                        >
+                            <SunIcon />
+                        </button>
+                    </div>
+                    <div className="pf-c-toggle-group__item">
+                        <button 
+                            type="button" 
+                            className={`pf-c-toggle-group__button ${colorMode === "dark" ? "pf-m-selected" : ""}`} 
+                            aria-label="Light mode toggler"
+                            aria-pressed={colorMode === "dark" ? "true" : "false"}
+                            onClick={() => setColorMode("dark")}
+                        >
+                            <MoonIcon />
+                        </button>
+                    </div>
+                </div>
+            </div>
             <div id="kc-header" className={kcClsx("kcHeaderClass")}>
                 <div className={kcClsx("kcHeaderWrapperClass")}>
                     <BrandWordmark variant={isDark ? "white" : "default"} size="md" />
