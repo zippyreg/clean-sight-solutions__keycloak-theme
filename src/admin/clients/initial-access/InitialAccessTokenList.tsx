@@ -133,7 +133,7 @@ export const InitialAccessTokenList = () => {
                     <ListEmptyState
                         message={t("noTokens")}
                         instructions={t("noTokensInstructions")}
-                        primaryActionText={t("create")}
+                        primaryActionText={t("createToken")}
                         onPrimaryAction={() =>
                             navigate(toCreateInitialAccessToken({ realm }))
                         }

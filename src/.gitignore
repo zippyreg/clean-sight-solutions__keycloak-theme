@@ -33,6 +33,8 @@
 # admin/groups/GroupsSection.tsx
 # admin/groups/GroupTable.tsx
 # admin/groups/Members.tsx
+# admin/identity-providers/IdentityProvidersSection.tsx
+# admin/realm/RealmSection.tsx
 # admin/realm-roles/UsersInRoleTab.tsx
 # admin/realm-settings/DefaultGroupsTab.tsx
 # admin/realm-settings/PoliciesTab.tsx
@@ -41,6 +43,7 @@
 # admin/user/user-section.css
 # admin/user/UserConsents.tsx
 # admin/user/UserGroups.tsx
+# admin/user-federation/UserFederationSection.tsx
 # shared/keycloak-ui-shared/main.ts
 # account/components/page/Page.tsx
 # admin/assets/theme/login.css
@@ -56,8 +59,10 @@
 # admin/clients/scopes/ClientScopes.tsx
 # admin/components/form/CodeEditor.tsx
 # admin/components/key-value-form/KeyValueInput.tsx
+# admin/components/keycloak-card/ClickableCard.tsx
 # admin/components/role-mapping/RoleMapping.tsx
 # admin/components/roles-list/RolesList.tsx
+# admin/components/time-selector/TimeSelector.tsx
 # admin/components/users/UserDataTable.tsx
 # admin/components/users/UserDataTableToolbarItems.tsx
 # admin/components/view-header/ViewHeader.tsx
@@ -146,7 +151,6 @@
 /admin/i18n/messages_ru.properties
 /admin/i18n/messages_sl.properties
 /admin/i18n/messages_zh_CN.properties
-/admin/identity-providers/IdentityProvidersSection.tsx
 /admin/identity-providers/ManageOrderDialog.tsx
 /admin/identity-providers/OIDCConfigurationRepresentation.ts
 /admin/identity-providers/routes.ts
@@ -170,7 +174,6 @@
 /admin/permissions-configuration/PermissionsConfigurationSection.tsx
 /admin/permissions-configuration/routes.ts
 /admin/realm/RealmRoutes.tsx
-/admin/realm/RealmSection.tsx
 /admin/realm/routes.ts
 /admin/realm-roles/CreateRealmRole.tsx
 /admin/realm-roles/RealmRolesSection.tsx
@@ -226,7 +229,6 @@
 /admin/user-federation/UserFederationLdapForm.tsx
 /admin/user-federation/UserFederationLdapSettings.tsx
 /admin/user-federation/UserFederationLdapWizard.tsx
-/admin/user-federation/UserFederationSection.tsx
 /admin/utils/client-url.ts
 /admin/utils/generateEncodedPath.ts
 /admin/utils/getAuthorizationHeaders.ts
@@ -426,7 +428,6 @@
 /admin/components/key-value-form/key-value-convert.ts
 /admin/components/key-value-form/KeySelect.tsx
 /admin/components/key-value-form/ValueSelect.tsx
-/admin/components/keycloak-card/ClickableCard.tsx
 /admin/components/keycloak-card/keycloak-card.css
 /admin/components/keycloak-card/KeycloakCard.tsx
 /admin/components/keycloak-spinner/KeycloakSpinner.tsx
@@ -440,7 +441,6 @@
 /admin/components/role-mapping/role-mapping.css
 /admin/components/roles-list/RolesList.css
 /admin/components/routable-tabs/RoutableTabs.tsx
-/admin/components/time-selector/TimeSelector.tsx
 /admin/components/time-selector/TimeSelectorControl.tsx
 /admin/components/time-selector/TimeSelectorForm.tsx
 /admin/components/users/UserDataTableAttributeSearchForm.tsx
