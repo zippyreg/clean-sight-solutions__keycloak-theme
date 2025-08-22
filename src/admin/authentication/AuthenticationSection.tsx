@@ -26,7 +26,7 @@ import {
     TabTitleText,
     ToolbarItem
 } from "../../shared/@patternfly/react-core";
-import { PlusIcon } from "../../shared/@patternfly/react-icons";
+import { CheckCircleIcon, PlusIcon } from "../../shared/@patternfly/react-icons";
 import { sortBy } from "lodash-es";
 import { useState } from "react";
 import { Trans, useTranslation } from "react-i18next";
@@ -68,7 +68,7 @@ const AliasRenderer = ({ id, alias, usedBy, builtIn }: AuthenticationType) => {
             >
                 {alias}
             </Link>{" "}
-            {builtIn && <Label key={`label-${id}`}>{t("buildIn")}</Label>}
+            {builtIn && <Label isCompact icon={<CheckCircleIcon />} key={`label-${id}`}>{t("buildIn")}</Label>}
         </>
     );
 };

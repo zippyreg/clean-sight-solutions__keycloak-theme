@@ -36,6 +36,7 @@
 # admin/identity-providers/IdentityProvidersSection.tsx
 # admin/realm/RealmSection.tsx
 # admin/realm-roles/UsersInRoleTab.tsx
+# admin/realm-settings/ClientProfileForm.tsx
 # admin/realm-settings/DefaultGroupsTab.tsx
 # admin/realm-settings/PoliciesTab.tsx
 # admin/realm-settings/ProfilesTab.tsx
@@ -47,6 +48,7 @@
 # shared/keycloak-ui-shared/main.ts
 # account/components/page/Page.tsx
 # admin/assets/theme/login.css
+# admin/authentication/components/UsedBy.tsx
 # admin/authentication/policies/PasswordPolicy.tsx
 # admin/client-scopes/details/MapperList.tsx
 # admin/clients/advanced/AdvancedSettings.tsx
@@ -181,7 +183,6 @@
 /admin/realm-roles/routes.ts
 /admin/realm-settings/AddClientProfileModal.tsx
 /admin/realm-settings/AddTranslationModal.tsx
-/admin/realm-settings/ClientProfileForm.tsx
 /admin/realm-settings/EmailTab.tsx
 /admin/realm-settings/ExecutorForm.tsx
 /admin/realm-settings/GeneralTab.tsx
@@ -261,7 +262,6 @@
 /admin/authentication/components/FlowTitle.tsx
 /admin/authentication/components/RequiredActionConfigModal.tsx
 /admin/authentication/components/used-by.module.css
-/admin/authentication/components/UsedBy.tsx
 /admin/authentication/form/CreateFlow.tsx
 /admin/authentication/form/NameDescription.tsx
 /admin/authentication/policies/CibaPolicy.tsx

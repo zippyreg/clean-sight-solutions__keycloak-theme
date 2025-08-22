@@ -15,10 +15,10 @@ import type RoleRepresentation from "@keycloak/keycloak-admin-client/lib/defs/ro
 import { useAlerts } from "../../../shared/keycloak-ui-shared";
 import {
     AlertVariant,
-    Badge,
     Button,
     ButtonVariant,
     Checkbox,
+    Label,
     ToolbarItem
 } from "../../../shared/@patternfly/react-core";
 import { CodeIcon, PlusIcon } from "../../../shared/@patternfly/react-icons";
@@ -72,9 +72,9 @@ export const mapRoles = (assignedRoles: Row[], effectiveRoles: Row[], hide: bool
 export const ServiceRole = ({ role, client }: Row) => (
     <>
         {client?.clientId && (
-            <Badge isRead className="keycloak-admin--role-mapping__client-name">
+            <Label isCompact className="keycloak-admin--role-mapping__client-name">
                 {client.clientId}
-            </Badge>
+            </Label>
         )}
         {role.name}
     </>

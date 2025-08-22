@@ -130,7 +130,7 @@ export default function ProfilesTab() {
             })}
             key={row.name}
         >
-            {row.name} {row.global && <Label color="blue">{t("global")}</Label>}
+            {row.name} {row.global && <Label isCompact color="green">{t("global")}</Label>}
         </Link>
     );
 
