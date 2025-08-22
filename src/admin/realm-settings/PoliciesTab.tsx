@@ -32,7 +32,8 @@ import {
     ToolbarItem
 } from "../../shared/@patternfly/react-core";
 import {
-    PlusIcon
+    PlusIcon,
+    PrivateIcon
 } from "../../shared/@patternfly/react-icons";
 import { omit } from "lodash-es";
 import { useState } from "react";
@@ -235,11 +236,13 @@ export const PoliciesTab = () => {
                     key={policies.length}
                     emptyState={
                         <ListEmptyState
+                            hasIcon
                             message={t("noClientPolicies")}
                             instructions={t("noClientPoliciesInstructions")}
                             primaryActionText={t("createClientPolicy")}
                             onPrimaryAction={() => navigate(toAddClientPolicy({ realm }))}
                             primaryActionIcon={<PlusIcon />}
+                            icon={PrivateIcon}
                         />
                     }
                     ariaLabelKey="clientPolicies"

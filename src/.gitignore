@@ -20,6 +20,8 @@
 # account/root/Header.tsx
 # account/root/PageNav.tsx
 # account/root/Root.tsx
+# admin/authentication/AuthenticationSection.tsx
+# admin/authentication/FlowDetails.tsx
 # admin/client-scopes/ClientScopesSection.tsx
 # admin/clients/AdvancedTab.tsx
 # admin/clients/ClientDetails.tsx
@@ -42,6 +44,7 @@
 # shared/keycloak-ui-shared/main.ts
 # account/components/page/Page.tsx
 # admin/assets/theme/login.css
+# admin/authentication/policies/PasswordPolicy.tsx
 # admin/client-scopes/details/MapperList.tsx
 # admin/clients/advanced/AdvancedSettings.tsx
 # admin/clients/advanced/AuthenticationOverrides.tsx
@@ -51,6 +54,7 @@
 # admin/clients/initial-access/InitialAccessTokenList.tsx
 # admin/clients/registration/ClientRegistrationList.tsx
 # admin/clients/scopes/ClientScopes.tsx
+# admin/components/form/CodeEditor.tsx
 # admin/components/key-value-form/KeyValueInput.tsx
 # admin/components/role-mapping/RoleMapping.tsx
 # admin/components/roles-list/RolesList.tsx
@@ -87,7 +91,6 @@
 /admin/assets/icon.svg
 /admin/assets/img_avatar.svg
 /admin/assets/logo.svg
-/admin/authentication/AuthenticationSection.tsx
 /admin/authentication/BindFlowDialog.tsx
 /admin/authentication/build-in-label.module.css
 /admin/authentication/BuildInLabel.tsx
@@ -97,7 +100,6 @@
 /admin/authentication/empty-execution-state.css
 /admin/authentication/EmptyExecutionState.tsx
 /admin/authentication/execution-model.ts
-/admin/authentication/FlowDetails.tsx
 /admin/authentication/RequiredActions.tsx
 /admin/authentication/routes.ts
 /admin/client-scopes/ChangeTypeDropdown.tsx
@@ -263,7 +265,6 @@
 /admin/authentication/policies/CibaPolicy.tsx
 /admin/authentication/policies/otp-policy.css
 /admin/authentication/policies/OtpPolicy.tsx
-/admin/authentication/policies/PasswordPolicy.tsx
 /admin/authentication/policies/Policies.tsx
 /admin/authentication/policies/policy-row.css
 /admin/authentication/policies/PolicyRow.tsx
@@ -410,7 +411,6 @@
 /admin/components/dynamic/UserProfileAttributeListComponent.tsx
 /admin/components/error/ErrorRenderer.tsx
 /admin/components/external-link/FormattedLink.tsx
-/admin/components/form/CodeEditor.tsx
 /admin/components/form/fixed-buttons.module.css
 /admin/components/form/FixedButtonGroup.tsx
 /admin/components/form/FormAccess.tsx
