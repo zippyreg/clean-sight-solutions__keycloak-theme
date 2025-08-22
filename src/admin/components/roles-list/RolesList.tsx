@@ -49,13 +49,15 @@ const RoleDetailLink = ({ defaultRoleName, toDetail, ...role }: RoleDetailLinkPr
         <Link to={toDetail(role.id!)}>{role.name}</Link>
     ) : (
         <>
-            {canViewUserRegistration ? (
-                <Link to={toRealmSettings({ realm, tab: "user-registration" })}>
-                    {role.name}
-                </Link>
-            ) : (
-                <span>{role.name}</span>
-            )}
+            <span class="pf-v5-u-mr-xs">
+                {canViewUserRegistration ? (
+                    <Link to={toRealmSettings({ realm, tab: "user-registration" })}>
+                        {role.name}
+                    </Link>
+                ) : (
+                    <span>{role.name}</span>
+                )}
+            </span>
             <HelpItem helpText={t("defaultRole")} fieldLabelId="defaultRole" />
         </>
     );

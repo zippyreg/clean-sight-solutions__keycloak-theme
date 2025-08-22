@@ -6,7 +6,6 @@
  */
 
 .keycloak__form {
-    max-width: 1024px;
     padding-bottom: var(--pf-v5-global--spacer--4xl);
 }
 

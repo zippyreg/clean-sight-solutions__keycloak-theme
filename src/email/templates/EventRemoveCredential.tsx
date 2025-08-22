@@ -1,6 +1,13 @@
 /* eslint-disable react-refresh/only-export-components */
 import { Container, render } from "jsx-email";
-import { Content, EmailLayout, Greeting, HeroText, labeledSubject } from "../shared";
+import {
+    Content,
+    Disclaimer,
+    EmailLayout,
+    Greeting,
+    HeroText,
+    labeledSubject
+} from "../shared";
 import * as Fm from "keycloakify-emails/jsx-email";
 import { GetSubject, GetTemplate, GetTemplateProps } from "keycloakify-emails";
 import { createVariablesHelper } from "keycloakify-emails/variables";
@@ -12,17 +19,17 @@ export const previewProps: TemplateProps = {
     themeName: "clean-sight-solutions"
 };
 
-export const templateName = "Event: User Permanent Lockout";
+export const templateName = "Event: Credential Removed";
 
-const { exp, v } = createVariablesHelper("event-user_disabled_by_permanent_lockout.ftl");
+const { exp, v } = createVariablesHelper("event-remove_credential.ftl");
 
 export const Template = ({ locale }: TemplateProps) => (
     <EmailLayout
-        preview={`Your ${exp("realmName")} account has been permanently disabled.`}
+        preview={`A credential was recently removed from your ${exp("realmName")} account.`}
         locale={locale}
     >
         <Container>
-            <HeroText>Account permanently disabled.</HeroText>
+            <HeroText>Credential removed.</HeroText>
 
             <Greeting>
                 <Fm.If condition={`${v("user.firstName")}?? && ${v("user.lastName")}??`}>
@@ -36,9 +43,11 @@ export const Template = ({ locale }: TemplateProps) => (
                 </Fm.If>
             </Greeting>
             <Content>
-                Your {exp("realmName")} account has been <strong>permanently</strong>{" "}
-                disabled due to multiple failed login attempts on {exp("event.date")}.
+                We noticed a credential was recently removed from your {exp("realmName")} account from
+                {exp("event.ipAddress")} on {exp("event.date")}. If this wasn&apos;t you,
+                please update your password.
             </Content>
+            <Disclaimer>If this was you, feel free to ignore this message.</Disclaimer>
         </Container>
     </EmailLayout>
 );
@@ -49,5 +58,5 @@ export const getTemplate: GetTemplate = async props => {
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const getSubject: GetSubject = async _props => {
-    return labeledSubject("Account permanently disabled");
+    return labeledSubject("Credential removed");
 };

@@ -49,7 +49,7 @@ export const Template = ({ locale }: TemplateProps) => (
                 password.
             </Content>
             <PrimaryButton align="center" href={exp("link")} target="_blank">
-                Reset my password
+                Reset your password
             </PrimaryButton>
             <Content>
                 This link will expire in {exp("linkExpirationFormatter(linkExpiration)")}.

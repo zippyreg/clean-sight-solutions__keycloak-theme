@@ -15,6 +15,6 @@
 }
 
 .keycloak__dashboard_welcome_tab {
-    max-width: 38%;
+    max-width: clamp(300px, 50%, 576px);
     margin-top: var(--pf-v5-global--spacer--md);
 }

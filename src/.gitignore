@@ -36,6 +36,8 @@
 # admin/realm-settings/PoliciesTab.tsx
 # admin/realm-settings/ProfilesTab.tsx
 # admin/sessions/SessionsTable.tsx
+# admin/user/user-section.css
+# admin/user/UserConsents.tsx
 # admin/user/UserGroups.tsx
 # shared/keycloak-ui-shared/main.ts
 # account/components/page/Page.tsx
@@ -49,6 +51,7 @@
 # admin/clients/initial-access/InitialAccessTokenList.tsx
 # admin/clients/registration/ClientRegistrationList.tsx
 # admin/clients/scopes/ClientScopes.tsx
+# admin/components/key-value-form/KeyValueInput.tsx
 # admin/components/role-mapping/RoleMapping.tsx
 # admin/components/roles-list/RolesList.tsx
 # admin/components/users/UserDataTable.tsx
@@ -203,9 +206,7 @@
 /admin/user/Organizations.tsx
 /admin/user/routes.ts
 /admin/user/user-credentials.css
-/admin/user/user-section.css
 /admin/user/UserAttributes.tsx
-/admin/user/UserConsents.tsx
 /admin/user/UserCredentials.tsx
 /admin/user/UserForm.tsx
 /admin/user/UserIdentityProviderLinks.tsx
@@ -424,7 +425,6 @@
 /admin/components/key-value-form/AttributeForm.tsx
 /admin/components/key-value-form/key-value-convert.ts
 /admin/components/key-value-form/KeySelect.tsx
-/admin/components/key-value-form/KeyValueInput.tsx
 /admin/components/key-value-form/ValueSelect.tsx
 /admin/components/keycloak-card/ClickableCard.tsx
 /admin/components/keycloak-card/keycloak-card.css

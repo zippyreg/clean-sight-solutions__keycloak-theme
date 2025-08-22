@@ -72,5 +72,5 @@ export const getTemplate: GetTemplate = async props => {
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const getSubject: GetSubject = async _props => {
-    return labeledSubject("Verify email");
+    return labeledSubject("Verify updated email");
 };

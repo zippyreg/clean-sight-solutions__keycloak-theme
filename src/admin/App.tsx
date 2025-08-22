@@ -47,7 +47,7 @@ import { WhoAmIContextProvider } from "./context/whoami/WhoAmI";
 import type { Environment } from "./environment";
 import { SubGroups } from "./groups/SubGroupsContext";
 import { AuthWall } from "./root/AuthWall";
-import { Banners, AdminBanner } from "./Banners";
+import { Banners } from "./Banners";
 
 export const AppContexts = ({ children }: PropsWithChildren) => (
     <ErrorBoundaryProvider>
@@ -118,7 +118,6 @@ export const App = () => {
                     style={{ minHeight: "100vh" }}
                 >
                     <FlexItem>
-                        <AdminBanner />
                         <Banners />
                     </FlexItem>
                     <FlexItem grow={{ default: "grow" }} style={{ minHeight: 0 }}>
