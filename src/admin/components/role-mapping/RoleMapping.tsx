@@ -21,10 +21,7 @@ import {
     Checkbox,
     ToolbarItem
 } from "../../../shared/@patternfly/react-core";
-import {
-    CodeIcon,
-    PlusIcon
-} from "../../../shared/@patternfly/react-icons";
+import { CodeIcon, PlusIcon } from "../../../shared/@patternfly/react-icons";
 import { cellWidth } from "../../../shared/@patternfly/react-table";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";

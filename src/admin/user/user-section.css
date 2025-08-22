@@ -88,13 +88,13 @@ button#kc-join-groups-button {
 }
 
 .kc-linked-idps {
-    border-top: 0!important;
-    border-left: 0!important;
-    border-right: 0!important;
+    border-top: 0 !important;
+    border-left: 0 !important;
+    border-right: 0 !important;
 }
 
 .kc-available-idps {
-    border: 0!important;
+    border: 0 !important;
 }
 
 .kc-available-idps-text {

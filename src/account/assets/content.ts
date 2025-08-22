@@ -25,8 +25,8 @@ export const content: MenuItem[] = [
             }
         ]
     },
-    // { 
-    //     label: "applications", 
+    // {
+    //     label: "applications",
     //     path: "applications",
     // },
     {

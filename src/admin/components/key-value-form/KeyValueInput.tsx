@@ -22,7 +22,12 @@ import {
     HelperTextItem,
     TextInput
 } from "../../../shared/@patternfly/react-core";
-import { ListIcon, PlusCircleIcon, PlusIcon, TimesIcon } from "../../../shared/@patternfly/react-icons";
+import {
+    ListIcon,
+    PlusCircleIcon,
+    PlusIcon,
+    TimesIcon
+} from "../../../shared/@patternfly/react-icons";
 import { ListEmptyState } from "../../../shared/keycloak-ui-shared";
 import { Fragment } from "react";
 import { FieldValues, useFieldArray, useFormContext, useWatch } from "react-hook-form";
@@ -177,7 +182,7 @@ export const KeyValueInput = ({
             </ActionList>
         </>
     ) : (
-        <ListEmptyState 
+        <ListEmptyState
             data-testid={`${name}-empty-state`}
             hasIcon
             message={t("noAttributes", { label })}

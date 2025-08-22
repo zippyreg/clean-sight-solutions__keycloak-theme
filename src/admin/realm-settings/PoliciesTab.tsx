@@ -31,10 +31,7 @@ import {
     Title,
     ToolbarItem
 } from "../../shared/@patternfly/react-core";
-import {
-    PlusIcon,
-    PrivateIcon
-} from "../../shared/@patternfly/react-icons";
+import { PlusIcon, PrivateIcon } from "../../shared/@patternfly/react-icons";
 import { omit } from "lodash-es";
 import { useState } from "react";
 import { Controller, useForm, type UseFormReturn } from "react-hook-form";

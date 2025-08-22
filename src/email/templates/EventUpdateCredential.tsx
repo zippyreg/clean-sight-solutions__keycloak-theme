@@ -43,7 +43,8 @@ export const Template = ({ locale }: TemplateProps) => (
                 </Fm.If>
             </Greeting>
             <Content>
-                We noticed a credential was recently updated for your {exp("realmName")} account from
+                We noticed a credential was recently updated for your {exp("realmName")}{" "}
+                account from
                 {exp("event.ipAddress")} on {exp("event.date")}. If this wasn&apos;t you,
                 please update your password.
             </Content>

@@ -39,9 +39,9 @@ import {
 } from "../../shared/@patternfly/react-core";
 import {
     CheckCircleIcon,
+    TimesCircleIcon,
     RunningIcon,
-    SyncAltIcon,
-    WarningTriangleIcon
+    SyncAltIcon
 } from "../../shared/@patternfly/react-icons";
 import { cellWidth } from "../../shared/@patternfly/react-table";
 import { pickBy } from "lodash-es";
@@ -70,20 +70,20 @@ type UserEventSearchForm = {
 
 const StatusRow = (event: EventRepresentation) =>
     !event.error ? (
-        <span>
+        <Flex gap={{ default: "gapSm" }}>
             <Icon status="success">
                 <CheckCircleIcon />
             </Icon>
-            {event.type}
-        </span>
+            <span>{event.type}</span>
+        </Flex>
     ) : (
         <Tooltip content={event.error}>
-            <span>
+            <Flex gap={{ default: "gapSm" }}>
                 <Icon status="warning">
-                    <WarningTriangleIcon />
+                    <TimesCircleIcon />
                 </Icon>
-                {event.type}
-            </span>
+                <span>{event.type}</span>
+            </Flex>
         </Tooltip>
     );
 

@@ -71,5 +71,7 @@ export const getTemplate: GetTemplate = async props => {
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const getSubject: GetSubject = async _props => {
-    return labeledSubject(`Invitation to join the ${exp("organization.name")} organization`);
+    return labeledSubject(
+        `Invitation to join the ${exp("organization.name")} organization`
+    );
 };

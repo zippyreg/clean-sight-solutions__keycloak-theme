@@ -52,7 +52,13 @@ import {
     TextVariants,
     Title
 } from "../../shared/@patternfly/react-core";
-import { CheckCircleIcon, CogIcon, EnhancementIcon, MinusCircleIcon, TimesCircleIcon } from "../../shared/@patternfly/react-icons";
+import {
+    CheckCircleIcon,
+    CogIcon,
+    EnhancementIcon,
+    MinusCircleIcon,
+    TimesCircleIcon
+} from "../../shared/@patternfly/react-icons";
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { RoutableTabs, useRoutableTab } from "../components/routable-tabs/RoutableTabs";
@@ -85,8 +91,14 @@ const EmptyDashboard = () => {
                                 alignItems={{ default: "alignItemsCenter" }}
                                 gap={{ default: "gapLg" }}
                             >
-                                <BrandWordmark variant={isDark ? "white" : "default"} size="xl" />
-                                <Flex direction={{ default: "column" }} gap={{ default: undefined }}>
+                                <BrandWordmark
+                                    variant={isDark ? "white" : "default"}
+                                    size="xl"
+                                />
+                                <Flex
+                                    direction={{ default: "column" }}
+                                    gap={{ default: undefined }}
+                                >
                                     <EmptyStateHeader
                                         titleText={<>{t("welcome")}</>}
                                         headingLevel="h2"
@@ -114,24 +126,27 @@ type FeatureItemProps = {
     feature: FeatureRepresentation;
 };
 
-const featureNameToHeaderCase = (str: FeatureRepresentation.name = ''): string  => {
-  if (!str) return '';
+const featureNameToHeaderCase = (str: FeatureRepresentation.name = ""): string => {
+    if (!str) return "";
 
-  return String(str)
-    .replace(/^[^A-Za-z0-9]*|[^A-Za-z0-9]*$/g, '')
-    .replace(/([a-z])([A-Z])/g, (m, a, b) => `${a}_${b.toLowerCase()}`)
-    .replace(/[^A-Za-z0-9]+|_+/g, ' ')
-    .toLowerCase()
-    .replace(/( ?)(\w+)( ?)/g, (m, a, b, c) => a + b.charAt(0).toUpperCase() + b.slice(1) + c)
-    .replaceAll(/Api/g, 'API')
-    .replaceAll(/Ui/g, 'UI')
-    .replaceAll(/Ciba/g, 'CIBA')
-    .replaceAll(/Par/g, 'PAR')
-    .replaceAll(/Fips/g, 'FIPS')
-    .replaceAll(/Oid4vc Vci/g, 'OID4VC VCI')
-    .replaceAll(/Dpop/g, "DPOP")
-    .replaceAll(/Ipa/g, "IPA");
-}
+    return String(str)
+        .replace(/^[^A-Za-z0-9]*|[^A-Za-z0-9]*$/g, "")
+        .replace(/([a-z])([A-Z])/g, (m, a, b) => `${a}_${b.toLowerCase()}`)
+        .replace(/[^A-Za-z0-9]+|_+/g, " ")
+        .toLowerCase()
+        .replace(
+            /( ?)(\w+)( ?)/g,
+            (m, a, b, c) => a + b.charAt(0).toUpperCase() + b.slice(1) + c
+        )
+        .replaceAll(/Api/g, "API")
+        .replaceAll(/Ui/g, "UI")
+        .replaceAll(/Ciba/g, "CIBA")
+        .replaceAll(/Par/g, "PAR")
+        .replaceAll(/Fips/g, "FIPS")
+        .replaceAll(/Oid4vc Vci/g, "OID4VC VCI")
+        .replaceAll(/Dpop/g, "DPOP")
+        .replaceAll(/Ipa/g, "IPA");
+};
 
 const FeatureItem = ({ feature }: FeatureItemProps) => {
     const { t } = useTranslation();
@@ -139,22 +154,34 @@ const FeatureItem = ({ feature }: FeatureItemProps) => {
         <ListItem className="pf-v5-u-mb-sm">
             <span className="pf-v5-u-mr-xs">{featureNameToHeaderCase(feature.name)}</span>
             {feature.type === FeatureType.Default && (
-                <Label color="green" icon={<CheckCircleIcon />}>{t("supported")}</Label>
+                <Label color="green" icon={<CheckCircleIcon />}>
+                    {t("supported")}
+                </Label>
             )}
             {feature.type === FeatureType.Preview && (
-                <Label color="purple" icon={<EnhancementIcon />}>{t("preview")}</Label>
+                <Label color="purple" icon={<EnhancementIcon />}>
+                    {t("preview")}
+                </Label>
             )}
             {feature.type === FeatureType.Experimental && (
-                <Label color="cyan" icon={<CogIcon />}>{t("experimental")}</Label>
+                <Label color="cyan" icon={<CogIcon />}>
+                    {t("experimental")}
+                </Label>
             )}
             {feature.type === FeatureType.PreviewDisabledByDefault && (
-                <Label color="gold" icon={<TimesCircleIcon />}>{t("previewDefaultDisabled")}</Label>
+                <Label color="gold" icon={<TimesCircleIcon />}>
+                    {t("previewDefaultDisabled")}
+                </Label>
             )}
             {feature.type === FeatureType.DisabledByDefault && (
-                <Label color="gold" icon={<TimesCircleIcon />}>{t("defaultDisabled")}</Label>
+                <Label color="gold" icon={<TimesCircleIcon />}>
+                    {t("defaultDisabled")}
+                </Label>
             )}
             {feature.type === FeatureType.Deprecated && (
-                <Label color="grey" icon={<MinusCircleIcon />}>{t("deprecated")}</Label>
+                <Label color="grey" icon={<MinusCircleIcon />}>
+                    {t("deprecated")}
+                </Label>
             )}
         </ListItem>
     );
@@ -226,7 +253,7 @@ const Dashboard = () => {
                             <Grid>
                                 <GridItem>
                                     <Card isPlain>
-                                        <CardTitle 
+                                        <CardTitle
                                             data-testid="welcomeTitle"
                                             className="pf-v5-u-font-weight-bold pf-v5-u-font-size-3xl"
                                             component={TextVariants.h2}
@@ -302,8 +329,13 @@ const Dashboard = () => {
                             <Grid hasGutter>
                                 <GridItem xl2={2} xl={3} lg={12}>
                                     <Card isFlat className="keycloak__dashboard_card">
-                                        <CardTitle className="pf-v5-u-font-weight-bold pf-v5-u-font-size-xl">{t("serverInfo")}</CardTitle>
-                                        <CardBody isFilled={false} className="pf-v5-u-mb-xl">
+                                        <CardTitle className="pf-v5-u-font-weight-bold pf-v5-u-font-size-xl">
+                                            {t("serverInfo")}
+                                        </CardTitle>
+                                        <CardBody
+                                            isFilled={false}
+                                            className="pf-v5-u-mb-xl"
+                                        >
                                             <DescriptionList>
                                                 <DescriptionListGroup>
                                                     <DescriptionListTerm>
@@ -315,7 +347,9 @@ const Dashboard = () => {
                                                 </DescriptionListGroup>
                                             </DescriptionList>
                                         </CardBody>
-                                        <CardTitle className="pf-v5-u-font-weight-bold pf-v5-u-font-size-lg">{t("memory")}</CardTitle>
+                                        <CardTitle className="pf-v5-u-font-weight-bold pf-v5-u-font-size-lg">
+                                            {t("memory")}
+                                        </CardTitle>
                                         <CardBody>
                                             <DescriptionList>
                                                 <DescriptionListGroup>
@@ -353,12 +387,16 @@ const Dashboard = () => {
                                 </GridItem>
                                 <GridItem xl={7} lg={12}>
                                     <Card isPlain className="keycloak__dashboard_card">
-                                        <CardTitle className="pf-v5-u-font-weight-bold pf-v5-u-font-size-xl">{t("featureProfile")}</CardTitle>
+                                        <CardTitle className="pf-v5-u-font-weight-bold pf-v5-u-font-size-xl">
+                                            {t("featureProfile")}
+                                        </CardTitle>
                                         <CardBody>
                                             <DescriptionList>
                                                 <DescriptionListGroup className="pf-v5-u-mb-lg">
                                                     <DescriptionListTerm>
-                                                        <span className="pf-v5-u-mr-sm">{t("enabledFeatures")}</span>
+                                                        <span className="pf-v5-u-mr-sm">
+                                                            {t("enabledFeatures")}
+                                                        </span>
                                                         <HelpItem
                                                             fieldLabelId="enabledFeatures"
                                                             helpText={t(
@@ -383,7 +421,9 @@ const Dashboard = () => {
                                                 </DescriptionListGroup>
                                                 <DescriptionListGroup>
                                                     <DescriptionListTerm>
-                                                        <span className="pf-v5-u-mr-sm">{t("disabledFeatures")}</span>
+                                                        <span className="pf-v5-u-mr-sm">
+                                                            {t("disabledFeatures")}
+                                                        </span>
                                                         <HelpItem
                                                             fieldLabelId="disabledFeatures"
                                                             helpText={t(

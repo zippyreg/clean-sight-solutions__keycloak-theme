@@ -38,7 +38,7 @@ export const Template = ({ locale }: TemplateProps) => (
             <Content>
                 Your {exp("realmName")} account has been <strong>temporarily</strong>{" "}
                 disabled due to multiple failed login attempts on {exp("event.date")}. If
-                this wasn&apos;t you, please update your password once you are able to 
+                this wasn&apos;t you, please update your password once you are able to
                 access your account again.
             </Content>
         </Container>

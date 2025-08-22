@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Wix+Madefor+Text:ital,wght@0,400..800;1,400..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Wix+Madefor+Text:ital,wght@0,400..800;1,400..800&display=swap");
 
 :root {
     --css-global--primary-color: oklch(0.91 0.1931 105.16);
@@ -42,5 +42,6 @@
     --pf-v5-global--FontFamily--text: "Wix Madefor Text", system-ui, sans-serif;
     --pf-v5-global--FontFamily--heading: "Wix Madefor Text", system-ui, sans-serif;
     --pf-v5-global--FontWeight--medium: 500;
-    --pf-global--FontFamily--monospace: "Source Code Pro", ui-monospace, SFMono-Regular, SF Mono, Consolas, Liberation Mono, Menlo, monospace;
+    --pf-global--FontFamily--monospace: "Source Code Pro", ui-monospace, SFMono-Regular,
+        SF Mono, Consolas, Liberation Mono, Menlo, monospace;
 }

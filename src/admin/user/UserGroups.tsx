@@ -19,7 +19,11 @@ import {
     Checkbox,
     Popover
 } from "../../shared/@patternfly/react-core";
-import { CubeIcon, PlusIcon, QuestionCircleIcon } from "../../shared/@patternfly/react-icons";
+import {
+    CubeIcon,
+    PlusIcon,
+    QuestionCircleIcon
+} from "../../shared/@patternfly/react-icons";
 import { cellWidth } from "../../shared/@patternfly/react-table";
 import { intersectionBy, sortBy, uniqBy } from "lodash-es";
 import { useState } from "react";

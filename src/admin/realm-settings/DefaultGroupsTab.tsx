@@ -30,7 +30,12 @@ import {
     TextContent,
     ToolbarItem
 } from "../../shared/@patternfly/react-core";
-import { CubeIcon, EllipsisVIcon, PlusIcon, QuestionCircleIcon } from "../../shared/@patternfly/react-icons";
+import {
+    CubeIcon,
+    EllipsisVIcon,
+    PlusIcon,
+    QuestionCircleIcon
+} from "../../shared/@patternfly/react-icons";
 import { useState } from "react";
 import { Trans, useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";

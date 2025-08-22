@@ -15,9 +15,7 @@ export const EmailLayout = ({
     return (
         <Html lang={locale}>
             <Head />
-            {preview && (
-                <Preview>{preview}</Preview>
-            )}
+            {preview && <Preview>{preview}</Preview>}
             <Body style={getStyles(BaseStyles.Layout)}>
                 <Container style={getStyles(BaseStyles.Main)}>
                     <Section style={getStyles(BaseStyles.Header)}>

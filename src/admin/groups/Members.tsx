@@ -29,7 +29,12 @@ import {
     MenuToggle,
     ToolbarItem
 } from "../../shared/@patternfly/react-core";
-import { EllipsisVIcon, InfoCircleIcon, PlusIcon, UserIcon } from "../../shared/@patternfly/react-icons";
+import {
+    EllipsisVIcon,
+    InfoCircleIcon,
+    PlusIcon,
+    UserIcon
+} from "../../shared/@patternfly/react-icons";
 import { uniqBy } from "lodash-es";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";

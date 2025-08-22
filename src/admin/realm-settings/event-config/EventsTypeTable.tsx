@@ -52,9 +52,9 @@ export function EventsTypeTable({
             toolbarItem={
                 addTypes && (
                     <ToolbarItem>
-                        <Button 
-                            id="addTypes" 
-                            onClick={addTypes} 
+                        <Button
+                            id="addTypes"
+                            onClick={addTypes}
                             data-testid="addTypes"
                             icon={<PlusIcon />}
                         >
