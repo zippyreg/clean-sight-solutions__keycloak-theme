@@ -19,10 +19,7 @@ export const CurrentRealm = ({ className, textMaxWidth }: CurrentRealmProps) => 
 
     return (
         <h2 className={"pf-v5-c-nav__section-title"} style={{ wordWrap: "break-word" }}>
-            <LabelGroup
-                categoryName={`${t("currentRealm")}:`}
-                className={clsx(className)}
-            >
+            <LabelGroup categoryName={`${t("viewing")}:`} className={clsx(className)}>
                 <Label
                     color="blue"
                     href={realmBadgeUrl}

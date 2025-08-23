@@ -178,7 +178,7 @@ export const DeviceActivity = () => {
                                                 / {session.browser}
                                             </span>
                                             {session.current && (
-                                                <Label color="green">
+                                                <Label color="cyan" isCompact>
                                                     {t("currentSession")}
                                                 </Label>
                                             )}

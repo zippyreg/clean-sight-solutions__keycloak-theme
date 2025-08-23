@@ -1,7 +1,7 @@
 {
     "name": "clean-sight-solutions",
-    "version": "0.8.1",
-    "description": "Starter for Keycloakify 11",
+    "version": "0.8.2",
+    "description": "KC Theme for Clean Sight Solutions",
     "repository": {
         "type": "git",
         "url": "git://github.com/codegouvfr/keycloakify-starter.git"
@@ -22,6 +22,8 @@
     "keywords": [],
     "dependencies": {
         "@dagrejs/dagre": "^1.1.4",
+        "@jsx-email/plugin-inline": "^1.0.1",
+        "@jsx-email/plugin-minify": "^1.0.2",
         "@keycloak/keycloak-admin-client": "26.2.0",
         "@keycloakify/keycloak-account-ui": "~260200.1.3",
         "@keycloakify/keycloak-admin-ui": "~260200.0.3",

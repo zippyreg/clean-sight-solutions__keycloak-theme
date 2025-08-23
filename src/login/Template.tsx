@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { BrandWordmark, MoonIcon, SunIcon, useColorMode } from "../shared/keycloak-ui-shared";
 import { clsx } from "keycloakify/tools/clsx";
 import { kcSanitize } from "keycloakify/lib/kcSanitize";
@@ -8,10 +8,10 @@ import { useSetClassName } from "keycloakify/tools/useSetClassName";
 import { useInitialize } from "keycloakify/login/Template.useInitialize";
 import type { I18n } from "./i18n";
 import type { KcContext } from "./KcContext";
+import { useDebounceValue } from "usehooks-ts";
 
 const LiveCopyrightDate = () => {
-    const [currentDate, setCurrentDate] = useState(new Date());
-
+    const [currentDate, setCurrentDate] = useDebounceValue(new Date(), 900000);
     const [isDark] = useColorMode();
 
     useEffect(() => {

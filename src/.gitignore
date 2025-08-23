@@ -38,6 +38,7 @@
 # admin/realm-roles/UsersInRoleTab.tsx
 # admin/realm-settings/ClientProfileForm.tsx
 # admin/realm-settings/DefaultGroupsTab.tsx
+# admin/realm-settings/EmailTab.tsx
 # admin/realm-settings/PoliciesTab.tsx
 # admin/realm-settings/ProfilesTab.tsx
 # admin/realm-settings/SessionsTab.tsx
@@ -189,7 +190,6 @@
 /admin/realm-roles/routes.ts
 /admin/realm-settings/AddClientProfileModal.tsx
 /admin/realm-settings/AddTranslationModal.tsx
-/admin/realm-settings/EmailTab.tsx
 /admin/realm-settings/ExecutorForm.tsx
 /admin/realm-settings/GeneralTab.tsx
 /admin/realm-settings/LoginTab.tsx

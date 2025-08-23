@@ -48,6 +48,7 @@ import type { Environment } from "./environment";
 import { SubGroups } from "./groups/SubGroupsContext";
 import { AuthWall } from "./root/AuthWall";
 import { Banners } from "./Banners";
+import { useDebounceValue } from "usehooks-ts";
 
 export const AppContexts = ({ children }: PropsWithChildren) => (
     <ErrorBoundaryProvider>
@@ -66,7 +67,7 @@ export const AppContexts = ({ children }: PropsWithChildren) => (
 );
 
 const LiveCopyrightDate = () => {
-    const [currentDate, setCurrentDate] = useState(new Date());
+    const [currentDate, setCurrentDate] = useDebounceValue(new Date(), 900000);
 
     const [isDark] = useColorMode();
 

@@ -289,7 +289,12 @@ const Dashboard = () => {
                                             </Button>
                                         </CardBody>
                                         <CardBody>
-                                            <ActionList className="pf-v5-u-flex-wrap"> 
+                                            <ActionList
+                                                className="pf-v5-u-flex-wrap"
+                                                style={{
+                                                    gap: "1rem"
+                                                }}
+                                            >
                                                 <ActionListItem>
                                                     <Button
                                                         component="a"
@@ -300,7 +305,7 @@ const Dashboard = () => {
                                                         {t("viewGuides")}
                                                     </Button>
                                                 </ActionListItem>
-                                                <ActionListItem>
+                                                <ActionListItem className="pf-v5-u-ml-0">
                                                     <Button
                                                         component="a"
                                                         href={helpUrls.community}
@@ -310,7 +315,7 @@ const Dashboard = () => {
                                                         {t("joinCommunity")}
                                                     </Button>
                                                 </ActionListItem>
-                                                <ActionListItem>
+                                                <ActionListItem className="pf-v5-u-ml-0">
                                                     <Button
                                                         component="a"
                                                         href={helpUrls.blog}

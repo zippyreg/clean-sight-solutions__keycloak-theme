@@ -63,17 +63,20 @@ body.kcBodyClass {
     justify-content: center;
 }
 
+#kc-theme-selector .pf-c-toggle-group {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
 @media screen and (max-width: 767px) {
     #kc-theme-selector {
         padding-top: var(--pf-global--spacer--xs);
     }
-}
 
-#kc-theme-selector .pf-c-toggle-group {
-    width: 100%;
-    max-width: 500px;
-    display: flex;
-    justify-content: flex-end;
+    #kc-theme-selector .pf-c-toggle-group {
+        max-width: 500px;
+    }
 }
 
 .pf-c-toggle-group {

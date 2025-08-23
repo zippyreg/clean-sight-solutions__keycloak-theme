@@ -5,7 +5,7 @@ __metadata:
   version: 8
   cacheKey: 10c0
 
-"@adobe/css-tools@npm:^4.3.1, @adobe/css-tools@npm:^4.4.0":
+"@adobe/css-tools@npm:^4.3.1, @adobe/css-tools@npm:^4.3.3, @adobe/css-tools@npm:^4.4.0":
   version: 4.4.4
   resolution: "@adobe/css-tools@npm:4.4.4"
   checksum: 10c0/8f3e6cfaa5e6286e6f05de01d91d060425be2ebaef490881f5fe6da8bbdb336835c5d373ea337b0c3b0a1af4be048ba18780f0f6021d30809b4545922a7e13d9
@@ -1308,6 +1308,49 @@ __metadata:
     micromatch: "npm:^4.0.5"
     style-to-object: "npm:^1.0.4"
   checksum: 10c0/56daa5c4dcae150868120c332c8681647162c6dcc991a17f9e837fa9c4a6fc4afff1b9c46de67bb4876e7e82189a43bf6d987d76848bc82a09457ecbed3fff56
+  languageName: node
+  linkType: hard
+
+"@jsx-email/plugin-inline@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "@jsx-email/plugin-inline@npm:1.0.1"
+  dependencies:
+    "@adobe/css-tools": "npm:^4.3.3"
+    hast-util-select: "npm:^6.0.2"
+    hast-util-to-string: "npm:^3.0.0"
+    unist-util-remove: "npm:^4.0.0"
+    unist-util-visit: "npm:^5.0.0"
+  peerDependencies:
+    jsx-email: ^2.0.0
+  checksum: 10c0/7abaef80fe385108831293695cf87a9191401d5778f194d96e6b7413347b6b78e0b1ce03534b7461855414bf777062fcffa05672c173c669bb24621dfe31b7fe
+  languageName: node
+  linkType: hard
+
+"@jsx-email/plugin-minify@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "@jsx-email/plugin-minify@npm:1.0.2"
+  dependencies:
+    rehype-minify-attribute-whitespace: "npm:^4.0.0"
+    rehype-minify-css-style: "npm:^4.0.0"
+    rehype-minify-enumerated-attribute: "npm:^5.0.0"
+    rehype-minify-media-attribute: "npm:^4.0.0"
+    rehype-minify-meta-color: "npm:^4.0.0"
+    rehype-minify-meta-content: "npm:^4.0.0"
+    rehype-minify-style-attribute: "npm:^4.0.0"
+    rehype-minify-whitespace: "npm:^6.0.0"
+    rehype-normalize-attribute-value-case: "npm:^4.0.0"
+    rehype-remove-comments: "npm:^6.0.0"
+    rehype-remove-duplicate-attribute-values: "npm:^4.0.0"
+    rehype-remove-empty-attribute: "npm:^4.0.0"
+    rehype-remove-external-script-content: "npm:^4.0.0"
+    rehype-remove-meta-http-equiv: "npm:^4.0.0"
+    rehype-remove-style-type-css: "npm:^4.0.0"
+    rehype-sort-attribute-values: "npm:^5.0.0"
+    rehype-sort-attributes: "npm:^5.0.0"
+    unified: "npm:^11.0.0"
+  peerDependencies:
+    jsx-email: ^2.6.1
+  checksum: 10c0/a8c5c1d755a389a8abfbb0f186abc11b7bc222680baa66fb5cb16af046211ee2e124b675476d05aed178fc61d12fb2fafd829c05311ebaa4d18c860b286a1d13
   languageName: node
   linkType: hard
 
@@ -4310,6 +4353,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"bcp-47-match@npm:^2.0.0":
+  version: 2.0.3
+  resolution: "bcp-47-match@npm:2.0.3"
+  checksum: 10c0/ae5c202854df8a9ad4777dc3b49562578495a69164869f365a88c1a089837a9fbbce4c0c44f6f1a5e44c7841f47e91fe6fea00306ca49ce5ec95a7eb71f839c4
+  languageName: node
+  linkType: hard
+
 "better-opn@npm:^3.0.2":
   version: 3.0.2
   resolution: "better-opn@npm:3.0.2"
@@ -4323,6 +4373,13 @@ __metadata:
   version: 2.3.0
   resolution: "binary-extensions@npm:2.3.0"
   checksum: 10c0/75a59cafc10fb12a11d510e77110c6c7ae3f4ca22463d52487709ca7f18f69d886aa387557cc9864fbdb10153d0bdb4caacabf11541f55e89ed6e18d12ece2b5
+  languageName: node
+  linkType: hard
+
+"boolbase@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "boolbase@npm:1.0.0"
+  checksum: 10c0/e4b53deb4f2b85c52be0e21a273f2045c7b6a6ea002b0e139c744cb6f95e9ec044439a52883b0d74dedd1ff3da55ed140cfdddfed7fb0cccbed373de5dce1bcf
   languageName: node
   linkType: hard
 
@@ -4619,12 +4676,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"clean-css@npm:^5.0.0":
+  version: 5.3.3
+  resolution: "clean-css@npm:5.3.3"
+  dependencies:
+    source-map: "npm:~0.6.0"
+  checksum: 10c0/381de7523e23f3762eb180e327dcc0cedafaf8cb1cd8c26b7cc1fc56e0829a92e734729c4f955394d65ed72fb62f82d8baf78af34b33b8a7d41ebad2accdd6fb
+  languageName: node
+  linkType: hard
+
 "clean-sight-solutions@workspace:.":
   version: 0.0.0-use.local
   resolution: "clean-sight-solutions@workspace:."
   dependencies:
     "@dagrejs/dagre": "npm:^1.1.4"
     "@eslint/js": "npm:^9.33.0"
+    "@jsx-email/plugin-inline": "npm:^1.0.1"
+    "@jsx-email/plugin-minify": "npm:^1.0.2"
     "@jsx-email/plugin-pretty": "npm:^1.0.0"
     "@keycloak/keycloak-admin-client": "npm:26.2.0"
     "@keycloakify/keycloak-account-ui": "npm:~260200.1.3"
@@ -4678,6 +4746,13 @@ __metadata:
     vite: "npm:^5.4.19"
   languageName: unknown
   linkType: soft
+
+"collapse-white-space@npm:^2.0.0":
+  version: 2.1.0
+  resolution: "collapse-white-space@npm:2.1.0"
+  checksum: 10c0/b2e2800f4ab261e62eb27a1fbe853378296e3a726d6695117ed033e82d61fb6abeae4ffc1465d5454499e237005de9cfc52c9562dc7ca4ac759b9a222ef14453
+  languageName: node
+  linkType: hard
 
 "color-convert@npm:^1.9.0":
   version: 1.9.3
@@ -4800,6 +4875,13 @@ __metadata:
     shebang-command: "npm:^2.0.0"
     which: "npm:^2.0.1"
   checksum: 10c0/053ea8b2135caff68a9e81470e845613e374e7309a47731e81639de3eaeb90c3d01af0e0b44d2ab9d50b43467223b88567dfeb3262db942dc063b9976718ffc1
+  languageName: node
+  linkType: hard
+
+"css-selector-parser@npm:^3.0.0":
+  version: 3.1.3
+  resolution: "css-selector-parser@npm:3.1.3"
+  checksum: 10c0/0bba96edfd27827d79933b113c42bec627b96a79f6fe4b12dec12da109d0b3a25f2f76d385b7c28ff22dca68840251751d1061d9226657755430e4787bf4594e
   languageName: node
   linkType: hard
 
@@ -5088,6 +5170,15 @@ __metadata:
   version: 1.2.2
   resolution: "didyoumean@npm:1.2.2"
   checksum: 10c0/95d0b53d23b851aacff56dfadb7ecfedce49da4232233baecfeecb7710248c4aa03f0aa8995062f0acafaf925adf8536bd7044a2e68316fd7d411477599bc27b
+  languageName: node
+  linkType: hard
+
+"direction@npm:^2.0.0":
+  version: 2.0.1
+  resolution: "direction@npm:2.0.1"
+  bin:
+    direction: cli.js
+  checksum: 10c0/dce809431cad978e0778769a3818ea797ebe0bd542c85032ad9ad98971e2021a146be62feb259d7ffe4b76739e07b23e861b29c3f184ac8d38cc6ba956d5c586
   languageName: node
   linkType: hard
 
@@ -6617,6 +6708,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"hast-util-embedded@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "hast-util-embedded@npm:3.0.0"
+  dependencies:
+    "@types/hast": "npm:^3.0.0"
+    hast-util-is-element: "npm:^3.0.0"
+  checksum: 10c0/054c3d3b96fcd5c1d1c6f8d38ce1f7f33022ba6362129a022673d0b539f876acdcababbb9df29812fb927294f98ef7a2f44519a80d637fe3eea1819c9e69eeac
+  languageName: node
+  linkType: hard
+
 "hast-util-from-html@npm:^2.0.0":
   version: 2.0.3
   resolution: "hast-util-from-html@npm:2.0.3"
@@ -6647,6 +6748,92 @@ __metadata:
   languageName: node
   linkType: hard
 
+"hast-util-from-string@npm:^3.0.0":
+  version: 3.0.1
+  resolution: "hast-util-from-string@npm:3.0.1"
+  dependencies:
+    "@types/hast": "npm:^3.0.0"
+  checksum: 10c0/f8116bb44d5bb1b782c47dc1b354db1f60ed4eb3b49d6e1712433ab1ba0767574b98f7916b364e55fe5f70c92c441a7de44e0e6b7e77b9b3ea6d80bc485118d0
+  languageName: node
+  linkType: hard
+
+"hast-util-has-property@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "hast-util-has-property@npm:3.0.0"
+  dependencies:
+    "@types/hast": "npm:^3.0.0"
+  checksum: 10c0/6e2c0e22ca893c6ebb60f8390e184c4deb041c36d09796756f02cd121c1789c0f5c862ed06caea8f1a80ea8c0ef6a7854dd57946c2eebb76488727bd4a1c952e
+  languageName: node
+  linkType: hard
+
+"hast-util-is-conditional-comment@npm:^3.0.0":
+  version: 3.0.1
+  resolution: "hast-util-is-conditional-comment@npm:3.0.1"
+  dependencies:
+    "@types/hast": "npm:^3.0.0"
+  checksum: 10c0/536d8aef39c0499f640325968f3e82bbd6b2755ec34015dc330c444953e9e9d818f29bdd8d37ef639bb5ec7eb21143a0e7cc4974672f14a4b776549239382a1f
+  languageName: node
+  linkType: hard
+
+"hast-util-is-css-link@npm:^3.0.0":
+  version: 3.0.1
+  resolution: "hast-util-is-css-link@npm:3.0.1"
+  dependencies:
+    "@types/hast": "npm:^3.0.0"
+    collapse-white-space: "npm:^2.0.0"
+  checksum: 10c0/a89aae090574cf7d2e08677ee781809174130c75a77de51071fb6e196a131e1099b8a9717fe297f2ee8ba806e61acc3910769785e485e72ca47a398873f37173
+  languageName: node
+  linkType: hard
+
+"hast-util-is-css-style@npm:^3.0.0":
+  version: 3.0.1
+  resolution: "hast-util-is-css-style@npm:3.0.1"
+  dependencies:
+    "@types/hast": "npm:^3.0.0"
+    collapse-white-space: "npm:^2.0.0"
+  checksum: 10c0/b889dc440b967d1cb64d39deec3c02291295bfa5dc498df0e6b6c2c6d7bed71a3cfc7df02870823471368f6a0ec4d1dc50101aa7fc7dc9bd93a27985c2badde8
+  languageName: node
+  linkType: hard
+
+"hast-util-is-element@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "hast-util-is-element@npm:3.0.0"
+  dependencies:
+    "@types/hast": "npm:^3.0.0"
+  checksum: 10c0/f5361e4c9859c587ca8eb0d8343492f3077ccaa0f58a44cd09f35d5038f94d65152288dcd0c19336ef2c9491ec4d4e45fde2176b05293437021570aa0bc3613b
+  languageName: node
+  linkType: hard
+
+"hast-util-is-event-handler@npm:^3.0.0":
+  version: 3.0.1
+  resolution: "hast-util-is-event-handler@npm:3.0.1"
+  checksum: 10c0/91284c50acb38ba0aac8e1ef89db50e085573d2054a2fb97be794bdde3c49d33f2aaafb8569540e999e818678c02a296efca0a595ced6f5dd390ed335ed5e093
+  languageName: node
+  linkType: hard
+
+"hast-util-is-javascript@npm:^3.0.0":
+  version: 3.0.1
+  resolution: "hast-util-is-javascript@npm:3.0.1"
+  dependencies:
+    "@types/hast": "npm:^3.0.0"
+    collapse-white-space: "npm:^2.0.0"
+  checksum: 10c0/7a687f2255c33f9116aeb94f1334b8d666088a81858aee540aef33099f01544028d4e4b2a8aaec3b87b9730c945e49c2e57216b94bdfd9699a1ce8d8c78aa05e
+  languageName: node
+  linkType: hard
+
+"hast-util-minify-whitespace@npm:^1.0.0":
+  version: 1.0.1
+  resolution: "hast-util-minify-whitespace@npm:1.0.1"
+  dependencies:
+    "@types/hast": "npm:^3.0.0"
+    hast-util-embedded: "npm:^3.0.0"
+    hast-util-is-element: "npm:^3.0.0"
+    hast-util-whitespace: "npm:^3.0.0"
+    unist-util-is: "npm:^6.0.0"
+  checksum: 10c0/20a7d64947e080463084f444ad09c7f28c40e7648ca2d9c6c036e42a67f8e945d352560ff599304c988257c1e477abcf6a1f508c0900211fa58ec1ba21b36533
+  languageName: node
+  linkType: hard
+
 "hast-util-parse-selector@npm:^3.0.0":
   version: 3.1.1
   resolution: "hast-util-parse-selector@npm:3.1.1"
@@ -6662,6 +6849,29 @@ __metadata:
   dependencies:
     "@types/hast": "npm:^3.0.0"
   checksum: 10c0/5e98168cb44470dc274aabf1a28317e4feb09b1eaf7a48bbaa8c1de1b43a89cd195cb1284e535698e658e3ec26ad91bc5e52c9563c36feb75abbc68aaf68fb9f
+  languageName: node
+  linkType: hard
+
+"hast-util-select@npm:^6.0.0, hast-util-select@npm:^6.0.2":
+  version: 6.0.4
+  resolution: "hast-util-select@npm:6.0.4"
+  dependencies:
+    "@types/hast": "npm:^3.0.0"
+    "@types/unist": "npm:^3.0.0"
+    bcp-47-match: "npm:^2.0.0"
+    comma-separated-tokens: "npm:^2.0.0"
+    css-selector-parser: "npm:^3.0.0"
+    devlop: "npm:^1.0.0"
+    direction: "npm:^2.0.0"
+    hast-util-has-property: "npm:^3.0.0"
+    hast-util-to-string: "npm:^3.0.0"
+    hast-util-whitespace: "npm:^3.0.0"
+    nth-check: "npm:^2.0.0"
+    property-information: "npm:^7.0.0"
+    space-separated-tokens: "npm:^2.0.0"
+    unist-util-visit: "npm:^5.0.0"
+    zwitch: "npm:^2.0.0"
+  checksum: 10c0/d6829953f829c24ffe465c2b156f6a7cd352f7d9b4d601e0e6ca38b85cc4a720bb9f027d34881c3b2a05f4b55c9375e256dbf43ca88604230da784e1c9c7d03f
   languageName: node
   linkType: hard
 
@@ -6725,6 +6935,13 @@ __metadata:
     property-information: "npm:^7.0.0"
     space-separated-tokens: "npm:^2.0.0"
   checksum: 10c0/18dc8064e5c3a7a2ae862978e626b97a254e1c8a67ee9d0c9f06d373bba155ed805fc5b5ce21b990fb7bc174624889e5e1ce1cade264f1b1d58b48f994bc85ce
+  languageName: node
+  linkType: hard
+
+"html-enumerated-attributes@npm:^1.0.0":
+  version: 1.1.1
+  resolution: "html-enumerated-attributes@npm:1.1.1"
+  checksum: 10c0/94b2a7a9376d317f51d5cd160d481721e172f60db93dc12e49fad3d89ff94bfd539ce21bd8b2417283ffa6bd88fba34451cd3de2c9c6f3ce5f01de421c44929b
   languageName: node
   linkType: hard
 
@@ -8237,6 +8454,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"nth-check@npm:^2.0.0":
+  version: 2.1.1
+  resolution: "nth-check@npm:2.1.1"
+  dependencies:
+    boolbase: "npm:^1.0.0"
+  checksum: 10c0/5fee7ff309727763689cfad844d979aedd2204a817fbaaf0e1603794a7c20db28548d7b024692f953557df6ce4a0ee4ae46cd8ebd9b36cfb300b9226b567c479
+  languageName: node
+  linkType: hard
+
 "object-assign@npm:^4.0.1, object-assign@npm:^4.1.1":
   version: 4.1.1
   resolution: "object-assign@npm:4.1.1"
@@ -9213,6 +9439,112 @@ __metadata:
   languageName: node
   linkType: hard
 
+"rehype-minify-attribute-whitespace@npm:^4.0.0":
+  version: 4.0.1
+  resolution: "rehype-minify-attribute-whitespace@npm:4.0.1"
+  dependencies:
+    "@types/hast": "npm:^3.0.0"
+    collapse-white-space: "npm:^2.0.0"
+    hast-util-is-element: "npm:^3.0.0"
+    hast-util-is-event-handler: "npm:^3.0.0"
+    unist-util-visit: "npm:^5.0.0"
+  checksum: 10c0/a59e15354ad94ed90d98b9066ed90679a77d0ff88cfeb282ce837789c86e92478c2688c5b3f40602927c441b262fbba5d61dafa82ab2d92719e42c03158630e8
+  languageName: node
+  linkType: hard
+
+"rehype-minify-css-style@npm:^4.0.0":
+  version: 4.0.1
+  resolution: "rehype-minify-css-style@npm:4.0.1"
+  dependencies:
+    "@types/hast": "npm:^3.0.0"
+    clean-css: "npm:^5.0.0"
+    hast-util-from-string: "npm:^3.0.0"
+    hast-util-is-css-style: "npm:^3.0.0"
+    hast-util-to-string: "npm:^3.0.0"
+    unist-util-visit: "npm:^5.0.0"
+  checksum: 10c0/46257505557430c5664dff5605abffefc28826061194d45e1a2ee7927162ebfcabe8e4c9fe1595f451f4e93482a9ffe540f86734b4a89227d4958033121cd1c6
+  languageName: node
+  linkType: hard
+
+"rehype-minify-enumerated-attribute@npm:^5.0.0":
+  version: 5.0.2
+  resolution: "rehype-minify-enumerated-attribute@npm:5.0.2"
+  dependencies:
+    "@types/hast": "npm:^3.0.0"
+    hast-util-select: "npm:^6.0.0"
+    html-enumerated-attributes: "npm:^1.0.0"
+    property-information: "npm:^7.0.0"
+    space-separated-tokens: "npm:^2.0.0"
+    unist-util-visit: "npm:^5.0.0"
+  checksum: 10c0/f66fd414ae6453b66d4ef1c1a5b89426649177fd3e054458a91c1ee2e745c691600211658f6471057b7882c5047bf545917e4aa44b5682e80ed3d39b27e00a18
+  languageName: node
+  linkType: hard
+
+"rehype-minify-media-attribute@npm:^4.0.0":
+  version: 4.0.1
+  resolution: "rehype-minify-media-attribute@npm:4.0.1"
+  dependencies:
+    "@types/hast": "npm:^3.0.0"
+    clean-css: "npm:^5.0.0"
+    unist-util-visit: "npm:^5.0.0"
+  checksum: 10c0/6fba00c41e00a38154ddb261ba3f2a60f6dd5a13176d8ff2ec50ee97b61b44fb960f74d75e641ef624f9500acf7a90afef97c9e2a2f9da45ffeaddf0f39564dd
+  languageName: node
+  linkType: hard
+
+"rehype-minify-meta-color@npm:^4.0.0":
+  version: 4.0.1
+  resolution: "rehype-minify-meta-color@npm:4.0.1"
+  dependencies:
+    "@types/hast": "npm:^3.0.0"
+    clean-css: "npm:^5.0.0"
+    unist-util-visit: "npm:^5.0.0"
+  checksum: 10c0/9156c36204d2da566cfbb8277aeb2540cb7524a23c0565028aaec7d3d591f9632c74b6bf6d089a6fcbd691f55684a5edf844e8f549191fd81cbd21b2f39d684c
+  languageName: node
+  linkType: hard
+
+"rehype-minify-meta-content@npm:^4.0.0":
+  version: 4.0.1
+  resolution: "rehype-minify-meta-content@npm:4.0.1"
+  dependencies:
+    "@types/hast": "npm:^3.0.0"
+    comma-separated-tokens: "npm:^2.0.0"
+    unist-util-visit: "npm:^5.0.0"
+  checksum: 10c0/39b09b77211e24220c2696ca6be918a671cfa0f1445098282c48d2bdab44cd7e5f36a93ef1ffc4e9bdc82176d4e694cddb1c68e598e21c9c3a9756fe530669c8
+  languageName: node
+  linkType: hard
+
+"rehype-minify-style-attribute@npm:^4.0.0":
+  version: 4.0.1
+  resolution: "rehype-minify-style-attribute@npm:4.0.1"
+  dependencies:
+    "@types/hast": "npm:^3.0.0"
+    clean-css: "npm:^5.0.0"
+    unist-util-visit: "npm:^5.0.0"
+  checksum: 10c0/2958d2c95e913a12680aebd68fa8395884d1ad4108c88e5446948a601b5ee44f122e4a34572799fcfd108f665a047694b0e9783c65f7904f2000b5951fb28763
+  languageName: node
+  linkType: hard
+
+"rehype-minify-whitespace@npm:^6.0.0":
+  version: 6.0.2
+  resolution: "rehype-minify-whitespace@npm:6.0.2"
+  dependencies:
+    "@types/hast": "npm:^3.0.0"
+    hast-util-minify-whitespace: "npm:^1.0.0"
+  checksum: 10c0/e808a452068392070dcba4ea0fdc24c783e21ddc9c70008f90827ddd29afa6fb82f77473bba91e06b48cef8575553f906fa8ab44ae59700f945eb0910927acd9
+  languageName: node
+  linkType: hard
+
+"rehype-normalize-attribute-value-case@npm:^4.0.0":
+  version: 4.0.1
+  resolution: "rehype-normalize-attribute-value-case@npm:4.0.1"
+  dependencies:
+    "@types/hast": "npm:^3.0.0"
+    hast-util-is-element: "npm:^3.0.0"
+    unist-util-visit: "npm:^5.0.0"
+  checksum: 10c0/b5746ffe0b628a7779f9d1bb856f4c67e982bce4cca3bdf4a10a7d1ef3275ad070e21cd8c036678543b1884c2e7a29cf664dee5a37df260ba7b233173c1011b1
+  languageName: node
+  linkType: hard
+
 "rehype-parse@npm:^9.0.0":
   version: 9.0.1
   resolution: "rehype-parse@npm:9.0.1"
@@ -9235,6 +9567,95 @@ __metadata:
     unist-util-filter: "npm:^5.0.0"
     unist-util-visit: "npm:^5.0.0"
   checksum: 10c0/c8b284de7ee884d11dca3aae1119658a333cc10ccda1b33019dc9503411883e6379207df502e7524a81e05ac1db0e846e9e3f73b2a62b22eb581e2094d42070e
+  languageName: node
+  linkType: hard
+
+"rehype-remove-comments@npm:^6.0.0":
+  version: 6.1.1
+  resolution: "rehype-remove-comments@npm:6.1.1"
+  dependencies:
+    "@types/hast": "npm:^3.0.0"
+    hast-util-is-conditional-comment: "npm:^3.0.0"
+    unist-util-visit: "npm:^5.0.0"
+  checksum: 10c0/29e9407c36a134f84aef73e5e846aa557b9e0f6fed5af6cc7713c3ce3125619158a1666a9ef8a8f557b6df1dfc25ca0cb91031d8fea859453cdf5742dfd0b2c8
+  languageName: node
+  linkType: hard
+
+"rehype-remove-duplicate-attribute-values@npm:^4.0.0":
+  version: 4.0.1
+  resolution: "rehype-remove-duplicate-attribute-values@npm:4.0.1"
+  dependencies:
+    "@types/hast": "npm:^3.0.0"
+    hast-util-is-element: "npm:^3.0.0"
+    unist-util-visit: "npm:^5.0.0"
+  checksum: 10c0/e4ed32f9a69e7c9600ef1ed3e2a6a71931facd2802a76d263c7af3caf9c521e1d9cb23b5599a00ee9f713c0b0f26e421da124c5a96ed0ba00d996ddbe09e4188
+  languageName: node
+  linkType: hard
+
+"rehype-remove-empty-attribute@npm:^4.0.0":
+  version: 4.0.1
+  resolution: "rehype-remove-empty-attribute@npm:4.0.1"
+  dependencies:
+    "@types/hast": "npm:^3.0.0"
+    hast-util-is-element: "npm:^3.0.0"
+    hast-util-is-event-handler: "npm:^3.0.0"
+    unist-util-visit: "npm:^5.0.0"
+  checksum: 10c0/1e3061b85be98ec4172b4ee43a197e1e16914547cff8dbd7aa57708d4eaca8999b448e82c500af9be3cb5cdb169ae0f06f60b568be9326cc153328032800d0cf
+  languageName: node
+  linkType: hard
+
+"rehype-remove-external-script-content@npm:^4.0.0":
+  version: 4.0.1
+  resolution: "rehype-remove-external-script-content@npm:4.0.1"
+  dependencies:
+    "@types/hast": "npm:^3.0.0"
+    hast-util-is-javascript: "npm:^3.0.0"
+    unist-util-visit: "npm:^5.0.0"
+  checksum: 10c0/ef6ca167ab72d71ce52a757b47b4de8f898f83fccef24e0731319dc7d7a2b469ffd63266f8eebbeaeba485092d073aab6476cb1084d70179eb6fc324af281c62
+  languageName: node
+  linkType: hard
+
+"rehype-remove-meta-http-equiv@npm:^4.0.0":
+  version: 4.0.1
+  resolution: "rehype-remove-meta-http-equiv@npm:4.0.1"
+  dependencies:
+    "@types/hast": "npm:^3.0.0"
+    space-separated-tokens: "npm:^2.0.0"
+    unist-util-visit: "npm:^5.0.0"
+  checksum: 10c0/2e1407bfe6b28be55f323137cd3a7157d90f53b053a0d33d12c4659b1940b908bbefed291720d2f99d36a48765003885eb1a83436a13aeb481eedd1f0b12f234
+  languageName: node
+  linkType: hard
+
+"rehype-remove-style-type-css@npm:^4.0.0":
+  version: 4.0.1
+  resolution: "rehype-remove-style-type-css@npm:4.0.1"
+  dependencies:
+    "@types/hast": "npm:^3.0.0"
+    hast-util-is-css-link: "npm:^3.0.0"
+    hast-util-is-css-style: "npm:^3.0.0"
+    unist-util-visit: "npm:^5.0.0"
+  checksum: 10c0/af1c6c0f55416799a9873e83c88f0be3789f2ccb48b6a4fc65cfaa598eacd2096ff3039622a470c7af30905546057f2b756c8c4c99fb539348997b4f9e810348
+  languageName: node
+  linkType: hard
+
+"rehype-sort-attribute-values@npm:^5.0.0":
+  version: 5.0.1
+  resolution: "rehype-sort-attribute-values@npm:5.0.1"
+  dependencies:
+    "@types/hast": "npm:^3.0.0"
+    hast-util-is-element: "npm:^3.0.0"
+    unist-util-visit: "npm:^5.0.0"
+  checksum: 10c0/d5c2a03bf15993daedf02d348c79dac532732723f157b8db7d31c091f4acf51ee3e8dd61b00ed483de366378d0ec1be6f004dcc87937a4ce40520dfa33458a13
+  languageName: node
+  linkType: hard
+
+"rehype-sort-attributes@npm:^5.0.0":
+  version: 5.0.1
+  resolution: "rehype-sort-attributes@npm:5.0.1"
+  dependencies:
+    "@types/hast": "npm:^3.0.0"
+    unist-util-visit: "npm:^5.0.0"
+  checksum: 10c0/dd1bc2c35cbc3fc7874450b5ace3c088b5310e3f185374b537d4a7d6bb3d635c41d470d178d1cfb509a4f83b27531860cf2b75f1a39b14f92717768acdd8e3a7
   languageName: node
   linkType: hard
 
@@ -9762,7 +10183,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"source-map@npm:^0.6.0, source-map@npm:~0.6.1":
+"source-map@npm:^0.6.0, source-map@npm:~0.6.0, source-map@npm:~0.6.1":
   version: 0.6.1
   resolution: "source-map@npm:0.6.1"
   checksum: 10c0/ab55398007c5e5532957cb0beee2368529618ac0ab372d789806f5718123cc4367d57de3904b4e6a4170eb5a0b0f41373066d02ca0735a0c4d75c7d328d3e011
@@ -10531,6 +10952,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"unist-util-remove@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "unist-util-remove@npm:4.0.0"
+  dependencies:
+    "@types/unist": "npm:^3.0.0"
+    unist-util-is: "npm:^6.0.0"
+    unist-util-visit-parents: "npm:^6.0.0"
+  checksum: 10c0/30f3ed31095dd7f3109266d39c514fab5f2da3fb656d5f78a0e3e7700f219760f2f4d8286c810ae43c241fee3f0a8dd40f8d1e5ebeee3cb810581d5e7e8d4f7d
+  languageName: node
+  linkType: hard
+
 "unist-util-stringify-position@npm:^4.0.0":
   version: 4.0.0
   resolution: "unist-util-stringify-position@npm:4.0.0"
@@ -11029,7 +11461,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zwitch@npm:^2.0.4":
+"zwitch@npm:^2.0.0, zwitch@npm:^2.0.4":
   version: 2.0.4
   resolution: "zwitch@npm:2.0.4"
   checksum: 10c0/3c7830cdd3378667e058ffdb4cf2bb78ac5711214e2725900873accb23f3dfe5f9e7e5a06dcdc5f29605da976fc45c26d9a13ca334d6eea2245a15e77b8fc06e

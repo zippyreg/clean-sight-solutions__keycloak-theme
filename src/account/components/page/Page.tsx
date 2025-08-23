@@ -22,6 +22,7 @@ import {
     Title
 } from "../../../shared/@patternfly/react-core";
 import { PropsWithChildren, useState, useEffect } from "react";
+import { useDebounceValue } from "usehooks-ts";
 
 type PageProps = {
     title: string;
@@ -29,7 +30,7 @@ type PageProps = {
 };
 
 const LiveCopyrightDate = () => {
-    const [currentDate, setCurrentDate] = useState(new Date());
+    const [currentDate, setCurrentDate] = useDebounceValue(new Date(), 900000);
     const [isDark] = useColorMode();
 
     useEffect(() => {
