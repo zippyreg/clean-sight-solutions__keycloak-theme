@@ -138,7 +138,7 @@ export const Header = () => {
                     visibility={{ default: "hidden", md: "visible" }}
                     align={{ default: "alignLeft" }}
                 >
-                    <CurrentRealm />
+                    <CurrentRealm textMaxWidth="25ch" />
                 </ToolbarItem>
             ]}
             toolbarItems={[

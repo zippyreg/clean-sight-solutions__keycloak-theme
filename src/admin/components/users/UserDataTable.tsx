@@ -38,6 +38,7 @@ import {
     ExclamationCircleIcon,
     InfoCircleIcon,
     PlusIcon,
+    UserIcon,
     WarningTriangleIcon
 } from "../../../shared/@patternfly/react-icons";
 import type { IRowData } from "../../../shared/@patternfly/react-table";
@@ -389,6 +390,8 @@ export function UserDataTable() {
                         </>
                     ) : (
                         <ListEmptyState
+                            hasIcon
+                            icon={<UserIcon />}
                             message={t("noUsersFound")}
                             instructions={t("emptyInstructions")}
                             primaryActionText={t("createNewUser")}

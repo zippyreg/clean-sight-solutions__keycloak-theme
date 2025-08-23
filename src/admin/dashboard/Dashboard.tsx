@@ -91,10 +91,18 @@ const EmptyDashboard = () => {
                                 alignItems={{ default: "alignItemsCenter" }}
                                 gap={{ default: "gapLg" }}
                             >
-                                <BrandWordmark
-                                    variant={isDark ? "white" : "default"}
-                                    size="xl"
-                                />
+                                <span className="pf-v5-u-display-none pf-v5-u-display-inline-on-lg">
+                                    <BrandWordmark
+                                        variant={isDark ? "white" : "default"}
+                                        size="xl"
+                                    />
+                                </span>
+                                <span className="pf-v5-u-display-none-on-lg">
+                                    <BrandWordmark
+                                        variant={isDark ? "white" : "default"}
+                                        size="md"
+                                    />
+                                </span>
                                 <Flex
                                     direction={{ default: "column" }}
                                     gap={{ default: undefined }}
@@ -281,7 +289,7 @@ const Dashboard = () => {
                                             </Button>
                                         </CardBody>
                                         <CardBody>
-                                            <ActionList>
+                                            <ActionList className="pf-v5-u-flex-wrap"> 
                                                 <ActionListItem>
                                                     <Button
                                                         component="a"

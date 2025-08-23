@@ -120,7 +120,7 @@ export const PageNav = () => {
                 <Nav onSelect={(_event, item) => onSelect(item as SelectedItem)}>
                     <NavList>
                         <span className="pf-v5-u-display-none-on-md">
-                            <CurrentRealm className={style["realm-identify"]} />
+                            <CurrentRealm textMaxWidth="23ch" className={style["realm-identify"]} />
                         </span>
                         <NavItem className="keycloak__page_nav__nav_item__realm-selector">
                             <RealmSelector />
