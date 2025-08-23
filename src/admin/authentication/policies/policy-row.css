@@ -20,7 +20,7 @@
 }
 
 :where(.pf-v5-theme-dark) .keycloak__policies_authentication__minus-icon svg {
-    color: oklch(.741 .00191 248.853);
+    color: oklch(0.741 0.00191 248.853);
 }
 
 .keycloak__policies_authentication__number-field {

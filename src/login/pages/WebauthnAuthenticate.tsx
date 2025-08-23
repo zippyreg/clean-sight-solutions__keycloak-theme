@@ -69,7 +69,11 @@ export default function WebauthnAuthenticate(props: PageProps<Extract<KcContext,
                                     <div className={kcClsx("kcFormOptionsClass")}>
                                         <div className={kcClsx("kcSelectAuthListClass")}>
                                             {authenticators.authenticators.map((authenticator, i) => (
-                                                <div key={i} id={`kc-webauthn-authenticator-item-${i}`} className={kcClsx("kcSelectAuthListItemClass")}>
+                                                <div
+                                                    key={i}
+                                                    id={`kc-webauthn-authenticator-item-${i}`}
+                                                    className={kcClsx("kcSelectAuthListItemClass")}
+                                                >
                                                     <div className={kcClsx("kcSelectAuthListItemIconClass")}>
                                                         <i
                                                             className={clsx(
@@ -93,9 +97,7 @@ export default function WebauthnAuthenticate(props: PageProps<Extract<KcContext,
                                                         </div>
                                                         <div className={clsx("auth-select-", kcClsx("kcSelectAuthListItemDescriptionClass"))}>
                                                             {authenticator.transports.displayNameProperties?.length && (
-                                                                <div
-                                                                    id={`kc-webauthn-authenticator-transport-${i}`}
-                                                                >
+                                                                <div id={`kc-webauthn-authenticator-transport-${i}`}>
                                                                     {authenticator.transports.displayNameProperties
                                                                         .map((displayNameProperty, i, arr) => ({
                                                                             displayNameProperty,
@@ -110,11 +112,13 @@ export default function WebauthnAuthenticate(props: PageProps<Extract<KcContext,
                                                                 </div>
                                                             )}
 
-                                                            <div style={{
-                                                                display: "flex",
-                                                                gap: "0.25rem",
-                                                                fontWeight: 550,
-                                                            }}>
+                                                            <div
+                                                                style={{
+                                                                    display: "flex",
+                                                                    gap: "0.25rem",
+                                                                    fontWeight: 550
+                                                                }}
+                                                            >
                                                                 <span id={`kc-webauthn-authenticator-createdlabel-${i}`}>
                                                                     {msg("webauthn-createdAt-label")}:
                                                                 </span>

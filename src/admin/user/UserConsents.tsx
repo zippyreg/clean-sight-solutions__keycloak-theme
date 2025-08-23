@@ -134,7 +134,7 @@ export const UserConsents = () => {
                 ]}
                 emptyState={
                     <ListEmptyState
-                        hasIcon={true}
+                        hasIcon
                         icon={TaskIcon}
                         message={t("noConsents")}
                         instructions={t("noConsentsText")}

@@ -6,7 +6,7 @@ import { getKcClsx } from "keycloakify/login/lib/kcClsx";
 export default function LoginPageExpired(props: PageProps<Extract<KcContext, { pageId: "login-page-expired.ftl" }>, I18n>) {
     const { kcContext, i18n, doUseDefaultCss, Template, classes } = props;
 
-     const { kcClsx } = getKcClsx({
+    const { kcClsx } = getKcClsx({
         doUseDefaultCss,
         classes
     });
@@ -17,11 +17,13 @@ export default function LoginPageExpired(props: PageProps<Extract<KcContext, { p
 
     return (
         <Template kcContext={kcContext} i18n={i18n} doUseDefaultCss={doUseDefaultCss} classes={classes} headerNode={msg("pageExpiredTitle")}>
-            <div style={{ 
-                display: "flex",
-                flexDirection: "column",
-                gap: "0.5rem",
-            }}>
+            <div
+                style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "0.5rem"
+                }}
+            >
                 {url.loginRestartFlowUrl && (
                     <a
                         href={url.loginRestartFlowUrl}

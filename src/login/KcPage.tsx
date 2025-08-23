@@ -7,14 +7,12 @@ import type { KcContext } from "./KcContext";
 import { useI18n } from "./i18n";
 import DefaultPage from "keycloakify/login/DefaultPage";
 import Template from "./Template";
-const UserProfileFormFields = lazy(
-    () => import("./UserProfileFormFields")
-);
+const UserProfileFormFields = lazy(() => import("./UserProfileFormFields"));
 
 // Custom pages
 const LoginConfigTotp = lazy(() => import("./pages/LoginConfigTotp"));
-const LoginPageExpired = lazy(() => import('./pages/LoginPageExpired'));
-const LoginResetPassword = lazy(() => import('./pages/LoginResetPassword'));
+const LoginPageExpired = lazy(() => import("./pages/LoginPageExpired"));
+const LoginResetPassword = lazy(() => import("./pages/LoginResetPassword"));
 const LoginUpdatePassword = lazy(() => import("./pages/LoginUpdatePassword"));
 const Register = lazy(() => import("./pages/Register"));
 const WebauthnAuthenticate = lazy(() => import("./pages/WebauthnAuthenticate"));
@@ -89,7 +87,7 @@ export default function KcPage(props: { kcContext: KcContext }) {
                                 doUseDefaultCss={true}
                             />
                         );
-                    case "login-page-expired.ftl": 
+                    case "login-page-expired.ftl":
                         return (
                             <LoginPageExpired
                                 {...{ kcContext, i18n, classes }}
@@ -104,7 +102,7 @@ export default function KcPage(props: { kcContext: KcContext }) {
                                 Template={Template}
                                 doUseDefaultCss={true}
                             />
-                        )
+                        );
                     case "login-update-password.ftl":
                         return (
                             <LoginUpdatePassword
@@ -113,7 +111,7 @@ export default function KcPage(props: { kcContext: KcContext }) {
                                 doUseDefaultCss={true}
                             />
                         );
-                    case "register.ftl": 
+                    case "register.ftl":
                         return (
                             <Register
                                 {...{ kcContext, i18n, classes }}
@@ -130,7 +128,7 @@ export default function KcPage(props: { kcContext: KcContext }) {
                                 Template={Template}
                                 doUseDefaultCss={true}
                             />
-                        )
+                        );
                     default:
                         return (
                             <DefaultPage
