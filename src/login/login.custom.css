@@ -63,21 +63,25 @@ body.kcBodyClass {
     justify-content: center;
 }
 
+@media screen and (max-width: 767px) {
+    #kc-theme-selector {
+        padding-top: var(--pf-global--spacer--xs);
+        padding-right: var(--pf-global--spacer--sm);
+    }
+}
+
 #kc-theme-selector .pf-c-toggle-group {
     width: 100%;
     display: flex;
     justify-content: flex-end;
 }
 
-@media screen and (max-width: 767px) {
-    #kc-theme-selector {
-        padding-top: var(--pf-global--spacer--xs);
-    }
-
+@media screen and (min-width: 768px) {
     #kc-theme-selector .pf-c-toggle-group {
         max-width: 500px;
     }
 }
+
 
 .pf-c-toggle-group {
     --pf-c-toggle-group__button--m-selected--BackgroundColor: var(
@@ -233,6 +237,10 @@ h1#kc-page-title {
 /* Buttons */
 .pf-c-button {
     border-radius: 0.25rem;
+}
+
+.select-auth-box-parent,
+.pf-c-button {
     transition-property:
         color,
         background-color,
@@ -352,6 +360,21 @@ h1#kc-page-title {
     font-size: 1rem;
 }
 
+#kc-form-webauthn .select-auth-box-headline {
+    color: var(--css-global--secondary-color);
+    line-height: 1.05rem;
+    margin-bottom: 0.25rem;
+}
+
+#kc-form-webauthn .select-auth-box-desc {
+
+}
+
+/* Select Authenticator */
+:where(.pf-theme-dark) .select-auth-box-parent:hover {
+    background: #26292d;
+}
+
 /* Authentication config */
 #kc-totp-secret-qr-code-wrapper {
     display: flex;
@@ -395,7 +418,8 @@ h1#kc-page-title {
     }
 }
 
-:where(.pf-theme-dark) #kc-info {
+:where(.pf-theme-dark) #kc-info,
+:where(.pf-theme-dark) #kc-form-webauthn .select-auth-box-desc {
     color: var(--pf-global--palette--black-200);
 }
 

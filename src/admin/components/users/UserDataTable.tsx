@@ -391,7 +391,7 @@ export function UserDataTable() {
                     ) : (
                         <ListEmptyState
                             hasIcon
-                            icon={<UserIcon />}
+                            icon={UserIcon}
                             message={t("noUsersFound")}
                             instructions={t("emptyInstructions")}
                             primaryActionText={t("createNewUser")}

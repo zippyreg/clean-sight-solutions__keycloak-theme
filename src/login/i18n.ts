@@ -9,6 +9,7 @@ const { useI18n, ofTypeI18n } = i18nBuilder
         en: {
             /* Custom Entries */
             doRegister: "Register now",
+            emailInstructionEmail: "Enter your email address and we will send you instructions on how to create a new password.",
 
             // Footer
             loginFooterHtml:
@@ -34,7 +35,11 @@ const { useI18n, ofTypeI18n } = i18nBuilder
 
             // Attempted login
             loginAttempted: "Logging in as {0}",
-            loginAttemptedHtml: "Logging in as <strong>{0}</strong>"
+            loginAttemptedHtml: "Logging in as <strong>{0}</strong>",
+
+            // Login error page
+            restartLogin: "Restart Login",
+            continueLogin: "Continue Login",
         }
     })
     .build();

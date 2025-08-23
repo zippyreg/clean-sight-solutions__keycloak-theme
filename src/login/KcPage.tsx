@@ -8,10 +8,16 @@ import { useI18n } from "./i18n";
 import DefaultPage from "keycloakify/login/DefaultPage";
 import Template from "./Template";
 const UserProfileFormFields = lazy(
-    () => import("keycloakify/login/UserProfileFormFields")
+    () => import("./UserProfileFormFields")
 );
+
+// Custom pages
 const LoginConfigTotp = lazy(() => import("./pages/LoginConfigTotp"));
+const LoginPageExpired = lazy(() => import('./pages/LoginPageExpired'));
+const LoginResetPassword = lazy(() => import('./pages/LoginResetPassword'));
 const LoginUpdatePassword = lazy(() => import("./pages/LoginUpdatePassword"));
+const Register = lazy(() => import("./pages/Register"));
+const WebauthnAuthenticate = lazy(() => import("./pages/WebauthnAuthenticate"));
 
 const DARK_MODE_CLASS = "pf-theme-dark";
 
@@ -83,6 +89,22 @@ export default function KcPage(props: { kcContext: KcContext }) {
                                 doUseDefaultCss={true}
                             />
                         );
+                    case "login-page-expired.ftl": 
+                        return (
+                            <LoginPageExpired
+                                {...{ kcContext, i18n, classes }}
+                                Template={Template}
+                                doUseDefaultCss={true}
+                            />
+                        );
+                    case "login-reset-password.ftl":
+                        return (
+                            <LoginResetPassword
+                                {...{ kcContext, i18n, classes }}
+                                Template={Template}
+                                doUseDefaultCss={true}
+                            />
+                        )
                     case "login-update-password.ftl":
                         return (
                             <LoginUpdatePassword
@@ -91,6 +113,24 @@ export default function KcPage(props: { kcContext: KcContext }) {
                                 doUseDefaultCss={true}
                             />
                         );
+                    case "register.ftl": 
+                        return (
+                            <Register
+                                {...{ kcContext, i18n, classes }}
+                                Template={Template}
+                                doUseDefaultCss={true}
+                                UserProfileFormFields={UserProfileFormFields}
+                                doMakeUserConfirmPassword={doMakeUserConfirmPassword}
+                            />
+                        );
+                    case "webauthn-authenticate.ftl":
+                        return (
+                            <WebauthnAuthenticate
+                                {...{ kcContext, i18n, classes }}
+                                Template={Template}
+                                doUseDefaultCss={true}
+                            />
+                        )
                     default:
                         return (
                             <DefaultPage
