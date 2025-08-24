@@ -27,6 +27,7 @@ export type Action = {
     text: string;
     type?: ButtonVariant;
     onClick: MouseEventHandler<HTMLButtonElement>;
+    icon?: ComponentClass<SVGIconProps>;
 };
 
 export type ListEmptyStateProps = {
@@ -88,6 +89,7 @@ export const ListEmptyState = ({
                                 variant={action.type || ButtonVariant.secondary}
                                 onClick={action.onClick}
                                 isDisabled={isDisabled}
+                                icon={action?.icon}
                             >
                                 {action.text}
                             </Button>

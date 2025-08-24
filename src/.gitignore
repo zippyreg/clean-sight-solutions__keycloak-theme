@@ -34,6 +34,9 @@
 # admin/groups/GroupTable.tsx
 # admin/groups/Members.tsx
 # admin/identity-providers/IdentityProvidersSection.tsx
+# admin/organizations/Members.tsx
+# admin/organizations/OrganizationModal.tsx
+# admin/organizations/OrganizationsSection.tsx
 # admin/realm/RealmSection.tsx
 # admin/realm-roles/UsersInRoleTab.tsx
 # admin/realm-settings/ClientProfileForm.tsx
@@ -44,6 +47,7 @@
 # admin/realm-settings/SessionsTab.tsx
 # admin/realm-settings/UserRegistration.tsx
 # admin/sessions/SessionsTable.tsx
+# admin/user/Organizations.tsx
 # admin/user/user-section.css
 # admin/user/UserConsents.tsx
 # admin/user/UserGroups.tsx
@@ -83,6 +87,7 @@
 # admin/realm-settings/user-profile/AttributesGroupTab.tsx
 # admin/realm-settings/user-profile/AttributesTab.tsx
 # shared/keycloak-ui-shared/context/KeycloakContext.tsx
+# shared/keycloak-ui-shared/controls/OrganizationTable.tsx
 # shared/keycloak-ui-shared/masthead/Masthead.tsx
 # shared/keycloak-ui-shared/user-profile/UserProfileFields.tsx
 # shared/keycloak-ui-shared/controls/table/ListEmptyState.tsx
@@ -170,11 +175,8 @@
 /admin/organizations/IdentityProviderSelect.tsx
 /admin/organizations/InviteMemberModal.tsx
 /admin/organizations/LinkIdentityProviderModal.tsx
-/admin/organizations/Members.tsx
 /admin/organizations/NewOrganization.tsx
 /admin/organizations/OrganizationForm.tsx
-/admin/organizations/OrganizationModal.tsx
-/admin/organizations/OrganizationsSection.tsx
 /admin/organizations/routes.ts
 /admin/page/constants.ts
 /admin/page/Page.tsx
@@ -214,7 +216,6 @@
 /admin/user/EditUser.tsx
 /admin/user/FederatedUserLink.tsx
 /admin/user/form-state.ts
-/admin/user/Organizations.tsx
 /admin/user/routes.ts
 /admin/user/user-credentials.css
 /admin/user/UserAttributes.tsx
@@ -660,7 +661,6 @@
 /shared/keycloak-ui-shared/controls/HelpItem.tsx
 /shared/keycloak-ui-shared/controls/KeycloakSpinner.tsx
 /shared/keycloak-ui-shared/controls/NumberControl.tsx
-/shared/keycloak-ui-shared/controls/OrganizationTable.tsx
 /shared/keycloak-ui-shared/controls/PasswordControl.tsx
 /shared/keycloak-ui-shared/controls/PasswordInput.tsx
 /shared/keycloak-ui-shared/controls/SwitchControl.tsx
