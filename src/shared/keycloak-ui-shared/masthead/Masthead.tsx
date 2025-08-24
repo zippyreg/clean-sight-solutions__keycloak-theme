@@ -128,6 +128,7 @@ const KeycloakMasthead = ({
                             </ToolbarItem>
                         ))}
                         <ToolbarItem
+                            key="user-dropdown"
                             visibility={{
                                 default: "hidden",
                                 md: "visible"
@@ -144,6 +145,7 @@ const KeycloakMasthead = ({
                             />
                         </ToolbarItem>
                         <ToolbarItem
+                            key="options-kebab"
                             align={{ default: "alignLeft" }}
                             visibility={{
                                 md: "hidden"
@@ -159,6 +161,7 @@ const KeycloakMasthead = ({
                             />
                         </ToolbarItem>
                         <ToolbarItem
+                            key="profile-picture"
                             variant="overflow-menu"
                             align={{ default: "alignRight" }}
                             className="pf-v5-u-m-0-on-md"

@@ -39,6 +39,7 @@ import {
 import { useAccess } from "../context/access/Access";
 import { AdminEvents } from "../events/AdminEvents";
 import { useState } from "react";
+import OrganizationRepresentation from "@keycloak/keycloak-admin-client/lib/defs/organizationRepresentation";
 
 export default function DetailOrganization() {
     const { adminClient } = useAdminClient();
@@ -47,6 +48,8 @@ export default function DetailOrganization() {
     const { realm, realmRepresentation } = useRealm();
     const { id } = useParams<EditOrganizationParams>();
     const { t } = useTranslation();
+
+    const [currentOrganization, setCurrentOrganization] = useState<OrganizationRepresentation>();
 
     const form = useForm<OrganizationFormType>();
 
@@ -68,9 +71,10 @@ export default function DetailOrganization() {
             }
             form.reset({
                 ...org,
-                domains: org.domains?.map(d => d.name),
-                attributes: arrayToKeyValue(org.attributes)
+                domains: (org?.domains ?? currentOrganization?.domains)?.map(d => d.name),
+                attributes: arrayToKeyValue(org?.attributes ?? currentOrganization?.attributes)
             });
+            setCurrentOrganization(org);
         },
         [id]
     );
@@ -146,10 +150,12 @@ export default function DetailOrganization() {
                                 save={save}
                                 reset={() =>
                                     form.reset({
-                                        ...form.getValues()
+                                        ...form.getValues(),
+                                        attributes: arrayToKeyValue(currentOrganization?.attributes!)
                                     })
                                 }
                                 name="attributes"
+                                label="organization"
                             />
                         </PageSection>
                     </Tab>

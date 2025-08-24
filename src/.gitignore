@@ -30,6 +30,7 @@
 # admin/dashboard/Dashboard.tsx
 # admin/events/AdminEvents.tsx
 # admin/events/UserEvents.tsx
+# admin/groups/GroupAttributes.tsx
 # admin/groups/GroupsSection.tsx
 # admin/groups/GroupTable.tsx
 # admin/groups/Members.tsx
@@ -40,6 +41,7 @@
 # admin/organizations/OrganizationModal.tsx
 # admin/organizations/OrganizationsSection.tsx
 # admin/realm/RealmSection.tsx
+# admin/realm-roles/RealmRoleTabs.tsx
 # admin/realm-roles/UsersInRoleTab.tsx
 # admin/realm-settings/ClientProfileForm.tsx
 # admin/realm-settings/DefaultGroupsTab.tsx
@@ -71,6 +73,7 @@
 # admin/clients/registration/ClientRegistrationList.tsx
 # admin/clients/scopes/ClientScopes.tsx
 # admin/components/form/CodeEditor.tsx
+# admin/components/key-value-form/AttributeForm.tsx
 # admin/components/key-value-form/KeyValueInput.tsx
 # admin/components/keycloak-card/ClickableCard.tsx
 # admin/components/role-mapping/RoleMapping.tsx
@@ -143,7 +146,6 @@
 /admin/events/EventsSection.tsx
 /admin/events/ResourceLinks.tsx
 /admin/events/routes.ts
-/admin/groups/GroupAttributes.tsx
 /admin/groups/groupIdUtils.ts
 /admin/groups/GroupRoleMapping.tsx
 /admin/groups/GroupsModal.tsx
@@ -191,7 +193,6 @@
 /admin/realm/routes.ts
 /admin/realm-roles/CreateRealmRole.tsx
 /admin/realm-roles/RealmRolesSection.tsx
-/admin/realm-roles/RealmRoleTabs.tsx
 /admin/realm-roles/routes.ts
 /admin/realm-settings/AddClientProfileModal.tsx
 /admin/realm-settings/AddTranslationModal.tsx
@@ -430,7 +431,6 @@
 /admin/components/json-file-upload/FileUploadForm.tsx
 /admin/components/json-file-upload/JsonFileUpload.tsx
 /admin/components/key-value-form/AttributeForm.css
-/admin/components/key-value-form/AttributeForm.tsx
 /admin/components/key-value-form/key-value-convert.ts
 /admin/components/key-value-form/KeySelect.tsx
 /admin/components/key-value-form/ValueSelect.tsx
