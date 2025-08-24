@@ -392,3 +392,7 @@
 :where(.pf-v5-theme-dark) .pf-v5-c-jump-links {
     --pf-v5-c-jump-links__link-text--Color: oklch(0.741 0.00191 248.853);
 }
+
+:where(.pf-v5-theme-dark) .pf-v5-c-button.pf-m-plain {
+    --pf-v5-c-button--m-plain--Color: oklch(0.741 0.00191 248.853);
+}

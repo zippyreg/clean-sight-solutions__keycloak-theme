@@ -34,7 +34,9 @@
 # admin/groups/GroupTable.tsx
 # admin/groups/Members.tsx
 # admin/identity-providers/IdentityProvidersSection.tsx
+# admin/organizations/DetailOrganization.tsx
 # admin/organizations/Members.tsx
+# admin/organizations/OrganizationForm.tsx
 # admin/organizations/OrganizationModal.tsx
 # admin/organizations/OrganizationsSection.tsx
 # admin/realm/RealmSection.tsx
@@ -44,6 +46,7 @@
 # admin/realm-settings/EmailTab.tsx
 # admin/realm-settings/PoliciesTab.tsx
 # admin/realm-settings/ProfilesTab.tsx
+# admin/realm-settings/realm-settings-section.css
 # admin/realm-settings/SessionsTab.tsx
 # admin/realm-settings/UserRegistration.tsx
 # admin/sessions/SessionsTable.tsx
@@ -90,6 +93,7 @@
 # shared/keycloak-ui-shared/controls/OrganizationTable.tsx
 # shared/keycloak-ui-shared/masthead/Masthead.tsx
 # shared/keycloak-ui-shared/user-profile/UserProfileFields.tsx
+# admin/realm-settings/user-profile/attribute/AttributeAnnotations.tsx
 # shared/keycloak-ui-shared/controls/table/ListEmptyState.tsx
 # === Owned files end =====
 
@@ -170,13 +174,11 @@
 /admin/identity-providers/OIDCConfigurationRepresentation.ts
 /admin/identity-providers/routes.ts
 /admin/organizations/DetailOraganzationHeader.tsx
-/admin/organizations/DetailOrganization.tsx
 /admin/organizations/IdentityProviders.tsx
 /admin/organizations/IdentityProviderSelect.tsx
 /admin/organizations/InviteMemberModal.tsx
 /admin/organizations/LinkIdentityProviderModal.tsx
 /admin/organizations/NewOrganization.tsx
-/admin/organizations/OrganizationForm.tsx
 /admin/organizations/routes.ts
 /admin/page/constants.ts
 /admin/page/Page.tsx
@@ -202,7 +204,6 @@
 /admin/realm-settings/partial-export.css
 /admin/realm-settings/PartialExport.tsx
 /admin/realm-settings/PartialImport.tsx
-/admin/realm-settings/realm-settings-section.css
 /admin/realm-settings/RealmSettingsSection.tsx
 /admin/realm-settings/RealmSettingsTabs.tsx
 /admin/realm-settings/routes.ts
@@ -634,7 +635,6 @@
 /admin/realm-settings/keys/key-providers/KeyProvidersPicker.tsx
 /admin/realm-settings/user-profile/attribute/AddTranslationsDialog.tsx
 /admin/realm-settings/user-profile/attribute/AddValidatorDialog.tsx
-/admin/realm-settings/user-profile/attribute/AttributeAnnotations.tsx
 /admin/realm-settings/user-profile/attribute/AttributeGeneralSettings.tsx
 /admin/realm-settings/user-profile/attribute/AttributePermission.tsx
 /admin/realm-settings/user-profile/attribute/AttributeValidations.tsx
