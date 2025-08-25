@@ -45,5 +45,5 @@ run = "yarn version minor"
 
 [tasks.prepare]
 description = "Prepare the theme for next deployment"
-depends = ["patch"]
+depends = ["patch", "format"]
 run = "cat ${MISE_PROJECT_ROOT}/package.json"
