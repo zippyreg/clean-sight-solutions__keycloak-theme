@@ -11,6 +11,7 @@ const UserProfileFormFields = lazy(() => import("./UserProfileFormFields"));
 
 // Custom pages
 const LoginConfigTotp = lazy(() => import("./pages/LoginConfigTotp"));
+const LoginOtp = lazy(() => import("./pages/LoginOtp"));
 const LoginPageExpired = lazy(() => import("./pages/LoginPageExpired"));
 const LoginResetPassword = lazy(() => import("./pages/LoginResetPassword"));
 const LoginUpdatePassword = lazy(() => import("./pages/LoginUpdatePassword"));
@@ -88,6 +89,14 @@ export default function KcPage(props: { kcContext: KcContext }) {
                                 doUseDefaultCss={true}
                             />
                         );
+                    case "login-otp.ftl":
+                        return (
+                            <LoginOtp
+                                {...{ kcContext, i18n, classes }}
+                                Template={Template}
+                                doUseDefaultCss={true}
+                            />
+                        );
                     case "login-page-expired.ftl":
                         return (
                             <LoginPageExpired
@@ -129,7 +138,7 @@ export default function KcPage(props: { kcContext: KcContext }) {
                                 Template={Template}
                                 doUseDefaultCss={true}
                             />
-                        )
+                        );
                     case "webauthn-authenticate.ftl":
                         return (
                             <WebauthnAuthenticate

@@ -48,23 +48,20 @@ export const OrganizationForm = ({ readOnly = false }: OrganizationFormProps) =>
     const name = useWatch({ name: "name" });
 
     const convertToSnake = (str?: string): string => {
-        if(! str) return "";
+        if (!str) return "";
         return str
-            .replace(/([a-z])([A-Z]+)/g, (m, s1, s2) => s1 + ' ' + s2)
+            .replace(/([a-z])([A-Z]+)/g, (m, s1, s2) => s1 + " " + s2)
             .replace(
-                /([A-Z])([A-Z]+)([^a-zA-Z0-9]*)$/, 
+                /([A-Z])([A-Z]+)([^a-zA-Z0-9]*)$/,
                 (m, s1, s2, s3) => s1 + s2.toLowerCase() + s3
             )
-            .replace(
-                /([A-Z]+)([A-Z][a-z])/g, 
-                (m, s1, s2) => s1.toLowerCase() + ' ' + s2
-            )
+            .replace(/([A-Z]+)([A-Z][a-z])/g, (m, s1, s2) => s1.toLowerCase() + " " + s2)
             .replace(/\W+/g, " ")
             .split(/ |\B(?=[A-Z])/)
             .map(word => word.toLowerCase())
-            .join('_')
-            .replace(/^_+|_+$/g, '')
-    }
+            .join("_")
+            .replace(/^_+|_+$/g, "");
+    };
 
     useEffect(() => {
         if (!readOnly) {

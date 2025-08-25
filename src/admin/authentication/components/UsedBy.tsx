@@ -21,7 +21,10 @@ import {
     TextContent,
     TextVariants
 } from "../../../shared/@patternfly/react-core";
-import { CheckCircleIcon, MinusCircleIcon } from "../../../shared/@patternfly/react-icons";
+import {
+    CheckCircleIcon,
+    MinusCircleIcon
+} from "../../../shared/@patternfly/react-icons";
 import { useTranslation } from "react-i18next";
 import { useAdminClient } from "../../admin-client";
 import { fetchUsedBy } from "../../components/role-mapping/resource";
@@ -35,7 +38,7 @@ type UsedByProps = {
     authType: AuthenticationType;
 };
 
-const Label = ({ label, isNotUsed }: { label: string, isNotUsed?: boolean }) => (
+const Label = ({ label, isNotUsed }: { label: string; isNotUsed?: boolean }) => (
     <Flex gap={{ default: "gapSm" }}>
         {isNotUsed && <MinusCircleIcon className={clsx(style.label, style.notUsed)} />}
         {!isNotUsed && <CheckCircleIcon className={clsx(style.label, style.used)} />}

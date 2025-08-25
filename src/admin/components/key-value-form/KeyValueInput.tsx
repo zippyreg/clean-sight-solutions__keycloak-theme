@@ -55,7 +55,7 @@ export const KeyValueInput = ({
     label = "attributes",
     defaultKeyValue,
     isDisabled = false,
-    unregisterFieldsOnUnmount = true,
+    unregisterFieldsOnUnmount = true
 }: KeyValueInputProps) => {
     const { t } = useTranslation();
     const {

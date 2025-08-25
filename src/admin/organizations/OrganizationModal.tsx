@@ -98,14 +98,14 @@ export const OrganizationModal = ({
                         )
                     }
                 ]}
-                emptyState={(
+                emptyState={
                     <ListEmptyState
                         hasIcon
                         message={t("emptyUserOrganizations")}
                         instructions={t("emptyUserOrganizationsInstructions")}
                         icon={UsersIcon}
                     />
-                )}
+                }
             />
         </Modal>
     );

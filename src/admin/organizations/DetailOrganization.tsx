@@ -49,7 +49,8 @@ export default function DetailOrganization() {
     const { id } = useParams<EditOrganizationParams>();
     const { t } = useTranslation();
 
-    const [currentOrganization, setCurrentOrganization] = useState<OrganizationRepresentation>();
+    const [currentOrganization, setCurrentOrganization] =
+        useState<OrganizationRepresentation>();
 
     const form = useForm<OrganizationFormType>();
 
@@ -72,7 +73,9 @@ export default function DetailOrganization() {
             form.reset({
                 ...org,
                 domains: (org?.domains ?? currentOrganization?.domains)?.map(d => d.name),
-                attributes: arrayToKeyValue(org?.attributes ?? currentOrganization?.attributes ?? [])
+                attributes: arrayToKeyValue(
+                    org?.attributes ?? currentOrganization?.attributes ?? []
+                )
             });
             setCurrentOrganization(org);
         },
@@ -128,11 +131,17 @@ export default function DetailOrganization() {
                                         {t("save")}
                                     </FormSubmitButton>
                                     <Button
-                                        onClick={() => form.reset({
-                                            ...currentOrganization,
-                                            domains: (currentOrganization?.domains ?? []).map(d => d.name),
-                                            attributes: arrayToKeyValue(currentOrganization?.attributes ?? [])
-                                        })}
+                                        onClick={() =>
+                                            form.reset({
+                                                ...currentOrganization,
+                                                domains: (
+                                                    currentOrganization?.domains ?? []
+                                                ).map(d => d.name),
+                                                attributes: arrayToKeyValue(
+                                                    currentOrganization?.attributes ?? []
+                                                )
+                                            })
+                                        }
                                         data-testid="reset"
                                         variant="link"
                                     >
@@ -153,15 +162,17 @@ export default function DetailOrganization() {
                                 unregisterFieldsOnUnmount={false}
                                 form={form}
                                 save={save}
-                                reset={() =>
-                                {
+                                reset={() => {
                                     form.reset({
                                         ...currentOrganization,
-                                        domains: (currentOrganization?.domains ?? []).map(d => d.name),
-                                        attributes: arrayToKeyValue(currentOrganization?.attributes ?? [])
-                                    })
-                                }
-                                }
+                                        domains: (currentOrganization?.domains ?? []).map(
+                                            d => d.name
+                                        ),
+                                        attributes: arrayToKeyValue(
+                                            currentOrganization?.attributes ?? []
+                                        )
+                                    });
+                                }}
                                 name="attributes"
                                 label="organization"
                             />

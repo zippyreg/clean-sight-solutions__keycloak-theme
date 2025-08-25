@@ -195,7 +195,9 @@
     --pf-v5-c-menu-toggle--hover--BackgroundColor: var(--css-global--secondary-color);
     --pf-v5-c-menu-toggle--focus--BackgroundColor: var(--css-global--secondary-color);
     --pf-v5-c-menu-toggle--active--BackgroundColor: var(--css-global--brand-blue);
-    --pf-v5-c-menu-toggle--m-expanded--Color: var(--css-global--secondary-color-foreground);
+    --pf-v5-c-menu-toggle--m-expanded--Color: var(
+        --css-global--secondary-color-foreground
+    );
     --pf-v5-c-menu-toggle--m-expanded--BackgroundColor: var(--css-global--brand-blue);
     --pf-v5-c-menu-toggle--PaddingLeft: var(--pf-v5-global--spacer--md);
 }
@@ -203,9 +205,10 @@
 .pf-v5-c-menu-toggle.pf-m-primary:hover,
 .pf-v5-c-menu-toggle.pf-m-primary:active,
 .pf-v5-c-menu-toggle.pf-m-primary:focus {
-    --pf-v5-c-menu-toggle--m-primary--Color: var(--css-global--secondary-color-foreground);
+    --pf-v5-c-menu-toggle--m-primary--Color: var(
+        --css-global--secondary-color-foreground
+    );
 }
-
 
 .pf-v5-c-button,
 .pf-v5-c-menu-toggle {

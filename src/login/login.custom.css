@@ -365,7 +365,53 @@ h1#kc-page-title {
     margin-bottom: 0.25rem;
 }
 
-#kc-form-webauthn .select-auth-box-desc {
+/* OTP credential selectors */
+
+.kcInputWrapperClass {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.kcInputWrapperClass .relative-wrapper {
+    position: relative;
+    display: grid;
+}
+
+.kcLoginOTPListInputClass {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    top: 0; 
+    left: 0;
+}
+
+.pf-c-tile {
+    --pf-c-tile--focus__icon--Color: var(--css-global--secondary-color);
+    --pf-c-tile--focus__title--Color: var(--pf-global--Color--200);
+    --pf-c-tile--hover__icon--Color: var(--css-global--secondary-color);
+    --pf-c-tile--hover__title--Color: var(--pf-global--Color--200);
+    --pf-c-tile--hover--after--BackgroundColor: var(--css-global--secondary-color);
+    --pf-c-tile--m-selected--after--BackgroundColor: var(--css-global--brand-blue);
+}
+
+:where(.pf-theme-dark) .pf-c-tile {
+    --pf-c-tile--focus__title--Color: var(--pf-global--palette--black-100);
+    --pf-c-tile--hover__title--Color: var(--pf-global--palette--black-100);
+    --pf-c-tile--hover--after--BackgroundColor: var(--css-global--secondary-color);
+    --pf-c-tile--m-selected--after--BackgroundColor: var(--css-global--primary-color);
+}
+
+.kcLoginOTPListClass.pf-m-selected,
+.pf-c-tile:active {
+    --pf-c-tile__title--Color: var(--css-global--brand-blue);
+    --pf-c-tile__icon--Color: var(--css-global--secondary-color);
+}
+
+:where(.pf-theme-dark) .kcLoginOTPListClass.pf-m-selected,
+:where(.pf-theme-dark) .pf-c-tile:active {
+    --pf-c-tile__title--Color: var(--pf-global--Color--100);
+    --pf-c-tile__icon--Color: var(--css-global--secondary-color);
 }
 
 /* Select Authenticator */

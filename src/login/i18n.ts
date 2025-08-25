@@ -9,6 +9,7 @@ const { useI18n, ofTypeI18n } = i18nBuilder
         en: {
             /* Custom Entries */
             doRegister: "Register now",
+            doLogInOtp: "Enter your Authenticator code",
             emailInstructionEmail:
                 "Enter your email address and we will send you instructions on how to create a new password.",
 
