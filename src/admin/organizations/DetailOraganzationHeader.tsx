@@ -10,7 +10,11 @@
 // @ts-nocheck
 
 import { useMemo } from "react";
-import { ButtonVariant, DropdownItem, Tooltip } from "../../shared/@patternfly/react-core";
+import {
+    ButtonVariant,
+    DropdownItem,
+    Tooltip
+} from "../../shared/@patternfly/react-core";
 import { ViewHeader, ViewHeaderBadge } from "../components/view-header/ViewHeader";
 import { useTranslation } from "react-i18next";
 import { useConfirmDialog } from "../components/confirm-dialog/ConfirmDialog";
@@ -67,13 +71,13 @@ export const DetailOrganizationHeader = ({ save }: DetailOrganizationHeaderProps
     });
 
     const badges = useMemo<ViewHeaderBadge[]>(() => [
-        (!enabled && {
+        !enabled && {
             text: (
                 <Tooltip content={t("helpOrganizationDisabled")}>
                     <DisabledLabel isCompact={false} />
                 </Tooltip>
             )
-        })
+        }
     ]);
 
     return (

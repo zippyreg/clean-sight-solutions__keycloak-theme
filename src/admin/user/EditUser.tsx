@@ -292,37 +292,33 @@ export default function EditUser() {
                 className="kc-username-view-header"
                 divider={false}
                 badges={[
-                    ...(
-                        lightweightUser
-                            ? [
-                                {
-                                    text: (
-                                        <Tooltip content={t("transientUserTooltip")}>
-                                            <Label
-                                                data-testid="user-details-label-transient-user"
-                                                icon={<InfoCircleIcon />}
-                                            >
-                                                {t("transientUser")}
-                                            </Label>
-                                        </Tooltip>
-                                    )
-                                }
-                            ]
-                            : []
-                    ),
-                    ...(
-                        !user.enabled
-                            ? [
-                                {
-                                    text: (
-                                        <Tooltip content={t("helpUserDisabled")}>
-                                            <DisabledLabel isCompact={false} />
-                                        </Tooltip>
-                                    )
-                                }
-                            ] :
-                            []
-                    )
+                    ...(lightweightUser
+                        ? [
+                              {
+                                  text: (
+                                      <Tooltip content={t("transientUserTooltip")}>
+                                          <Label
+                                              data-testid="user-details-label-transient-user"
+                                              icon={<InfoCircleIcon />}
+                                          >
+                                              {t("transientUser")}
+                                          </Label>
+                                      </Tooltip>
+                                  )
+                              }
+                          ]
+                        : []),
+                    ...(!user.enabled
+                        ? [
+                              {
+                                  text: (
+                                      <Tooltip content={t("helpUserDisabled")}>
+                                          <DisabledLabel isCompact={false} />
+                                      </Tooltip>
+                                  )
+                              }
+                          ]
+                        : [])
                 ]}
                 dropdownItems={[
                     <DropdownItem

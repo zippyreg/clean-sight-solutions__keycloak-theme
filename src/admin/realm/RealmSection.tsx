@@ -13,17 +13,21 @@ import { NetworkError } from "@keycloak/keycloak-admin-client";
 import { KeycloakDataTable, useAlerts } from "../../shared/keycloak-ui-shared";
 import {
     AlertVariant,
-    Badge,
     Button,
     Dropdown,
     DropdownItem,
     DropdownList,
+    Flex,
     MenuToggle,
     PageSection,
     Popover,
     ToolbarItem
 } from "../../shared/@patternfly/react-core";
-import { EllipsisVIcon, PlusIcon } from "../../shared/@patternfly/react-icons";
+import {
+    CheckCircleIcon,
+    EllipsisVIcon,
+    PlusIcon
+} from "../../shared/@patternfly/react-icons";
 import { cellWidth } from "../../shared/@patternfly/react-table";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -39,6 +43,7 @@ import { translationFormatter } from "../utils/translationFormatter";
 import NewRealmForm from "./add/NewRealmForm";
 import { toRealm } from "./RealmRoutes";
 import { toDashboard } from "../dashboard/routes/Dashboard";
+import { DisabledLabel } from "../components/label/DisabledLabel";
 
 export type RealmNameRepresentation = {
     name: string;
@@ -245,20 +250,32 @@ export default function RealmSection() {
                         {
                             name: "name",
                             transforms: [cellWidth(20)],
-                            cellRenderer: ({ name }) =>
-                                name !== realm ? (
-                                    <Link to={toDashboard({ realm: name })}>{name}</Link>
-                                ) : (
-                                    <Popover
-                                        bodyContent={t("currentRealmExplain")}
-                                        triggerAction="hover"
-                                    >
-                                        <>
-                                            {name}{" "}
-                                            <Badge isRead>{t("currentRealm")}</Badge>
-                                        </>
-                                    </Popover>
-                                )
+                            cellRenderer: ({ name, enabled }) => (
+                                <Flex gap={{ default: "gapSm" }}>
+                                    {name !== realm ? (
+                                        <Link to={toDashboard({ realm: name })}>
+                                            {name}
+                                        </Link>
+                                    ) : (
+                                        <Popover
+                                            bodyContent={t("currentRealmExplain")}
+                                            triggerAction="hover"
+                                        >
+                                            <Flex gap={{ default: "gapSm" }}>
+                                                <span>{name}</span>
+                                                <Label
+                                                    isCompact
+                                                    color="green"
+                                                    icon={<CheckCircleIcon />}
+                                                >
+                                                    {t("currentRealm")}
+                                                </Label>
+                                            </Flex>
+                                        </Popover>
+                                    )}
+                                    {!enabled && <DisabledLabel />}
+                                </Flex>
+                            )
                         },
                         {
                             name: "displayName",

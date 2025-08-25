@@ -28,10 +28,8 @@ const OrgDetailLink = ({ link, organization }: OrgDetailLinkProps) => {
     const Component = link;
     return (
         <TableText wrapModifier="truncate">
-            <Flex gap={{ default: "gapSm" }} flexWrap={{ default: "nowrap"}}>
-                <Component organization={organization}>
-                    {organization.name}
-                </Component>
+            <Flex gap={{ default: "gapSm" }} flexWrap={{ default: "nowrap" }}>
+                <Component organization={organization}>{organization.name}</Component>
 
                 {!organization.enabled && (
                     <DisabledLabel key={`${organization.id}-disabled`} />

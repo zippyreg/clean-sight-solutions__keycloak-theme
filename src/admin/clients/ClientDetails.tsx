@@ -127,11 +127,11 @@ const ClientDetailHeader = ({
             <Label>{protocolName}</Label>
         );
 
-        const disabled = (!client.enabled && (
+        const disabled = !client.enabled && (
             <Tooltip content={t("helpClientDisabled")}>
                 <DisabledLabel isCompact={false} />
             </Tooltip>
-        ));
+        );
 
         return [{ text }, { text: disabled }];
     }, [client, t]);

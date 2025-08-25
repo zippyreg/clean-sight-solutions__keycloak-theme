@@ -51,6 +51,7 @@
 # admin/realm-settings/PoliciesTab.tsx
 # admin/realm-settings/ProfilesTab.tsx
 # admin/realm-settings/realm-settings-section.css
+# admin/realm-settings/RealmSettingsTabs.tsx
 # admin/realm-settings/SessionsTab.tsx
 # admin/realm-settings/UserRegistration.tsx
 # admin/sessions/SessionsTable.tsx
@@ -213,7 +214,6 @@
 /admin/realm-settings/PartialExport.tsx
 /admin/realm-settings/PartialImport.tsx
 /admin/realm-settings/RealmSettingsSection.tsx
-/admin/realm-settings/RealmSettingsTabs.tsx
 /admin/realm-settings/routes.ts
 /admin/realm-settings/TokensTab.tsx
 /admin/root/AuthWall.tsx
