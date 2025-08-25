@@ -313,7 +313,7 @@ export default function EditUser() {
                               {
                                   text: (
                                       <Tooltip content={t("helpUserDisabled")}>
-                                          <DisabledLabel isCompact={false} />
+                                          <DisabledLabel />
                                       </Tooltip>
                                   )
                               }

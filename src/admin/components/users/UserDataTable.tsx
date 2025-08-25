@@ -96,7 +96,7 @@ const StatusRow = ({ user }: StatusRowProps) => {
     const { t } = useTranslation();
     return (
         <>
-            {!user.enabled && <DisabledLabel />}
+            {!user.enabled && <DisabledLabel isCompact />}
             {user.bruteForceStatus?.disabled && (
                 <Label isCompact color="orange" icon={<MinusCircleIcon />}>
                     {t("temporaryLocked")}

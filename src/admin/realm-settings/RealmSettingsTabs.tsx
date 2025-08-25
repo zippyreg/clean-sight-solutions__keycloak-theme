@@ -140,7 +140,7 @@ const RealmSettingsHeader = ({
                               {
                                   text: (
                                       <Tooltip content={t("helpRealmDisabled")}>
-                                          <DisabledLabel isCompact={false} />
+                                          <DisabledLabel />
                                       </Tooltip>
                                   )
                               }

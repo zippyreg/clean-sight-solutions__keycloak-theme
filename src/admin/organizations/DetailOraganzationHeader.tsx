@@ -74,7 +74,7 @@ export const DetailOrganizationHeader = ({ save }: DetailOrganizationHeaderProps
         !enabled && {
             text: (
                 <Tooltip content={t("helpOrganizationDisabled")}>
-                    <DisabledLabel isCompact={false} />
+                    <DisabledLabel />
                 </Tooltip>
             )
         }

@@ -6,7 +6,7 @@ export type DisableLabelProps = {
     isCompact?: boolean;
 };
 
-export const DisabledLabel = ({ isCompact = true }: DisableLabelProps) => {
+export const DisabledLabel = ({ isCompact = false }: DisableLabelProps) => {
     const { t } = useTranslation();
 
     return (

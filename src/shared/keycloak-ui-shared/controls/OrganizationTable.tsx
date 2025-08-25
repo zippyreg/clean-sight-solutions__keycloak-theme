@@ -32,7 +32,7 @@ const OrgDetailLink = ({ link, organization }: OrgDetailLinkProps) => {
                 <Component organization={organization}>{organization.name}</Component>
 
                 {!organization.enabled && (
-                    <DisabledLabel key={`${organization.id}-disabled`} />
+                    <DisabledLabel isCompact key={`${organization.id}-disabled`} />
                 )}
             </Flex>
         </TableText>

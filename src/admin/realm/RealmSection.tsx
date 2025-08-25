@@ -274,7 +274,7 @@ export default function RealmSection() {
                                             </Flex>
                                         </Popover>
                                     )}
-                                    {!enabled && <DisabledLabel />}
+                                    {!enabled && <DisabledLabel isCompact />}
                                 </Flex>
                             )
                         },

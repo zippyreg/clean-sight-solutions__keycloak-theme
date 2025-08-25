@@ -62,7 +62,7 @@ const ClientDetailLink = (client: ClientRepresentation) => {
                     {client.clientId}
                 </Link>
                 <Flex gap={{ default: "gapSm" }}>
-                    {!client.enabled && <DisabledLabel />}
+                    {!client.enabled && <DisabledLabel isCompact />}
                     {client.attributes?.["is_temporary_admin"] === "true" && (
                         <TemporaryAdminLabel
                             labelKey="temporaryService"

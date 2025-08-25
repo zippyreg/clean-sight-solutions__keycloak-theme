@@ -129,7 +129,7 @@ const ClientDetailHeader = ({
 
         const disabled = !client.enabled && (
             <Tooltip content={t("helpClientDisabled")}>
-                <DisabledLabel isCompact={false} />
+                <DisabledLabel />
             </Tooltip>
         );
 
