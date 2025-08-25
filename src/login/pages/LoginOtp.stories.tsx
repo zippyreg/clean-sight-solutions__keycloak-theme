@@ -48,6 +48,22 @@ export const MultipleOtpCredentials: Story = {
     )
 };
 
+export const WithImmutablePresetUsername: Story = {
+    render: () => (
+        <KcPageStory
+            kcContext={{
+                auth: {
+                    attemptedUsername: "max.mustermann@mail.com",
+                    showUsername: true
+                },
+                otpLogin: {
+                    userOtpCredentials: []
+                },
+            }}
+        />
+    )
+};
+
 /**
  * WithOtpError:
  * - Purpose: Tests the behavior when an error occurs with the OTP field (e.g., invalid OTP code).
