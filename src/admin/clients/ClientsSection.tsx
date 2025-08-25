@@ -14,16 +14,15 @@ import type { ClientQuery } from "@keycloak/keycloak-admin-client/lib/resources/
 import { useAlerts, useEnvironment } from "../../shared/keycloak-ui-shared";
 import {
     AlertVariant,
-    Badge,
     Button,
     ButtonVariant,
+    Flex,
     PageSection,
     Tab,
     TabTitleText,
-    ToolbarItem,
-    Tooltip
+    ToolbarItem
 } from "../../shared/@patternfly/react-core";
-import { PlusIcon, WarningTriangleIcon } from "../../shared/@patternfly/react-icons";
+import { PlusIcon } from "../../shared/@patternfly/react-icons";
 import { IRowData, TableText, cellWidth } from "../../shared/@patternfly/react-table";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -48,31 +47,29 @@ import { toClient } from "./routes/Client";
 import { ClientsTab, toClients } from "./routes/Clients";
 import { toImportClient } from "./routes/ImportClient";
 import { getProtocolName, isRealmClient } from "./utils";
+import { DisabledLabel } from "../components/label/DisabledLabel";
+import { TemporaryAdminLabel } from "../components/label/TemporaryAdminLabel";
 
 const ClientDetailLink = (client: ClientRepresentation) => {
-    const { t } = useTranslation();
     const { realm } = useRealm();
     return (
         <TableText wrapModifier="truncate">
-            <Link
-                key={client.id}
-                to={toClient({ realm, clientId: client.id!, tab: "settings" })}
-            >
-                {client.clientId}
-                {!client.enabled && (
-                    <Badge key={`${client.id}-disabled`} isRead className="pf-v5-u-ml-sm">
-                        {t("disabled")}
-                    </Badge>
-                )}
-            </Link>
-            {client.attributes?.["is_temporary_admin"] === "true" && (
-                <Tooltip content={t("temporaryService")}>
-                    <WarningTriangleIcon
-                        className="pf-v5-u-ml-sm"
-                        id="temporary-admin-label"
-                    />
-                </Tooltip>
-            )}
+            <Flex gap={{ default: "gapSm" }}>
+                <Link
+                    key={client.id}
+                    to={toClient({ realm, clientId: client.id!, tab: "settings" })}
+                >
+                    {client.clientId}
+                </Link>
+                <Flex gap={{ default: "gapSm" }}>
+                    {!client.enabled && (
+                        <DisabledLabel />
+                    )}
+                    {client.attributes?.["is_temporary_admin"] === "true" && (
+                        <TemporaryAdminLabel labelKey="temporaryService" helpKey="helpTemporaryService" />
+                    )}
+                </Flex>
+            </Flex>
         </TableText>
     );
 };

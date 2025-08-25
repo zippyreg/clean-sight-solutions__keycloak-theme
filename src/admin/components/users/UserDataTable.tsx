@@ -36,7 +36,6 @@ import {
     Tooltip
 } from "../../../shared/@patternfly/react-core";
 import {
-    ExclamationCircleIcon,
     MinusCircleIcon,
     PlusIcon,
     UserIcon,
@@ -58,6 +57,8 @@ import { useConfirmDialog } from "../confirm-dialog/ConfirmDialog";
 import { BruteUser, findUsers } from "../role-mapping/resource";
 import { UserDataTableToolbarItems } from "./UserDataTableToolbarItems";
 import { NetworkError } from "@keycloak/keycloak-admin-client";
+import { DisabledLabel } from "../label/DisabledLabel";
+import { TemporaryAdminLabel } from "../label/TemporaryAdminLabel";
 
 export type UserFilter = {
     exact: boolean;
@@ -71,7 +72,6 @@ export type UserAttribute = {
 };
 
 const UserDetailLink = (user: BruteUser) => {
-    const { t } = useTranslation();
     const { realm } = useRealm();
     return (
         <Flex gap={{ default: "gapSm" }}>
@@ -80,11 +80,7 @@ const UserDetailLink = (user: BruteUser) => {
             </Link>
             <Flex gap={{ default: "gapSm" }}>
                 {user.attributes?.["is_temporary_admin"]?.[0] === "true" && (
-                    <Tooltip content={t("helpTemporaryAdmin")}>
-                        <Label isCompact color="red" icon={<ExclamationCircleIcon id="temporary-admin-label" />}>
-                            {t("temporaryAdmin")}
-                        </Label>
-                    </Tooltip>
+                    <TemporaryAdminLabel />
                 )}
                 <StatusRow user={user} />
             </Flex>
@@ -101,9 +97,7 @@ const StatusRow = ({ user }: StatusRowProps) => {
     return (
         <>
             {!user.enabled && (
-                <Label isCompact color="red" icon={<MinusCircleIcon />}>
-                    {t("disabled")}
-                </Label>
+                <DisabledLabel />
             )}
             {user.bruteForceStatus?.disabled && (
                 <Label isCompact color="orange" icon={<MinusCircleIcon />}>

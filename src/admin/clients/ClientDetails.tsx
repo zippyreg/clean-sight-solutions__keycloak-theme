@@ -78,6 +78,7 @@ import { getProtocolName, isRealmClient } from "./utils";
 import { UserEvents } from "../events/UserEvents";
 import { useIsAdminPermissionsClient } from "../utils/useIsAdminPermissionsClient";
 import { AdminEvents } from "../events/AdminEvents";
+import { DisabledLabel } from "../components/label/DisabledLabel";
 
 type ClientDetailHeaderProps = {
     onChange: (value: boolean) => void;
@@ -126,7 +127,13 @@ const ClientDetailHeader = ({
             <Label>{protocolName}</Label>
         );
 
-        return [{ text }];
+        const disabled = (!client.enabled && (
+            <Tooltip content={t("helpClientDisabled")}>
+                <DisabledLabel isCompact={false} />
+            </Tooltip>
+        ));
+
+        return [{ text }, { text: disabled }];
     }, [client, t]);
 
     const { hasAccess } = useAccess();

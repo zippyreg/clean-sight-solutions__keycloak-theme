@@ -36,6 +36,7 @@
 # admin/groups/Members.tsx
 # admin/groups/MembersModal.tsx
 # admin/identity-providers/IdentityProvidersSection.tsx
+# admin/organizations/DetailOraganzationHeader.tsx
 # admin/organizations/DetailOrganization.tsx
 # admin/organizations/Members.tsx
 # admin/organizations/OrganizationForm.tsx
@@ -53,6 +54,7 @@
 # admin/realm-settings/SessionsTab.tsx
 # admin/realm-settings/UserRegistration.tsx
 # admin/sessions/SessionsTable.tsx
+# admin/user/EditUser.tsx
 # admin/user/Organizations.tsx
 # admin/user/user-section.css
 # admin/user/UserAttributes.tsx
@@ -181,7 +183,6 @@
 /admin/identity-providers/ManageOrderDialog.tsx
 /admin/identity-providers/OIDCConfigurationRepresentation.ts
 /admin/identity-providers/routes.ts
-/admin/organizations/DetailOraganzationHeader.tsx
 /admin/organizations/IdentityProviders.tsx
 /admin/organizations/IdentityProviderSelect.tsx
 /admin/organizations/InviteMemberModal.tsx
@@ -221,7 +222,6 @@
 /admin/sessions/SessionsSection.css
 /admin/sessions/SessionsSection.tsx
 /admin/user/CreateUser.tsx
-/admin/user/EditUser.tsx
 /admin/user/FederatedUserLink.tsx
 /admin/user/form-state.ts
 /admin/user/routes.ts

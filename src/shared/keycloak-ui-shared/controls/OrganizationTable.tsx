@@ -10,11 +10,12 @@
 // @ts-nocheck
 
 import OrganizationRepresentation from "@keycloak/keycloak-admin-client/lib/defs/organizationRepresentation";
-import { Badge, Label, LabelGroup } from "../../@patternfly/react-core";
+import { Flex, Label, LabelGroup } from "../../@patternfly/react-core";
 import { TableText } from "../../@patternfly/react-table";
 import { FunctionComponent, PropsWithChildren, ReactNode } from "react";
 import { useTranslation } from "react-i18next";
 import { KeycloakDataTable, LoaderFunction } from "./table/KeycloakDataTable";
+import { DisabledLabel } from "../../../admin/components/label/DisabledLabel";
 
 type OrgDetailLinkProps = {
     link: FunctionComponent<
@@ -24,23 +25,18 @@ type OrgDetailLinkProps = {
 };
 
 const OrgDetailLink = ({ link, organization }: OrgDetailLinkProps) => {
-    const { t } = useTranslation();
     const Component = link;
     return (
         <TableText wrapModifier="truncate">
-            <Component organization={organization}>
-                {organization.name}
+            <Flex gap={{ default: "gapSm" }} flexWrap={{ default: "nowrap"}}>
+                <Component organization={organization}>
+                    {organization.name}
+                </Component>
+
                 {!organization.enabled && (
-                    <Label
-                        key={`${organization.id}-disabled`}
-                        isCompact
-                        color="red"
-                        className="pf-v5-u-ml-sm"
-                    >
-                        {t("disabled")}
-                    </Label>
+                    <DisabledLabel key={`${organization.id}-disabled`} />
                 )}
-            </Component>
+            </Flex>
         </TableText>
     );
 };
