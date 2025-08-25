@@ -44,7 +44,6 @@ import { translationFormatter } from "../utils/translationFormatter";
 import NewRealmForm from "./add/NewRealmForm";
 import { toRealm } from "./RealmRoutes";
 import { toDashboard } from "../dashboard/routes/Dashboard";
-import { DisabledLabel } from "../components/label/DisabledLabel";
 
 export type RealmNameRepresentation = {
     name: string;
@@ -251,10 +250,10 @@ export default function RealmSection() {
                         {
                             name: "name",
                             transforms: [cellWidth(20)],
-                            cellRenderer: ({ name, enabled }) => (
+                            cellRenderer: row => (
                                 <Flex gap={{ default: "gapSm" }}>
-                                    {name !== realm ? (
-                                        <Link to={toDashboard({ realm: name })}>
+                                    {row.name !== realm ? (
+                                        <Link to={toDashboard({ realm: row.name })}>
                                             {name}
                                         </Link>
                                     ) : (
@@ -263,7 +262,7 @@ export default function RealmSection() {
                                             triggerAction="hover"
                                         >
                                             <Flex gap={{ default: "gapSm" }}>
-                                                <span>{name}</span>
+                                                <span>{row.name}</span>
                                                 <Label
                                                     isCompact
                                                     color="green"
@@ -274,7 +273,6 @@ export default function RealmSection() {
                                             </Flex>
                                         </Popover>
                                     )}
-                                    {!enabled && <DisabledLabel isCompact />}
                                 </Flex>
                             )
                         },
