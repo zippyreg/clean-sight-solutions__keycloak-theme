@@ -73,6 +73,8 @@
 # admin/clients/registration/ClientRegistrationList.tsx
 # admin/clients/scopes/ClientScopes.tsx
 # admin/components/form/CodeEditor.tsx
+# admin/components/form/fixed-buttons.module.css
+# admin/components/form/FixedButtonGroup.tsx
 # admin/components/key-value-form/AttributeForm.tsx
 # admin/components/key-value-form/KeyValueInput.tsx
 # admin/components/keycloak-card/ClickableCard.tsx
@@ -420,8 +422,6 @@
 /admin/components/dynamic/UserProfileAttributeListComponent.tsx
 /admin/components/error/ErrorRenderer.tsx
 /admin/components/external-link/FormattedLink.tsx
-/admin/components/form/fixed-buttons.module.css
-/admin/components/form/FixedButtonGroup.tsx
 /admin/components/form/FormAccess.tsx
 /admin/components/group/group-picker-dialog.css
 /admin/components/group/GroupPath.tsx

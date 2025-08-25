@@ -47,13 +47,15 @@ type KeyValueInputProps = {
     label?: string;
     defaultKeyValue?: DefaultValue[];
     isDisabled?: boolean;
+    unregisterFieldsOnUnmount?: boolean;
 };
 
 export const KeyValueInput = ({
     name,
     label = "attributes",
     defaultKeyValue,
-    isDisabled = false
+    isDisabled = false,
+    unregisterFieldsOnUnmount = true,
 }: KeyValueInputProps) => {
     const { t } = useTranslation();
     const {
@@ -63,7 +65,7 @@ export const KeyValueInput = ({
     } = useFormContext();
 
     const { fields, append, remove } = useFieldArray({
-        shouldUnregister: true,
+        shouldUnregister: unregisterFieldsOnUnmount,
         control,
         name
     });

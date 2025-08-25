@@ -38,7 +38,7 @@ import {
 } from "./routes/EditOrganization";
 import { useAccess } from "../context/access/Access";
 import { AdminEvents } from "../events/AdminEvents";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import OrganizationRepresentation from "@keycloak/keycloak-admin-client/lib/defs/organizationRepresentation";
 
 export default function DetailOrganization() {
@@ -72,7 +72,7 @@ export default function DetailOrganization() {
             form.reset({
                 ...org,
                 domains: (org?.domains ?? currentOrganization?.domains)?.map(d => d.name),
-                attributes: arrayToKeyValue(org?.attributes ?? currentOrganization?.attributes)
+                attributes: arrayToKeyValue(org?.attributes ?? currentOrganization?.attributes ?? [])
             });
             setCurrentOrganization(org);
         },
@@ -128,7 +128,11 @@ export default function DetailOrganization() {
                                         {t("save")}
                                     </FormSubmitButton>
                                     <Button
-                                        onClick={() => form.reset()}
+                                        onClick={() => form.reset({
+                                            ...currentOrganization,
+                                            domains: (currentOrganization?.domains ?? []).map(d => d.name),
+                                            attributes: arrayToKeyValue(currentOrganization?.attributes ?? [])
+                                        })}
                                         data-testid="reset"
                                         variant="link"
                                     >
@@ -140,19 +144,23 @@ export default function DetailOrganization() {
                     </Tab>
                     <Tab
                         id="attributes"
-                        data-testid="attributeTab"
+                        data-testid="attributesTab"
                         title={<TabTitleText>{t("attributes")}</TabTitleText>}
                         {...attributesTab}
                     >
                         <PageSection variant="light">
                             <AttributesForm
+                                unregisterFieldsOnUnmount={false}
                                 form={form}
                                 save={save}
                                 reset={() =>
+                                {
                                     form.reset({
-                                        ...form.getValues(),
-                                        attributes: arrayToKeyValue(currentOrganization?.attributes!)
+                                        ...currentOrganization,
+                                        domains: (currentOrganization?.domains ?? []).map(d => d.name),
+                                        attributes: arrayToKeyValue(currentOrganization?.attributes ?? [])
                                     })
+                                }
                                 }
                                 name="attributes"
                                 label="organization"

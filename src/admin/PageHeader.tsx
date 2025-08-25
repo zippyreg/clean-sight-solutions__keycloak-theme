@@ -135,6 +135,7 @@ export const Header = () => {
             kebabDropdownItems={kebabDropdownItems(isMasterRealm, isManager)}
             toolbar={[
                 <ToolbarItem
+                    key="current-realm"
                     visibility={{ default: "hidden", md: "visible" }}
                     align={{ default: "alignLeft" }}
                 >
