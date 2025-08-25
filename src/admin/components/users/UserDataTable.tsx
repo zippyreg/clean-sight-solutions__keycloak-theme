@@ -25,6 +25,7 @@ import {
     Chip,
     ChipGroup,
     EmptyState,
+    Flex,
     FlexItem,
     Label,
     Text,
@@ -36,7 +37,7 @@ import {
 } from "../../../shared/@patternfly/react-core";
 import {
     ExclamationCircleIcon,
-    InfoCircleIcon,
+    MinusCircleIcon,
     PlusIcon,
     UserIcon,
     WarningTriangleIcon
@@ -75,8 +76,10 @@ const UserDetailLink = (user: BruteUser) => {
     return (
         <>
             <Link to={toUser({ realm, id: user.id!, tab: "settings" })}>
-                {user.username}
-                <StatusRow user={user} />
+                <Flex gap={{ default: "gapSm" }}>
+                    <span>{user.username}</span>
+                    <StatusRow user={user} />
+                </Flex>
             </Link>
             {user.attributes?.["is_temporary_admin"]?.[0] === "true" && (
                 <Tooltip content={t("temporaryAdmin")}>
@@ -99,12 +102,12 @@ const StatusRow = ({ user }: StatusRowProps) => {
     return (
         <>
             {!user.enabled && (
-                <Label color="red" icon={<InfoCircleIcon />}>
+                <Label isCompact color="red" icon={<MinusCircleIcon />}>
                     {t("disabled")}
                 </Label>
             )}
             {user.bruteForceStatus?.disabled && (
-                <Label color="orange" icon={<WarningTriangleIcon />}>
+                <Label isCompact color="orange" icon={<WarningTriangleIcon />}>
                     {t("temporaryLocked")}
                 </Label>
             )}
@@ -115,14 +118,16 @@ const StatusRow = ({ user }: StatusRowProps) => {
 const ValidatedEmail = (user: UserRepresentation) => {
     const { t } = useTranslation();
     return (
-        <>
+        <Flex gap={{ default: "gapSm" }}>
+            <span>{emptyFormatter()(user.email) as JSX.Element}</span>
             {!user.emailVerified && (
-                <Tooltip content={t("notVerified")}>
-                    <ExclamationCircleIcon className="keycloak__user-section__email-verified" />
+                <Tooltip content={t("emailNotVerified")}>
+                    <Label isCompact color="orange" icon={<ExclamationCircleIcon />}>
+                        {t("notVerified")}
+                    </Label>
                 </Tooltip>
             )}{" "}
-            {emptyFormatter()(user.email) as JSX.Element}
-        </>
+        </Flex>
     );
 };
 

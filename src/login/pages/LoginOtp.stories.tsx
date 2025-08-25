@@ -58,7 +58,7 @@ export const WithImmutablePresetUsername: Story = {
                 },
                 otpLogin: {
                     userOtpCredentials: []
-                },
+                }
             }}
         />
     )

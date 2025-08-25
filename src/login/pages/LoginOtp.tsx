@@ -72,8 +72,10 @@ export default function LoginOtp(props: PageProps<Extract<KcContext, { pageId: "
                     </div>
                 )}
 
-                {(auth !== undefined && auth.showUsername && !auth.showResetCredentials) && (
-                    <div className="pf-u-mb-xl" id="kc-fallback-otp-instruction">{msg("doLogInOtp")}</div>
+                {auth !== undefined && auth.showUsername && !auth.showResetCredentials && (
+                    <div className="pf-u-mb-xl" id="kc-fallback-otp-instruction">
+                        {msg("doLogInOtp")}
+                    </div>
                 )}
 
                 <div className={kcClsx("kcFormGroupClass")}>

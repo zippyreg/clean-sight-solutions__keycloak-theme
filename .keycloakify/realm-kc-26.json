@@ -536,6 +536,24 @@
     "webAuthnPolicyPasswordlessExtraOrigins": [],
     "users": [
         {
+            "id": "82cad8f4-3805-4f03-92be-b073ea68367e",
+            "username": "breepbrop@aogiejwe.com",
+            "email": "breepbrop@aogiejwe.com",
+            "emailVerified": false,
+            "attributes": {
+                "favourite_pet": ["dog"]
+            },
+            "createdTimestamp": 1756135855840,
+            "enabled": true,
+            "totp": false,
+            "credentials": [],
+            "disableableCredentialTypes": [],
+            "requiredActions": ["TERMS_AND_CONDITIONS"],
+            "realmRoles": ["default-roles-myrealm"],
+            "notBefore": 0,
+            "groups": []
+        },
+        {
             "id": "d93e1772-4916-4243-850f-a6d9b2615716",
             "username": "testuser",
             "firstName": "Test",
@@ -1814,14 +1832,14 @@
                 "subComponents": {},
                 "config": {
                     "allowed-protocol-mapper-types": [
-                        "saml-role-list-mapper",
-                        "oidc-address-mapper",
-                        "saml-user-attribute-mapper",
+                        "oidc-full-name-mapper",
+                        "oidc-usermodel-attribute-mapper",
                         "saml-user-property-mapper",
                         "oidc-sha256-pairwise-sub-mapper",
-                        "oidc-usermodel-attribute-mapper",
-                        "oidc-usermodel-property-mapper",
-                        "oidc-full-name-mapper"
+                        "saml-user-attribute-mapper",
+                        "saml-role-list-mapper",
+                        "oidc-address-mapper",
+                        "oidc-usermodel-property-mapper"
                     ]
                 }
             },
@@ -1851,14 +1869,14 @@
                 "subComponents": {},
                 "config": {
                     "allowed-protocol-mapper-types": [
-                        "oidc-sha256-pairwise-sub-mapper",
                         "oidc-address-mapper",
-                        "oidc-full-name-mapper",
                         "oidc-usermodel-property-mapper",
-                        "saml-role-list-mapper",
-                        "oidc-usermodel-attribute-mapper",
+                        "oidc-full-name-mapper",
+                        "saml-user-attribute-mapper",
                         "saml-user-property-mapper",
-                        "saml-user-attribute-mapper"
+                        "oidc-sha256-pairwise-sub-mapper",
+                        "saml-role-list-mapper",
+                        "oidc-usermodel-attribute-mapper"
                     ]
                 }
             },
@@ -1899,7 +1917,7 @@
                 "subComponents": {},
                 "config": {
                     "kc.user.profile.config": [
-                        "{\"attributes\":[{\"name\":\"username\",\"displayName\":\"${username}\",\"validations\":{\"length\":{\"min\":3,\"max\":255},\"username-prohibited-characters\":{},\"up-username-not-idn-homograph\":{}},\"permissions\":{\"view\":[\"admin\",\"user\"],\"edit\":[\"admin\",\"user\"]},\"multivalued\":false},{\"name\":\"email\",\"displayName\":\"${email}\",\"validations\":{\"email\":{},\"length\":{\"max\":255}},\"required\":{\"roles\":[\"user\"]},\"permissions\":{\"view\":[\"admin\",\"user\"],\"edit\":[\"admin\",\"user\"]},\"multivalued\":false},{\"name\":\"firstName\",\"displayName\":\"${firstName}\",\"validations\":{\"length\":{\"max\":255},\"person-name-prohibited-characters\":{}},\"required\":{\"roles\":[\"user\"]},\"permissions\":{\"view\":[\"admin\",\"user\"],\"edit\":[\"admin\",\"user\"]},\"multivalued\":false},{\"name\":\"lastName\",\"displayName\":\"${lastName}\",\"validations\":{\"length\":{\"max\":255},\"person-name-prohibited-characters\":{}},\"required\":{\"roles\":[\"user\"]},\"permissions\":{\"view\":[\"admin\",\"user\"],\"edit\":[\"admin\",\"user\"]},\"multivalued\":false},{\"name\":\"favourite_pet\",\"displayName\":\"${profile.attributes.favourite_pet}\",\"validations\":{\"options\":{\"options\":[\"cat\",\"dog\",\"bird\"]}},\"annotations\":{\"inputType\":\"select\",\"inputOptionLabelsI18nPrefix\":\"profile.attributes.favourite_pet\"},\"required\":{\"roles\":[\"admin\",\"user\"]},\"permissions\":{\"view\":[\"admin\",\"user\"],\"edit\":[\"admin\",\"user\"]},\"multivalued\":false}],\"groups\":[{\"name\":\"user-metadata\",\"displayHeader\":\"User metadata\",\"displayDescription\":\"Attributes, which refer to user metadata\"}]}"
+                        "{\"attributes\":[{\"name\":\"username\",\"displayName\":\"${username}\",\"validations\":{\"length\":{\"min\":3,\"max\":255},\"username-prohibited-characters\":{},\"up-username-not-idn-homograph\":{}},\"permissions\":{\"view\":[\"admin\",\"user\"],\"edit\":[\"admin\",\"user\"]},\"multivalued\":false},{\"name\":\"email\",\"displayName\":\"${email}\",\"validations\":{\"email\":{},\"length\":{\"max\":255}},\"required\":{\"roles\":[\"user\"]},\"permissions\":{\"view\":[\"admin\",\"user\"],\"edit\":[\"admin\",\"user\"]},\"multivalued\":false},{\"name\":\"firstName\",\"displayName\":\"${firstName}\",\"validations\":{\"length\":{\"max\":255},\"person-name-prohibited-characters\":{}},\"required\":{\"roles\":[\"user\"]},\"permissions\":{\"view\":[\"admin\",\"user\"],\"edit\":[\"admin\",\"user\"]},\"multivalued\":false},{\"name\":\"lastName\",\"displayName\":\"${lastName}\",\"validations\":{\"length\":{\"max\":255},\"person-name-prohibited-characters\":{}},\"required\":{\"roles\":[\"user\"]},\"permissions\":{\"view\":[\"admin\",\"user\"],\"edit\":[\"admin\",\"user\"]},\"multivalued\":false},{\"name\":\"favourite_pet\",\"displayName\":\"${profile.attributes.favourite_pet}\",\"validations\":{\"options\":{\"options\":[\"cat\",\"dog\",\"bird\"]}},\"annotations\":{\"inputType\":\"select\",\"inputOptionLabelsI18nPrefix\":\"profile.attributes.favourite_pet\"},\"required\":{\"roles\":[\"admin\",\"user\"]},\"permissions\":{\"view\":[\"admin\",\"user\"],\"edit\":[\"admin\",\"user\"]},\"multivalued\":false}],\"groups\":[{\"name\":\"user-metadata\",\"displayHeader\":\"User metadata\",\"displayDescription\":\"Attributes, which refer to user metadata\"}],\"unmanagedAttributePolicy\":\"ADMIN_VIEW\"}"
                     ]
                 }
             }

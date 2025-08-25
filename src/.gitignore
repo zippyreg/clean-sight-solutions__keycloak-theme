@@ -34,6 +34,7 @@
 # admin/groups/GroupsSection.tsx
 # admin/groups/GroupTable.tsx
 # admin/groups/Members.tsx
+# admin/groups/MembersModal.tsx
 # admin/identity-providers/IdentityProvidersSection.tsx
 # admin/organizations/DetailOrganization.tsx
 # admin/organizations/Members.tsx
@@ -54,7 +55,9 @@
 # admin/sessions/SessionsTable.tsx
 # admin/user/Organizations.tsx
 # admin/user/user-section.css
+# admin/user/UserAttributes.tsx
 # admin/user/UserConsents.tsx
+# admin/user/UserCredentials.tsx
 # admin/user/UserGroups.tsx
 # admin/user-federation/UserFederationSection.tsx
 # shared/keycloak-ui-shared/main.ts
@@ -155,7 +158,6 @@
 /admin/groups/GroupsModal.tsx
 /admin/groups/GroupsSection.css
 /admin/groups/MembershipsModal.tsx
-/admin/groups/MembersModal.tsx
 /admin/groups/routes.ts
 /admin/groups/SubGroupsContext.tsx
 /admin/i18n/i18n.ts
@@ -224,8 +226,6 @@
 /admin/user/form-state.ts
 /admin/user/routes.ts
 /admin/user/user-credentials.css
-/admin/user/UserAttributes.tsx
-/admin/user/UserCredentials.tsx
 /admin/user/UserForm.tsx
 /admin/user/UserIdentityProviderLinks.tsx
 /admin/user/UserIdPModal.tsx

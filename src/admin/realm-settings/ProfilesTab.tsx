@@ -31,7 +31,7 @@ import {
     ToolbarItem,
     TabTitleText
 } from "../../shared/@patternfly/react-core";
-import { PlusIcon } from "../../shared/@patternfly/react-icons";
+import { PlusIcon, PrivateIcon } from "../../shared/@patternfly/react-icons";
 import { omit } from "lodash-es";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -242,8 +242,10 @@ export default function ProfilesTab() {
                             ]}
                             emptyState={
                                 <ListEmptyState
+                                    hasIcon
                                     message={t("emptyClientProfiles")}
                                     instructions={t("emptyClientProfilesInstructions")}
+                                    icon={PrivateIcon}
                                 />
                             }
                         />
