@@ -9,6 +9,7 @@
 
 // @ts-nocheck
 
+import { clsx } from "keycloakify/tools/clsx";
 import { KeycloakDataTable } from "../../../shared/keycloak-ui-shared";
 import {
     Button,
@@ -20,7 +21,7 @@ import {
     TextContent,
     TextVariants
 } from "../../../shared/@patternfly/react-core";
-import { CheckCircleIcon } from "../../../shared/@patternfly/react-icons";
+import { CheckCircleIcon, MinusCircleIcon } from "../../../shared/@patternfly/react-icons";
 import { useTranslation } from "react-i18next";
 import { useAdminClient } from "../../admin-client";
 import { fetchUsedBy } from "../../components/role-mapping/resource";
@@ -34,9 +35,10 @@ type UsedByProps = {
     authType: AuthenticationType;
 };
 
-const Label = ({ label }: { label: string }) => (
+const Label = ({ label, isNotUsed }: { label: string, isNotUsed?: boolean }) => (
     <Flex gap={{ default: "gapSm" }}>
-        <CheckCircleIcon className={style.label} />
+        {isNotUsed && <MinusCircleIcon className={clsx(style.label, style.notUsed)} />}
+        {!isNotUsed && <CheckCircleIcon className={clsx(style.label, style.used)} />}
         <span>{label}</span>
     </Flex>
 );
@@ -159,7 +161,7 @@ export const UsedBy = ({ authType: { id, usedBy } }: UsedByProps) => {
             {usedBy?.type === "DEFAULT" && (
                 <Label label={t(`flow.${REALM_FLOWS.get(key!)}`)} />
             )}
-            {!usedBy?.type && t("used.notInUse")}
+            {!usedBy?.type && <Label isNotUsed label={t("used.notInUse")} />}
         </>
     );
 };

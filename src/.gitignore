@@ -60,6 +60,7 @@
 # shared/keycloak-ui-shared/main.ts
 # account/components/page/Page.tsx
 # admin/assets/theme/login.css
+# admin/authentication/components/used-by.module.css
 # admin/authentication/components/UsedBy.tsx
 # admin/authentication/policies/PasswordPolicy.tsx
 # admin/authentication/policies/policy-row.css
@@ -272,7 +273,6 @@
 /admin/authentication/components/FlowRow.tsx
 /admin/authentication/components/FlowTitle.tsx
 /admin/authentication/components/RequiredActionConfigModal.tsx
-/admin/authentication/components/used-by.module.css
 /admin/authentication/form/CreateFlow.tsx
 /admin/authentication/form/NameDescription.tsx
 /admin/authentication/policies/CibaPolicy.tsx
