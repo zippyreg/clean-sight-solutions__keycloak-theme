@@ -250,10 +250,10 @@ export default function RealmSection() {
                         {
                             name: "name",
                             transforms: [cellWidth(20)],
-                            cellRenderer: row => (
+                            cellRenderer: ({ name }) => (
                                 <Flex gap={{ default: "gapSm" }}>
-                                    {row.name !== realm ? (
-                                        <Link to={toDashboard({ realm: row.name })}>
+                                    {name !== realm ? (
+                                        <Link to={toDashboard({ realm: name })}>
                                             {name}
                                         </Link>
                                     ) : (
@@ -262,7 +262,7 @@ export default function RealmSection() {
                                             triggerAction="hover"
                                         >
                                             <Flex gap={{ default: "gapSm" }}>
-                                                <span>{row.name}</span>
+                                                <span>{name}</span>
                                                 <Label
                                                     isCompact
                                                     color="green"
