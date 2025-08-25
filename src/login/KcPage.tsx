@@ -13,8 +13,10 @@ const UserProfileFormFields = lazy(() => import("./UserProfileFormFields"));
 const LoginConfigTotp = lazy(() => import("./pages/LoginConfigTotp"));
 const LoginOtp = lazy(() => import("./pages/LoginOtp"));
 const LoginPageExpired = lazy(() => import("./pages/LoginPageExpired"));
+const LoginPassword = lazy(() => import("./pages/LoginPassword"));
 const LoginResetPassword = lazy(() => import("./pages/LoginResetPassword"));
 const LoginUpdatePassword = lazy(() => import("./pages/LoginUpdatePassword"));
+const LoginUsername = lazy(() => import("./pages/LoginUsername"));
 const Register = lazy(() => import("./pages/Register"));
 const Terms = lazy(() => import("./pages/Terms"));
 const WebauthnAuthenticate = lazy(() => import("./pages/WebauthnAuthenticate"));
@@ -105,6 +107,14 @@ export default function KcPage(props: { kcContext: KcContext }) {
                                 doUseDefaultCss={true}
                             />
                         );
+                    case "login-password.ftl":
+                        return (
+                            <LoginPassword
+                                {...{ kcContext, i18n, classes }}
+                                Template={Template}
+                                doUseDefaultCss={true}
+                            />
+                        );
                     case "login-reset-password.ftl":
                         return (
                             <LoginResetPassword
@@ -116,6 +126,14 @@ export default function KcPage(props: { kcContext: KcContext }) {
                     case "login-update-password.ftl":
                         return (
                             <LoginUpdatePassword
+                                {...{ kcContext, i18n, classes }}
+                                Template={Template}
+                                doUseDefaultCss={true}
+                            />
+                        );
+                    case "login-username.ftl":
+                        return (
+                            <LoginUsername
                                 {...{ kcContext, i18n, classes }}
                                 Template={Template}
                                 doUseDefaultCss={true}

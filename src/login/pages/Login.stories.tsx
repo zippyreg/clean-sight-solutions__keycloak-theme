@@ -212,7 +212,7 @@ export const WithoutPasswordField: Story = {
     render: () => (
         <KcPageStory
             kcContext={{
-                realm: { password: false }
+                usernameHidden: false
             }}
         />
     )

@@ -43,6 +43,32 @@ export const WithPasswordError: Story = {
 };
 
 /**
+ * WithExistingUsername:
+ * - Purpose: Tests the behavior when the username is predefined by the request.
+ * - Scenario: TBD.
+ * - Key Aspect: Ensures that the existing username is shown correctly.
+ */
+export const WithExistingUsername: Story = {
+    render: () => (
+        <KcPageStory
+            kcContext={{
+                auth: {
+                    showUsername: true,
+                    attemptedUsername: "zippyreg"
+                },
+                url: {
+                    loginAction: "/mock-login",
+                    loginResetCredentialsUrl: "/mock-reset-password"
+                },
+                messagesPerField: {
+                    existsError: () => false
+                }
+            }}
+        />
+    )
+};
+
+/**
  * WithoutResetPasswordOption:
  * - Purpose: Tests the behavior when the reset password option is disabled.
  * - Scenario: Simulates a scenario where the `resetPasswordAllowed` is set to `false`, and the "Forgot Password" link is not rendered.

@@ -16,6 +16,11 @@ description = "Build the Keycloak theme"
 depends = ["dependencies", "format"]
 run = "yarn build-keycloak-theme"
 
+[tasks.story]
+description = "Run the storybook development server"
+depends = ["dependencies"]
+run = "yarn storybook"
+
 [tasks.dev]
 description = "Start the development environment for the theme"
 depends = ["dependencies"]

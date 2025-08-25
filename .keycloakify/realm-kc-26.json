@@ -544,7 +544,7 @@
                 "favourite_pet": ["dog"]
             },
             "createdTimestamp": 1756135855840,
-            "enabled": true,
+            "enabled": false,
             "totp": false,
             "credentials": [],
             "disableableCredentialTypes": [],
@@ -698,7 +698,7 @@
             "adminUrl": "",
             "baseUrl": "/realms/myrealm/account/",
             "surrogateAuthRequired": false,
-            "enabled": true,
+            "enabled": false,
             "alwaysDisplayInConsole": false,
             "clientAuthenticatorType": "client-secret",
             "redirectUris": [
@@ -1841,14 +1841,14 @@
                 "subComponents": {},
                 "config": {
                     "allowed-protocol-mapper-types": [
-                        "oidc-full-name-mapper",
-                        "oidc-usermodel-property-mapper",
+                        "saml-role-list-mapper",
                         "oidc-usermodel-attribute-mapper",
+                        "oidc-usermodel-property-mapper",
                         "oidc-address-mapper",
                         "saml-user-attribute-mapper",
-                        "saml-user-property-mapper",
+                        "oidc-full-name-mapper",
                         "oidc-sha256-pairwise-sub-mapper",
-                        "saml-role-list-mapper"
+                        "saml-user-property-mapper"
                     ]
                 }
             },
@@ -1879,12 +1879,12 @@
                 "config": {
                     "allowed-protocol-mapper-types": [
                         "saml-user-property-mapper",
-                        "oidc-usermodel-attribute-mapper",
                         "oidc-address-mapper",
-                        "oidc-sha256-pairwise-sub-mapper",
-                        "oidc-full-name-mapper",
                         "saml-role-list-mapper",
+                        "oidc-full-name-mapper",
                         "saml-user-attribute-mapper",
+                        "oidc-usermodel-attribute-mapper",
+                        "oidc-sha256-pairwise-sub-mapper",
                         "oidc-usermodel-property-mapper"
                     ]
                 }
@@ -2682,7 +2682,7 @@
         {
             "alias": "frantz",
             "description": "Frantz Building Services",
-            "enabled": true,
+            "enabled": false,
             "id": "7349dbe9-b089-47af-abce-8aab3c590006",
             "name": "Frantz Building Services",
             "attributes": {

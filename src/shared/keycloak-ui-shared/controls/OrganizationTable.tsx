@@ -27,8 +27,8 @@ type OrgDetailLinkProps = {
 const OrgDetailLink = ({ link, organization }: OrgDetailLinkProps) => {
     const Component = link;
     return (
-        <TableText wrapModifier="truncate">
-            <Flex gap={{ default: "gapSm" }} flexWrap={{ default: "nowrap" }}>
+        <TableText wrapModifier="wrap">
+            <Flex gap={{ default: "gapSm" }}>
                 <Component organization={organization}>{organization.name}</Component>
 
                 {!organization.enabled && (
