@@ -15,6 +15,7 @@ const LoginPageExpired = lazy(() => import("./pages/LoginPageExpired"));
 const LoginResetPassword = lazy(() => import("./pages/LoginResetPassword"));
 const LoginUpdatePassword = lazy(() => import("./pages/LoginUpdatePassword"));
 const Register = lazy(() => import("./pages/Register"));
+const Terms = lazy(() => import("./pages/Terms"));
 const WebauthnAuthenticate = lazy(() => import("./pages/WebauthnAuthenticate"));
 
 const DARK_MODE_CLASS = "pf-theme-dark";
@@ -121,6 +122,14 @@ export default function KcPage(props: { kcContext: KcContext }) {
                                 doMakeUserConfirmPassword={doMakeUserConfirmPassword}
                             />
                         );
+                    case "terms.ftl":
+                        return (
+                            <Terms
+                                {...{ kcContext, i18n, classes }}
+                                Template={Template}
+                                doUseDefaultCss={true}
+                            />
+                        )
                     case "webauthn-authenticate.ftl":
                         return (
                             <WebauthnAuthenticate

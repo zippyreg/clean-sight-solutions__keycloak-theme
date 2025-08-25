@@ -95,6 +95,7 @@
 # admin/realm-settings/user-profile/AttributesGroupTab.tsx
 # admin/realm-settings/user-profile/AttributesTab.tsx
 # shared/keycloak-ui-shared/context/KeycloakContext.tsx
+# shared/keycloak-ui-shared/controls/KeycloakSpinner.tsx
 # shared/keycloak-ui-shared/controls/OrganizationTable.tsx
 # shared/keycloak-ui-shared/masthead/Masthead.tsx
 # shared/keycloak-ui-shared/user-profile/UserProfileFields.tsx
@@ -659,7 +660,6 @@
 /shared/keycloak-ui-shared/controls/FormErrorText.tsx
 /shared/keycloak-ui-shared/controls/FormLabel.tsx
 /shared/keycloak-ui-shared/controls/HelpItem.tsx
-/shared/keycloak-ui-shared/controls/KeycloakSpinner.tsx
 /shared/keycloak-ui-shared/controls/NumberControl.tsx
 /shared/keycloak-ui-shared/controls/PasswordControl.tsx
 /shared/keycloak-ui-shared/controls/PasswordInput.tsx
