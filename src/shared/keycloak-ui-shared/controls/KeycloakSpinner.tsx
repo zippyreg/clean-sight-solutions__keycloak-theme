@@ -16,7 +16,7 @@ export const KeycloakSpinner = () => {
     const { t } = useTranslation();
 
     return (
-        <Bullseye className="pf-v5-u-m-lg">
+        <Bullseye className="pf-v5-u-p-lg">
             <Spinner aria-label={t("spinnerLoading")} />
         </Bullseye>
     );
