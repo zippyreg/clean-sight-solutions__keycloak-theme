@@ -1,3 +1,4 @@
 [tools]
+java = "24"
 maven = "latest"
 yarn = "latest"
