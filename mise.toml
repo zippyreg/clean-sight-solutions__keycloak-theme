@@ -2,3 +2,48 @@
 java = "24"
 maven = "latest"
 yarn = "latest"
+
+[tasks.dependencies]
+description = "Install dependencies for the theme"
+run = "yarn"
+
+[tasks.format]
+description = "Format the theme codebase with eslint"
+run = "yarn format"
+
+[tasks.build]
+description = "Build the Keycloak theme"
+depends = ["dependencies", "format"]
+run = "yarn build-keycloak-theme"
+
+[tasks.dev]
+description = "Start the development environment for the theme"
+depends = ["dependencies"]
+run = "npx keycloakify start-keycloak --keycloak-version=26"
+
+[tasks.email]
+description = "Start the jsx-email development server"
+depends = ["dependencies"]
+run="yarn emails:preview"
+
+[tasks.email-check]
+description = "Check the email templates for validity"
+depends = ["dependencies"]
+run = "yarn emails:check"
+
+[tasks.patch]
+description = "Bump the version of the theme"
+run = "yarn version patch"
+
+[tasks.major]
+description = "Bump the major version of the theme"
+run = "yarn version major"
+
+[tasks.minor]
+description = "Bump the minor version of the theme"
+run = "yarn version minor"
+
+[tasks.prepare]
+description = "Prepare the theme for next deployment"
+depends = ["patch"]
+run = "cat ${MISE_PROJECT_ROOT}/package.json"

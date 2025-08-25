@@ -74,22 +74,21 @@ const UserDetailLink = (user: BruteUser) => {
     const { t } = useTranslation();
     const { realm } = useRealm();
     return (
-        <>
+        <Flex gap={{ default: "gapSm" }}>
             <Link to={toUser({ realm, id: user.id!, tab: "settings" })}>
-                <Flex gap={{ default: "gapSm" }}>
-                    <span>{user.username}</span>
-                    <StatusRow user={user} />
-                </Flex>
+                {user.username}
             </Link>
-            {user.attributes?.["is_temporary_admin"]?.[0] === "true" && (
-                <Tooltip content={t("temporaryAdmin")}>
-                    <WarningTriangleIcon
-                        className="pf-v5-u-ml-sm"
-                        id="temporary-admin-label"
-                    />
-                </Tooltip>
-            )}
-        </>
+            <Flex gap={{ default: "gapSm" }}>
+                {user.attributes?.["is_temporary_admin"]?.[0] === "true" && (
+                    <Tooltip content={t("helpTemporaryAdmin")}>
+                        <Label isCompact color="red" icon={<ExclamationCircleIcon id="temporary-admin-label" />}>
+                            {t("temporaryAdmin")}
+                        </Label>
+                    </Tooltip>
+                )}
+                <StatusRow user={user} />
+            </Flex>
+        </Flex>
     );
 };
 
@@ -107,7 +106,7 @@ const StatusRow = ({ user }: StatusRowProps) => {
                 </Label>
             )}
             {user.bruteForceStatus?.disabled && (
-                <Label isCompact color="orange" icon={<WarningTriangleIcon />}>
+                <Label isCompact color="orange" icon={<MinusCircleIcon />}>
                     {t("temporaryLocked")}
                 </Label>
             )}
@@ -122,7 +121,7 @@ const ValidatedEmail = (user: UserRepresentation) => {
             <span>{emptyFormatter()(user.email) as JSX.Element}</span>
             {!user.emailVerified && (
                 <Tooltip content={t("emailNotVerified")}>
-                    <Label isCompact color="orange" icon={<ExclamationCircleIcon />}>
+                    <Label isCompact color="orange" icon={<WarningTriangleIcon />}>
                         {t("notVerified")}
                     </Label>
                 </Tooltip>
