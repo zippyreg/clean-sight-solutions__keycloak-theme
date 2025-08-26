@@ -36,6 +36,9 @@ const { useI18n, ofTypeI18n } = i18nBuilder
             "loginTotp.totp": "Time-based (TOTP)",
             "loginTotp.hotp": "Counter-based (HOTP)",
 
+            configureTotpMessage:
+                "You need to set up an Authenticator application to activate your account.",
+
             // Update password translations
             loginUpdatePasswordDocumentTitle: "Update password for {0}",
 

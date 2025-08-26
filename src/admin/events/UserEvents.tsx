@@ -79,7 +79,7 @@ const StatusRow = (event: EventRepresentation) =>
     ) : (
         <Tooltip content={event.error}>
             <Flex gap={{ default: "gapSm" }}>
-                <Icon status="warning">
+                <Icon status="danger">
                     <TimesCircleIcon />
                 </Icon>
                 <span>{event.type}</span>
@@ -259,7 +259,7 @@ export const UserEvents = ({ user, client }: UserEventsProps) => {
                             setSearchDropdownOpen={setSearchDropdownOpen}
                             searchDropdownOpen={searchDropdownOpen}
                             marginRight="2.5rem"
-                            width="15vw"
+                            width="225px"
                         >
                             <Form
                                 data-testid="searchForm"

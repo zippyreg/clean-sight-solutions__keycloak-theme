@@ -1,0 +1,15 @@
+.w-tc-editor-preview,
+.w-tc-editor-text {
+    padding-left: 3rem !important;
+}
+
+.code-line {
+    position: relative;
+}
+
+.code-line::before {
+    position: absolute;
+    left: -2.5rem;
+    content: attr(line);
+    color: var(--pf-v5-global--palette--black-400);
+}

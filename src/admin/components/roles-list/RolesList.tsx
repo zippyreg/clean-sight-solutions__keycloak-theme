@@ -49,7 +49,7 @@ const RoleDetailLink = ({ defaultRoleName, toDetail, ...role }: RoleDetailLinkPr
         <Link to={toDetail(role.id!)}>{role.name}</Link>
     ) : (
         <>
-            <span class="pf-v5-u-mr-xs">
+            <span className="pf-v5-u-mr-xs">
                 {canViewUserRegistration ? (
                     <Link to={toRealmSettings({ realm, tab: "user-registration" })}>
                         {role.name}

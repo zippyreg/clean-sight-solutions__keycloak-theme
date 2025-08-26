@@ -1,7 +1,7 @@
 import { createRef, useState } from "react";
 import { getKcClsx, KcClsx } from "keycloakify/login/lib/kcClsx";
 import { kcSanitize } from "keycloakify/lib/kcSanitize";
-import { PinField } from "../components/pin-input/PinField";
+import PinField from "../../shared/keycloak-ui-shared/controls/pin-input";
 import type { PageProps } from "keycloakify/login/pages/PageProps";
 import type { KcContext } from "../KcContext";
 import type { I18n } from "../i18n";

@@ -1716,7 +1716,7 @@
     "accountTheme": "clean-sight-solutions",
     "adminTheme": "clean-sight-solutions",
     "emailTheme": "clean-sight-solutions",
-    "eventsEnabled": false,
+    "eventsEnabled": true,
     "eventsListeners": ["keycloakify-logging", "jboss-logging"],
     "enabledEventTypes": [
         "SEND_RESET_PASSWORD",
@@ -1813,8 +1813,8 @@
         "GRANT_CONSENT_ERROR",
         "IDENTITY_PROVIDER_FIRST_LOGIN_ERROR"
     ],
-    "adminEventsEnabled": false,
-    "adminEventsDetailsEnabled": false,
+    "adminEventsEnabled": true,
+    "adminEventsDetailsEnabled": true,
     "identityProviders": [],
     "identityProviderMappers": [],
     "components": {
@@ -1837,14 +1837,14 @@
                 "subComponents": {},
                 "config": {
                     "allowed-protocol-mapper-types": [
-                        "saml-role-list-mapper",
-                        "oidc-full-name-mapper",
-                        "saml-user-attribute-mapper",
                         "oidc-usermodel-property-mapper",
+                        "oidc-usermodel-attribute-mapper",
+                        "saml-role-list-mapper",
                         "saml-user-property-mapper",
+                        "saml-user-attribute-mapper",
                         "oidc-address-mapper",
-                        "oidc-sha256-pairwise-sub-mapper",
-                        "oidc-usermodel-attribute-mapper"
+                        "oidc-full-name-mapper",
+                        "oidc-sha256-pairwise-sub-mapper"
                     ]
                 }
             },
@@ -1875,13 +1875,13 @@
                 "config": {
                     "allowed-protocol-mapper-types": [
                         "oidc-address-mapper",
-                        "oidc-full-name-mapper",
-                        "saml-user-attribute-mapper",
-                        "oidc-usermodel-property-mapper",
                         "saml-role-list-mapper",
                         "oidc-sha256-pairwise-sub-mapper",
+                        "oidc-full-name-mapper",
+                        "oidc-usermodel-property-mapper",
                         "saml-user-property-mapper",
-                        "oidc-usermodel-attribute-mapper"
+                        "oidc-usermodel-attribute-mapper",
+                        "saml-user-attribute-mapper"
                     ]
                 }
             },
@@ -2657,6 +2657,7 @@
         "parRequestUriLifespan": "60",
         "clientSessionMaxLifespan": "0",
         "acr.loa.map": "{}",
+        "adminEventsExpiration": "",
         "darkMode": "true",
         "frontendUrl": "",
         "saml.signature.algorithm": ""
@@ -2671,7 +2672,7 @@
         "policies": []
     },
     "adminPermissionsEnabled": false,
-    "displayName": "Kevin Testing Really long name",
+    "displayName": "Kevin Testing",
     "displayNameHtml": "",
     "verifiableCredentialsEnabled": false,
     "organizations": [

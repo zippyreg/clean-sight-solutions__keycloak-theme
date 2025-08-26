@@ -9,3 +9,24 @@
 .pf-v5-c-content h1 {
     font-weight: var(--pf-v5-global--FontWeight--bold);
 }
+
+/* Event section details description list */
+
+@media screen and (max-width: 767px) {
+    .keycloak_eventsection_details {
+        --pf-v5-c-description-list--m-horizontal__term--width: 15ch !important;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .keycloak_eventsection_details {
+        --pf-v5-c-description-list--m-horizontal__term--width: 20ch !important;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .keycloak_eventsection_details {
+        --pf-v5-c-description-list__group--GridTemplateColumns: auto !important;
+        --pf-v5-c-description-list__group--GridTemplateRows: auto 1fr !important;
+    }
+}
