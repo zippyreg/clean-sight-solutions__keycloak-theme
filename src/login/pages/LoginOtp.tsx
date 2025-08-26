@@ -1,5 +1,5 @@
 import { clsx } from "keycloakify/tools/clsx";
-import { useState } from "react";
+import { createRef, useState } from "react";
 import { getKcClsx } from "keycloakify/login/lib/kcClsx";
 import { kcSanitize } from "keycloakify/lib/kcSanitize";
 import { PinField } from "../components/pin-input/PinField";
@@ -22,6 +22,7 @@ export default function LoginOtp(props: PageProps<Extract<KcContext, { pageId: "
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [selectedCredentialIndex, setSelectedCredentialIndex] = useState(-1);
     const [otpCode, setOtpCode] = useState<string>("");
+    const submitRef = createRef<HTMLInputElement>();
 
     return (
         <Template
@@ -95,6 +96,17 @@ export default function LoginOtp(props: PageProps<Extract<KcContext, { pageId: "
                             className={kcClsx("kcInputClass")}
                             autoComplete="off"
                             onChange={value => setOtpCode(value)}
+                            onComplete={value => {
+                                setOtpCode(value);
+                                try {
+                                    // If there is a button try to click it.
+                                    submitRef.current?.click();
+                                } catch {
+                                    // Don't run the form submission function, try to CLICK the button if we can
+                                    // if NOT, make the user. Give them a chance to catch the error in the code.
+                                    console.warn("Cannot autosubmit OTP form. Requiring manual submission.");
+                                }
+                            }}
                             autoFocus
                         />
 
@@ -123,6 +135,7 @@ export default function LoginOtp(props: PageProps<Extract<KcContext, { pageId: "
                             type="submit"
                             value={msgStr("doFinishLogIn")}
                             disabled={isSubmitting}
+                            ref={submitRef}
                         />
                     </div>
                 </div>
