@@ -73,6 +73,13 @@ const DetailCell = (event: AdminEventRepresentation) => {
             isHorizontal
             className="keycloak_eventsection_details pf-v5-u-mb-lg"
         >
+            {event.details &&
+                Object.entries(event.details).map(([key, value]) => (
+                    <DescriptionListGroup key={key}>
+                        <DescriptionListTerm>{key}</DescriptionListTerm>
+                        <DescriptionListDescription>{value}</DescriptionListDescription>
+                    </DescriptionListGroup>
+                ))}
             {event.authDetails && (
                 <>
                     <DescriptionListGroup key="realmId">
@@ -276,6 +283,7 @@ export const AdminEvents = ({ resourcePath }: AdminEventsProps) => {
                     {
                         name: "details",
                         enabled: event =>
+                            event.details !== undefined ||
                             event.authDetails !== undefined ||
                             event.representation !== undefined,
                         cellRenderer: DetailCell
