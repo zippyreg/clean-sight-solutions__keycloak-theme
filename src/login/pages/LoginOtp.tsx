@@ -96,17 +96,6 @@ export default function LoginOtp(props: PageProps<Extract<KcContext, { pageId: "
                             className={kcClsx("kcInputClass")}
                             autoComplete="off"
                             onChange={value => setOtpCode(value)}
-                            onComplete={value => {
-                                setOtpCode(value);
-                                try {
-                                    // If there is a button try to click it.
-                                    submitRef.current?.click();
-                                } catch {
-                                    // Don't run the form submission function, try to CLICK the button if we can
-                                    // if NOT, make the user. Give them a chance to catch the error in the code.
-                                    console.warn("Cannot autosubmit OTP form. Requiring manual submission.");
-                                }
-                            }}
                             autoFocus
                         />
 
