@@ -2,6 +2,7 @@ import { clsx } from "keycloakify/tools/clsx";
 import { useState } from "react";
 import { getKcClsx } from "keycloakify/login/lib/kcClsx";
 import { kcSanitize } from "keycloakify/lib/kcSanitize";
+import { PinField } from "../components/pin-input/PinField";
 import type { PageProps } from "keycloakify/login/pages/PageProps";
 import type { KcContext } from "../KcContext";
 import type { I18n } from "../i18n";
@@ -20,6 +21,7 @@ export default function LoginOtp(props: PageProps<Extract<KcContext, { pageId: "
 
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [selectedCredentialIndex, setSelectedCredentialIndex] = useState(-1);
+    const [otpCode, setOtpCode] = useState<string>("");
 
     return (
         <Template
@@ -81,19 +83,21 @@ export default function LoginOtp(props: PageProps<Extract<KcContext, { pageId: "
                 <div className={kcClsx("kcFormGroupClass")}>
                     <div className={kcClsx("kcLabelWrapperClass")}>
                         <label htmlFor="otp" className={kcClsx("kcLabelClass")}>
-                            {msg("loginOtpOneTime")}
+                            <span>{msg("loginOtpOneTime")}</span> <span className="required">*</span>
                         </label>
                     </div>
                     <div className={kcClsx("kcInputWrapperClass")}>
-                        <input
-                            id="otp"
-                            name="otp"
-                            autoComplete="off"
-                            type="text"
-                            className={kcClsx("kcInputClass")}
-                            autoFocus
+                        <input type="hidden" id="otp" name="otp" autoComplete="off" value={otpCode} />
+                        <PinField
+                            length={otpLogin.policy.digits}
+                            formatAriaLabel={(n, total) => `OTP Code field ${n} of ${total}`}
                             aria-invalid={messagesPerField.existsError("totp")}
+                            className={kcClsx("kcInputClass")}
+                            autoComplete="off"
+                            onChange={value => setOtpCode(value)}
+                            autoFocus
                         />
+
                         {messagesPerField.existsError("totp") && (
                             <span
                                 id="input-error-otp-code"
@@ -117,7 +121,7 @@ export default function LoginOtp(props: PageProps<Extract<KcContext, { pageId: "
                             name="login"
                             id="kc-login"
                             type="submit"
-                            value={msgStr("doLogIn")}
+                            value={msgStr("doFinishLogIn")}
                             disabled={isSubmitting}
                         />
                     </div>

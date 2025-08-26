@@ -10,6 +10,7 @@ import Template from "./Template";
 const UserProfileFormFields = lazy(() => import("./UserProfileFormFields"));
 
 // Custom pages
+const DeleteAccountConfirm = lazy(() => import("./pages/DeleteAccountConfirm"));
 const LoginConfigTotp = lazy(() => import("./pages/LoginConfigTotp"));
 const LoginOtp = lazy(() => import("./pages/LoginOtp"));
 const LoginPageExpired = lazy(() => import("./pages/LoginPageExpired"));
@@ -83,6 +84,14 @@ export default function KcPage(props: { kcContext: KcContext }) {
         <Suspense>
             {(() => {
                 switch (kcContext.pageId) {
+                    case "delete-account-confirm.ftl":
+                        return (
+                            <DeleteAccountConfirm
+                                {...{ kcContext, i18n, classes }}
+                                Template={Template}
+                                doUseDefaultCss={true}
+                            />
+                        );
                     case "login-config-totp.ftl":
                         return (
                             <LoginConfigTotp

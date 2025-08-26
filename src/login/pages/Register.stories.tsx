@@ -256,7 +256,7 @@ export const WithReadOnlyFields: Story = {
                 profile: {
                     attributesByName: {
                         username: { value: "johndoe", readOnly: true },
-                        email: { value: "jhon.doe@gmail.com", readOnly: false }
+                        email: { value: "jhon.doe@gmail.com", readOnly: true }
                     }
                 }
             }}

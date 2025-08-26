@@ -9,6 +9,26 @@ export type KcContextExtension = {
     // See: https://docs.keycloakify.dev/faq-and-help/some-values-you-need-are-missing-from-in-kccontext
 };
 
-export type KcContextExtensionPerPage = {};
+export type KcContextExtensionPerPage = {
+    "login-otp.ftl": {
+        otpLogin: {
+            policy: {
+                algorithm: "HmacSHA1" | "HmacSHA256" | "HmacSHA512";
+                digits: number;
+                lookAheadWindow: number;
+                getAlgorithmKey: () => string;
+            } & (
+                | {
+                      type: "totp";
+                      period: number;
+                  }
+                | {
+                      type: "hotp";
+                      initialCounter: number;
+                  }
+            );
+        };
+    };
+};
 
 export type KcContext = ExtendKcContext<KcContextExtension, KcContextExtensionPerPage>;

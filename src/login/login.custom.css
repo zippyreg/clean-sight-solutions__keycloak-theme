@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Wix+Madefor+Text:ital,wght@0,400..800;1,400..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Wix+Madefor+Text:ital,wght@0,400..800;1,400..800&display=swap");
 
 :root {
     --css-global--primary-color: oklch(0.91 0.1931 105.16);
@@ -240,6 +240,28 @@ h1#kc-page-title {
     --pf-global--primary-color--100: var(--css-global--secondary-color);
 }
 
+.pf-c-pin-field {
+    --pf-l-flex--FlexWrap: nowrap;
+}
+
+.pf-c-pin-field .pf-c-form-control {
+    --pf-c-form-control--FontSize: 1.75rem;
+}
+
+.pf-c-pin-field .pf-c-form-control[aria-invalid="true"] {
+    background-image: none;
+}
+
+.pf-c-pin-field input {
+    text-align: center;
+    font-weight: 550;
+}
+
+/* Delete account alert */
+.pficon-error-circle-o::before {
+    color: oklab(46.272000000000006% 0.16042 0.08655);
+}
+
 /* Buttons */
 .pf-c-button {
     border-radius: 0.25rem;
@@ -446,9 +468,20 @@ h1#kc-page-title {
 }
 
 #kc-totp-secret-key {
+    padding: 0;
+    font-family: "Source Code Pro", monospace;
+}
+
+#kc-totp-secret-key,
+p:has(> #kc-totp-secret-key) {
     background-color: var(--css-global--light-grey);
-    padding: 0.25rem;
+}
+
+p:has(> #kc-totp-secret-key) {
+    padding: 0.15rem 0.5rem;
     margin-left: -0.25rem;
+    max-width: 391px;
+    font-weight: 550;
 }
 
 #kc-totp-manual-list {
@@ -488,7 +521,7 @@ h1#kc-page-title {
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    padding-bottom: 1rem;
+    padding: 3rem 0 1.25rem;
 }
 
 .kcFooterCopyrightContainer {

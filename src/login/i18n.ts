@@ -10,6 +10,7 @@ const { useI18n, ofTypeI18n } = i18nBuilder
             /* Custom Entries */
             doRegister: "Register now",
             doLogInOtp: "Enter your Authenticator code",
+            doFinishLogIn: "Finish Sign-in",
             emailInstructionEmail:
                 "Enter your email address and we will send you instructions on how to create a new password.",
 
@@ -23,7 +24,7 @@ const { useI18n, ofTypeI18n } = i18nBuilder
             loginTotpDocumentTitle: "Authenticator setup for {0}",
             loginTotpTitle: "Authenticator setup",
             loginTotpStep1:
-                "Install one of the following Authenticator applications on your mobile device:",
+                "Install an Authenticator application on your mobile device. Some supported applications are:",
             loginTotpStep2: "Open your Authenticator application and scan the QR code:",
             loginTotpStep3DeviceName:
                 "Give this device a name to organize your OTP devices.",
@@ -31,6 +32,9 @@ const { useI18n, ofTypeI18n } = i18nBuilder
                 "Open your Authenticator application and enter the key:",
             loginTotpManualStep3:
                 "Use the following configuration values if your Authenticator application allows:",
+
+            "loginTotp.totp": "Time-based (TOTP)",
+            "loginTotp.hotp": "Counter-based (HOTP)",
 
             // Update password translations
             loginUpdatePasswordDocumentTitle: "Update password for {0}",

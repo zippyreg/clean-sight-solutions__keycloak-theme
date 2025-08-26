@@ -265,7 +265,7 @@ export default function RealmSection() {
                                                 <span>{name}</span>
                                                 <Label
                                                     isCompact
-                                                    color="green"
+                                                    color="cyan"
                                                     icon={<CheckCircleIcon />}
                                                 >
                                                     {t("currentRealm")}

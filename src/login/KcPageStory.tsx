@@ -11,7 +11,20 @@ const kcContextExtension: KcContextExtension = {
         ...kcEnvDefaults
     }
 };
-const kcContextExtensionPerPage: KcContextExtensionPerPage = {};
+const kcContextExtensionPerPage: KcContextExtensionPerPage = {
+    "login-otp.ftl": {
+        otpLogin: {
+            policy: {
+                algorithm: "HmacSHA1",
+                digits: 6,
+                lookAheadWindow: 1,
+                type: "totp",
+                period: 30,
+                getAlgorithmKey: () => "SHA1"
+            }
+        }
+    }
+};
 
 export const { getKcContextMock } = createGetKcContextMock({
     kcContextExtension,

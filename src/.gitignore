@@ -68,6 +68,8 @@
 # admin/assets/theme/login.css
 # admin/authentication/components/used-by.module.css
 # admin/authentication/components/UsedBy.tsx
+# admin/authentication/policies/otp-policy.css
+# admin/authentication/policies/OtpPolicy.tsx
 # admin/authentication/policies/PasswordPolicy.tsx
 # admin/authentication/policies/policy-row.css
 # admin/client-scopes/details/MapperList.tsx
@@ -276,8 +278,6 @@
 /admin/authentication/form/CreateFlow.tsx
 /admin/authentication/form/NameDescription.tsx
 /admin/authentication/policies/CibaPolicy.tsx
-/admin/authentication/policies/otp-policy.css
-/admin/authentication/policies/OtpPolicy.tsx
 /admin/authentication/policies/Policies.tsx
 /admin/authentication/policies/PolicyRow.tsx
 /admin/authentication/policies/util.ts

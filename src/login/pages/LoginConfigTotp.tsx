@@ -1,5 +1,7 @@
+import { createRef, useState } from "react";
 import { getKcClsx, KcClsx } from "keycloakify/login/lib/kcClsx";
 import { kcSanitize } from "keycloakify/lib/kcSanitize";
+import { PinField } from "../components/pin-input/PinField";
 import type { PageProps } from "keycloakify/login/pages/PageProps";
 import type { KcContext } from "../KcContext";
 import type { I18n } from "../i18n";
@@ -16,6 +18,9 @@ export default function LoginConfigTotp(props: PageProps<Extract<KcContext, { pa
 
     const { msg, msgStr, advancedMsg } = i18n;
 
+    const [totpCode, setTotpCode] = useState<string>("");
+    const nicknameRef = createRef<HTMLInputElement>();
+
     return (
         <Template
             kcContext={kcContext}
@@ -31,11 +36,13 @@ export default function LoginConfigTotp(props: PageProps<Extract<KcContext, { pa
                     <li>
                         <p>{msg("loginTotpStep1")}</p>
 
-                        <ul id="kc-totp-supported-apps">
+                        <div className="pf-l-flex pf-m-space-items-none" style={{ gap: "0.5rem", marginBottom: "10px" }}>
                             {totp.supportedApplications.map(app => (
-                                <li key={app}>{advancedMsg(app)}</li>
+                                <span key={app} className="pf-c-label pf-m-compact pf-m-blue">
+                                    {advancedMsg(app)}
+                                </span>
                             ))}
-                        </ul>
+                        </div>
                     </li>
 
                     {mode == "manual" ? (
@@ -98,18 +105,22 @@ export default function LoginConfigTotp(props: PageProps<Extract<KcContext, { pa
                     <div className={kcClsx("kcFormGroupClass")}>
                         <div className={kcClsx("kcInputWrapperClass")}>
                             <label htmlFor="totp" className={kcClsx("kcLabelClass")}>
-                                {msg("authenticatorCode")}
-                            </label>{" "}
-                            <span className="required">*</span>
+                                <span>{msg("authenticatorCode")}</span> <span className="required">*</span>
+                            </label>
                         </div>
                         <div className={kcClsx("kcInputWrapperClass")}>
-                            <input
-                                type="text"
-                                id="totp"
-                                name="totp"
-                                autoComplete="off"
-                                className={kcClsx("kcInputClass")}
+                            <input type="hidden" id="totp" name="totp" autoComplete="off" value={totpCode} />
+                            <PinField
+                                length={totp.policy.digits}
+                                formatAriaLabel={(n, total) => `TOTP field ${n} of ${total}`}
                                 aria-invalid={messagesPerField.existsError("totp")}
+                                className={kcClsx("kcInputClass")}
+                                autoComplete="off"
+                                onChange={value => setTotpCode(value)}
+                                onComplete={value => {
+                                    setTotpCode(value);
+                                    nicknameRef.current?.focus();
+                                }}
                             />
 
                             {messagesPerField.existsError("totp") && (
@@ -130,9 +141,9 @@ export default function LoginConfigTotp(props: PageProps<Extract<KcContext, { pa
                     <div className={kcClsx("kcFormGroupClass")}>
                         <div className={kcClsx("kcInputWrapperClass")}>
                             <label htmlFor="userLabel" className={kcClsx("kcLabelClass")}>
-                                {msg("loginTotpDeviceName")}
-                            </label>{" "}
-                            {totp.otpCredentials.length >= 1 && <span className="required">*</span>}
+                                <span>{msg("loginTotpDeviceName")}</span>
+                                {totp.otpCredentials.length >= 1 && <span className="required">*</span>}
+                            </label>
                         </div>
                         <div className={kcClsx("kcInputWrapperClass")}>
                             <input
@@ -142,6 +153,7 @@ export default function LoginConfigTotp(props: PageProps<Extract<KcContext, { pa
                                 autoComplete="off"
                                 className={kcClsx("kcInputClass")}
                                 aria-invalid={messagesPerField.existsError("userLabel")}
+                                ref={nicknameRef}
                             />
                             {messagesPerField.existsError("userLabel") && (
                                 <span
