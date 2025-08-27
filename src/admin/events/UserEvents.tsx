@@ -120,22 +120,19 @@ const UserDetailLink = (event: EventRepresentation) => {
     const { t } = useTranslation();
     const { realm } = useRealm();
 
-    return (
-        <>
-            {event.userId && (
-                <Link
-                    key={`link-${event.time}-${event.type}`}
-                    to={toUser({
-                        realm,
-                        id: event.userId,
-                        tab: "settings"
-                    })}
-                >
-                    {event.userId}
-                </Link>
-            )}
-            {!event.userId && <Tooltip content={t("noUserDetails")}>—</Tooltip>}
-        </>
+    return event.userId ? (
+        <Link
+            key={`link-${event.time}-${event.type}`}
+            to={toUser({
+                realm,
+                id: event.userId,
+                tab: "settings"
+            })}
+        >
+            {event.userId}
+        </Link>
+    ) : (
+        <span>—</span>
     );
 };
 

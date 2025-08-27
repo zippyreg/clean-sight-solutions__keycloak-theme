@@ -32,9 +32,18 @@ import {
     FlexItem,
     Form,
     FormGroup,
+    Icon,
+    IconComponentProps,
     SelectOption
 } from "../../shared/@patternfly/react-core";
-import { RunningIcon, SyncAltIcon } from "../../shared/@patternfly/react-icons";
+import {
+    ArrowCircleUpIcon,
+    PlusCircleIcon,
+    MinusCircleIcon,
+    RunningIcon,
+    SyncAltIcon,
+    TenantIcon
+} from "../../shared/@patternfly/react-icons";
 import { cellWidth } from "../../shared/@patternfly/react-table";
 import { pickBy } from "lodash-es";
 import { useState } from "react";
@@ -135,24 +144,50 @@ const UserDetailLink = (event: AdminEventRepresentation) => {
     const { t } = useTranslation();
     const { realm } = useRealm();
 
-    return (
-        <>
-            {event.authDetails.userId && (
-                <Link
-                    key={`link-${event.time}-${event.operationType}-${event.resourcePath}`}
-                    to={toUser({
-                        realm,
-                        id: event.authDetails.userId,
-                        tab: "settings"
-                    })}
-                >
-                    {event.authDetails.userId}
-                </Link>
-            )}
-            {!event.authDetails.userId && t("noUserDetails")}
-        </>
+    return event.authDetails.userId ? (
+        <Link
+            key={`link-${event.time}-${event.operationType}-${event.resourcePath}`}
+            to={toUser({
+                realm,
+                id: event.authDetails.userId,
+                tab: "settings"
+            })}
+        >
+            {event.authDetails.userId}
+        </Link>
+    ) : (
+        <span>—</span>
     );
 };
+
+const operationTypeCellIcon = (event: AdminEventRepresentation) => {
+    function injectIcon(
+        icon: JSX.Element,
+        status?: IconComponentProps["status"] = "success"
+    ) {
+        return <Icon status={status}>{icon}</Icon>;
+    }
+
+    switch (event.operationType) {
+        case "CREATE":
+            return injectIcon(<PlusCircleIcon />);
+        case "UPDATE":
+            return injectIcon(<ArrowCircleUpIcon />);
+        case "DELETE":
+            return injectIcon(<MinusCircleIcon />, "danger");
+        case "ACTION":
+            return injectIcon(<TenantIcon />, "info");
+        default:
+            return null;
+    }
+};
+
+const OperationTypeCell = (event: AdminEventRepresentation) => (
+    <Flex gap={{ default: "gapSm" }}>
+        {operationTypeCellIcon(event)}
+        <span>{event.operationType}</span>
+    </Flex>
+);
 
 type AdminEventsProps = {
     resourcePath?: string;
@@ -633,7 +668,8 @@ export const AdminEvents = ({ resourcePath }: AdminEventsProps) => {
                     {
                         name: "operationType",
                         displayKey: "operationType",
-                        transforms: [cellWidth(10)]
+                        transforms: [cellWidth(10)],
+                        cellRenderer: OperationTypeCell
                     },
                     {
                         name: "",
