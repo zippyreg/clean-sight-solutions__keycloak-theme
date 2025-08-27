@@ -1,7 +1,7 @@
 import "./login.custom.css";
 
 import { Suspense, lazy, useEffect } from "react";
-import type { ClassKey } from "keycloakify/login";
+import type { ClassKey } from "keycloakify/login"; 
 import { useColorMode } from "../shared/keycloak-ui-shared/";
 import type { KcContext } from "./KcContext";
 import { useI18n } from "./i18n";
@@ -64,7 +64,7 @@ export default function KcPage(props: { kcContext: KcContext }) {
 
     const { i18n } = useI18n({ kcContext });
 
-    const [isDark, colorMode, setColorMode] = useColorMode();
+    const [isDark, colorMode, setColorMode] = useColorMode("dark");
 
     from_url: {
         const themeFromUrl = getThemeFromUrl();
@@ -77,7 +77,7 @@ export default function KcPage(props: { kcContext: KcContext }) {
     }
 
     useEffect(() => {
-        setDarkTheme(isDark);
+        setDarkTheme(isDark); 
     }, [isDark, colorMode]);
 
     return (

@@ -33,6 +33,8 @@ const LiveCopyrightDate = () => {
     );
 };
 
+const themeSelectorEnabled = false;
+
 export default function Template(props: TemplateProps<KcContext, I18n>) {
     const {
         displayInfo = false,
@@ -60,7 +62,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
 
     useEffect(() => {
         document.title = documentTitle ?? msgStr("loginTitle", realm.displayName);
-    }, []);
+    }, [documentTitle]);
 
     useSetClassName({
         qualifiedName: "html",
@@ -80,32 +82,34 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
 
     return (
         <div className={kcClsx("kcLoginClass")}>
-            <div id="kc-theme-selector">
-                <div className="pf-c-toggle-group" role="group" aria-label="Theme selector toggle group">
-                    <div className="pf-c-toggle-group__item">
-                        <button
-                            type="button"
-                            className={`pf-c-toggle-group__button ${colorMode === "light" ? "pf-m-selected" : ""}`}
-                            aria-label="Light mode toggler"
-                            aria-pressed={colorMode === "light" ? "true" : "false"}
-                            onClick={() => setColorMode("light")}
-                        >
-                            <SunIcon />
-                        </button>
-                    </div>
-                    <div className="pf-c-toggle-group__item">
-                        <button
-                            type="button"
-                            className={`pf-c-toggle-group__button ${colorMode === "dark" ? "pf-m-selected" : ""}`}
-                            aria-label="Light mode toggler"
-                            aria-pressed={colorMode === "dark" ? "true" : "false"}
-                            onClick={() => setColorMode("dark")}
-                        >
-                            <MoonIcon />
-                        </button>
+            {themeSelectorEnabled && (
+                <div id="kc-theme-selector">
+                    <div className="pf-c-toggle-group" role="group" aria-label="Theme selector toggle group">
+                        <div className="pf-c-toggle-group__item">
+                            <button
+                                type="button"
+                                className={`pf-c-toggle-group__button ${colorMode === "light" ? "pf-m-selected" : ""}`}
+                                aria-label="Light mode toggler"
+                                aria-pressed={colorMode === "light" ? "true" : "false"}
+                                onClick={() => setColorMode("light")}
+                            >
+                                <SunIcon />
+                            </button>
+                        </div>
+                        <div className="pf-c-toggle-group__item">
+                            <button
+                                type="button"
+                                className={`pf-c-toggle-group__button ${colorMode === "dark" ? "pf-m-selected" : ""}`}
+                                aria-label="Light mode toggler"
+                                aria-pressed={colorMode === "dark" ? "true" : "false"}
+                                onClick={() => setColorMode("dark")}
+                            >
+                                <MoonIcon />
+                            </button>
+                        </div>
                     </div>
                 </div>
-            </div>
+            )}
             <div id="kc-header" className={kcClsx("kcHeaderClass")}>
                 <div className={kcClsx("kcHeaderWrapperClass")}>
                     <BrandWordmark variant={isDark ? "white" : "default"} size="md" />

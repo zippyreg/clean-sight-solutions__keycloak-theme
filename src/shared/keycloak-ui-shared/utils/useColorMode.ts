@@ -1,7 +1,7 @@
 import { useMediaQuery, useLocalStorage } from "usehooks-ts";
 import { useState, useEffect } from "react";
 
-const LOCAL_STORAGE_KEY = "css__dark-theme-preference";
+const LOCAL_STORAGE_KEY = "css__dark-theme-pref";
 // const VALID_COLOR_MODES = ["auto", "light", "dark"];
 const VALID_COLOR_MODES = ["light", "dark"];
 
@@ -18,11 +18,11 @@ function wrapSetColorMode(setColorMode: ColorModeSetterFn) {
     };
 }
 
-export function useColorMode(): [boolean, string, ColorModeSetterFn] {
+export function useColorMode(gentleOverride?: string): [boolean, string, ColorModeSetterFn] {
     const prefersDarkTheme = useMediaQuery("(prefers-color-scheme: dark)");
     const [colorMode, setColorMode] = useLocalStorage(
         LOCAL_STORAGE_KEY,
-        prefersDarkTheme ? "dark" : "light"
+        gentleOverride ?? prefersDarkTheme ? "dark" : "light"
     );
     const [isDark, setIsDark] = useState(false);
 

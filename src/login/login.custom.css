@@ -185,21 +185,14 @@ h1#kc-page-title {
 
 .kcFormCardClass {
     width: 100%;
-    border-top: 6px solid var(--css-global--brand-blue) !important;
+    border-top: 0 !important;
     box-shadow: var(--css-global--inset-shadow), var(--css-global--inset-ring-shadow),
         var(--css-global--ring-offset-shadow), var(--css-global--ring-shadow),
         var(--css-global--shadow-lg) !important;
 }
 
-@media screen and (max-width: 767px) {
-    .kcFormCardClass {
-        border-top: 5px solid var(--css-global--brand-blue) !important;
-    }
-}
-
 :where(.pf-theme-dark) .kcFormCardClass {
     background-color: oklch(0.2303 0.0083 264.4);
-    border-color: var(--css-global--secondary-color) !important;
 }
 
 :where(.pf-theme-dark) .login-pf-page .card-pf p {
