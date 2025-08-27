@@ -55,6 +55,7 @@ import { EventsBanners } from "../Banners";
 import DropdownPanel from "../components/dropdown-panel/DropdownPanel";
 import { useRealm } from "../context/realm-context/RealmContext";
 import { toUser } from "../user/routes/User";
+import { emptyFormatter } from "../util";
 import useFormatDate, { FORMAT_DATE_AND_TIME } from "../utils/useFormatDate";
 import useLocaleSort from "../utils/useLocaleSort";
 
@@ -133,7 +134,9 @@ const UserDetailLink = (event: EventRepresentation) => {
                     {event.userId}
                 </Link>
             )}
-            {!event.userId && t("noUserDetails")}
+            {!event.userId && (
+                <Tooltip content={t("noUserDetails")}>{emptyFormatter()()}</Tooltip>
+            )}
         </>
     );
 };
