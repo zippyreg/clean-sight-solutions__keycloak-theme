@@ -48,7 +48,7 @@ import CodeEditor from "../components/form/CodeEditor";
 import { useRealm } from "../context/realm-context/RealmContext";
 import { toUser } from "../user/routes/User";
 import { useServerInfo } from "../context/server-info/ServerInfoProvider";
-import { prettyPrintJSON } from "../util";
+import { emptyFormatter, prettyPrintJSON } from "../util";
 import useFormatDate, { FORMAT_DATE_AND_TIME } from "../utils/useFormatDate";
 import { CellResourceLinkRenderer } from "./ResourceLinks";
 
@@ -623,11 +623,13 @@ export const AdminEvents = ({ resourcePath }: AdminEventsProps) => {
                     {
                         name: "resourcePath",
                         displayKey: "resourcePath",
-                        cellRenderer: CellResourceLinkRenderer
+                        cellRenderer: CellResourceLinkRenderer,
+                        cellFormatters: [emptyFormatter()]
                     },
                     {
                         name: "resourceType",
-                        displayKey: "resourceType"
+                        displayKey: "resourceType",
+                        cellFormatters: [emptyFormatter()]
                     },
                     {
                         name: "operationType",

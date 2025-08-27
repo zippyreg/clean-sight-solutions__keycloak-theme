@@ -134,9 +134,7 @@ const UserDetailLink = (event: EventRepresentation) => {
                     {event.userId}
                 </Link>
             )}
-            {!event.userId && (
-                <Tooltip content={t("noUserDetails")}>{emptyFormatter()()}</Tooltip>
-            )}
+            {!event.userId && <Tooltip content={t("noUserDetails")}>—</Tooltip>}
         </>
     );
 };
@@ -527,7 +525,8 @@ export const UserEvents = ({ user, client }: UserEventsProps) => {
                         ? [
                               {
                                   name: "clientId",
-                                  displayKey: "client"
+                                  displayKey: "client",
+                                  cellFormatters: [emptyFormatter()]
                               }
                           ]
                         : [])
