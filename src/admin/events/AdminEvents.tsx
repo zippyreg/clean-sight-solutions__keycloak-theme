@@ -42,7 +42,7 @@ import {
     MinusCircleIcon,
     RunningIcon,
     SyncAltIcon,
-    TenantIcon
+    CheckCircleIcon
 } from "../../shared/@patternfly/react-icons";
 import { cellWidth } from "../../shared/@patternfly/react-table";
 import { pickBy } from "lodash-es";
@@ -176,7 +176,7 @@ const operationTypeCellIcon = (event: AdminEventRepresentation) => {
         case "DELETE":
             return injectIcon(<MinusCircleIcon />, "danger");
         case "ACTION":
-            return injectIcon(<TenantIcon />, "info");
+            return injectIcon(<CheckCircleIcon />, "info");
         default:
             return null;
     }
