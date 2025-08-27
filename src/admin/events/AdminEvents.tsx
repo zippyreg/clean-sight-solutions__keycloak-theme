@@ -623,8 +623,7 @@ export const AdminEvents = ({ resourcePath }: AdminEventsProps) => {
                     {
                         name: "resourcePath",
                         displayKey: "resourcePath",
-                        cellRenderer: CellResourceLinkRenderer,
-                        cellFormatters: [emptyFormatter()]
+                        cellRenderer: CellResourceLinkRenderer
                     },
                     {
                         name: "resourceType",

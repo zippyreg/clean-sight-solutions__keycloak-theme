@@ -29,6 +29,7 @@
 # admin/dashboard/dashboard.css
 # admin/dashboard/Dashboard.tsx
 # admin/events/AdminEvents.tsx
+# admin/events/ResourceLinks.tsx
 # admin/events/UserEvents.tsx
 # admin/groups/GroupAttributes.tsx
 # admin/groups/GroupsSection.tsx
@@ -156,7 +157,6 @@
 /admin/dashboard/routes.ts
 /admin/events/events.css
 /admin/events/EventsSection.tsx
-/admin/events/ResourceLinks.tsx
 /admin/events/routes.ts
 /admin/groups/groupIdUtils.ts
 /admin/groups/GroupRoleMapping.tsx
