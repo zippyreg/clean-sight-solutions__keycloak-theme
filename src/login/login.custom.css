@@ -242,6 +242,7 @@ h1#kc-page-title {
 }
 
 .pf-c-pin-field .pf-c-form-control[aria-invalid="true"] {
+    --pf-c-form-control--PaddingRight: var(--pf-c-form-control--inset--base);
     background-image: none;
 }
 
