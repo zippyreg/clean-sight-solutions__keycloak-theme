@@ -2,7 +2,7 @@ import "./login.custom.css";
 
 import { Suspense, lazy, useEffect } from "react";
 import type { ClassKey } from "keycloakify/login";
-import { useColorMode } from "../shared/keycloak-ui-shared/";
+import { useColorMode, LOCAL_STORAGE_KEY } from "../shared/keycloak-ui-shared/";
 import type { KcContext } from "./KcContext";
 import { useI18n } from "./i18n";
 import DefaultPage from "keycloakify/login/DefaultPage";
@@ -65,7 +65,10 @@ export default function KcPage(props: { kcContext: KcContext }) {
 
     const { i18n } = useI18n({ kcContext });
 
-    const [isDark, colorMode, setColorMode] = useColorMode("dark");
+    const [isDark, colorMode, setColorMode] = useColorMode(
+        "dark",
+        `${LOCAL_STORAGE_KEY}__login`
+    );
 
     from_url: {
         const themeFromUrl = getThemeFromUrl();

@@ -63,7 +63,7 @@ export {
     getNetworkErrorDescription
 } from "./utils/errors";
 export { isDefined } from "./utils/isDefined";
-export { useColorMode } from "./utils/useColorMode";
+export { useColorMode, LOCAL_STORAGE_KEY } from "./utils/useColorMode";
 export { useRequiredContext } from "./utils/useRequiredContext";
 export { useStoredState } from "./utils/useStoredState";
 export { useSetTimeout } from "./utils/useSetTimeout";
