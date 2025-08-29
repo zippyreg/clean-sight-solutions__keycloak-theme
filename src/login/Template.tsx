@@ -12,7 +12,6 @@ import { useDebounceValue } from "usehooks-ts";
 
 const LiveCopyrightDate = () => {
     const [currentDate, setCurrentDate] = useDebounceValue(new Date(), 900000);
-    const [isDark] = useColorMode();
 
     useEffect(() => {
         const intervalId = setInterval(() => {
@@ -28,7 +27,7 @@ const LiveCopyrightDate = () => {
     return (
         <div className="kcFooterCopyrightContainer">
             <div>Copyright &copy; {currentDate.getFullYear()}</div>
-            <BrandWordmark size="xs" variant={isDark ? "white" : "default"} />
+            <BrandWordmark size="xs" variant="white" />
         </div>
     );
 };
@@ -58,7 +57,8 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
 
     const { realm, auth, url, message, isAppInitiatedAction } = kcContext;
 
-    const [isDark, colorMode, setColorMode] = useColorMode();
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const [_, colorMode, setColorMode] = useColorMode();
 
     useEffect(() => {
         document.title = documentTitle ?? msgStr("loginTitle", realm.displayName);
@@ -112,7 +112,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
             )}
             <div id="kc-header" className={kcClsx("kcHeaderClass")}>
                 <div className={kcClsx("kcHeaderWrapperClass")}>
-                    <BrandWordmark variant={isDark ? "white" : "default"} size="md" />
+                    <BrandWordmark variant="white" size="md" />
                 </div>
             </div>
             <div className={kcClsx("kcFormCardClass")}>
