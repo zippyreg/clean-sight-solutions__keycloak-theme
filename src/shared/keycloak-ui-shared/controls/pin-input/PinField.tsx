@@ -153,7 +153,7 @@ export const PinField = forwardRef<HTMLInputElement[], Props>(
                 key={index}
                 ref={setRefAt(index)}
                 value={index in state.values ? state.values[index] : ""}
-                autoFocus={index === 0 && autoFocus}
+                autoFocus={!nativeProps.readOnly && index === 0 && autoFocus}
                 onKeyDown={handleKeyDownAt(index)}
                 onChange={handleChangeAt(index)}
                 onCompositionStart={startCompositionAt(index)}

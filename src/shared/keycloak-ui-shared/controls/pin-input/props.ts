@@ -28,7 +28,8 @@ export const defaultNativeProps: NativeProps = {
     inputMode: "text",
     autoCapitalize: "off",
     autoCorrect: "off",
-    autoComplete: "off"
+    autoComplete: "off",
+    readOnly: false
 };
 
 export type Props = NativeProps &

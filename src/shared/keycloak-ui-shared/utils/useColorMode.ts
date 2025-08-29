@@ -18,7 +18,9 @@ function wrapSetColorMode(setColorMode: ColorModeSetterFn) {
     };
 }
 
-export function useColorMode(gentleOverride?: string): [boolean, string, ColorModeSetterFn] {
+export function useColorMode(
+    gentleOverride?: string
+): [boolean, string, ColorModeSetterFn] {
     const prefersDarkTheme = useMediaQuery("(prefers-color-scheme: dark)");
     const [colorMode, setColorMode] = useLocalStorage(
         LOCAL_STORAGE_KEY,

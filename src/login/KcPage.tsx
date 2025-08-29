@@ -1,7 +1,7 @@
 import "./login.custom.css";
 
 import { Suspense, lazy, useEffect } from "react";
-import type { ClassKey } from "keycloakify/login"; 
+import type { ClassKey } from "keycloakify/login";
 import { useColorMode } from "../shared/keycloak-ui-shared/";
 import type { KcContext } from "./KcContext";
 import { useI18n } from "./i18n";
@@ -10,6 +10,7 @@ import Template from "./Template";
 const UserProfileFormFields = lazy(() => import("./UserProfileFormFields"));
 
 // Custom pages
+const Code = lazy(() => import("./pages/Code"));
 const DeleteAccountConfirm = lazy(() => import("./pages/DeleteAccountConfirm"));
 const LoginConfigTotp = lazy(() => import("./pages/LoginConfigTotp"));
 const LoginOtp = lazy(() => import("./pages/LoginOtp"));
@@ -77,13 +78,21 @@ export default function KcPage(props: { kcContext: KcContext }) {
     }
 
     useEffect(() => {
-        setDarkTheme(isDark); 
+        setDarkTheme(isDark);
     }, [isDark, colorMode]);
 
     return (
         <Suspense>
             {(() => {
                 switch (kcContext.pageId) {
+                    case "code.ftl":
+                        return (
+                            <Code
+                                {...{ kcContext, i18n, classes }}
+                                Template={Template}
+                                doUseDefaultCss={true}
+                            />
+                        );
                     case "delete-account-confirm.ftl":
                         return (
                             <DeleteAccountConfirm

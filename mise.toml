@@ -52,3 +52,4 @@ run = "yarn version minor"
 description = "Prepare the theme for next deployment"
 depends = ["patch", "format"]
 run = "cat ${MISE_PROJECT_ROOT}/package.json"
+run_windows="type ${MISE_PROJECT_ROOT}/package.json"
