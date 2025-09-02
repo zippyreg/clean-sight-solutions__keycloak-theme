@@ -26,7 +26,7 @@ const { exp, v } = createVariablesHelper("org-invite.ftl");
 
 export const Template = ({ locale }: TemplateProps) => (
     <EmailLayout
-        preview={`Join the ${exp("organization.name")} organization.`}
+        preview={`Join the ${exp("organization.name")} organization in ${exp("realmName")}.`}
         locale={locale}
     >
         <Container>
