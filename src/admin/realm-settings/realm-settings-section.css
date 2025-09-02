@@ -14,11 +14,16 @@
 .pf-v5-c-card.pf-m-flat.kc-sso-session-template,
 .pf-v5-c-card.pf-m-flat.kc-client-session-template,
 .pf-v5-c-card.pf-m-flat.kc-offline-session-template,
-.pf-v5-c-card.pf-m-flat.kc-login-settings-template {
+.pf-v5-c-card.pf-m-flat.kc-login-settings-template,
+.pf-v5-c-card.pf-m-flat.kc-scim-template {
     border: none;
     margin-top: 0px;
     margin-bottom: 0px;
     padding-bottom: var(--pf-v5-global--spacer--sm);
+}
+
+.pf-v5-c-card.pf-m-flat.kc-scim-template h1 {
+    margin-bottom: 0px;
 }
 
 article.pf-v5-c-card.pf-m-flat.kc-email-template
@@ -34,7 +39,13 @@ article.pf-v5-c-card.pf-m-flat.kc-email-connection
 .kc-login-screen > div.pf-v5-c-card__header.kc-form-panel__header,
 .kc-email-settings > div.pf-v5-c-card__header.kc-form-panel__header,
 .kc-email-template > div.pf-v5-c-card__header.kc-form-panel__header,
-.kc-user-info-settings > div.pf-v5-c-card__header.kc-form-panel__header {
+.kc-email-connection > div.pf-v5-c-card__header.kc-form-panel__header,
+.kc-user-info-settings > div.pf-v5-c-card__header.kc-form-panel__header,
+.kc-sso-session-template > div.pf-v5-c-card__header.kc-form-panel__header, 
+.kc-client-session-template > div.pf-v5-c-card__header.kc-form-panel__header,
+.kc-offline-session-template > div.pf-v5-c-card__header.kc-form-panel__header,
+.kc-login-settings-template > div.pf-v5-c-card__header.kc-form-panel__header,
+.kc-scim-template > div.pf-v5-c-card__header.kc-form-panel__header {
     padding-bottom: 0px;
     padding-left: 0px;
     padding-top: 0px;
@@ -42,8 +53,14 @@ article.pf-v5-c-card.pf-m-flat.kc-email-connection
 
 .kc-email-settings > div.pf-v5-c-card__body.kc-form-panel__body,
 .kc-email-template > div.pf-v5-c-card__body.kc-form-panel__body,
+.kc-email-connection > div.pf-v5-c-card__body.kc-form-panel__body,
 .kc-login-screen > div.pf-v5-c-card__body.kc-form-panel__body,
-.kc-user-info-settings > div.pf-v5-c-card__body.kc-form-panel__body {
+.kc-user-info-settings > div.pf-v5-c-card__body.kc-form-panel__body,
+.kc-sso-session-template > div.pf-v5-c-card__body.kc-form-panel__body,
+.kc-client-session-template > div.pf-v5-c-card__body.kc-form-panel__body,
+.kc-offline-session-template > div.pf-v5-c-card__body.kc-form-panel__body,
+.kc-login-settings-template > div.pf-v5-c-card__body.kc-form-panel__body,
+.kc-scim-template > div.pf-v5-c-card__body.kc-form-panel__body {
     padding-left: 0px;
     padding-bottom: var(--pf-v5-global--spacer--2xl);
 }

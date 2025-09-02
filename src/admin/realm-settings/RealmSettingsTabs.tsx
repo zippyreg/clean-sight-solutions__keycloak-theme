@@ -52,6 +52,7 @@ import ProfilesTab from "./ProfilesTab";
 import { RealmSettingsSessionsTab } from "./SessionsTab";
 import ThemesTab from "./themes/ThemesTab";
 import { RealmSettingsTokensTab } from "./TokensTab";
+import { RealmSettingsSCIMTab } from "./SCIMTab";
 import { UserRegistration } from "./UserRegistration";
 import { EventsTab } from "./event-config/EventsTab";
 import { KeysTab } from "./keys/KeysTab";
@@ -306,6 +307,7 @@ export const RealmSettingsTabs = () => {
     const securityDefensesTab = useTab("security-defenses");
     const sessionsTab = useTab("sessions");
     const tokensTab = useTab("tokens");
+    const scimTab = useTab("scim");
     const clientPoliciesTab = useTab("client-policies");
     const userProfileTab = useTab("user-profile");
     const userRegistrationTab = useTab("user-registration");
@@ -428,6 +430,13 @@ export const RealmSettingsTabs = () => {
                         {...tokensTab}
                     >
                         <RealmSettingsTokensTab save={save} realm={realm!} />
+                    </Tab>
+                    <Tab
+                        title={<TabTitleText>{t("scim")}</TabTitleText>}
+                        data-testid="rs-scim-tab"
+                        {...scimTab}
+                    >
+                        <RealmSettingsSCIMTab save={save} realm={realm!} />
                     </Tab>
                     {isFeatureEnabled(Feature.ClientPolicies) && (
                         <Tab

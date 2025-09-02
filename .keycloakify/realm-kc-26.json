@@ -1837,13 +1837,13 @@
                 "subComponents": {},
                 "config": {
                     "allowed-protocol-mapper-types": [
-                        "oidc-full-name-mapper",
-                        "saml-user-property-mapper",
                         "saml-role-list-mapper",
                         "oidc-address-mapper",
-                        "saml-user-attribute-mapper",
                         "oidc-sha256-pairwise-sub-mapper",
+                        "oidc-full-name-mapper",
+                        "saml-user-property-mapper",
                         "oidc-usermodel-property-mapper",
+                        "saml-user-attribute-mapper",
                         "oidc-usermodel-attribute-mapper"
                     ]
                 }
@@ -1874,14 +1874,14 @@
                 "subComponents": {},
                 "config": {
                     "allowed-protocol-mapper-types": [
-                        "saml-role-list-mapper",
-                        "oidc-address-mapper",
                         "oidc-sha256-pairwise-sub-mapper",
+                        "oidc-usermodel-property-mapper",
+                        "oidc-usermodel-attribute-mapper",
+                        "oidc-address-mapper",
                         "oidc-full-name-mapper",
                         "saml-user-attribute-mapper",
-                        "oidc-usermodel-property-mapper",
-                        "saml-user-property-mapper",
-                        "oidc-usermodel-attribute-mapper"
+                        "saml-role-list-mapper",
+                        "saml-user-property-mapper"
                     ]
                 }
             },
@@ -2660,7 +2660,12 @@
         "adminEventsExpiration": "",
         "darkMode": "true",
         "frontendUrl": "",
-        "saml.signature.algorithm": ""
+        "saml.signature.algorithm": "",
+        "scim.authentication.mode": "KEYCLOAK",
+        "scim.enabled": "true",
+        "scim.external.audience": "",
+        "scim.external.issuer": "",
+        "scim.external.jwks.uri": ""
     },
     "keycloakVersion": "26.3.3",
     "userManagedAccessAllowed": false,
