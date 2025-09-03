@@ -20,6 +20,7 @@ export default defineConfig({
                 const { config: loadConfig } = await import("./jsx-email.config");
 
                 const config = await loadConfig;
+                // This is no longer needed
                 // const config = { esbuild: {} };
 
                 await buildEmailTheme({
