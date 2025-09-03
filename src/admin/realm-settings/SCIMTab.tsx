@@ -15,7 +15,9 @@ import {
     ActionListItem,
     Button,
     PageSection,
-    Switch
+    Switch,
+    ToggleGroup,
+    ToggleGroupItem
 } from "../../shared/@patternfly/react-core";
 import { FormProvider, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -80,10 +82,15 @@ export const RealmSettingsSCIMTab = ({ realm, save }: RealmSettingsSCIMTabProps)
             attributes["scim.authentication.mode"] = "KEYCLOAK";
         }
 
-        console.log(attributes);
-
         // Save this update
         save({ ...realm, attributes });
+    };
+
+    const updateAuthMode = (mode: string) => {
+        form.setValue(
+            convertAttributeNameToForm("attributes.scim.authentication.mode"),
+            mode
+        );
     };
 
     const saveForm = () => {};
@@ -119,29 +126,34 @@ export const RealmSettingsSCIMTab = ({ realm, save }: RealmSettingsSCIMTabProps)
                         className="pf-v5-u-mt-lg"
                         onSubmit={handleSubmit(save)}
                     >
-                        <Switch
-                            id="realm-scim-auth-mode-switch"
-                            data-testid="realm-scim-auth-mode-switch"
-                            name={convertAttributeNameToForm(
-                                "attributes.scim.authentication.mode"
-                            )}
-                            label={t("scim.modes.keycloak")}
-                            labelOff={t("scim.modes.external")}
-                            className="pf-v5-u-mr-lg"
-                            isDisabled={!isEnabled}
-                            defaultChecked={["KEYCLOAK", undefined].includes(
-                                realm.attributes?.["scim.authentication.mode"]
-                            )}
-                            aria-label={t("scim.modes.keycloak")}
-                            onChange={(_event, value) => {
-                                form.setValue(
-                                    convertAttributeNameToForm(
-                                        "attributes.scim.authentication.mode"
-                                    ),
-                                    value ? "KEYCLOAK" : "EXTERNAL"
-                                );
-                            }}
-                        />
+                        <ToggleGroup aria-label="SCIM authentication mode toggle">
+                            <ToggleGroupItem
+                                key="keycloak"
+                                aria-label="Keycloak SCIM authentication toggler"
+                                isSelected={["KEYCLOAK", undefined].includes(
+                                    watchAuthMode
+                                )}
+                                isDisabled={!isEnabled}
+                                text={t("scim.modes.keycloak")}
+                                onChange={(_event, isSelected) => {
+                                    if (isSelected) {
+                                        updateAuthMode("KEYCLOAK");
+                                    }
+                                }}
+                            />
+                            <ToggleGroupItem
+                                key="external"
+                                aria-label="External SCIM authentication toggler"
+                                isSelected={watchAuthMode === "EXTERNAL"}
+                                isDisabled={!isEnabled}
+                                text={t("scim.modes.external")}
+                                onChange={(_event, isSelected) => {
+                                    if (isSelected) {
+                                        updateAuthMode("EXTERNAL");
+                                    }
+                                }}
+                            />
+                        </ToggleGroup>
                         <TextControl
                             name={convertAttributeNameToForm(
                                 "attributes.scim.external.issuer"
