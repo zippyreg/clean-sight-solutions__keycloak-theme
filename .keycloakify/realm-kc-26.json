@@ -1294,6 +1294,25 @@
             },
             "protocolMappers": [
                 {
+                    "id": "708c5efc-35f5-45e7-b4cd-9cd0d35410ba",
+                    "name": "organizations",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-organization-membership-mapper",
+                    "consentRequired": false,
+                    "config": {
+                        "introspection.token.claim": "true",
+                        "userinfo.token.claim": "true",
+                        "id.token.claim": "true",
+                        "access.token.claim": "true",
+                        "claim.name": "organization",
+                        "jsonType.label": "JSON",
+                        "addOrganizationAttributes": "true",
+                        "addOrganizationId": "false",
+                        "lightweight.claim": "false",
+                        "multivalued": "true"
+                    }
+                },
+                {
                     "id": "569c799d-79f2-4b2b-a1ec-3661e3d8d433",
                     "name": "gender",
                     "protocol": "openid-connect",
@@ -1837,13 +1856,13 @@
                 "subComponents": {},
                 "config": {
                     "allowed-protocol-mapper-types": [
-                        "oidc-full-name-mapper",
-                        "saml-role-list-mapper",
-                        "oidc-address-mapper",
-                        "oidc-sha256-pairwise-sub-mapper",
-                        "saml-user-attribute-mapper",
                         "oidc-usermodel-attribute-mapper",
+                        "saml-role-list-mapper",
+                        "oidc-full-name-mapper",
                         "saml-user-property-mapper",
+                        "oidc-sha256-pairwise-sub-mapper",
+                        "oidc-address-mapper",
+                        "saml-user-attribute-mapper",
                         "oidc-usermodel-property-mapper"
                     ]
                 }
@@ -1874,14 +1893,14 @@
                 "subComponents": {},
                 "config": {
                     "allowed-protocol-mapper-types": [
-                        "oidc-full-name-mapper",
-                        "saml-user-attribute-mapper",
                         "oidc-usermodel-attribute-mapper",
                         "saml-user-property-mapper",
+                        "saml-user-attribute-mapper",
+                        "saml-role-list-mapper",
+                        "oidc-address-mapper",
                         "oidc-sha256-pairwise-sub-mapper",
                         "oidc-usermodel-property-mapper",
-                        "saml-role-list-mapper",
-                        "oidc-address-mapper"
+                        "oidc-full-name-mapper"
                     ]
                 }
             },
@@ -2667,7 +2686,7 @@
         "scim.external.issuer": "",
         "scim.external.jwks.uri": ""
     },
-    "keycloakVersion": "26.3.3",
+    "keycloakVersion": "26.4.0",
     "userManagedAccessAllowed": false,
     "organizationsEnabled": true,
     "clientProfiles": {
@@ -2684,11 +2703,10 @@
         {
             "alias": "frantz",
             "description": "Frantz Building Services",
-            "enabled": false,
+            "enabled": true,
             "id": "7349dbe9-b089-47af-abce-8aab3c590006",
             "name": "Frantz Building Services",
             "attributes": {
-                "asdf": ["boop"],
                 "logo": [
                     "https://frantzbuilding.com/wp-content/uploads/Frantz-Building-Services-Logo-Reversed@2x.png"
                 ]
@@ -2697,6 +2715,12 @@
                 {
                     "name": "frantzbuilding.com",
                     "verified": false
+                }
+            ],
+            "members": [
+                {
+                    "membershipType": "UNMANAGED",
+                    "username": "testuser"
                 }
             ]
         }

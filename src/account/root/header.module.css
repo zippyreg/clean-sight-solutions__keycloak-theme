@@ -7,7 +7,7 @@
 
 .brand-container {
     --css--brand-container--padding-x: 1rem;
-    --css--brand--width: 80px;
+    --css--brand--width: 2em;
 
     background: white;
     align-self: stretch;
@@ -20,5 +20,5 @@
 }
 
 .brand {
-    width: 80px;
+    height: 2em;
 }

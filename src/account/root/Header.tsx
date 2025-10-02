@@ -12,7 +12,6 @@
 import {
     BrandLettermark,
     KeycloakMasthead,
-    ThemeSelector,
     label,
     useEnvironment
 } from "../../shared/keycloak-ui-shared";
@@ -51,6 +50,9 @@ export const Header = () => {
     const { environment, keycloak } = useEnvironment();
     const { t } = useTranslation();
 
+    const organization = Object.values(keycloak.idTokenParsed?.organization ?? {})?.[0];
+    const organizationLogo = organization?.logo?.[0];
+
     const logoUrl = environment.logoUrl ? environment.logoUrl : "/";
     const internalLogoHref = useHref(logoUrl);
 
@@ -63,16 +65,20 @@ export const Header = () => {
             keycloak={keycloak}
             features={{ hasManageAccount: false }}
             brand={{
-                children: [<BrandLettermark variant="white" key="brand-lettermark" />]
+                children: [
+                    organizationLogo ? (
+                        <img
+                            className={style.brand}
+                            src={organizationLogo}
+                            alt={t("logo")}
+                        />
+                    ) : <BrandLettermark variant="white" key="brand-lettermark" />
+                ]
             }}
             toolbarItems={[
                 {
                     children: [<ReferrerLink key="link" />]
                 },
-                {
-                    align: "alignLeft",
-                    children: [<ThemeSelector key="theme" />]
-                }
             ]}
         />
     );

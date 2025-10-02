@@ -34,11 +34,11 @@ export const content: MenuItem[] = [
         path: "groups",
         isVisible: "isViewGroupsEnabled"
     },
-    {
-        label: "organizations",
-        path: "organizations",
-        isVisible: "isViewOrganizationsEnabled"
-    },
+    // {
+    //     label: "organizations",
+    //     path: "organizations",
+    //     isVisible: "isViewOrganizationsEnabled"
+    // },
     {
         label: "resources",
         path: "resources",

@@ -53,7 +53,7 @@ const LiveCopyrightDate = () => {
                 >
                     <FlexItem>Copyright &copy; {currentDate.getFullYear()} </FlexItem>
                     <FlexItem>
-                        <BrandWordmark size="xs" variant={isDark ? "white" : "default"} />
+                        <BrandWordmark size="xs" />
                     </FlexItem>
                 </Flex>
             </Text>

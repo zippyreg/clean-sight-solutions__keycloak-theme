@@ -160,7 +160,7 @@ const KeycloakMasthead = ({
                                 ]}
                             />
                         </ToolbarItem>
-                        <ToolbarItem
+                        {/* <ToolbarItem
                             key="profile-picture"
                             variant="overflow-menu"
                             align={{ default: "alignRight" }}
@@ -173,7 +173,7 @@ const KeycloakMasthead = ({
                             ) : (
                                 <DefaultAvatar {...avatar} />
                             )}
-                        </ToolbarItem>
+                        </ToolbarItem> */}
                     </ToolbarContent>
                 </Toolbar>
             </MastheadContent>
