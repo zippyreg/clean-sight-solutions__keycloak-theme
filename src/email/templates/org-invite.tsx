@@ -57,7 +57,7 @@ export const Template = ({ locale }: TemplateProps) => (
                 If you don&apos;t want to join the organization, or this email was sent in
                 error, feel free to ignore this message. If you can&apos;t click the link,
                 copy and paste the following URL into your browser:{" "}
-                <a href={exp("link")} target="_blank" rel="noreferrer">
+                <a href={exp("link")} target="_blank" rel="noreferrer" style={{ wordBreak: 'break-word' }}>
                     {exp("link")}
                 </a>
             </Disclaimer>

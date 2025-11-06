@@ -1,6 +1,7 @@
 [tools]
 java = "24"
 maven = "latest"
+node = "24"
 yarn = "latest"
 
 [tasks.dependencies]
