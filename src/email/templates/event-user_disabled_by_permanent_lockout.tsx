@@ -27,10 +27,10 @@ export const Template = ({ locale }: TemplateProps) => (
             <Greeting>
                 <Fm.If condition={`${v("user.firstName")}?? && ${v("user.lastName")}??`}>
                     <Fm.Then>
-                        Hi, {exp("user.firstName")} {exp("user.lastName")}
+                        Hi {exp("user.firstName")} {exp("user.lastName")},
                     </Fm.Then>
                     <Fm.ElseIf condition={`${v("user.firstName")}??`}>
-                        Hi, {exp("user.firstName")}
+                        Hi {exp("user.firstName")},
                     </Fm.ElseIf>
                     <Fm.Else>Hi</Fm.Else>
                 </Fm.If>
