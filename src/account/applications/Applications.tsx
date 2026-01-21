@@ -245,7 +245,7 @@ export const Applications = () => {
                                                         key={`scope${scope.id}`}
                                                     >
                                                         <CheckIcon />{" "}
-                                                        {t(scope.name as TFuncKey)}
+                                                        {t(scope.name as TFuncKey, scope.displayText)}
                                                     </DescriptionListDescription>
                                                 )
                                             )}

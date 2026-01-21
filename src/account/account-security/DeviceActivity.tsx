@@ -78,7 +78,7 @@ export const DeviceActivity = () => {
 
     const signOutAll = async () => {
         await deleteSession(context);
-        context.keycloak.logout();
+        await context.keycloak.logout();
     };
 
     const signOutSession = async (
