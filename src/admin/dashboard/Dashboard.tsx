@@ -352,7 +352,7 @@ const Dashboard = () => {
                                             <DescriptionList>
                                                 <DescriptionListGroup>
                                                     <DescriptionListTerm>
-                                                        {t("version")}
+                                                        Keycloak {t("version")}
                                                     </DescriptionListTerm>
                                                     <DescriptionListDescription>
                                                         {serverInfo.systemInfo?.version}
@@ -361,7 +361,10 @@ const Dashboard = () => {
                                             </DescriptionList>
                                         </CardBody>
                                         <CardTitle className="pf-v5-u-font-weight-bold pf-v5-u-font-size-lg">{t("cpu")}</CardTitle>
-                                        <CardBody>
+                                        <CardBody
+                                            isFilled={false}
+                                            className="pf-v5-u-mb-xl"
+                                        >
                                             <DescriptionList>
                                                 <DescriptionListGroup>
                                                 <DescriptionListTerm>
