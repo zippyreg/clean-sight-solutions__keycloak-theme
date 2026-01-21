@@ -14,8 +14,6 @@ import {
     ActionListItem,
     Button,
     EmptyState,
-    EmptyStateBody,
-    EmptyStateFooter,
     Grid,
     GridItem,
     HelperText,
@@ -29,12 +27,9 @@ import {
     TimesIcon
 } from "../../../shared/@patternfly/react-icons";
 import { ListEmptyState } from "../../../shared/keycloak-ui-shared";
-import { Fragment } from "react";
+import { Fragment, FunctionComponent, PropsWithChildren } from "react";
 import { FieldValues, useFieldArray, useFormContext, useWatch } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-
-import { KeySelect } from "./KeySelect";
-import { ValueSelect } from "./ValueSelect";
 
 export type DefaultValue = {
     key: string;
@@ -42,20 +37,28 @@ export type DefaultValue = {
     label: string;
 };
 
+type Field = {
+  name: string;
+};
+
+type ValueField = Field & {
+  keyValue: string;
+};
+
 type KeyValueInputProps = {
     name: string;
     label?: string;
-    defaultKeyValue?: DefaultValue[];
     isDisabled?: boolean;
-    unregisterFieldsOnUnmount?: boolean;
+    KeyComponent?: FunctionComponent<Field>;
+    ValueComponent?: FunctionComponent<ValueField>;
 };
 
 export const KeyValueInput = ({
     name,
     label = "attributes",
-    defaultKeyValue,
     isDisabled = false,
-    unregisterFieldsOnUnmount = true
+    KeyComponent,
+    ValueComponent,
 }: KeyValueInputProps) => {
     const { t } = useTranslation();
     const {
@@ -65,7 +68,6 @@ export const KeyValueInput = ({
     } = useFormContext();
 
     const { fields, append, remove } = useFieldArray({
-        shouldUnregister: unregisterFieldsOnUnmount,
         control,
         name
     });
@@ -95,20 +97,14 @@ export const KeyValueInput = ({
                     return (
                         <Fragment key={attribute.id}>
                             <GridItem span={5}>
-                                {defaultKeyValue ? (
-                                    <KeySelect
-                                        name={`${name}.${index}.key`}
-                                        selectItems={defaultKeyValue}
-                                        rules={{ required: true }}
-                                    />
+                                {KeyComponent ? (
+                                    <KeyComponent name={`${name}.${index}.key`} />
                                 ) : (
                                     <TextInput
                                         placeholder={t("keyPlaceholder")}
                                         aria-label={t("key")}
                                         data-testid={`${name}-key`}
-                                        {...register(`${name}.${index}.key`, {
-                                            required: true
-                                        })}
+                                        {...register(`${name}.${index}.key`, { required: true })}
                                         validated={keyError ? "error" : "default"}
                                         isRequired
                                         isDisabled={isDisabled}
@@ -123,24 +119,18 @@ export const KeyValueInput = ({
                                 )}
                             </GridItem>
                             <GridItem span={5}>
-                                {defaultKeyValue ? (
-                                    <ValueSelect
+                                {ValueComponent ? (
+                                    <ValueComponent
                                         name={`${name}.${index}.value`}
                                         keyValue={values[index]?.key}
-                                        selectItems={defaultKeyValue}
-                                        rules={{ required: true }}
                                     />
                                 ) : (
                                     <TextInput
                                         placeholder={t("valuePlaceholder")}
                                         aria-label={t("value")}
                                         data-testid={`${name}-value`}
-                                        {...register(`${name}.${index}.value`, {
-                                            required: true
-                                        })}
-                                        validated={
-                                            valueErrorPresent ? "error" : "default"
-                                        }
+                                        {...register(`${name}.${index}.value`, { required: true })}
+                                        validated={valueErrorPresent ? "error" : "default"}
                                         isRequired
                                         isDisabled={isDisabled}
                                     />

@@ -221,6 +221,7 @@ export default function ClientDetails() {
     const form = useForm<FormFields>();
     const { clientId } = useParams<ClientParams>();
     const [key, setKey] = useState(0);
+    const refresh = () => setKey(key + 1);
 
     const isAdminPermissionsClient = useIsAdminPermissionsClient(clientId);
 

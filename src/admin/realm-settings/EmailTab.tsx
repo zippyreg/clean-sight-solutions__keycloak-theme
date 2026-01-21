@@ -325,7 +325,6 @@ export const RealmSettingsEmailTab = ({ realm, save }: RealmSettingsEmailTabProp
                                 )}
                             </>
                         )}
-                        {/* Patch for React admin ui from newer KeyCloak 26.3.3 features. */}
                         <SwitchControl
                             name="smtpServer.allowutf8"
                             label={t("allowutf8")}
@@ -335,6 +334,30 @@ export const RealmSettingsEmailTab = ({ realm, save }: RealmSettingsEmailTabProp
                             labelOn={t("enabled")}
                             labelOff={t("disabled")}
                             stringify
+                        />
+                        <TextControl
+                            name="smtpServer.connectionTimeout"
+                            label={t("smtpConnectionTimeout")}
+                            labelIcon={t("smtpConnectionTimeoutHelp")}
+                            type="number"
+                            defaultValue={10000}
+                            min={0}
+                        />
+                        <TextControl
+                            name="smtpServer.timeout"
+                            label={t("smtpSocketReadTimeout")}
+                            labelIcon={t("smtpSocketReadTimeoutHelp")}
+                            type="number"
+                            defaultValue={10000}
+                            min={0}
+                        />
+                        <TextControl
+                            name="smtpServer.writeTimeout"
+                            label={t("smtpSocketWriteTimeout")}
+                            labelIcon={t("smtpSocketWriteTimeoutHelp")}
+                            type="number"
+                            defaultValue={10000}
+                            min={0}
                         />
                         <Controller
                             name="smtpServer.debug"

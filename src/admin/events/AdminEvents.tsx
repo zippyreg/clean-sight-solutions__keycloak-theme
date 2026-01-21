@@ -366,7 +366,7 @@ export const AdminEvents = ({ resourcePath }: AdminEventsProps) => {
                                                         variant={
                                                             SelectVariant.typeaheadMulti
                                                         }
-                                                        typeAheadAriaLabel="Select"
+                                                        typeAheadAriaLabel="select-resourceTypes"
                                                         onToggle={isOpen =>
                                                             setSelectResourceTypesOpen(
                                                                 isOpen
@@ -381,7 +381,7 @@ export const AdminEvents = ({ resourcePath }: AdminEventsProps) => {
                                                                     option
                                                                 )
                                                                     ? field.value.filter(
-                                                                          item =>
+                                                                          (item: string) =>
                                                                               item !==
                                                                               option
                                                                       )
@@ -399,14 +399,14 @@ export const AdminEvents = ({ resourcePath }: AdminEventsProps) => {
                                                         aria-labelledby={"resourceTypes"}
                                                         chipGroupComponent={
                                                             <ChipGroup>
-                                                                {field.value.map(chip => (
+                                                                {field.value.map((chip: string) => (
                                                                     <Chip
                                                                         key={chip}
                                                                         onClick={resource => {
                                                                             resource.stopPropagation();
                                                                             field.onChange(
                                                                                 field.value.filter(
-                                                                                    val =>
+                                                                                    (val: string) =>
                                                                                         val !==
                                                                                         chip
                                                                                 )
@@ -452,7 +452,7 @@ export const AdminEvents = ({ resourcePath }: AdminEventsProps) => {
                                                         variant={
                                                             SelectVariant.typeaheadMulti
                                                         }
-                                                        typeAheadAriaLabel="Select"
+                                                        typeAheadAriaLabel="select-operationTypes"
                                                         onToggle={isOpen =>
                                                             setSelectOperationTypesOpen(
                                                                 isOpen
@@ -467,7 +467,7 @@ export const AdminEvents = ({ resourcePath }: AdminEventsProps) => {
                                                                     option
                                                                 )
                                                                     ? field.value.filter(
-                                                                          item =>
+                                                                          (item: string) =>
                                                                               item !==
                                                                               option
                                                                       )
@@ -485,14 +485,14 @@ export const AdminEvents = ({ resourcePath }: AdminEventsProps) => {
                                                         aria-labelledby={"operationTypes"}
                                                         chipGroupComponent={
                                                             <ChipGroup>
-                                                                {field.value.map(chip => (
+                                                                {field.value.map((chip: string) => (
                                                                     <Chip
                                                                         key={chip}
                                                                         onClick={operation => {
                                                                             operation.stopPropagation();
                                                                             field.onChange(
                                                                                 field.value.filter(
-                                                                                    val =>
+                                                                                    (val: string) =>
                                                                                         val !==
                                                                                         chip
                                                                                 )
@@ -507,7 +507,7 @@ export const AdminEvents = ({ resourcePath }: AdminEventsProps) => {
                                                     >
                                                         {operationTypes?.map(option => (
                                                             <SelectOption
-                                                                key={option.toString()}
+                                                                key={option}
                                                                 value={option}
                                                             >
                                                                 {option}

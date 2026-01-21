@@ -360,6 +360,19 @@ const Dashboard = () => {
                                                 </DescriptionListGroup>
                                             </DescriptionList>
                                         </CardBody>
+                                        <CardTitle className="pf-v5-u-font-weight-bold pf-v5-u-font-size-lg">{t("cpu")}</CardTitle>
+                                        <CardBody>
+                                            <DescriptionList>
+                                                <DescriptionListGroup>
+                                                <DescriptionListTerm>
+                                                    {t("processorCount")}
+                                                </DescriptionListTerm>
+                                                <DescriptionListDescription>
+                                                    {serverInfo.cpuInfo?.processorCount}
+                                                </DescriptionListDescription>
+                                                </DescriptionListGroup>
+                                            </DescriptionList>
+                                        </CardBody>
                                         <CardTitle className="pf-v5-u-font-weight-bold pf-v5-u-font-size-lg">
                                             {t("memory")}
                                         </CardTitle>
@@ -408,7 +421,7 @@ const Dashboard = () => {
                                                 <DescriptionListGroup className="pf-v5-u-mb-lg">
                                                     <DescriptionListTerm>
                                                         <span className="pf-v5-u-mr-sm">
-                                                            {t("enabledFeatures")}
+                                                            {t("enabledFeatures")}{" "}
                                                         </span>
                                                         <HelpItem
                                                             fieldLabelId="enabledFeatures"

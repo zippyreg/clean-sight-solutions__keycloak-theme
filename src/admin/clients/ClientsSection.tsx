@@ -14,15 +14,17 @@ import type { ClientQuery } from "@keycloak/keycloak-admin-client/lib/resources/
 import { useAlerts, useEnvironment } from "../../shared/keycloak-ui-shared";
 import {
     AlertVariant,
+    Badge,
     Button,
     ButtonVariant,
     Flex,
     PageSection,
     Tab,
     TabTitleText,
-    ToolbarItem
+    ToolbarItem,
+    Tooltip
 } from "../../shared/@patternfly/react-core";
-import { PlusIcon } from "../../shared/@patternfly/react-icons";
+import { PlusIcon, WarningTriangleIcon } from "../../shared/@patternfly/react-icons";
 import { IRowData, TableText, cellWidth } from "../../shared/@patternfly/react-table";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -51,6 +53,7 @@ import { DisabledLabel } from "../components/label/DisabledLabel";
 import { TemporaryAdminLabel } from "../components/label/TemporaryAdminLabel";
 
 const ClientDetailLink = (client: ClientRepresentation) => {
+    const { t } = useTranslation();
     const { realm } = useRealm();
     return (
         <TableText wrapModifier="truncate">

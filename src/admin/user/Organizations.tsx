@@ -94,7 +94,7 @@ export const Organizations = ({ user }: OrganizationProps) => {
     useFetch(
         async () => {
             const userOrganizations = await adminClient.organizations.memberOrganizations(
-                { userId: id! }
+                { userId: `"${user.id!}"` }
             );
 
             const userOrganizationsWithMembershipTypes = await Promise.all(

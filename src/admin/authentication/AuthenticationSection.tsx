@@ -146,9 +146,9 @@ export default function AuthenticationSection() {
     return (
         <>
             <DeleteConfirm />
-            {open && (
+            {open && selectedFlow && (
                 <DuplicateFlowModal
-                    name={selectedFlow ? selectedFlow.alias! : ""}
+                    name={selectedFlow.alias!}
                     description={selectedFlow?.description!}
                     toggleDialog={toggleOpen}
                     onComplete={() => {

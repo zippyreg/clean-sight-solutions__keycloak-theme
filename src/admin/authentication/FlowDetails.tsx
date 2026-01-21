@@ -304,16 +304,20 @@ export default function FlowDetails() {
                       onClick={() => setEdit(true)}
                   >
                       {t("editInfo")}
-                  </DropdownItem>,
-                  <DropdownItem
-                      data-testid="delete-flow"
-                      key="delete"
-                      onClick={() => toggleDeleteFlow()}
-                  >
-                      {t("delete")}
                   </DropdownItem>
               ]
-            : [])
+            : []),
+        ...(!builtIn && !usedBy
+            ? [
+                <DropdownItem
+                    data-testid="delete-flow"
+                    key="delete"
+                    onClick={() => toggleDeleteFlow()}
+                >
+                    {t("delete")}
+                </DropdownItem>,
+                ]
+            : []),
     ];
 
     return (
@@ -334,7 +338,7 @@ export default function FlowDetails() {
                     }}
                 />
             )}
-            {open && (
+            {open && flow && (
                 <DuplicateFlowModal
                     name={flow?.alias!}
                     description={flow?.description!}
@@ -528,9 +532,9 @@ export default function FlowDetails() {
                                                 ? "client"
                                                 : "basic"
                                         }
-                                        onSelect={type => {
+                                        onSelect={async type => {
                                             if (type) {
-                                                addExecution(flow.alias!, type);
+                                                await addExecution(flow.alias!, type);
                                             }
                                             setShowAddExecutionDialog(false);
                                         }}
@@ -540,8 +544,8 @@ export default function FlowDetails() {
                                     <AddSubFlowModal
                                         name={flow.alias!}
                                         onCancel={() => setShowSubFlowDialog(false)}
-                                        onConfirm={newFlow => {
-                                            addFlow(flow.alias!, newFlow);
+                                        onConfirm={async newFlow => {
+                                            await addFlow(flow.alias!, newFlow);
                                             setShowSubFlowDialog(false);
                                         }}
                                     />

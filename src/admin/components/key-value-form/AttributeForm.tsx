@@ -30,7 +30,6 @@ export type AttributesFormProps = {
     fineGrainedAccess?: boolean;
     name?: string;
     isDisabled?: boolean;
-    unregisterFieldsOnUnmount?: boolean;
 };
 
 export const AttributesForm = ({
@@ -41,7 +40,6 @@ export const AttributesForm = ({
     name = "attributes",
     label = "attributes",
     isDisabled = false,
-    unregisterFieldsOnUnmount = true
 }: AttributesFormProps) => {
     const noSaveCancelButtons = !save && !reset;
     const { handleSubmit } = form;
@@ -57,7 +55,6 @@ export const AttributesForm = ({
                     name={name}
                     label={label}
                     isDisabled={isDisabled}
-                    unregisterFieldsOnUnmount={unregisterFieldsOnUnmount}
                 />
             </FormProvider>
             {!noSaveCancelButtons && (

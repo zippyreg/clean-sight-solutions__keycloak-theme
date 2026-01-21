@@ -26,7 +26,6 @@ type FixedButtonGroupProps = ActionGroupProps & {
     resetText?: string;
     isSubmit?: boolean;
     isDisabled?: boolean;
-    isActive?: boolean;
 };
 
 export const FixedButtonsGroup = ({
@@ -37,7 +36,6 @@ export const FixedButtonsGroup = ({
     resetText,
     isSubmit = false,
     isDisabled = false,
-    isActive = true,
     children,
     ...rest
 }: FixedButtonGroupProps) => {

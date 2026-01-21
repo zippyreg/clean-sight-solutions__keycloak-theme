@@ -160,6 +160,15 @@ export const EventsTab = ({ realm }: EventsTabProps) => {
         refresh();
     };
 
+    const removeEvents = async (eventTypes: EventType[] = []) => {
+        const values = eventTypes.map((type) => type.id);
+        const enabledEventTypes = events?.enabledEventTypes?.filter(
+            (e) => !values.includes(e),
+        );
+        await addEvents(enabledEventTypes);
+        setEvents({ ...events, enabledEventTypes });
+    };
+
     return (
         <>
             <DeleteConfirm />
@@ -224,14 +233,8 @@ export const EventsTab = ({ realm }: EventsTabProps) => {
                             key={tableKey}
                             addTypes={() => setAddEventType(true)}
                             eventTypes={events?.enabledEventTypes || []}
-                            onDelete={value => {
-                                const enabledEventTypes =
-                                    events?.enabledEventTypes?.filter(
-                                        e => e !== value.id
-                                    );
-                                addEvents(enabledEventTypes);
-                                setEvents({ ...events, enabledEventTypes });
-                            }}
+                            onDelete={value => removeEvents([value])}
+                            onDeleteAll={removeEvents}
                         />
                     </PageSection>
                 </Tab>

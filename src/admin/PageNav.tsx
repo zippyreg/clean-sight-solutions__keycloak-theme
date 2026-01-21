@@ -79,7 +79,7 @@ const LeftNav = ({ title, path, id }: LeftNavProps) => {
 export const PageNav = () => {
     const { t } = useTranslation();
     const { environment } = useEnvironment<Environment>();
-    const { hasSomeAccess } = useAccess();
+    const { hasAccess, hasSomeAccess } = useAccess();
     const { componentTypes } = useServerInfo();
     const isFeatureEnabled = useIsFeatureEnabled();
     const pages = componentTypes?.["org.keycloak.services.ui.extend.UiPageProvider"];
@@ -111,6 +111,8 @@ export const PageNav = () => {
         "query-clients",
         "view-identity-providers"
     );
+
+    const showWorkflows = hasAccess("manage-realm") && isFeatureEnabled(Feature.Workflows);
 
     const showManageRealm = environment.masterRealm === environment.realm;
 
@@ -166,6 +168,7 @@ export const PageNav = () => {
                                 path="/identity-providers"
                             />
                             <LeftNav title="userFederation" path="/user-federation" />
+                            {showWorkflows && <LeftNav title="workflows" path="/workflows" />}
                             {isFeatureEnabled(Feature.DeclarativeUI) &&
                                 pages?.map(p => (
                                     <LeftNav

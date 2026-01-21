@@ -106,7 +106,7 @@ export const PasswordPolicy = ({ realm, realmUpdated }: PasswordPolicyProps) => 
     const { passwordPolicies } = useServerInfo();
 
     const { addAlert, addError } = useAlerts();
-    const { realm: realmName } = useRealm();
+    const { realm: realmName, refresh } = useRealm();
 
     const [rows, setRows] = useState<PasswordPolicyTypeRepresentation[]>([]);
     const onSelect = (row: PasswordPolicyTypeRepresentation) => {
@@ -144,6 +144,7 @@ export const PasswordPolicy = ({ realm, realmUpdated }: PasswordPolicyProps) => 
             await adminClient.realms.update({ realm: realmName }, updatedRealm);
             realmUpdated(updatedRealm);
             setupForm(updatedRealm);
+            refresh();
             addAlert(t("updatePasswordPolicySuccess"), AlertVariant.success);
         } catch (error: any) {
             addError("updatePasswordPolicyError", error);

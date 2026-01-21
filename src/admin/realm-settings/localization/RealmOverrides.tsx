@@ -133,7 +133,7 @@ export const RealmOverrides = ({
                     selectedLocale:
                         selectMenuLocale ||
                         getValues("defaultLocale") ||
-                        whoAmI.getLocale()
+                        whoAmI.locale
                 });
 
                 setTranslations(Object.entries(result));
@@ -159,7 +159,7 @@ export const RealmOverrides = ({
             }
         };
 
-        fetchLocalizationTexts().then(translations => {
+        void fetchLocalizationTexts().then(translations => {
             const updatedRows: IRow[] = translations.map(
                 (translation): IRow => ({
                     rowEditBtnAriaLabel: () =>
@@ -202,14 +202,14 @@ export const RealmOverrides = ({
     const options = [
         <SelectGroup label={t("defaultLocale")} key="group1">
             <SelectOption key={DEFAULT_LOCALE} value={DEFAULT_LOCALE}>
-                {localeToDisplayName(DEFAULT_LOCALE, whoAmI.getDisplayName())}
+                {localeToDisplayName(DEFAULT_LOCALE, whoAmI.displayName)}
             </SelectOption>
         </SelectGroup>,
         <Divider key="divider" />,
         <SelectGroup label={t("supportedLocales")} key="group2">
             {watchSupportedLocales.map(locale => (
                 <SelectOption key={locale} value={locale}>
-                    {localeToDisplayName(locale, whoAmI.getLocale())}
+                    {localeToDisplayName(locale, whoAmI.locale)}
                 </SelectOption>
             ))}
         </SelectGroup>
@@ -233,7 +233,7 @@ export const RealmOverrides = ({
             refreshTable();
             translationForm.setValue("key", "");
             translationForm.setValue("value", "");
-            i18n.reloadResources();
+            await i18n.reloadResources();
 
             addAlert(t("addTranslationSuccess"), AlertVariant.success);
         } catch (error) {
@@ -256,7 +256,7 @@ export const RealmOverrides = ({
             try {
                 for (const key of selectedRowKeys) {
                     delete (
-                        i18n.store.data[whoAmI.getLocale()][currentRealm] as Record<
+                        i18n.store.data[whoAmI.locale][currentRealm] as Record<
                             string,
                             string
                         >
@@ -328,7 +328,7 @@ export const RealmOverrides = ({
                 },
                 value
             );
-            i18n.reloadResources();
+            await i18n.reloadResources();
 
             addAlert(t("updateTranslationSuccess"), AlertVariant.success);
             setTableRows(newRows);
@@ -348,8 +348,8 @@ export const RealmOverrides = ({
             {addTranslationModalOpen && (
                 <AddTranslationModal
                     handleModalToggle={handleModalToggle}
-                    save={(pair: any) => {
-                        addKeyValue(pair);
+                    save={async (pair: any) => {
+                        await addKeyValue(pair);
                         handleModalToggle();
                     }}
                     form={translationForm}
@@ -448,12 +448,12 @@ export const RealmOverrides = ({
                                 selectMenuValueSelected
                                     ? localeToDisplayName(
                                           selectMenuLocale,
-                                          whoAmI.getLocale()
+                                          whoAmI.locale
                                       )
                                     : realm.defaultLocale !== ""
                                       ? localeToDisplayName(
                                             DEFAULT_LOCALE,
-                                            whoAmI.getLocale()
+                                            whoAmI.locale
                                         )
                                       : t("placeholderText")
                             }
@@ -532,8 +532,8 @@ export const RealmOverrides = ({
                                         <Form
                                             isHorizontal
                                             className="kc-form-translationValue"
-                                            onSubmit={handleSubmit(() => {
-                                                onSubmit(formValue, rowIndex);
+                                            onSubmit={handleSubmit(async () => {
+                                                await onSubmit(formValue, rowIndex);
                                             })}
                                         >
                                             <FormGroup

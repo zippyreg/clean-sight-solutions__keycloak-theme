@@ -10,7 +10,11 @@
 // @ts-nocheck
 
 import type RoleRepresentation from "@keycloak/keycloak-admin-client/lib/defs/roleRepresentation";
-import { useAlerts, useFetch } from "../../shared/keycloak-ui-shared";
+import { 
+    KeycloakSpinner,
+    useAlerts, 
+    useFetch 
+} from "../../shared/keycloak-ui-shared";
 import {
     AlertVariant,
     ButtonVariant,
@@ -41,21 +45,19 @@ import {
     arrayToKeyValue,
     keyValueToArray
 } from "../components/key-value-form/key-value-convert";
-import { KeycloakSpinner } from "../../shared/keycloak-ui-shared";
 import { PermissionsTab } from "../components/permission-tab/PermissionTab";
 import { RoleForm } from "../components/role-form/RoleForm";
-import { AddRoleMappingModal } from "../components/role-mapping/AddRoleMappingModal";
 import { RoleMapping } from "../components/role-mapping/RoleMapping";
 import { RoutableTabs, useRoutableTab } from "../components/routable-tabs/RoutableTabs";
 import { ViewHeader } from "../components/view-header/ViewHeader";
 import { useAccess } from "../context/access/Access";
 import { useRealm } from "../context/realm-context/RealmContext";
+import { AdminEvents } from "../events/AdminEvents";
 import useIsFeatureEnabled, { Feature } from "../utils/useIsFeatureEnabled";
 import { useParams } from "../utils/useParams";
 import { UsersInRoleTab } from "./UsersInRoleTab";
 import { RealmRoleRoute, RealmRoleTab, toRealmRole } from "./routes/RealmRole";
 import { toRealmRoles } from "./routes/RealmRoles";
-import { AdminEvents } from "../events/AdminEvents";
 
 export default function RealmRoleTabs() {
     const { adminClient } = useAdminClient();
@@ -82,7 +84,6 @@ export default function RealmRoleTabs() {
 
     const [canManageClientRole, setCanManageClientRole] = useState(false);
 
-    const [open, setOpen] = useState(false);
     const convert = (role: RoleRepresentation) => {
         const { attributes, ...rest } = role;
         return {
@@ -246,15 +247,6 @@ export default function RealmRoleTabs() {
     return (
         <>
             <DeleteConfirm />
-            {open && (
-                <AddRoleMappingModal
-                    id={id}
-                    type="roles"
-                    name={roleName}
-                    onAssign={rows => addComposites(rows.map(r => r.role))}
-                    onClose={() => setOpen(false)}
-                />
-            )}
             <ViewHeader
                 titleKey={roleName!}
                 badges={[

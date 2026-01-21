@@ -241,7 +241,7 @@ export function UserDataTable() {
 
     const goToCreate = () => navigate(toAddUser({ realm: realmName }));
 
-    if (!uiRealmInfo || !realm) {
+    if (uiRealmInfo.userProfileProvidersEnabled === undefined || !realm) {
         return <KeycloakSpinner />;
     }
 
@@ -398,20 +398,16 @@ export function UserDataTable() {
                 }
                 toolbarItem={toolbar()}
                 subToolbar={subtoolbar()}
-                actionResolver={(rowData: IRowData) => {
-                    const user: UserRepresentation = rowData.data;
-                    if (!user.access?.manage) return [];
-
-                    return [
-                        {
-                            title: t("delete"),
-                            onClick: () => {
-                                setSelectedRows([user]);
-                                toggleDeleteDialog();
-                            }
-                        }
-                    ];
-                }}
+                actionResolver={(rowData: IRowData) => [
+                    {
+                        title: t("delete"),
+                        onClick: () => {
+                        setSelectedRows([rowData.data]);
+                        toggleDeleteDialog();
+                        },
+                    },
+                ]}
+                isRowDisabled={(user: UserRepresentation) => !user.access?.manage}
                 columns={[
                     {
                         name: "username",

@@ -214,7 +214,7 @@ export default function UserFederationSection() {
                                 className="pf-v5-u-mt-md pf-v5-u-mb-lg"
                                 headingLevel={TextVariants.h2}
                             >
-                                {t("providers")}
+                                {t("add-providers")}
                             </Title>
                         </TextContent>
                         <Gallery hasGutter className="pf-v5-u-mb-lg">

@@ -11,11 +11,12 @@
 
 import UserRepresentation from "@keycloak/keycloak-admin-client/lib/defs/userRepresentation";
 import {
+  KeycloakDataTable,
+  ListEmptyState,
+  useAlerts,
+} from "../../shared/keycloak-ui-shared";
+import {
     Button,
-    Dropdown,
-    DropdownItem,
-    DropdownList,
-    MenuToggle,
     ToolbarItem
 } from "../../shared/@patternfly/react-core";
 import { PlusIcon, UserIcon } from "../../shared/@patternfly/react-icons";
@@ -23,19 +24,15 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { useAdminClient } from "../admin-client";
-import { useAlerts } from "../../shared/keycloak-ui-shared";
-import { ListEmptyState } from "../../shared/keycloak-ui-shared";
-import { KeycloakDataTable } from "../../shared/keycloak-ui-shared";
+import { CheckboxFilterComponent } from "../components/dynamic/CheckboxFilterComponent";
+import { SearchInputComponent } from "../components/dynamic/SearchInputComponent";
 import { useRealm } from "../context/realm-context/RealmContext";
 import { MemberModal } from "../groups/MembersModal";
 import { toUser } from "../user/routes/User";
+import { translationFormatter } from "../utils/translationFormatter";
 import { useParams } from "../utils/useParams";
 import useToggle from "../utils/useToggle";
-import { InviteMemberModal } from "./InviteMemberModal";
 import { EditOrganizationParams } from "./routes/EditOrganization";
-import { CheckboxFilterComponent } from "../components/dynamic/CheckboxFilterComponent";
-import { SearchInputComponent } from "../components/dynamic/SearchInputComponent";
-import { translationFormatter } from "../utils/translationFormatter";
 
 type MembershipTypeRepresentation = UserRepresentation & {
     membershipType?: string;
@@ -55,9 +52,7 @@ export const Members = () => {
     const { addAlert, addError } = useAlerts();
     const [key, setKey] = useState(0);
     const refresh = () => setKey(key + 1);
-    const [open, toggle] = useToggle();
     const [openAddMembers, toggleAddMembers] = useToggle();
-    const [openInviteMembers, toggleInviteMembers] = useToggle();
     const [selectedMembers, setSelectedMembers] = useState<UserRepresentation[]>([]);
     const [searchText, setSearchText] = useState<string>("");
     const [searchTriggerText, setSearchTriggerText] = useState<string>("");
@@ -129,7 +124,7 @@ export const Members = () => {
                 selectedMembers.map(user =>
                     adminClient.organizations.delMember({
                         orgId,
-                        userId: user.id!
+                        userId: `"${user.id!}"`
                     })
                 )
             );
@@ -171,9 +166,6 @@ export const Members = () => {
                     }}
                 />
             )}
-            {openInviteMembers && (
-                <InviteMemberModal orgId={orgId} onClose={toggleInviteMembers} />
-            )}
             <KeycloakDataTable
                 key={key}
                 loader={loader}
@@ -194,40 +186,13 @@ export const Members = () => {
                             />
                         </ToolbarItem>
                         <ToolbarItem>
-                            <Dropdown
-                                onOpenChange={toggle}
-                                toggle={ref => (
-                                    <MenuToggle
-                                        ref={ref}
-                                        onClick={toggle}
-                                        isExpanded={open}
-                                        variant="primary"
-                                        icon={<PlusIcon />}
-                                    >
-                                        {t("addMember")}
-                                    </MenuToggle>
-                                )}
-                                isOpen={open}
+                            <Button 
+                                variant="primary" 
+                                onClick={toggleAddMembers}
+                                icon={<PlusIcon />}
                             >
-                                <DropdownList>
-                                    <DropdownItem
-                                        onClick={() => {
-                                            toggleAddMembers();
-                                            toggle();
-                                        }}
-                                    >
-                                        {t("addExistingUser")}
-                                    </DropdownItem>
-                                    <DropdownItem
-                                        onClick={() => {
-                                            toggleInviteMembers();
-                                            toggle();
-                                        }}
-                                    >
-                                        {t("inviteMember")}
-                                    </DropdownItem>
-                                </DropdownList>
-                            </Dropdown>
+                                {t("addMember")}
+                            </Button>
                         </ToolbarItem>
                         <ToolbarItem>
                             <Button
@@ -284,20 +249,9 @@ export const Members = () => {
                         hasIcon
                         message={t("emptyMembers")}
                         instructions={t("emptyMembersInstructions")}
-                        secondaryActions={[
-                            {
-                                type: "primary",
-                                text: t("addExistingUser"),
-                                onClick: toggleAddMembers,
-                                icon: <PlusIcon />
-                            },
-                            {
-                                type: "primary",
-                                text: t("inviteMember"),
-                                onClick: toggleInviteMembers,
-                                icon: <PlusIcon />
-                            }
-                        ]}
+                        primaryActionText={t("addMember")}
+                        primaryActionIcon={<PlusIcon />}
+                        onPrimaryAction={toggleAddMembers}
                         icon={UserIcon}
                     />
                 }

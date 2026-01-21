@@ -114,7 +114,7 @@ export const AttributesGroupTab = ({ setTableData }: AttributesGroupTabProps) =>
                     })
                 );
 
-                save(
+                await save(
                     { ...config, groups },
                     {
                         successMessageKey: "deleteSuccess",

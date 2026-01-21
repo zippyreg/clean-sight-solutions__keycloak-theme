@@ -13,6 +13,7 @@ import { useColorMode } from "../../../shared/keycloak-ui-shared";
 import rehypePrism from "rehype-prism-plus";
 
 import CodeEditorComponent from "@uiw/react-textarea-code-editor";
+import { useMemo } from "react";
 
 import "./code-editor.css";
 
@@ -28,11 +29,11 @@ type CodeEditorProps = {
     height?: number;
 };
 
-const CodeEditor = ({ onChange, height = 128, ...rest }: CodeEditorProps) => {
+const CodeEditor = ({ onChange, height = 128, value, language, ...rest }: CodeEditorProps) => {
     const [isDark] = useColorMode();
 
-    return (
-        <div style={{ height: `${height}px`, overflow: "auto" }}>
+    const codeEditor = useMemo(
+        () => (
             <CodeEditorComponent
                 padding={5}
                 minHeight={height}
@@ -40,12 +41,20 @@ const CodeEditor = ({ onChange, height = 128, ...rest }: CodeEditorProps) => {
                     fontFamily: "var(--pf-global--FontFamily--monospace)"
                 }}
                 onChange={event => onChange?.(event.target.value)}
+                value={value}
+                language={language}
                 data-color-mode={isDark ? "dark" : "light"}
                 rehypePlugins={[
                     [rehypePrism, { ignoreMissing: true, showLineNumbers: true }]
                 ]}
                 {...rest}
             />
+        )
+    )
+
+    return (
+        <div style={{ height: `${height}px`, overflow: "auto" }}>
+            {codeEditor}
         </div>
     );
 };

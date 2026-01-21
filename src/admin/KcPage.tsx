@@ -68,9 +68,9 @@ export default function KcPage(props: { kcContext: KcContext }) {
 
     return (
         <KcAdminUiLoader
-            enableDarkModeIfPreferred={false}
             kcContext={kcContext}
             KcAdminUi={KcAdminUi}
+            darkModePolicy="never dark mode"
         />
     );
 }

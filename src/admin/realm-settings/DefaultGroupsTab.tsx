@@ -144,8 +144,8 @@ export const DefaultsGroupsTab = () => {
                         title: "addDefaultGroups",
                         ok: "add"
                     }}
-                    onConfirm={groups => {
-                        addGroups(groups || []);
+                    onConfirm={async groups => {
+                        await addGroups(groups || []);
                         toggleGroupPicker();
                     }}
                     onClose={toggleGroupPicker}

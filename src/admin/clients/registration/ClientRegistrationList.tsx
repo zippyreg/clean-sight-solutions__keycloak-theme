@@ -10,13 +10,17 @@
 // @ts-nocheck
 
 import ComponentRepresentation from "@keycloak/keycloak-admin-client/lib/defs/componentRepresentation";
-import { useAlerts, useFetch } from "../../../shared/keycloak-ui-shared";
+import { 
+    ListEmptyState, 
+    useAlerts, 
+    useFetch 
+} from "../../../shared/keycloak-ui-shared";
 import {
     Button,
     ButtonVariant,
     ToolbarItem
 } from "../../../shared/@patternfly/react-core";
-import { PlusIcon } from "../../../shared/@patternfly/react-icons";
+import { PlusIcon, PrivateIcon } from "../../../shared/@patternfly/react-icons";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link, useNavigate, useParams } from "react-router-dom";
@@ -148,6 +152,17 @@ export const ClientRegistrationList = ({ subType }: ClientRegistrationListProps)
                         displayKey: "providerId"
                     }
                 ]}
+                emptyState={
+                    <ListEmptyState
+                        hasIcon
+                        message={t("noAccessPolicies")}
+                        instructions={t("noAccessPoliciesInstructions")}
+                        primaryActionText={t("createPolicy")}
+                        onPrimaryAction={toggleAddDialog}
+                        primaryActionIcon={<PlusIcon />}
+                        icon={PrivateIcon}
+                    />
+                }
             />
         </>
     );

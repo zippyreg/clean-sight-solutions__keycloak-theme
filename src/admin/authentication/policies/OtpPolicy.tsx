@@ -57,10 +57,18 @@ export const OtpPolicy = ({ realm, realmUpdated }: OtpPolicyProps) => {
     const { adminClient } = useAdminClient();
 
     const { t } = useTranslation();
-    const { realm: realmName } = useRealm();
     const form = useForm<FormFields>({
         mode: "onChange",
-        defaultValues: { ...realm }
+        defaultValues: { 
+            otpPolicyType: realm.otpPolicyType ?? POLICY_TYPES[0],
+            otpPolicyAlgorithm:
+                realm.otpPolicyAlgorithm ?? `Hmac${OTP_HASH_ALGORITHMS[0]}`,
+            otpPolicyDigits: realm.otpPolicyDigits ?? NUMBER_OF_DIGITS[0],
+            otpPolicyLookAheadWindow: realm.otpPolicyLookAheadWindow ?? 1,
+            otpPolicyPeriod: realm.otpPolicyPeriod ?? 30,
+            otpPolicyInitialCounter: realm.otpPolicyInitialCounter ?? 30,
+            otpPolicyCodeReusable: realm.otpPolicyCodeReusable ?? false,
+        }
     });
     const {
         control,
@@ -68,13 +76,13 @@ export const OtpPolicy = ({ realm, realmUpdated }: OtpPolicyProps) => {
         handleSubmit,
         formState: { isValid, isDirty }
     } = form;
+    const { realm: realmName } = useRealm();
     const { addAlert, addError } = useAlerts();
     const localeSort = useLocaleSort();
 
     const otpType = useWatch({
         name: "otpPolicyType",
-        control,
-        defaultValue: POLICY_TYPES[0]
+        control
     });
 
     const setupForm = (formValues: FormFields) => reset(formValues);
@@ -125,16 +133,16 @@ export const OtpPolicy = ({ realm, realmUpdated }: OtpPolicyProps) => {
                             data-testid="otpPolicyType"
                             defaultValue={POLICY_TYPES[0]}
                             control={control}
-                            render={({ field }) => (
+                            render={({ field: { value, onChange } }) => (
                                 <>
                                     {POLICY_TYPES.map(type => (
                                         <Radio
                                             key={type}
                                             id={type}
                                             data-testid={type}
-                                            isChecked={field.value === type}
+                                            isChecked={value === type}
                                             name="otpPolicyType"
-                                            onChange={() => field.onChange(type)}
+                                            onChange={() => onChange(type)}
                                             label={t(`policyType.${type}`)}
                                             className="keycloak__otp_policies_authentication__policy-type"
                                         />

@@ -229,8 +229,8 @@ export default function EditUser() {
         titleKey: "disableConfirmUserTitle",
         messageKey: "disableConfirmUser",
         continueButtonLabel: "disable",
-        onConfirm: () => {
-            save({
+        onConfirm: async () => {
+            await save({
                 ...toUserFormFields(user!),
                 enabled: false
             });

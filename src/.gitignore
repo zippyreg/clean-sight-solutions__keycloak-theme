@@ -113,7 +113,7 @@
 # shared/keycloak-ui-shared/controls/table/ListEmptyState.tsx
 # === Owned files end =====
 
-# === @keycloakify/keycloak-admin-ui v260200.0.3 ===
+# === @keycloakify/keycloak-admin-ui v260500.0.0 ===
 /admin/admin-client.ts
 /admin/banners.module.css
 /admin/environment.ts
@@ -149,6 +149,7 @@
 /admin/clients/ClientDescription.tsx
 /admin/clients/ClientSessions.tsx
 /admin/clients/ClientSettings.tsx
+/admin/clients/constants.ts
 /admin/clients/routes.ts
 /admin/clients/utils.ts
 /admin/components/SwitchControl.tsx
@@ -167,13 +168,18 @@
 /admin/groups/SubGroupsContext.tsx
 /admin/i18n/i18n.ts
 /admin/i18n/messages_ca.properties
+/admin/i18n/messages_cs.properties
 /admin/i18n/messages_de.properties
+/admin/i18n/messages_el.properties
 /admin/i18n/messages_en.properties
 /admin/i18n/messages_es.properties
+/admin/i18n/messages_eu.properties
 /admin/i18n/messages_fr.properties
 /admin/i18n/messages_it.properties
 /admin/i18n/messages_ja.properties
 /admin/i18n/messages_ka.properties
+/admin/i18n/messages_kk.properties
+/admin/i18n/messages_ky.properties
 /admin/i18n/messages_lt.properties
 /admin/i18n/messages_nl.properties
 /admin/i18n/messages_no.properties
@@ -182,14 +188,18 @@
 /admin/i18n/messages_ro.properties
 /admin/i18n/messages_ru.properties
 /admin/i18n/messages_sl.properties
-/admin/i18n/messages_zh_CN.properties
+/admin/i18n/messages_tr.properties
+/admin/i18n/messages_zh_Hans.properties
+/admin/i18n/messages_zh_Hant.properties
 /admin/identity-providers/ManageOrderDialog.tsx
 /admin/identity-providers/OIDCConfigurationRepresentation.ts
 /admin/identity-providers/routes.ts
 /admin/organizations/IdentityProviders.tsx
 /admin/organizations/IdentityProviderSelect.tsx
+/admin/organizations/Invitations.tsx
 /admin/organizations/InviteMemberModal.tsx
 /admin/organizations/LinkIdentityProviderModal.tsx
+/admin/organizations/MembersSection.tsx
 /admin/organizations/NewOrganization.tsx
 /admin/organizations/routes.ts
 /admin/page/constants.ts
@@ -261,6 +271,9 @@
 /admin/utils/useSortedResourceTypes.ts
 /admin/utils/useToggle.ts
 /admin/utils/useUpdateEffect.ts
+/admin/workflows/routes.ts
+/admin/workflows/WorkflowDetailForm.tsx
+/admin/workflows/WorkflowsSection.tsx
 /admin/authentication/components/AddFlowDropdown.tsx
 /admin/authentication/components/AuthenticationProviderContext.tsx
 /admin/authentication/components/DraggableTable.tsx
@@ -303,10 +316,12 @@
 /admin/clients/add/LogoutPanel.tsx
 /admin/clients/add/NewClientForm.tsx
 /admin/clients/add/SamlConfig.tsx
+/admin/clients/add/SamlEncryption.tsx
 /admin/clients/add/SamlSignature.tsx
 /admin/clients/advanced/AddHostDialog.tsx
 /admin/clients/advanced/ApplicationUrls.tsx
 /admin/clients/advanced/FineGrainSamlEndpointConfig.tsx
+/admin/clients/advanced/OpenIdVerifiableCredentials.tsx
 /admin/clients/advanced/TokenLifespan.tsx
 /admin/clients/authorization/AuthorizationDataModal.tsx
 /admin/clients/authorization/AuthorizationEvaluate.tsx
@@ -401,11 +416,13 @@
 /admin/components/dropdown-panel/DropdownPanel.tsx
 /admin/components/dynamic/BooleanComponent.tsx
 /admin/components/dynamic/CheckboxFilterComponent.tsx
+/admin/components/dynamic/ClaimDisplayComponent.tsx
 /admin/components/dynamic/ClientSelectComponent.tsx
 /admin/components/dynamic/components.ts
 /admin/components/dynamic/DynamicComponents.tsx
 /admin/components/dynamic/FileComponent.tsx
 /admin/components/dynamic/GroupComponent.tsx
+/admin/components/dynamic/IdentityProviderMultiSelectComponent.tsx
 /admin/components/dynamic/IntComponent.tsx
 /admin/components/dynamic/ListComponent.tsx
 /admin/components/dynamic/MapComponent.tsx
@@ -429,15 +446,13 @@
 /admin/components/group/GroupPickerDialog.tsx
 /admin/components/help-enabler/help-header.css
 /admin/components/help-enabler/HelpHeader.tsx
+/admin/components/identity-provider/IdentityProviderSelect.tsx
 /admin/components/json-file-upload/FileUploadForm.tsx
 /admin/components/json-file-upload/JsonFileUpload.tsx
 /admin/components/key-value-form/AttributeForm.css
 /admin/components/key-value-form/key-value-convert.ts
-/admin/components/key-value-form/KeySelect.tsx
-/admin/components/key-value-form/ValueSelect.tsx
 /admin/components/keycloak-card/keycloak-card.css
 /admin/components/keycloak-card/KeycloakCard.tsx
-/admin/components/keycloak-spinner/KeycloakSpinner.tsx
 /admin/components/multi-line-input/MultiLineInput.tsx
 /admin/components/permission-tab/permissions-tab.css
 /admin/components/permission-tab/PermissionTab.tsx
@@ -458,6 +473,7 @@
 /admin/context/auth/admin-ui-endpoint.ts
 /admin/context/auth/uiRealmInfo.ts
 /admin/context/realm-context/RealmContext.tsx
+/admin/context/realm-context/useHash.tsx
 /admin/context/server-info/ServerInfoProvider.tsx
 /admin/context/whoami/WhoAmI.tsx
 /admin/dashboard/routes/Dashboard.tsx
@@ -470,17 +486,27 @@
 /admin/groups/components/MoveDialog.tsx
 /admin/groups/routes/Groups.tsx
 /admin/identity-providers/add/AddIdentityProvider.tsx
+/admin/identity-providers/add/AddJWTAuthorizationGrant.tsx
+/admin/identity-providers/add/AddKubernetesConnect.tsx
 /admin/identity-providers/add/AddMapper.tsx
 /admin/identity-providers/add/AddMapperForm.tsx
+/admin/identity-providers/add/AddOAuth2.tsx
 /admin/identity-providers/add/AddOpenIdConnect.tsx
 /admin/identity-providers/add/AddSamlConnect.tsx
+/admin/identity-providers/add/AddSpiffeConnect.tsx
 /admin/identity-providers/add/AdvancedSettings.tsx
 /admin/identity-providers/add/DescriptorSettings.tsx
 /admin/identity-providers/add/DetailSettings.tsx
 /admin/identity-providers/add/discovery-settings.css
 /admin/identity-providers/add/DiscoverySettings.tsx
 /admin/identity-providers/add/ExtendedNonDiscoverySettings.tsx
+/admin/identity-providers/add/ExtendedOAuth2Settings.tsx
 /admin/identity-providers/add/GeneralSettings.tsx
+/admin/identity-providers/add/JwksSettings.tsx
+/admin/identity-providers/add/JWTAuthorizationGrantAssertionSettings.tsx
+/admin/identity-providers/add/JWTAuthorizationGrantSettings.tsx
+/admin/identity-providers/add/KubernetesSettings.tsx
+/admin/identity-providers/add/OAuth2UserProfileClaimsSettings.tsx
 /admin/identity-providers/add/OIDCAuthentication.tsx
 /admin/identity-providers/add/OIDCGeneralSettings.tsx
 /admin/identity-providers/add/OpenIdConnectSettings.tsx
@@ -488,6 +514,7 @@
 /admin/identity-providers/add/saml-general-settings.css
 /admin/identity-providers/add/SamlConnectSettings.tsx
 /admin/identity-providers/add/SamlGeneralSettings.tsx
+/admin/identity-providers/add/SpiffeSettings.tsx
 /admin/identity-providers/component/ClientIdSecret.tsx
 /admin/identity-providers/component/DiscoveryEndpointField.tsx
 /admin/identity-providers/component/DisplayOrder.tsx
@@ -499,10 +526,14 @@
 /admin/identity-providers/routes/EditMapper.tsx
 /admin/identity-providers/routes/IdentityProvider.tsx
 /admin/identity-providers/routes/IdentityProviderCreate.tsx
+/admin/identity-providers/routes/IdentityProviderJWTAuthorizationGrant.tsx
 /admin/identity-providers/routes/IdentityProviderKeycloakOidc.tsx
+/admin/identity-providers/routes/IdentityProviderKubernetes.tsx
+/admin/identity-providers/routes/IdentityProviderOAuth2.tsx
 /admin/identity-providers/routes/IdentityProviderOidc.tsx
 /admin/identity-providers/routes/IdentityProviders.tsx
 /admin/identity-providers/routes/IdentityProviderSaml.tsx
+/admin/identity-providers/routes/IdentityProviderSpiffe.tsx
 /admin/organizations/routes/AddOrganization.tsx
 /admin/organizations/routes/EditOrganization.tsx
 /admin/organizations/routes/Organizations.tsx
@@ -561,12 +592,14 @@
 /admin/realm-settings/security-defences/HelpLinkTextInput.tsx
 /admin/realm-settings/security-defences/security-defences.css
 /admin/realm-settings/security-defences/Time.tsx
+/admin/realm-settings/themes/FileNameDialog.tsx
 /admin/realm-settings/themes/ImageUpload.tsx
 /admin/realm-settings/themes/LogoContext.tsx
 /admin/realm-settings/themes/PatternflyVars.ts
 /admin/realm-settings/themes/PreviewWindow.tsx
 /admin/realm-settings/themes/ThemeColors.tsx
 /admin/realm-settings/themes/ThemesTab.tsx
+/admin/realm-settings/themes/UploadJar.tsx
 /admin/realm-settings/user-profile/AttributesGroupDetails.tsx
 /admin/realm-settings/user-profile/AttributesGroupForm.tsx
 /admin/realm-settings/user-profile/JsonEditorTab.tsx
@@ -608,6 +641,8 @@
 /admin/user-federation/shared/ExtendedHeader.tsx
 /admin/user-federation/shared/Header.tsx
 /admin/user-federation/shared/SettingsCache.tsx
+/admin/workflows/routes/WorkflowDetail.tsx
+/admin/workflows/routes/Workflows.tsx
 /admin/authentication/components/diagram/auto-layout.ts
 /admin/authentication/components/diagram/ButtonEdge.tsx
 /admin/authentication/components/diagram/ConditionalNode.tsx
@@ -639,12 +674,14 @@
 /admin/realm-settings/user-profile/attribute/AttributeGeneralSettings.tsx
 /admin/realm-settings/user-profile/attribute/AttributePermission.tsx
 /admin/realm-settings/user-profile/attribute/AttributeValidations.tsx
+/admin/realm-settings/user-profile/attribute/KeySelect.tsx
 /admin/realm-settings/user-profile/attribute/TranslatableField.tsx
 /admin/realm-settings/user-profile/attribute/ValidatorSelect.tsx
+/admin/realm-settings/user-profile/attribute/ValueSelect.tsx
 /admin/user-federation/ldap/mappers/LdapMapperDetails.tsx
 /admin/user-federation/ldap/mappers/LdapMapperList.tsx
 
-# === @keycloakify/keycloak-ui-shared v260200.0.0 ===
+# === @keycloakify/keycloak-ui-shared v260500.0.0 ===
 /shared/keycloak-ui-shared/index.ts
 /shared/@patternfly/react-core/index.tsx
 /shared/@patternfly/react-icons/index.tsx
@@ -657,6 +694,7 @@
 /shared/keycloak-ui-shared/context/ErrorPage.tsx
 /shared/keycloak-ui-shared/context/HelpContext.tsx
 /shared/keycloak-ui-shared/continue-cancel/ContinueCancelModal.tsx
+/shared/keycloak-ui-shared/controls/FileUploadControl.tsx
 /shared/keycloak-ui-shared/controls/FormErrorText.tsx
 /shared/keycloak-ui-shared/controls/FormLabel.tsx
 /shared/keycloak-ui-shared/controls/HelpItem.tsx
@@ -706,7 +744,7 @@
 /shared/keycloak-ui-shared/controls/table/PaginatingTableToolbar.tsx
 /shared/keycloak-ui-shared/controls/table/TableToolbar.tsx
 
-# === @keycloakify/keycloak-account-ui v260200.1.3 ===
+# === @keycloakify/keycloak-account-ui v260500.0.0 ===
 /account/api.ts
 /account/environment.ts
 /account/i18next.d.ts
@@ -728,6 +766,7 @@
 /account/i18n/i18n.ts
 /account/i18n/index.ts
 /account/i18n/messages_ar.properties
+/account/i18n/messages_az.properties
 /account/i18n/messages_ca.properties
 /account/i18n/messages_cs.properties
 /account/i18n/messages_da.properties
@@ -735,6 +774,7 @@
 /account/i18n/messages_el.properties
 /account/i18n/messages_en.properties
 /account/i18n/messages_es.properties
+/account/i18n/messages_eu.properties
 /account/i18n/messages_fa.properties
 /account/i18n/messages_fi.properties
 /account/i18n/messages_fr.properties
@@ -743,6 +783,8 @@
 /account/i18n/messages_it.properties
 /account/i18n/messages_ja.properties
 /account/i18n/messages_ka.properties
+/account/i18n/messages_kk.properties
+/account/i18n/messages_ky.properties
 /account/i18n/messages_lt.properties
 /account/i18n/messages_lv.properties
 /account/i18n/messages_nl.properties
@@ -758,8 +800,8 @@
 /account/i18n/messages_th.properties
 /account/i18n/messages_tr.properties
 /account/i18n/messages_uk.properties
-/account/i18n/messages_zh_CN.properties
-/account/i18n/messages_zh_TW.properties
+/account/i18n/messages_zh_Hans.properties
+/account/i18n/messages_zh_Hant.properties
 /account/oid4vci/Oid4Vci.tsx
 /account/organizations/Organizations.tsx
 /account/resources/EditTheResource.tsx

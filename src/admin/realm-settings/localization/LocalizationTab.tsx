@@ -110,29 +110,42 @@ export const LocalizationTab = ({ save, realm, tableData }: LocalizationTabProps
                                     name="supportedLocales"
                                     isScrollable
                                     label={t("supportedLocales")}
+                                    labelIcon={t("supportedLocalesHelp")}
                                     controller={{
-                                        defaultValue: defaultSupportedLocales
+                                        defaultValue: defaultSupportedLocales,
+                                        rules: {
+                                            required: t("required"),
+                                            validate: (value: string[]) =>
+                                                    value.every((v) => allLocales.includes(v)) ||
+                                                    t("invalidLocale"),
+                                        },
                                     }}
                                     variant="typeaheadMulti"
                                     placeholderText={t("selectLocales")}
                                     options={allLocales.map(l => ({
                                         key: l,
                                         value:
-                                            localeToDisplayName(l, whoAmI.getLocale()) ||
+                                            localeToDisplayName(l, whoAmI.locale) ||
                                             l
                                     }))}
                                 />
                                 <SelectControl
                                     name="defaultLocale"
                                     label={t("defaultLocale")}
+                                    labelIcon={t("defaultLocaleHelp")}
                                     controller={{
-                                        defaultValue: DEFAULT_LOCALE
+                                        defaultValue: DEFAULT_LOCALE,
+                                        rules: {
+                                            required: t("required"),
+                                            validate: (value: string) =>
+                                                watchSupportedLocales?.includes(value) || t("required"),
+                                        },
                                     }}
                                     data-testid="select-default-locale"
                                     options={watchSupportedLocales!.map(l => ({
                                         key: l,
                                         value:
-                                            localeToDisplayName(l, whoAmI.getLocale()) ||
+                                            localeToDisplayName(l, whoAmI.locale) ||
                                             l
                                     }))}
                                 />
