@@ -9,7 +9,12 @@
 
 // @ts-nocheck
 
-import { ComponentClass, MouseEventHandler, ReactNode } from "react";
+import { 
+    ComponentClass, 
+    MouseEventHandler, 
+    PropsWithChildren,
+    ReactNode 
+} from "react";
 import {
     EmptyState,
     EmptyStateIcon,
@@ -53,8 +58,9 @@ export const ListEmptyState = ({
     secondaryActions,
     icon,
     primaryActionIcon,
-    isDisabled = false
-}: ListEmptyStateProps) => {
+    isDisabled = false,
+    children
+}: PropsWithChildren<ListEmptyStateProps>) => {
     return (
         <EmptyState data-testid="empty-state" variant="lg">
             {hasIcon && isSearchVariant ? (
@@ -78,6 +84,7 @@ export const ListEmptyState = ({
                         {primaryActionText}
                     </Button>
                 )}
+                {children}
                 {secondaryActions && (
                     <EmptyStateActions>
                         {secondaryActions.map(action => (

@@ -39,6 +39,7 @@
 # admin/identity-providers/IdentityProvidersSection.tsx
 # admin/organizations/DetailOraganzationHeader.tsx
 # admin/organizations/DetailOrganization.tsx
+# admin/organizations/Invitations.tsx
 # admin/organizations/Members.tsx
 # admin/organizations/OrganizationForm.tsx
 # admin/organizations/OrganizationModal.tsx
@@ -196,7 +197,6 @@
 /admin/identity-providers/routes.ts
 /admin/organizations/IdentityProviders.tsx
 /admin/organizations/IdentityProviderSelect.tsx
-/admin/organizations/Invitations.tsx
 /admin/organizations/InviteMemberModal.tsx
 /admin/organizations/LinkIdentityProviderModal.tsx
 /admin/organizations/MembersSection.tsx
